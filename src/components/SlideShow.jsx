@@ -1,6 +1,13 @@
-import img1 from "../imges/img1.jpg";
-import img2 from "../imges/img2.jpg"
-import img3 from "../imges/img3.jpg"
+import img1 from "../imges/1.jpg";
+import img2 from "../imges/2.jpg";
+import img3 from "../imges/3.jpg";
+import img4 from "../imges/4.jpg";
+import img5 from "../imges/5.jpg";
+import img6 from "../imges/6.jpg";
+import img7 from "../imges/7.jpg";
+import img8 from "../imges/8.jpg";
+
+
 import {useState ,useEffect} from "react"
 const SlideShow = () => {
 
@@ -45,6 +52,21 @@ const SlideShow = () => {
             </div>
             <div className="myslide">
                 <img src={img3}  />
+            </div>
+            <div className="myslide">
+                <img src={img4}   />
+            </div>
+            <div className="myslide">
+                <img src={img5}  />
+            </div>
+            <div className="myslide">
+                <img src={img6}  />
+            </div>
+            <div className="myslide">
+                <img src={img7}  />
+            </div>
+            <div className="myslide">
+                <img src={img8}  />
             </div>
 
             <a className="prev"   onClick={()=> plusSlides(-1)}>&#10094;</a>

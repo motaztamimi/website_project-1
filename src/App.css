@@ -13,16 +13,21 @@ body {
 
 .Header {
   width: 100%;
-  height: 100px;
-  justify-content: center;
-  align-items: center;
+  height: 100%;
+}
+.Header img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .NavBar {
   display: flex;
+  flex-direction: row;
   width: 100%;
   justify-content: center;
   align-items: center;
+  color: #151e4d;
 }
 .NavBar input {
   direction: rtl;
@@ -52,16 +57,18 @@ body {
 
 .NavBar ul li ul {
   display: none;
-  margin-top: 20px;
+  margin-top: 31px;
   position: absolute;
   background-color: #fff;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 .NavBar ul li:hover ul {
   display: block;
+  z-index: 1;
 }
 .NavBar ul li ul li {
   display: block;
-  background-color: #fff;
   list-style: none;
   font-weight: 500;
   font-size: 1.1rem;
@@ -71,20 +78,25 @@ body {
   width: 180px;
   padding-top: 5px;
 }
+.NavBar ul li ul li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 
-.myslide{
-display: none;
-}
-.myslide img{
-  vertical-align: middle;
-  width: 100%; 
-}
-.slideShow-container{
+.myslide {
+  display: none;
   width: 100%;
-  position: relative;
-  margin: auto;
 }
-.prev, .next {
+.myslide img {
+  width: 100%;
+}
+
+.slideShow-container {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+}
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -97,6 +109,7 @@ display: none;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* Position the "next button" to the right */
@@ -106,7 +119,7 @@ display: none;
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
-

@@ -194,6 +194,7 @@ body {
  
   width: 100%;
   display: block;
+  
 
 
 }
@@ -217,7 +218,7 @@ body {
   
 
 }
-.eventimg{
+.eventImg{
  
   width: 90%;
  
@@ -228,6 +229,6 @@ body {
   direction: rtl;
   margin-left: auto;
 }
-.EventsContainer > h2{
+.EventsContainer h2{
   text-align: center;
 }

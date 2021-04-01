@@ -47,6 +47,7 @@ const news = [{
   title: 'גאווה ישראלית – שנה שלישית ברציפות',
   brife: ' שיבא ב-TOP 10 של צמרת בתי החולים הטובים ביותר בעולם',
   img: `${process.env.PUBLIC_URL}/imges/News1.jpeg`
+
 },
 ]
 
@@ -58,7 +59,7 @@ const news = [{
       CardSubtitle:'first',
       date:'2thFeb',
       body:'הפלונטר והבחירות לנשיאות: האם יו"ר הכנסת לוין ייכנס לנעלי ריבלין? ',
-      img:'../imges/event1.jpg',
+      img:`${process.env.PUBLIC_URL}/imges/event1.jpg`,
     },
     {
       id:'2',
@@ -66,14 +67,14 @@ const news = [{
       CardSubtitle:'Second',
       date:'3thFeb',
       body:'הפלונטר והבחירות לנשיאות: האם יו"ר הכנסת לוין ייכנס לנעלי ריבלין?',
-      img:'../imges/event2.jpg',
+      img:`${process.env.PUBLIC_URL}/imges/event2.jpg`,
     },{
       id:'3',
       CardTitle:'thirdone',
       CardSubtitle:'third',
       date:'3thFeb',
       body:'הפלונטר והבחירות לנשיאות: האם יו"ר הכנסת לוין ייכנס לנעלי ריבלין?',
-      img:'../imges/event3.jpg'
+      img:`${process.env.PUBLIC_URL}/imges/event3.jpg`
     }
     
 ])

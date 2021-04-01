@@ -4,7 +4,6 @@ import Header from "./components/Header"
 import SlideShow from "./components/SlideShow"
 import {useState} from "react"
 import Events from "./components/Events"
-=======
 import News from './components/News'
 import img1 from './imges/News1.jpeg';
 
@@ -82,24 +81,12 @@ const news = [{
 
   return (
     <div className="App">
-    <Header/>
-    <SlideShow/>
-    <section className='MainSection'>
-    <section className="NewsAndEvents">
-    <Events events={events}/>
-    <Events events={events}/>
-    </section>
-    <section className='Ads'>
-    
-    </section>
-    </section>
-  </div>
       <Header/>
       <SlideShow/>
       <section className='MainSection'>
       <section className="NewsAndEvents">
       <News News={news}/>
-      <News News={news}/>
+      <Events events={events}/>
       </section>
       <section className='Ads'>
         <img src={img1} alt=""/>

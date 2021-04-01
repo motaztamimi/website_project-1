@@ -208,7 +208,7 @@ body {
   grid-row-gap: 20px;
   padding: 5px;
 }
-.eventimg {
+.eventImg{
   width: 90%;
 }
 
@@ -217,7 +217,8 @@ body {
   direction: rtl;
   margin-left: auto;
 }
-.EventsContainer > h2 {
+
+.EventsContainer h2{
   text-align: center;
 }
 .Event h6 {

@@ -203,12 +203,12 @@ body {
   gap: 20px;
   text-align: center;
   grid-auto-rows: auto;
+
   width: 100%;
   grid-row-gap: 20px;
   padding: 5px;
-  direction: rtl;
 }
-.eventImg {
+.eventimg {
   width: 90%;
 }
 

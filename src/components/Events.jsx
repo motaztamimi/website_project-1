@@ -18,6 +18,7 @@ const Events = ({events}) => {
         })}
 
     </section>
+    <a href="http://" target="_blank" rel="noopener noreferrer"> עוד אירועים{'   >'}</a>
     </section>
     )
 }

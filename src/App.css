@@ -124,6 +124,7 @@ body {
 .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
+
 .News {
   display: block;
   flex-direction: column;
@@ -187,4 +188,46 @@ body {
   display: flex;
   flex-direction: column;
   width: 20%;
+}
+
+.Event{
+ 
+  width: 100%;
+  display: block;
+
+
+}
+.Event:hover{
+
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  
+  
+}
+.Events{
+ 
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  gap: 20px;
+  text-align: center;
+  grid-auto-rows: auto;
+  
+  width: 100%;
+  grid-row-gap:20px;
+  padding: 5px;
+  
+
+}
+.eventimg{
+ 
+  width: 90%;
+ 
+}
+
+.EventsContainer{
+  width: 100%;
+  direction: rtl;
+  margin-left: auto;
+}
+.EventsContainer > h2{
+  text-align: center;
 }

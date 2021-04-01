@@ -80,6 +80,7 @@ body {
 }
 .NavBar ul li ul li:hover {
   background-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .myslide {
@@ -188,9 +189,6 @@ body {
   flex-direction: column;
   width: 20%;
 }
-
-
-
 
 .Event{
  

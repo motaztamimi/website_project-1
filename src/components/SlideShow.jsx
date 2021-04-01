@@ -16,7 +16,6 @@ const SlideShow = () => {
     const Showslide=(n)=>{
         let i;
         let slide=document.getElementsByClassName("myslide");
-        console.log(slidenum);
           let a  = Array.from(slide);
     
         let curentindex=n;
@@ -34,43 +33,42 @@ const SlideShow = () => {
         Showslide(slidenum+n);
       }  
      useEffect(()=> {
-         if ( firstrender ){
          Showslide(1);
          setfirstrender(false);
-         }
-     });
+         
+     }, [firstrender]);
 
 
     return (
     
       < div className="slideShow-container">
             <div className="myslide">
-                <img src={img1}   />
+                <img src={img1}  alt='' />
             </div>
             <div className="myslide">
-                <img src={img2}  />
+                <img src={img2}  alt=''/>
             </div>
             <div className="myslide">
-                <img src={img3}  />
+                <img src={img3}  alt=''/>
             </div>
             <div className="myslide">
-                <img src={img4}   />
+                <img src={img4}  alt='' />
             </div>
             <div className="myslide">
-                <img src={img5}  />
+                <img src={img5}  alt=''/>
             </div>
             <div className="myslide">
-                <img src={img6}  />
+                <img src={img6} alt='' />
             </div>
             <div className="myslide">
-                <img src={img7}  />
+                <img src={img7} alt='' />
             </div>
             <div className="myslide">
-                <img src={img8}  />
+                <img src={img8} alt=''/>
             </div>
 
-            <a className="prev"   onClick={()=> plusSlides(-1)}>&#10094;</a>
-            <a className="next"  onClick={()=> plusSlides(1)}>&#10095;</a>
+            <button className="prev"   onClick={()=> plusSlides(-1)}>&#10094;</button>
+            <button className="next"  onClick={()=> plusSlides(1)}>&#10095;</button>
         </div>
      
   

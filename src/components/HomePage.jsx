@@ -3,7 +3,6 @@ import SlideShow from "./SlideShow"
 import Events from "./Events"
 import News from './News'
 import SideWidget from './SideWidget'
-import Fotter from "./Fotter"
 
 
 const HomePage = ()=>{
@@ -70,7 +69,6 @@ const HomePage = ()=>{
 
                 </section>
             </section>
-            <Fotter/>
         </>
     );
 

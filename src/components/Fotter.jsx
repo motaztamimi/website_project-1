@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import * as ReactBootstrap from "react-bootstrap";
+
 import location from "../imges/Location.png"
 import { AiFillFacebook } from 'react-icons/ai';
 import logo from "../imges/Logo3.jpg"

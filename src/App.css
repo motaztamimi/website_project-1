@@ -13,40 +13,41 @@ body {
 
 .Header {
   width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .Header img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .NavBar {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
+  width: 50%;
+  direction: rtl;
+  padding-left: 15px;
+  padding-right: 15px;
   color: #151e4d;
 }
 .NavBar input {
   direction: rtl;
-  font-size: 20px;
+  font-size: 1.2rem;
 }
 
 .NavBar ul {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   direction: rtl;
 }
 .NavBar ul li {
   display: inline-block;
   position: relative;
   list-style: none;
-  text-align: center;
-  font-weight: 500;
-  font-size: 1.1rem;
+  font-weight: 650;
+  font-size: 1.2rem;
   direction: rtl;
-  height: 100px;
   padding: 20px;
   padding-top: 40px;
 }
@@ -57,7 +58,7 @@ body {
 
 .NavBar ul li ul {
   display: none;
-  margin-top: 31px;
+  margin-top: 20px;
   position: absolute;
   background-color: #fff;
   border-bottom-left-radius: 20px;
@@ -176,22 +177,28 @@ body {
   display: flex;
   direction: rtl;
   width: 100%;
+  margin-top: 20px;
 }
 .NewsAndEvents {
   display: flex;
   flex-direction: column;
   width: 50%;
   margin-right: 15%;
+  padding: 0 15px;
 }
 .Ads {
   display: flex;
   flex-direction: column;
   width: 20%;
+  padding: 0 15px;
+}
+.Ads .SideWidget {
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 .Event {
-  width: 100%;
-  display: block;
+  padding: 5px;
 }
 .Event:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -199,16 +206,12 @@ body {
 .Events {
   display: grid;
   grid-template-columns: repeat(3, minmax(200px, 1fr));
-  gap: 20px;
+  gap: 15px;
   text-align: center;
-  grid-auto-rows: auto;
-
   width: 100%;
-  grid-row-gap: 20px;
-  padding: 5px;
 }
 .eventImg {
-  width: 90%;
+  width: 100%;
 }
 
 .EventsContainer {
@@ -241,4 +244,88 @@ body {
   width: 100%;
   color: #1abc9c;
   font-size: 1.4rem;
+}
+@media screen and (max-width: 1300px) {
+  .NavBar {
+    display: none;
+  }
+  .NewsCard {
+    text-align: unset;
+    display: flex;
+    width: 100%;
+    direction: rtl;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .CardImg {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .NewsCard h1 {
+    text-align: right;
+    font-size: 1.4rem;
+  }
+  .NewsCard h3 {
+    text-align: right;
+    font-size: 1.2rem;
+  }
+  .Events {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .slideShow-container {
+    width: 100%;
+  }
+  .NewsAndEvents {
+    margin: 0 30px 0 15px;
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .MainSection {
+    flex-direction: column;
+  }
+  .Header img {
+    width: 100%;
+  }
+  .NewsCard {
+    flex-direction: column;
+  }
+  .NewsCard h1 {
+    text-align: right;
+  }
+  .NewsCard h3 {
+    text-align: right;
+  }
+  .EventsContainer {
+    margin: 0;
+  }
+  .NewsAndEvents {
+    margin: 0;
+    width: 100%;
+  }
+  .NavBar {
+    display: none;
+  }
+  .slideShow-container {
+    width: 100%;
+  }
+  .slideShow-container img {
+    height: 305px;
+  }
+  .Ads {
+    width: 100%;
+  }
+
+  .Ads .SideWidget {
+    display: flex;
+    justify-content: center;
+  }
+  .Events {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .Events Img {
+    width: 60%;
+  }
 }

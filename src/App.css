@@ -127,7 +127,7 @@ body {
 }
 
 .News {
-  display: block;
+  display: flex;
   flex-direction: column;
   direction: rtl;
   width: 100%;
@@ -168,8 +168,7 @@ body {
 }
 /* add thid for the img becuse there are diferent in the size*/
 .NewsCard img {
-  width: 240px;
- 
+  width: 300px;
 }
 .News a {
   text-decoration: none;
@@ -223,9 +222,10 @@ body {
 }
 
 .EventsContainer {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   direction: rtl;
-  margin-left: auto;
 }
 
 .EventsContainer h2 {
@@ -263,6 +263,7 @@ footer {
   min-height: 250px;
   margin-top: 60px;
   padding: 10px 0px 25px 0px;
+  direction: rtl;
 }
 .pt2 {
   padding-top: 40px;

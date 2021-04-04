@@ -4,20 +4,21 @@ import Events from "./Events"
 import News from './News'
 import SideWidget from './SideWidget'
 import Fotter from "./Fotter" 
-
+import img1 from '../imges/newsimg1.jpg';
+import img2 from '../imges/newsimg2.jpg';
 const HomePage = ()=>{
 
     const news = [{
         id: 1,
         title: 'גאווה ישראלית – שנה שלישית ברציפות',
         brife: ' שיבא ב-TOP 10 של צמרת בתי החולים הטובים ביותר בעולם',
-        img: `${process.env.PUBLIC_URL}/imges/News1.jpeg`
+        img: `${process.env.PUBLIC_URL}/imges/newsimg2.jpg`
       },
       {
         id: 2,
         title: 'גאווה ישראלית – שנה שלישית ברציפות',
         brife: ' שיבא ב-TOP 10 של צמרת בתי החולים הטובים ביותר בעולם',
-        img: `${process.env.PUBLIC_URL}/imges/News1.jpeg`
+        img: `${process.env.PUBLIC_URL}/imges/newsimg3.jpg`
       },
       {
         id: 3,
@@ -62,10 +63,10 @@ const HomePage = ()=>{
                     <Events events={events}/>
                 </section>
                 <section className='Ads'>
-                        <SideWidget/>
-                        <SideWidget/>
-                        <SideWidget/>
-                        <SideWidget/>
+                        <SideWidget photo={img1}/>
+                        <SideWidget photo={img2}/>
+                        <SideWidget photo={img1}/>
+                        <SideWidget photo={img2}/>
 
                 </section>
             </section>

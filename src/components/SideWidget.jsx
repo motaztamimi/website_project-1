@@ -1,12 +1,12 @@
-import img1 from '../imges/SideWidgetImg.jpeg';
+import img1 from '../imges/newsimg1.jpg';
 
 
-const SideWidget = ()=>{
+const SideWidget = ({photo})=>{
 
     return(
         <>  
             <div className='SideWidget'>
-                <img src={img1} alt=""/>
+                <img src={[photo]} alt=""/>
             </div>
         </>
 

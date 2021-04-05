@@ -1,4 +1,3 @@
-import { BsSearch } from 'react-icons/bs';
 import { useState} from 'react';
 import DropDown from './DropDown';
 const Nav = () => {

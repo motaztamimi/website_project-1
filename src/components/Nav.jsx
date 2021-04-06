@@ -1,7 +1,5 @@
-import { useState} from 'react';
 import DropDown from './DropDown';
 const Nav = () => {
-    const [inputToggle, inputToggleSet] = useState(false); 
     return (
         <div className="NavBar">
             

@@ -1,5 +1,6 @@
 import Nav from "./Nav";
 import { BsSearch } from 'react-icons/bs';
+import MoblieHeader from './MobHeader';
 
 
 const Header = () => {
@@ -17,7 +18,7 @@ const Header = () => {
             <Nav/>
             </div>
             </div>
-            
+            <MoblieHeader/>
         </>
     )
 }

@@ -9,8 +9,8 @@ const Fotter = () => {
 		<div className="Containers ">
 		<div className="rows">
 		
-		<div className="cols">
-		<h5 className="col_white_amrc pt2 logoFotter ">חפש אותנו</h5>
+		<div className="cols firstCol">
+		
 	
 		<img src={logo}  className="logoFotter1  pt2" alt=""/>
 
@@ -81,10 +81,10 @@ const Fotter = () => {
 
 		
 		<ul className="social_footer_ul">
-		<li><a href="#">	<i className="material-icons" style={{color:"wheat" } } >facebook</i></a></li>
-		<li><a href="#">	<i className="material-icons" style={{color:"wheat" } } >favorite</i></a></li>
-		<li><a href="#">	<i className="material-icons" style={{color:"wheat" } } >email</i></a></li>
-		<li><a href="#">	<i className="material-icons" style={{color:"wheat" } } >feedback</i></a></li>
+		<li><a href="#">	<i className="material-icons" >facebook</i></a></li>
+		<li><a href="#">	<i className="material-icons" >favorite</i></a></li>
+		<li><a href="#">	<i className="material-icons" >email</i></a></li>
+		<li><a href="#">	<i className="material-icons" >feedback</i></a></li>
 		</ul>
 		
 		</div>

@@ -1,10 +1,11 @@
 import DropDown from './DropDown';
+import {Link} from 'react-router-dom';
 const Nav = () => {
     return (
         <div className="NavBar">
             
             <ul>
-                <li>מי-אנחנו<DropDown items={['שלום', 'היי', 'לול']}/></li>
+                <li><Link to = "/about"> מי-אנחנו</Link><DropDown items={['שלום', 'היי', 'לול']}/></li>
                 <li>ביה-כפר-שאול<DropDown items={['שלום', 'היי', 'לול']}/></li>
                 <li>ביה''ח-איתנים<DropDown items={['שלום', 'היי', 'לול']}/></li>
                 <li>השירות-הקהילתי<DropDown items={['שלום', 'היי', 'לול']}/></li>

@@ -1,9 +1,8 @@
-import Header from "./Header"
+
 import SlideShow from "./SlideShow"
 import Events from "./Events"
 import News from './News'
 import SideWidget from './SideWidget'
-import Fotter from "./Fotter" 
 import img1 from '../imges/newsimg1.jpg';
 import img2 from '../imges/newsimg2.jpg';
 const HomePage = ()=>{
@@ -55,7 +54,7 @@ const HomePage = ()=>{
 
     return(
         <>
-            <Header/>
+            
             <SlideShow/>
             <section className='MainSection'>
                 <section className="NewsAndEvents">
@@ -70,7 +69,6 @@ const HomePage = ()=>{
 
                 </section>
             </section>
-            <Fotter/>
         </>
     );
 

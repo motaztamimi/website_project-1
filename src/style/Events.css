@@ -1,0 +1,70 @@
+.Event {
+  padding: 5px;
+}
+.Event:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.Events {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  gap: 15px;
+  text-align: center;
+  width: 100%;
+}
+.eventImg {
+  width: 100%;
+}
+
+.EventsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  direction: rtl;
+}
+
+.EventsContainer h2 {
+  text-align: center;
+}
+.Event h6 {
+  text-align: right;
+  margin-right: 10px;
+  font-size: 1.1rem;
+  color: #3f3f3f86;
+}
+
+.Event h5 {
+  text-align: right;
+  font-size: 1.2rem;
+  font-weight: 300;
+  direction: rtl;
+  margin: 10px;
+}
+
+.EventsContainer a {
+  text-decoration: none;
+  text-align: right;
+  width: 100%;
+  color: #1abc9c;
+  font-size: 1.4rem;
+}
+
+@media screen and (max-width: 1300px) {
+  .Events {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 800px) {
+  .EventsContainer {
+    margin: 0;
+  }
+  .NavBar {
+    display: none;
+  }
+  .Events {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .Events Img {
+    width: 60%;
+  }
+}

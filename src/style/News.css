@@ -1,0 +1,85 @@
+.News {
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+  width: 100%;
+  margin-top: 10px;
+}
+.News h2 {
+  text-align: center;
+}
+.NewsCard {
+  text-align: unset;
+  display: flex;
+  width: 100%;
+  direction: rtl;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.NewsCard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.CardBody {
+  width: 100%;
+}
+.NewsCard h1 {
+  text-align: right;
+  font-weight: 300;
+  font-size: 1.5rem;
+  margin: 10px;
+}
+.NewsCard h1:hover {
+  color: #1abc9c;
+  cursor: pointer;
+}
+.NewsCard h3 {
+  text-align: right;
+  font-weight: 200;
+  font-size: 1.3rem;
+  margin: 10px;
+}
+/* add thid for the img becuse there are diferent in the size*/
+.NewsCard img {
+  width: 300px;
+}
+.News a {
+  text-decoration: none;
+  text-align: right;
+  width: 100%;
+  color: #1abc9c;
+  font-size: 1.4rem;
+}
+
+@media screen and (max-width: 1300px) {
+  .NewsCard {
+    text-align: unset;
+    display: flex;
+    width: 100%;
+    direction: rtl;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .CardImg {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .NewsCard h1 {
+    text-align: right;
+    font-size: 1.4rem;
+  }
+  .NewsCard h3 {
+    text-align: right;
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .NewsCard {
+    flex-direction: column;
+  }
+  .NewsCard h1 {
+    text-align: right;
+  }
+  .NewsCard h3 {
+    text-align: right;
+  }
+}

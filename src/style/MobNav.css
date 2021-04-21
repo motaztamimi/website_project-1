@@ -1,0 +1,77 @@
+.MobNav {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  @keyframes MobNavAnim {
+    from {
+      height: 0%;
+    }
+    to {
+      height: 70%;
+    }
+  }
+  .MobNav {
+    display: none;
+    position: absolute;
+    top: 0;
+    flex-direction: column;
+    align-items: center;
+    direction: rtl;
+    width: 100%;
+    height: 70%;
+    z-index: 10;
+    background-color: #151e4d;
+    padding-top: 38px;
+    animation-name: MobNavAnim;
+    animation-duration: 0.4s;
+  }
+  .MobNav.active {
+    display: flex;
+  }
+  .MobNav ul {
+    color: white;
+    direction: rtl;
+    margin-top: 20px;
+  }
+  .MobNav ul li {
+    margin: 15px;
+    direction: rtl;
+    list-style: none;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 300;
+  }
+  .MobNav input {
+    height: 39px;
+    width: 190px;
+    font-size: 1.4rem;
+    font-weight: 30;
+    direction: rtl;
+    color: #151e4d;
+    border-color: rgba(153, 153, 153, 0.26);
+    border-width: 1px;
+    border-left: none;
+    padding-right: 10px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    animation-name: inherit;
+  }
+  .MobNav ::placeholder {
+    color: #171f73;
+  }
+  .MobNav button {
+    height: 39px;
+    text-decoration: none;
+    border-style: none;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    font-size: 1.4rem;
+    background-color: #171f73;
+    width: 60px;
+  }
+
+  .MobNav button:hover {
+    background-color: #ea3d84;
+  }
+}

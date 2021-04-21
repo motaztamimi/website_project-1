@@ -1,5 +1,5 @@
 import { BsSearch } from 'react-icons/bs';
-
+import '../style/MobNav.css';
 
 const MobNav = ()=>{
 

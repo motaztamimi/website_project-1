@@ -1,0 +1,50 @@
+.MainSection {
+  display: flex;
+  direction: rtl;
+  width: 100%;
+  margin-top: 20px;
+}
+.NewsAndEvents {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-right: 14%;
+  padding: 0 15px;
+}
+.Ads {
+  display: flex;
+  flex-direction: column;
+  width: 22%;
+  padding: 0 15px;
+}
+.Ads .SideWidget {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.Ads .SideWidget img {
+  width: 100%;
+}
+
+@media screen and (max-width: 1300px) {
+  .NewsAndEvents {
+    margin: 0 30px 0 15px;
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .MainSection {
+    flex-direction: column;
+  }
+  .NewsAndEvents {
+    margin: 0;
+    width: 100%;
+  }
+  .Ads {
+    width: 100%;
+  }
+  .Ads .SideWidget {
+    display: flex;
+    justify-content: center;
+  }
+}

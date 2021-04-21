@@ -1,5 +1,6 @@
 import DropDown from './DropDown';
 import {Link} from 'react-router-dom';
+import '../style/Nav.css';
 const Nav = () => {
     return (
         <div className="NavBar">

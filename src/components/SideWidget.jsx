@@ -1,4 +1,3 @@
-import img1 from '../imges/newsimg1.jpg';
 
 
 const SideWidget = ({photo})=>{

@@ -1,0 +1,67 @@
+.NavBar {
+  width: 100%;
+  direction: rtl;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #151e4d;
+}
+
+.NavBar ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  direction: rtl;
+}
+.NavBar ul li {
+  display: inline-block;
+  position: relative;
+  list-style: none;
+  font-weight: 650;
+  font-size: 1.2rem;
+  direction: rtl;
+  padding: 20px;
+  padding-top: 40px;
+}
+.NavBar ul li a {
+  text-decoration: none;
+  color: #151e4d;
+}
+.NavBar ul li ul {
+  display: none;
+  margin-top: 20px;
+  position: absolute;
+  background-color: #fff;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.NavBar ul :hover {
+  color: #ea3d84;
+}
+.NavBar ul li:hover ul {
+  display: block;
+  color: #171f73;
+  z-index: 1;
+}
+.NavBar ul li ul li {
+  display: block;
+  list-style: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  direction: rtl;
+  text-align: right;
+  height: 50px;
+  width: 180px;
+  padding-top: 5px;
+}
+.NavBar ul li ul li:hover {
+  background-color: #77d2bb;
+  color: white;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1300px) {
+  .NavBar {
+    display: none;
+  }
+}

@@ -1,8 +1,9 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-import location from "../imges/Location.png"
-import { AiFillFacebook } from 'react-icons/ai';
-import logo from "../imges/Logo3.jpg"
+
+import location from "../imges/Location.png";
+import '../style/Fotter.css';
+import logo from "../imges/Logo3.jpg";
+
 const Fotter = () => {
     return (
 		<footer className="footer">

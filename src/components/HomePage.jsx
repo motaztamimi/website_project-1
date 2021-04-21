@@ -1,10 +1,13 @@
 
-import SlideShow from "./SlideShow"
-import Events from "./Events"
-import News from './News'
-import SideWidget from './SideWidget'
+import SlideShow from "./SlideShow";
+import Events from "./Events";
+import News from './News';
+import SideWidget from './SideWidget';
 import img1 from '../imges/newsimg1.jpg';
 import img2 from '../imges/newsimg2.jpg';
+import '../style/HomePage.css';
+
+
 const HomePage = ()=>{
 
     const news = [{

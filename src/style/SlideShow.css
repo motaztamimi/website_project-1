@@ -1,0 +1,57 @@
+.myslide {
+  display: none;
+  width: 100%;
+}
+.myslide img {
+  width: 100%;
+}
+
+.slideShow-container {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+}
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  border: none;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media screen and (max-width: 1300px) {
+  .slideShow-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .slideShow-container {
+    display: none;
+  }
+  .slideShow-container img {
+    height: 305px;
+  }
+}

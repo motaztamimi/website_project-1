@@ -1,5 +1,6 @@
 import NewsCard from "./NewsCard";
-import React from 'react'
+import React from 'react';
+import '../style/News.css';
 
 const News = ({News})=>{
 

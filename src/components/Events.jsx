@@ -1,6 +1,6 @@
 
-import Event from "./Event"
-
+import Event from "./Event";
+import '../style/Events.css';
 
 
 const Events = ({events}) => {

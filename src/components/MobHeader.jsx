@@ -3,6 +3,8 @@ import { AiFillHome } from "react-icons/ai";
 import { IoClose } from "react-icons/io5";
 import MobNav from "./MobNav";
 import { useState } from "react";
+import '../style/MobHeader.css';
+
 const MobHeader = ()=>{
 
     const [toogle, setToogle] = useState(false);

@@ -6,6 +6,7 @@ import img5 from "../imges/5.jpg";
 import img6 from "../imges/6.jpg";
 import img7 from "../imges/7.jpg";
 import img8 from "../imges/8.jpg";
+import '../style/SlideShow.css';
 
 
 import {useState ,useEffect} from "react"

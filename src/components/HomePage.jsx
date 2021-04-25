@@ -3,6 +3,7 @@ import SlideShow from "./SlideShow";
 import Events from "./Events";
 import News from './News';
 import SideWidget from './SideWidget';
+import Information from './Information';
 import img1 from '../imges/newsimg1.jpg';
 import img2 from '../imges/newsimg2.jpg';
 import '../style/HomePage.css';
@@ -59,6 +60,7 @@ const HomePage = ()=>{
         <>
             
             <SlideShow/>
+            <Information/>
             <section className='MainSection'>
                 <section className="NewsAndEvents">
                     <News News={news}/>

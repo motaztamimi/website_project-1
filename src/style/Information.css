@@ -1,0 +1,26 @@
+.Information {
+  display: flex;
+  direction: rtl;
+  width: 100%;
+  margin-top: 20px;
+  padding-right: 13%;
+}
+.columnContactUs {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 15px;
+}
+.columnContactUs h2 {
+  display: flex;
+  direction: rtl;
+}
+.columnBranches {
+  display: table-column;
+  width: 50%;
+  padding: 15px;
+}
+.columnBranches h2 {
+  display: flex;
+  direction: rtl;
+}

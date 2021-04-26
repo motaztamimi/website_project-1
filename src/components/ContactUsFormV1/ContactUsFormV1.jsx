@@ -16,13 +16,13 @@ function ContactUsFormV1() {
 
   const { handleChange, values, handleSubmit, errors } = useForm(validate);
   return (
-    <div style={{ width: "30rem", margin: "auto" }}>
+    <div style={{ }}>
       <form className="form" onSubmit={handleSubmit} method="POST">
-        <h1>Contact form</h1>
-        <label>Name</label>
+        <h1>צור איתנו קשר</h1>
+        <label>שם</label>
         <input
           type="text"
-          placeholder="name"
+          placeholder="שם"
           name="name" // to use this input in useform to update it value onChange
           value={values.name}
           onChange={handleChange}
@@ -30,27 +30,27 @@ function ContactUsFormV1() {
         />
 
         {errors.NoSenderInformation && <p>{errors.NoSenderInformation}</p>}
-        <label>Email</label>
+        <label>מייל</label>
         <input
-          placeholder="Email"
+          placeholder="מייל"
           type="email"
           name="email"
           value={values.email}
           onChange={handleChange}
         />
-        <label>Phone Number</label>
+        <label>מספר פלפון</label>
         <input
           // require the field
           type="tel"
           name="phoneNumber"
-          placeholder="Phone Number"
+          placeholder="מספר פלון"
           value={values.phoneNumber}
           onChange={handleChange}
           // pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
         />
-        <label>Message</label>
+        <label>הודעה</label>
         <textarea
-          placeholder="Message"
+          placeholder="הודעה"
           name="message"
           value={values.message}
           onChange={handleChange}
@@ -58,7 +58,7 @@ function ContactUsFormV1() {
         ></textarea>
         <button type="submit" >
           {/* problem here  */}
-          Submit
+          שלח
         </button>
       </form>
     </div>

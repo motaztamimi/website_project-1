@@ -1,0 +1,38 @@
+.LoginForm {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 5%;
+  background-color: white;
+  padding: 10px 5px 10px 5px;
+}
+.LoginButton {
+  text-align: center;
+  direction: rtl;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgba(0, 136, 195, 0.7);
+  border-color: rgba(0, 136, 195, 0.7);
+  color: white;
+}
+.LoginForm .FormInput {
+  direction: rtl;
+  text-align: right;
+  font-size: 1.5rem;
+  padding: 10px;
+  margin: 10px;
+}
+.LoginForm h2 {
+  direction: rtl;
+  text-align: right;
+  padding: 10px;
+}
+.LoginBackGround {
+  max-width: 100%;
+}

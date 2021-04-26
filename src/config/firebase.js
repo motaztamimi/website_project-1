@@ -20,5 +20,6 @@ import "firebase/storage";
 
   const dataBase = firebase.firestore();
   const storage = firebase.storage();
+  const auth = firebase.auth();
 
-  export { dataBase , storage };
+  export { dataBase, storage, auth };

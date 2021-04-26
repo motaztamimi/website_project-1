@@ -10,13 +10,13 @@ function ContactUsFormV1() {
 
   const clickSubmitButton = (e) => {
     e.preventDefault();
+    window.open("mailto:test@example.com?subject=subject&body=body");
     console.log("clicked");
-    return <alert> it's submitted</alert>;
   };
 
   const { handleChange, values, handleSubmit, errors } = useForm(validate);
   return (
-    <div style={{ }}>
+    <div style={{}}>
       <form className="form" onSubmit={handleSubmit} method="POST">
         <h1>צור איתנו קשר</h1>
         <label>שם</label>
@@ -56,7 +56,7 @@ function ContactUsFormV1() {
           onChange={handleChange}
           required
         ></textarea>
-        <button type="submit" >
+        <button type="submit" onSubmit="clickSubmitButton">
           {/* problem here  */}
           שלח
         </button>

@@ -1,0 +1,22 @@
+.container {
+  width: 80%;
+  height: auto;
+  background-color: #d8e1e2;
+  margin: 0 auto;
+  margin-top: 4rem;
+  opacity: 0.7;
+  direction: rtl;
+
+}
+.container h1 {
+  font-size: 4rem;
+  color: black;
+  text-align: center;
+  letter-spacing: 0.4rem;
+  padding-top: 1rem;
+}
+.container p {
+  margin: 1rem 3rem 0;
+  font-size: 1rem;
+  word-spacing: 4px;
+}

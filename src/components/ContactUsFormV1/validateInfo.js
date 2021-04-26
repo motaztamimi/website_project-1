@@ -18,7 +18,7 @@ export default function validateInfo(values) {
   }
 
 if(!values.email && !values.phoneNumber){
-    errors.NoSenderInformation = "Enter Email or Phone Number"
+    errors.NoSenderInformation = "לרשום את המייל או מספר הפלפון"
 }
 
 //   if (!values.password) {

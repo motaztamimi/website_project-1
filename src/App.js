@@ -5,6 +5,7 @@ import HomePage from './components/HomePage';
 import Header from "./components/Header";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import About from './components/About';
+import ContactUsFormV1 from './components/ContactUsFormV1/ContactUsFormV1.jsx';
 
 
 function App() {
@@ -14,13 +15,14 @@ function App() {
       <Router>
         <Header/>
           <Switch>
-            <Route exact path='/'>
+            {/* <Route exact path='/'>
              <HomePage/>
              </Route>
              <Route exact path='/about'>
              <About/>
-             </Route>
+             </Route> */}
           </Switch> 
+          <ContactUsFormV1 />
         <Fotter/>
         </Router>
     </div>

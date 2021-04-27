@@ -15,6 +15,8 @@
   display: flex;
   direction: rtl;
 }
+
+
 .columnBranches {
   display: table-column;
   width: 50%;
@@ -22,5 +24,31 @@
 }
 .columnBranches h2 {
   display: flex;
+  margin-right: 20px;
   direction: rtl;
+}
+
+@media screen and (max-width: 800px) {
+.Information{
+  flex-direction: column;
+  padding: 0;
+}
+.columnBranches{
+  width: 100%;
+  padding: 0;
+}
+.columnBranches h2{
+  margin: 0 auto;
+  
+  
+  color: rgb(4, 5, 5);
+}
+.columnContactUs{
+  width: 100%;
+}
+.columnContactUs h2{
+  text-align: center;
+  
+}
+
 }

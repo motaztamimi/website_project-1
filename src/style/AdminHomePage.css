@@ -6,6 +6,13 @@
 .AdminHomePage img {
   width: 100%;
 }
+.AdminHomePage a {
+  text-decoration: none;
+}
+.AdminHomePage a:visited {
+  color: black;
+}
+
 .gridSec {
   position: absolute;
   top: 40%;
@@ -28,5 +35,21 @@
 }
 .AdminHomePageOp:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+}
+.logOutButton {
+  border-radius: 7%;
+  font-size: 1.3rem;
+  padding: 10px;
+  border: none;
+  background-color: rgba(0, 136, 195, 0.9);
+  z-index: 10;
+  position: absolute;
+  direction: rtl;
+  text-align: center;
+  top: 1%;
+  right: 1%;
+}
+.logOutButton:hover {
   cursor: pointer;
 }

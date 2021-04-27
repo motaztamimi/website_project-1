@@ -24,13 +24,17 @@ const AdminLogin = () => {
           alert(errorMessage);
         }
       });
+    setPassword('');
+    setUserName('');
   };
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
-        SetUser(user);
-        console.log('hellllo');
+        if (!LoggedIn) {
+          SetUser(user);
+          console.log('hellllo');
+        }
       } else {
         SetUser(undefined);
       }

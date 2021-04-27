@@ -1,32 +1,31 @@
 import '../style/ContactUs.css'
-const ContactUs = () => {
+const ContactUs = ({details}) => {
   return (
     <div class="contactUS">
       <h5> מוקד זימון תורים</h5>
       <a href="*8888">
-        <span>*8888</span>
+        <h2>{details.moked_num}</h2>
       </a>
-      <h5>כתובת שדרות יצחק רבין 1 באר יעקב, 7032102</h5>
+      <h5>{details.address}</h5>
       <h5>
-        דואר אלקטרוני:
+         דואר אלקטרוני :   
         <a href="niogsnreiogne@gmail.com">
-          <span> niogsnreiogne@gmail.com </span>
+          <span>{details.email} </span>
         </a>
       </h5>
-      <h5>
-        טלפון:
+      <h5> טלפון:             
         <a href="tel">
-          <span> 025554488 </span>
+          <span> {details.tel} </span>
         </a>
       </h5>
       <h5>
         פקס:
         <a href="fax">
-          <span> 025554488 </span>
+          <span> {details.fax} </span>
         </a>
       </h5>
-      <h5>מענה טלפוני:  16:00 - 08:00 </h5>
-      <h5>שפות מענה עברית, אנגלית ורוסית</h5>
+      <h5>{details.time}</h5>
+      <h5>{details.language}</h5>
       <div>
         <button
           href="button"

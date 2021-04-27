@@ -4,6 +4,27 @@
   width: 100%;
   margin-top: 20px;
 }
+.contactUS h5{
+  font-weight: 300;
+  font-size: 17px;
+  padding-bottom: 10px;
+  font-family: Rubik,sans-serif !important;
+}
+.contactUS h2{
+  color: #285c7e !important;
+}
+.contactUS a{
+  text-decoration:none;
+}
+.contactUS h5 a{
+  color: black;
+  font-weight: 700;
+  text-decoration:none;
+}
+.contactUS h5 a:hover{
+  color: #285c7e;
+  text-decoration:underline;
+}
 .contactUS button {
   border-radius: 12px;
   width: 70%;
@@ -12,3 +33,13 @@
   font-size: 20px;
   color: black;
 }
+.contactUS button div {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+@media screen and (max-width: 800px) {
+  
+  .contactUS button{
+    width: 80%;
+  }
+  }

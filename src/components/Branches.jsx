@@ -1,5 +1,5 @@
 import Branch from './Branch'
-import img0 from '../imges/hospital.jpg'
+import img0 from '../imges/manger.jpg'
 import '../style/Branches.css'
 const Branches = () => {
   const list = [

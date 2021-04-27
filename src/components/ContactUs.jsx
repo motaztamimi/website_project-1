@@ -1,7 +1,7 @@
 import '../style/ContactUs.css'
 const ContactUs = ({details}) => {
   return (
-    <div class="contactUS">
+    <div className='contactUS'>
       <h5> מוקד זימון תורים</h5>
       <a href="*8888">
         <h2>{details.moked_num}</h2>
@@ -28,11 +28,10 @@ const ContactUs = ({details}) => {
       <h5>{details.language}</h5>
       <div>
         <button
-          href="button"
-          name="BureauButton"
-          target="_blank"
-          title="יחידות קבלת קהל"
-        >
+          href='button'
+          name='BureauButton'
+          target='_blank'
+          title='יחידות קבלת קהל'>
           <div>
             <span>יחידות קבלת קהל</span>
           </div>

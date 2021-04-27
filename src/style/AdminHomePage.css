@@ -1,11 +1,32 @@
 .AdminHomePage {
   display: flex;
-  flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+}
+.AdminHomePage img {
+  width: 100%;
 }
 .gridSec {
+  position: absolute;
+  top: 40%;
+  left: 16%;
   display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
+  z-index: 1;
+  gap: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  direction: rtl;
+}
+.AdminHomePageOp {
+  direction: rtl;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5%;
+  opacity: 0.9;
+}
+.AdminHomePageOp h3 {
+  padding: 10px;
+}
+.AdminHomePageOp:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.9);
+  cursor: pointer;
 }

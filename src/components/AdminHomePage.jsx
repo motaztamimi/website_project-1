@@ -1,3 +1,5 @@
+/** @format */
+
 import '../style/AdminHomePage.css';
 import { GrGallery } from 'react-icons/gr';
 import { BiNews, BiCalendarEvent, BiSlideshow } from 'react-icons/bi';

@@ -1,3 +1,5 @@
+/** @format */
+
 const SlideShow = () => {
   return <div>EditNews</div>;
 };

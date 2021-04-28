@@ -1,3 +1,5 @@
+/** @format */
+
 import '../style/AdminEditGallery.css';
 import UploadPhotoFrom from './UploadPhotoForm';
 const AdminEditGallery = () => {

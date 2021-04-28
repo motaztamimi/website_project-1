@@ -1,26 +1,30 @@
-import '../style/ContactUs.css'
-const ContactUs = ({details}) => {
+/** @format */
+
+import '../style/ContactUs.css';
+const ContactUs = ({ details }) => {
   return (
     <div className='contactUS'>
       <h5> מוקד זימון תורים</h5>
-      <a href="*8888">
+      <a href='*8888'>
         <h2>{details.moked_num}</h2>
       </a>
       <h5>{details.address}</h5>
       <h5>
-         דואר אלקטרוני :   
-        <a href="niogsnreiogne@gmail.com">
+        דואר אלקטרוני :
+        <a href='niogsnreiogne@gmail.com'>
           <span>{details.email} </span>
         </a>
       </h5>
-      <h5> טלפון:             
-        <a href="tel">
+      <h5>
+        {' '}
+        טלפון:
+        <a href='tel'>
           <span> {details.tel} </span>
         </a>
       </h5>
       <h5>
         פקס:
-        <a href="fax">
+        <a href='fax'>
           <span> {details.fax} </span>
         </a>
       </h5>

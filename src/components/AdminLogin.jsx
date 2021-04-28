@@ -1,3 +1,5 @@
+/** @format */
+
 import { useState, useEffect } from 'react';
 import '../style/AdminLogin.css';
 import AdminHomePage from './AdminHomePage';

@@ -1,16 +1,13 @@
-import SlideShow from "./SlideShow"
+/** @format */
 
+import SlideShow from './SlideShow';
 
-const About = ()=>{
-
-
-    return (
-        <div>
-            <SlideShow/>
-        </div>
-    );
-
-}
-
+const About = () => {
+  return (
+    <div>
+      <SlideShow />
+    </div>
+  );
+};
 
 export default About;

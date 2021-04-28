@@ -1,9 +1,10 @@
 import '../style/AdminEditGallery.css';
-
+import UploadPhotoFrom from './UploadPhotoForm';
 const AdminEditGallery = () => {
   return (
     <div className='AdminGallery'>
       <h1 className='GalleryHeading'>הגלאריה שלך </h1>
+      <UploadPhotoFrom />
       <div className='AdminGalleryContent'>
         <div className='AdminGalleryImg'>
           <input type='button' value='X' />

@@ -55,42 +55,32 @@
   direction: rtl;
   color: #285c7e !important;
 }
-<<<<<<< Updated upstream
-=======
-.Subject h5{
-    text-align: center;
-    font-size: 22px;
-    direction: rtl;
-    color: #285c7e !important;
-
+.Subject h5 {
+  text-align: center;
+  font-size: 22px;
+  direction: rtl;
+  color: #285c7e !important;
 }
 @media screen and (max-width: 800px) {
-    .Subject_row{
-        flex-direction: column;
-        justify-content: right;
-        flex-wrap: nowrap;
-        margin:0 auto;
-    }
-    .Subject_Container h2 {
-        margin: 0;
-    }
-    .Subject{
-        width: 100%;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        
-    }
-    .Subject img{
-       
-        margin: 0;
-    }
-    .Subject_Container{
-        width: 100%;
-        display: inline-block;
-    
-      
-       
-    }
-  
- }
->>>>>>> Stashed changes
+  .Subject_row {
+    flex-direction: column;
+    justify-content: right;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+  }
+  .Subject_Container h2 {
+    margin: 0;
+  }
+  .Subject {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .Subject img {
+    margin: 0;
+  }
+  .Subject_Container {
+    width: 100%;
+    display: inline-block;
+  }
+}

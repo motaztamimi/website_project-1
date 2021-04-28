@@ -24,6 +24,8 @@ const AdminLogin = () => {
           alert(errorMessage);
         }
       });
+    setPassword('');
+    setUserName('');
   };
 
   useEffect(() => {

@@ -3,7 +3,6 @@ import { GrGallery } from 'react-icons/gr';
 import { BiNews, BiCalendarEvent, BiSlideshow } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import { auth } from '../config/firebase';
-import AdminEditGallery from './AdminEditGallery';
 
 const AdminHomePage = () => {
   return (

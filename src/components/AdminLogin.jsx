@@ -31,10 +31,8 @@ const AdminLogin = () => {
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
-        if (!LoggedIn) {
-          SetUser(user);
-          console.log('hellllo');
-        }
+        SetUser(user);
+        console.log('hellllo');
       } else {
         SetUser(undefined);
       }

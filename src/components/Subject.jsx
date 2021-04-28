@@ -1,14 +1,14 @@
-import '../style/Subject.css'
+/** @format */
 
+import '../style/Subject.css';
 
-const Subject = ({subj}) => {
-    return (
-        <div className="Subject">
-            <img src={subj.img}/>
-            <h5>{subj.body}</h5>
-            
-        </div>
-    )
-}
+const Subject = ({ subj }) => {
+  return (
+    <div className='Subject'>
+      <img src={subj.img} />
+      <h5>{subj.body}</h5>
+    </div>
+  );
+};
 
-export default Subject
+export default Subject;

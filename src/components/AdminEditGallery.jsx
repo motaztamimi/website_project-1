@@ -1,3 +1,5 @@
+/** @format */
+
 import '../style/AdminEditGallery.css';
 
 const AdminEditGallery = () => {

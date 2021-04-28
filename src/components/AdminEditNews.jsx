@@ -1,3 +1,5 @@
+/** @format */
+
 const AdminEditNews = () => {
   return <div>EditNews</div>;
 };

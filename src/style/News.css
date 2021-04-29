@@ -1,5 +1,8 @@
+/** @format */
+
 .News {
-  display: flex;
+  /*display: flex;*/
+  display: none;
   flex-direction: column;
   direction: rtl;
   width: 100%;

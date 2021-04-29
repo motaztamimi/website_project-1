@@ -2,22 +2,30 @@
 
 import '../style/Subject.css';
 import Subject from './Subject';
-
+import { useState } from 'react';
 const Subjects = ({ Sub }) => {
-  function sayhello() {
-    alert('hello word');
+  const max = 12;
+  const [isclick, setClick] = useState(false);
+  function getSubject() {
+    if (isclick) {
+      return Sub;
+    }
+    return Sub.slice(0, max);
   }
+  function toggle() {
+    setClick(!isclick);
+  }
+
   return (
     <section className='Subject_Container'>
       <h2> נושאים</h2>
       <section className='Subject_row'>
-        {Sub.map((sub) => {
+        {getSubject().map((sub) => {
           return <Subject key={sub.id} subj={sub} />;
         })}
       </section>
-      <button key='56' onClick={sayhello}>
-        {' '}
-        +עוד נושאים
+      <button key='56' onClick={toggle}>
+        {isclick ? '-חסר נושאים' : ' +עוד נושאים'}
       </button>
     </section>
   );

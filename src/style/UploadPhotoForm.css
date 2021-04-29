@@ -1,3 +1,6 @@
+.UploadPhotoForm .output {
+  width: 100%;
+}
 .UploadPhotoForm {
-  width: fit-content;
+  text-align: center;
 }

@@ -8,17 +8,23 @@ function ContactUsFormV1() {
   //  value={name}
   // onChange={(e) => setName(e.target.value)}›
 
+  const { handleChange, values, handleSubmit, errors } = useForm(validate);
+
   const clickSubmitButton = (e) => {
     e.preventDefault();
-    window.open("mailto:test@example.com?subject=subject&body=body");
-    console.log("clicked");
+    window.open(
+      "mailto:" +
+        values.email +
+        "?subject=" +
+        values.name +
+        "&body=" +
+        values.message
+    );
   };
-
-  const { handleChange, values, handleSubmit, errors } = useForm(validate);
   return (
     <div style={{}}>
-      <form className="form" onSubmit={handleSubmit} method="POST">
-        <h1>צור איתנו קשר</h1>
+      {/* <form className="form" onSubmit={handleSubmit} method="POST"> */}
+      <form className="form" onSubmit={clickSubmitButton} method="POST">
         <label>שם</label>
         <input
           type="text"
@@ -29,12 +35,13 @@ function ContactUsFormV1() {
           required
         />
 
-        {errors.NoSenderInformation && <p>{errors.NoSenderInformation}</p>}
+        {/* {errors.NoSenderInformation && <p>{errors.NoSenderInformation}</p>} */}
         <label>מייל</label>
         <input
           placeholder="מייל"
           type="email"
           name="email"
+          required
           value={values.email}
           onChange={handleChange}
         />
@@ -56,10 +63,7 @@ function ContactUsFormV1() {
           onChange={handleChange}
           required
         ></textarea>
-        <button type="submit" onSubmit="clickSubmitButton">
-          {/* problem here  */}
-          שלח
-        </button>
+        <button type="submit">שלח</button>
       </form>
     </div>
   );

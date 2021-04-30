@@ -14,7 +14,7 @@
   padding: 0 15px;
 }
 .Ads {
-  display: none;
+  display: flex;
   flex-direction: column;
   width: 22%;
   padding: 0 15px;

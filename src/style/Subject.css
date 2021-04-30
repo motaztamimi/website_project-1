@@ -1,0 +1,86 @@
+/** @format */
+
+.Subject_Container {
+  width: 100%;
+  direction: rtl;
+  display: block;
+  margin-top: 40px;
+  max-width: fit-content;
+}
+.Subject_Container h2 {
+  text-align: right;
+  margin-right: 40px;
+  font-size: 2.5rem;
+  color: #151e4d;
+  font-family: 'Poppins', sans-serif;
+  direction: rtl;
+}
+.Subject_Container button {
+  background-color: #285c7e !important ;
+  color: white;
+  font-weight: normal;
+  font-size: 1.5rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 50px;
+  padding-left: 50px;
+  margin-right: 40px;
+  border-radius: 10px;
+}
+.Subject_row {
+  display: flex;
+  direction: rtl;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.Subject {
+  width: 16%;
+  padding: 15px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+  flex-wrap: wrap;
+}
+.Subject img {
+  width: 30%;
+  margin: 0 auto;
+  object-fit: cover;
+}
+.Subject h5 {
+  text-align: center;
+  font-size: 22px;
+  direction: rtl;
+  color: #285c7e !important;
+}
+.Subject h5 {
+  text-align: center;
+  font-size: 22px;
+  direction: rtl;
+  color: #285c7e !important;
+}
+@media screen and (max-width: 800px) {
+  .Subject_row {
+    flex-direction: column;
+    justify-content: right;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+  }
+  .Subject_Container h2 {
+    margin: 0;
+  }
+  .Subject {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .Subject img {
+    margin: 0;
+  }
+  .Subject_Container {
+    width: 100%;
+    display: inline-block;
+  }
+}

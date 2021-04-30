@@ -4,10 +4,6 @@ import useForm from "./useForm";
 import validate from "./validateInfo";
 
 function ContactUsFormV1() {
-  //const [name, setName] = useState("");   1 way
-  //  value={name}
-  // onChange={(e) => setName(e.target.value)}›
-
   const { handleChange, values, handleSubmit, errors } = useForm(validate);
 
   const clickSubmitButton = (e) => {
@@ -23,7 +19,6 @@ function ContactUsFormV1() {
   };
   return (
     <div style={{}}>
-      {/* <form className="form" onSubmit={handleSubmit} method="POST"> */}
       <form className="form" onSubmit={clickSubmitButton} method="POST">
         <label>שם</label>
         <input
@@ -47,13 +42,11 @@ function ContactUsFormV1() {
         />
         <label>מספר פלפון</label>
         <input
-          // require the field
           type="tel"
           name="phoneNumber"
           placeholder="מספר פלון"
           value={values.phoneNumber}
           onChange={handleChange}
-          // pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
         />
         <label>הודעה</label>
         <textarea

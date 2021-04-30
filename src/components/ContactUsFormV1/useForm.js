@@ -22,9 +22,8 @@ const useForm = (validate) => {
     e.preventDefault();
     //setValue({ ...values, [values.email]: validate(values).email });
     setErrors(validate(values));
-   // console.log(values);
   };
 
-  return { handleChange, values, handleSubmit , errors};
+  return { handleChange, values, handleSubmit, errors };
 };
 export default useForm;

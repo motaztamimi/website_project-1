@@ -5,6 +5,7 @@
   direction: rtl;
   padding-left: 20px;
   padding-right: 20px;
+
   display: block;
   margin-top: 40px;
 }
@@ -24,8 +25,11 @@
 .Center_row {
   display: grid;
 
+  margin-right: 100px;
   grid-template-columns: repeat(5, 1fr);
-  width: 100%;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
 }
 .Center {
   width: 100%;
@@ -37,7 +41,7 @@
   flex-wrap: wrap;
 }
 .Center img {
-  max-width: 250px;
+  max-width: 240px;
 }
 .Center h5 {
   text-align: center;
@@ -62,6 +66,8 @@
   }
   .Center_row {
     grid-template-columns: repeat(2, 1fr);
+    margin-right: 0;
+    width: 100%;
   }
   .Center {
     width: 100%;
@@ -104,6 +110,5 @@
   /* On hover, add a black background color with a little bit see-through */
   .prev_Center:hover,
   .next_Center:hover {
-    background-color: rgba(70, 4, 4, 0.8);
   }
 }

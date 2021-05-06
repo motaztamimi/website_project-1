@@ -56,30 +56,56 @@
   direction: rtl;
   color: #285c7e !important;
 }
+<<<<<<< Updated upstream
 
 @media screen and (max-width: 800px) {
   .Subject_row {
     flex-direction: row;
     justify-content: right;
     flex-wrap: wrap;
+=======
+.Subject h5 {
+  text-align: center;
+  font-size: 22px;
+  direction: rtl;
+  color: #285c7e !important;
+}
+@media screen and (max-width: 800px) {
+  .Subject_row {
+    flex-direction: column;
+    justify-content: right;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+>>>>>>> Stashed changes
   }
   .Subject_Container h2 {
     margin: 0;
   }
   .Subject {
+<<<<<<< Updated upstream
     width: 50%;
     flex-direction: column;
   }
   .Subject img {
     width: 20%;
+=======
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .Subject img {
+>>>>>>> Stashed changes
     margin: 0;
   }
   .Subject_Container {
     max-width: 100%;
     display: inline-block;
   }
+<<<<<<< Updated upstream
   .Subject h5 {
     font-size: 1.8rem;
     text-align: right;
   }
+=======
+>>>>>>> Stashed changes
 }

@@ -11,6 +11,7 @@ import img2 from '../imges/newsimg2.jpg';
 import '../style/HomePage.css';
 
 import Subjects from './Subjects';
+import Centers from './Centers';
 
 const HomePage = () => {
   const subject = [
@@ -80,6 +81,33 @@ const HomePage = () => {
       img: `${process.env.PUBLIC_URL}/imges/subjecttest.png`,
     },
   ];
+  const Center = [
+    {
+      id: 1,
+      body: 'רפואה',
+      img: `${process.env.PUBLIC_URL}/imges/Center.jpg`,
+    },
+    {
+      id: 2,
+      body: 'סיעוד',
+      img: `${process.env.PUBLIC_URL}/imges/Center.jpg`,
+    },
+    {
+      id: 3,
+      body: 'מנהלומשק',
+      img: `${process.env.PUBLIC_URL}/imges/Center.jpg`,
+    },
+    {
+      id: 4,
+      body: 'מערך ומזון',
+      img: `${process.env.PUBLIC_URL}/imges/Center.jpg`,
+    },
+    {
+      id: 5,
+      body: 'מערך ',
+      img: `${process.env.PUBLIC_URL}/imges/Center.jpg`,
+    },
+  ];
 
   const news = [
     {
@@ -146,6 +174,7 @@ const HomePage = () => {
           <SideWidget photo={img2} />
         </section>
       </section>
+      <Centers Cent={Center} />
       <Subjects Sub={subject} />
     </>
   );

@@ -1,21 +1,28 @@
 /** @format */
 
 .myslide {
-  display: none;
-  width: 90%;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: max-content;
   margin: 0 auto;
 }
+
 .myslide img {
-  width: 100%;
-  object-fit: fill;
-  height: 400px;
+  width: 50%;
+  object-fit: contain;
+
+  border: 2px;
+
+  border-style: solid;
 }
 
 .slideShow-container {
   position: relative;
+  height: max-content;
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 30px;
+  padding-left: 30px;
 }
 .prev,
 .next {
@@ -38,10 +45,12 @@
 
 /* Position the "next button" to the right */
 .next {
-  right: 0;
+  right: 30px;
   border-radius: 3px 0 0 3px;
 }
-
+.prev {
+  border-radius: 3px 0 0 3px;
+}
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {

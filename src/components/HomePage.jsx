@@ -165,13 +165,15 @@ const HomePage = () => {
         <Information />
         <Subjects Sub={subject} />
         <Centers Cent={Center} />
+
+        <News News={news} />
       </section>
 
       {/*  
 
       <section className='MainSection'>
         <section className='NewsAndEvents'>
-          <News News={news} />
+         
           <Events events={events} />
         </section>
         <section className='Ads'>

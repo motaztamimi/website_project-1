@@ -19,7 +19,7 @@ const Header = () => {
               </button>
             </div>
           </div>
-          <Nav />
+          {/*    <Nav /> */}
         </div>
       </div>
       <MoblieHeader />

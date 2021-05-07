@@ -1,11 +1,10 @@
 /** @format */
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 .Center_Container {
   width: 100%;
   direction: rtl;
-  padding-left: 20px;
-  padding-right: 20px;
-
+  padding-right: 30px;
   display: block;
   margin-top: 40px;
 }
@@ -15,21 +14,24 @@
 }
 .Center_Container h2 {
   text-align: right;
-  margin-right: 40px;
+  font-size: 43px;
   margin-bottom: 20px;
-  font-size: 2.5rem;
-  color: #151e4d;
-  font-family: 'Poppins', sans-serif;
-  direction: rtl;
+  margin-bottom: 40px;
+  font-weight: 700;
+  line-height: normal;
+  text-align: right;
+  font-family: 'Rubik' sans-serif;
+  color: #263c4a !important;
 }
 .Center_row {
+  max-width: 95%;
+  padding-left: 15px;
+  padding-right: 5px;
+  position: relative;
+  margin-left: 26.0125px;
+  margin-right: 26.0125px;
   display: grid;
-
-  margin-right: 100px;
   grid-template-columns: repeat(5, 1fr);
-  width: 90%;
-  justify-content: center;
-  align-items: center;
 }
 .Center {
   width: 100%;
@@ -41,7 +43,7 @@
   flex-wrap: wrap;
 }
 .Center img {
-  max-width: 240px;
+  max-width: 230px;
 }
 .Center h5 {
   text-align: center;
@@ -108,7 +110,4 @@
     border-radius: 3px 0 0 3px;
   }
   /* On hover, add a black background color with a little bit see-through */
-  .prev_Center:hover,
-  .next_Center:hover {
-  }
 }

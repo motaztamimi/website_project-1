@@ -19,7 +19,7 @@ function App() {
           <Route exact path='/'>
             <Header />
             <HomePage />
-            <Fotter />
+            {/* <Fotter /> */}
           </Route>
           <Route exact path='/about'>
             <Header />

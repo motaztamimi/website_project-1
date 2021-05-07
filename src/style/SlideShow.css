@@ -1,15 +1,21 @@
+/** @format */
+
 .myslide {
   display: none;
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
 }
 .myslide img {
   width: 100%;
+  object-fit: fill;
+  height: 400px;
 }
 
 .slideShow-container {
   position: relative;
-  width: 70%;
-  margin: 0 auto;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 .prev,
 .next {
@@ -17,6 +23,7 @@
   position: absolute;
   border: none;
   top: 50%;
+
   width: auto;
   padding: 16px;
   margin-top: -22px;

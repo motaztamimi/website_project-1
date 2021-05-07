@@ -2,7 +2,7 @@ import '../style/UploadPhotoForm.css';
 import { useState } from 'react';
 import ProgressBar from '../components/ProgressBar';
 
-const UploadPhotoFrom = () => {
+const UploadPhotoFrom = ({ collection }) => {
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
   const types = ['image/png', 'image/jpeg', 'img/jpg'];
@@ -25,7 +25,14 @@ const UploadPhotoFrom = () => {
       <div className='output'>
         {error && <div className='error'>{error} </div>}
         {file && <div>{file.name}</div>}
-        {file && <ProgressBar file={file} path={'Gallery'} setFile={setFile} />}
+        {file && (
+          <ProgressBar
+            file={file}
+            path={'Gallery'}
+            setFile={setFile}
+            collection={collection}
+          />
+        )}
       </div>
     </form>
   );

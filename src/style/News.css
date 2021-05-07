@@ -1,4 +1,7 @@
+/** @format */
+
 .News {
+  /*display: flex;*/
   display: flex;
   flex-direction: column;
   direction: rtl;

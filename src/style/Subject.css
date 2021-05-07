@@ -1,0 +1,85 @@
+/** @format */
+
+.Subject_Container {
+  width: 100%;
+  direction: rtl;
+  display: block;
+  margin-top: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.Subject_Container h2 {
+  text-align: right;
+  margin-right: 40px;
+  font-size: 2.5rem;
+  color: #151e4d;
+  font-family: 'Poppins', sans-serif;
+  direction: rtl;
+}
+.Subject_Container button {
+  background-color: #285c7e !important ;
+  color: white;
+  font-weight: normal;
+  font-size: 1.5rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 50px;
+  padding-left: 50px;
+  margin-right: 40px;
+  border-radius: 10px;
+}
+.Subject_row {
+  display: flex;
+  direction: rtl;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.Subject {
+  width: 16%;
+  padding: 15px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+  flex-wrap: wrap;
+}
+.Subject img {
+  width: 30%;
+  margin: 0 auto;
+  object-fit: cover;
+}
+.Subject h5 {
+  text-align: center;
+  font-size: 22px;
+  direction: rtl;
+  color: #285c7e !important;
+}
+
+@media screen and (max-width: 800px) {
+  .Subject_row {
+    flex-direction: row;
+    justify-content: right;
+    flex-wrap: wrap;
+  }
+  .Subject_Container h2 {
+    margin: 0;
+  }
+  .Subject {
+    width: 50%;
+    flex-direction: column;
+  }
+  .Subject img {
+    width: 20%;
+    margin: 0;
+  }
+  .Subject_Container {
+    max-width: 100%;
+    display: inline-block;
+  }
+  .Subject h5 {
+    font-size: 1.8rem;
+    text-align: right;
+  }
+}

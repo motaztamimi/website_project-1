@@ -16,9 +16,8 @@ import "firebase/storage";
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-
   const dataBase = firebase.firestore();
   const storage = firebase.storage();
+  const auth = firebase.auth();
 
-  export { dataBase , storage };
+  export { dataBase, storage, auth };

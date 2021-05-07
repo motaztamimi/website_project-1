@@ -10,50 +10,6 @@ const AdminEditGallery = () => {
       <div className='AdminGalleryContent'>
         <div className='AdminGalleryImg'>
           <input type='button' value='X' />
-          <img src={`${process.env.PUBLIC_URL}/imges/event3.jpg`} alt='' />
-        </div>
-        <div className='AdminGalleryImg'>
-          <input type='button' value='X' />
-
-          <img src={`${process.env.PUBLIC_URL}/imges/event3.jpg`} alt='' />
-        </div>
-        <div className='AdminGalleryImg'>
-          <input type='button' value='X' />
-
-          <img src={`${process.env.PUBLIC_URL}/imges/event3.jpg`} alt='' />
-        </div>
-        <div className='AdminGalleryImg'>
-          <input type='button' value='X' />
-
-          <img src={`${process.env.PUBLIC_URL}/imges/event3.jpg`} alt='' />
-        </div>
-        <div className='AdminGalleryImg'>
-          <input type='button' value='X' />
-
-          <img src={`${process.env.PUBLIC_URL}/imges/event3.jpg`} alt='' />
-        </div>
-        <div className='AdminGalleryImg'>
-          <input type='button' value='X' />
-
-          <img src={`${process.env.PUBLIC_URL}/imges/event3.jpg`} alt='' />
-        </div>
-        <div className='AdminGalleryImg'>
-          <input type='button' value='X' />
-
-          <img src={`${process.env.PUBLIC_URL}/imges/event3.jpg`} alt='' />
-        </div>
-        <div className='AdminGalleryImg'>
-          <input type='button' value='X' />
-
-          <img src={`${process.env.PUBLIC_URL}/imges/event3.jpg`} alt='' />
-        </div>
-        <div className='AdminGalleryImg'>
-          <input type='button' value='X' />
-
-          <img src={`${process.env.PUBLIC_URL}/imges/event3.jpg`} alt='' />
-        </div>
-        <div className='AdminGalleryImg'>
-          <input type='button' value='X' />
 
           <img src={`${process.env.PUBLIC_URL}/imges/event3.jpg`} alt='' />
         </div>

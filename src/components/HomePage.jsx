@@ -12,7 +12,8 @@ import '../style/HomePage.css';
 
 import Subjects from './Subjects';
 import Centers from './Centers';
-
+import Gallery from './Gallery';
+import Line from './Line';
 const HomePage = () => {
   const subject = [
     {
@@ -160,11 +161,25 @@ const HomePage = () => {
 
   return (
     <>
-      <SlideShow />
-      <Information />
+      <section className='MainContainer'>
+        <SlideShow />
+        <Information />
+        <Line />
+        <Subjects Sub={subject} />
+        <Line />
+        <Centers Cent={Center} />
+        <Line />
+
+        <News News={news} />
+
+        <Gallery />
+      </section>
+
+      {/*  
+
       <section className='MainSection'>
         <section className='NewsAndEvents'>
-          <News News={news} />
+         
           <Events events={events} />
         </section>
         <section className='Ads'>
@@ -173,9 +188,7 @@ const HomePage = () => {
           <SideWidget photo={img1} />
           <SideWidget photo={img2} />
         </section>
-      </section>
-      <Centers Cent={Center} />
-      <Subjects Sub={subject} />
+      </section> */}
     </>
   );
 };

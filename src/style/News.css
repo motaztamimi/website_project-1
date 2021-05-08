@@ -91,6 +91,9 @@
     margin-bottom: 20px;
     margin-top: 20px;
   }
+  .News {
+    padding-right: 0;
+  }
   .CardImg {
     margin-left: auto;
     margin-right: auto;
@@ -98,6 +101,10 @@
   .NewsCard h1 {
     text-align: right;
     font-size: 1.4rem;
+  }
+  .NewsContainer {
+    margin-right: 0px;
+    margin-left: 0px;
   }
   .NewsCard h3 {
     text-align: right;
@@ -111,7 +118,19 @@
   .NewsCard h1 {
     text-align: right;
   }
+  .NewsContainer {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  .News {
+    padding-right: 0;
+  }
   .NewsCard h3 {
     text-align: right;
+  }
+  .NewsCard img {
+    justify-items: right;
+    align-content: flex-start;
+    justify-content: right;
   }
 }

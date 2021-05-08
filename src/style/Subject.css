@@ -82,24 +82,27 @@
 }
 @media screen and (max-width: 800px) {
   .Subject_row {
-    flex-direction: column;
-    justify-content: right;
-    flex-wrap: nowrap;
     margin: 0 auto;
   }
   .Subject_Container h2 {
     margin: 0;
   }
+  .Subject h5 {
+    min-height: auto;
+    padding-right: 5px;
+  }
   .Subject {
-    width: 100%;
+    width: 50%;
     flex-direction: row;
     flex-wrap: nowrap;
   }
   .Subject img {
-    margin: 0;
+    align-items: center;
+    width: 30%;
   }
   .Subject_Container {
     max-width: 100%;
+    padding: 0;
     display: inline-block;
   }
 }

@@ -1,0 +1,63 @@
+.page002 {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 10px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.page003{
+  display: grid;
+  grid-template-columns: auto;
+  column-gap: 10px;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.fewWords {
+  padding: 15px;
+  width: 85%;
+  direction: rtl;
+}
+.sidePage {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  width: 85%;
+  margin-left: auto;
+  direction: rtl;
+}
+.managers {
+  padding: 15px;
+}
+.contact {
+  padding: 15px;
+}
+.workingDays {
+  padding: 15px;
+}
+.titlePage{
+  direction: rtl;
+  margin-left: auto;
+  margin-right: auto;
+}
+.titlePage h1{
+  font-size: xx-large;
+}
+@media screen and (max-width: 700px) {
+  .sidePage {
+    display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  width: 85%;
+  direction: rtl;
+  }
+  .page002 {
+    display: grid;
+    grid-template-columns: auto ;
+    margin-right: auto;
+  }
+  .fewWords{
+    margin-left: auto;
+  }
+}

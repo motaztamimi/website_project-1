@@ -136,13 +136,6 @@ function EditorPageImlimentation() {
             /////////////////////////////////////////////?
             //MUSTAFA
             ////////////////////////////
-
-            console.log(first);
-            console.log(second);
-            console.log(theird);
-            console.log(fourth);
-            console.log(dropDownFirst);
-            console.log(DropDownSecond);
           }}
         />
       </div>

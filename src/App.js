@@ -10,8 +10,9 @@ import AdminEditGallery from './components/AdminEditGallery';
 import AdminEditSlideShow from './components/AdminEditSlideShow';
 import AdminEditNews from './components/AdminEditNews';
 import AdminEditEvents from './components/AdminEditEvents';
-import AboutUs from './components/AboutUs/AboutUs';
 import EditorPageImlimentation from './components/Editor/EditorPageImlimentation';
+import ListOfDep from './components/ListOfDep';
+import InsidePage3 from './components/InsidePage';
 
 function App() {
   return (
@@ -30,6 +31,16 @@ function App() {
           </Route>
           <Route exact path='/Admin'>
             <AdminLogin />
+          </Route>
+          <Route exact path="/ביה''ח כפר שאול">
+            <Header />
+            <ListOfDep />
+            <Fotter />
+          </Route>
+          <Route exact path="/ביה''ח כפר שאול/a">
+            <Header />
+            <InsidePage3 />
+            <Fotter />
           </Route>
           <ProtectedRoute
             exact

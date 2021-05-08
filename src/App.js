@@ -10,6 +10,8 @@ import AdminEditGallery from './components/AdminEditGallery';
 import AdminEditSlideShow from './components/AdminEditSlideShow';
 import AdminEditNews from './components/AdminEditNews';
 import AdminEditEvents from './components/AdminEditEvents';
+import AboutUs from './components/AboutUs/AboutUs';
+import EditorPageImlimentation from './components/Editor/EditorPageImlimentation';
 
 function App() {
   return (
@@ -18,7 +20,8 @@ function App() {
         <Switch>
           <Route exact path='/'>
             <Header />
-            <HomePage />
+            {/* <HomePage /> */}
+            <EditorPageImlimentation />
             <Fotter />
           </Route>
           <Route exact path='/about'>
@@ -48,6 +51,11 @@ function App() {
             exact
             path='/Admin/EditSlideShow'
             component={AdminEditSlideShow}
+          />
+          <ProtectedRoute
+            exact
+            path='/Admin/EditPages'
+            component={EditorPageImlimentation}
           />
         </Switch>
       </Router>

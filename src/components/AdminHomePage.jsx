@@ -45,6 +45,12 @@ const AdminHomePage = () => {
             <h3>עריכת תמנות מתחלפות </h3>
           </Link>
         </div>
+        <div className='AdminHomePageOp'>
+          <Link to='/Admin/EditPages'>
+            <BiSlideshow size='150px'></BiSlideshow>
+            <h3>עריכת מחלקות </h3>
+          </Link>
+        </div>
       </section>
     </div>
   );

@@ -10,8 +10,8 @@
 
 .myslide img {
   width: 50%;
-  object-fit: contain;
 
+  height: 300px;
   border: 2px;
 
   border-style: solid;

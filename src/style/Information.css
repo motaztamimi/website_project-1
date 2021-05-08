@@ -1,54 +1,66 @@
+/** @format */
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 .Information {
   display: flex;
   direction: rtl;
   width: 100%;
   margin-top: 20px;
-  padding-right: 13%;
+  padding-right: 10px;
 }
 .columnContactUs {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  padding: 15px;
+  width: 33.333%;
+
+  padding-left: 15px;
+  font-family: 'Rubik', sans-serif;
 }
 .columnContactUs h2 {
   display: flex;
   direction: rtl;
+  font-weight: 400;
+  line-height: normal;
+  font-size: 32px;
+  text-align: right;
+  margin-top: 10px;
+  color: #263c4a !important;
+  font-family: 'Rubik' sans-serif;
 }
-
 
 .columnBranches {
   display: table-column;
-  width: 50%;
-  padding: 15px;
+  width: 66.666%;
+  padding-right: 20px;
 }
 .columnBranches h2 {
   display: flex;
-  margin-right: 20px;
+  font-size: 43px;
   direction: rtl;
+  font-weight: 700;
+  line-height: normal;
+  text-align: right;
+  font-family: 'Rubik' sans-serif;
+  color: #263c4a !important;
 }
 
 @media screen and (max-width: 800px) {
-.Information{
-  flex-direction: column;
-  padding: 0;
-}
-.columnBranches{
-  width: 100%;
-  padding: 0;
-}
-.columnBranches h2{
-  margin: 0 auto;
-  
-  
-  color: rgb(4, 5, 5);
-}
-.columnContactUs{
-  width: 100%;
-}
-.columnContactUs h2{
-  text-align: center;
-  
-}
+  .Information {
+    flex-direction: column;
+    padding: 0;
+  }
+  .columnBranches {
+    width: 100%;
+    padding: 0;
+  }
+  .columnBranches h2 {
+    margin: 0 auto;
 
+    color: rgb(4, 5, 5);
+  }
+  .columnContactUs {
+    width: 100%;
+  }
+  .columnContactUs h2 {
+    text-align: center;
+  }
 }

@@ -160,11 +160,20 @@ const HomePage = () => {
 
   return (
     <>
-      <SlideShow />
-      <Information />
+      <section className='MainContainer'>
+        <SlideShow />
+        <Information />
+        <Subjects Sub={subject} />
+        <Centers Cent={Center} />
+
+        <News News={news} />
+      </section>
+
+      {/*  
+
       <section className='MainSection'>
         <section className='NewsAndEvents'>
-          <News News={news} />
+         
           <Events events={events} />
         </section>
         <section className='Ads'>
@@ -173,9 +182,7 @@ const HomePage = () => {
           <SideWidget photo={img1} />
           <SideWidget photo={img2} />
         </section>
-      </section>
-      <Centers Cent={Center} />
-      <Subjects Sub={subject} />
+      </section> */}
     </>
   );
 };

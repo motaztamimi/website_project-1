@@ -41,9 +41,8 @@
 }
 .cardBranchImg {
   border-radius: 5px;
-  width: 85%;
-  object-fit: contain;
-  height: auto;
+  width: 250px;
+  height: 250px;
 }
 .cardBranch a {
   color: black;

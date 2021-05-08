@@ -6,7 +6,7 @@ import '../style/Information.css';
 const Information = () => {
   const contact_details = {
     id: 1,
-    moked_num: '*8888',
+    moked_num: '2786*',
     address: 'כתובת שדרות יצחק רבין 1 באר יעקב, 7032102',
     email: 'niogsnreiogne@gmail.com',
     tel: '025554488',

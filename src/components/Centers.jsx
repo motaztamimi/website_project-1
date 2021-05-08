@@ -3,6 +3,10 @@ import '../style/Centers.css';
 import Center from './Center';
 import { useState, useEffect } from 'react';
 const Centers = ({ Cent }) => {
+  window.onchange = (e) => {
+    getCenter();
+  };
+
   const [Centerr, setCenteer] = useState({
     firstone: 1,
     secondone: 2,

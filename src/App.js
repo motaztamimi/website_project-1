@@ -20,8 +20,7 @@ function App() {
         <Switch>
           <Route exact path='/'>
             <Header />
-            {/* <HomePage /> */}
-            <EditorPageImlimentation />
+            <HomePage />
             <Fotter />
           </Route>
           <Route exact path='/about'>

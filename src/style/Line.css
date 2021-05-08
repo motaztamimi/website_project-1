@@ -1,12 +1,10 @@
 /** @format */
 
-.hr {
-  height: 20px;
-  border: 1;
-  box-shadow: inset 0 9px 9px -3px rgba(11, 99, 184, 0.8);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
+.linediv {
+  margin-top: 20px;
+
+  height: 5px;
+  border: none;
+  background-color: rgb(59, 58, 114);
+  letter-spacing: 5px;
 }

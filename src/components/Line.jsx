@@ -1,11 +1,12 @@
-import React from 'react'
+/** @format */
 
+import '../style/Line.css';
 const Line = () => {
-    return (
-        <div className="linediv">
-        <hr  />
-        </div>
-    )
-}
+  return (
+    <div className='linediv'>
+      <hr />
+    </div>
+  );
+};
 
-export default Line
+export default Line;

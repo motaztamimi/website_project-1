@@ -12,7 +12,8 @@ import '../style/HomePage.css';
 
 import Subjects from './Subjects';
 import Centers from './Centers';
-
+import Gallery from './Gallery';
+import Line from './Line';
 const HomePage = () => {
   const subject = [
     {
@@ -163,10 +164,15 @@ const HomePage = () => {
       <section className='MainContainer'>
         <SlideShow />
         <Information />
+        <Line />
         <Subjects Sub={subject} />
+        <Line />
         <Centers Cent={Center} />
+        <Line />
 
         <News News={news} />
+
+        <Gallery />
       </section>
 
       {/*  

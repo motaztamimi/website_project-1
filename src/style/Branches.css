@@ -1,18 +1,21 @@
+/** @format */
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
 .Branches {
   display: grid;
   align-content: center;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  padding: 10px;
-  width: 100%;
 
+  padding-right: 30px;
+  width: 100%;
 }
 .cardBranch {
- /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
 
   transition: 0.3s;
-  margin: 15px;
-  width: 90%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 100%;
   height: max-content;
   border-radius: 5px;
 }
@@ -22,9 +25,10 @@
 }
 .cardContainer h4 {
   text-align: right;
-  
-  font-size: 20px;
-  color: #285c7e ;
+  font-family: 'Rubik', sans-serif;
+  font-weight: normal;
+  font-size: 32px;
+  color: #285c7e !important;
   display: inline-block;
 }
 .cardContainer h4:hover {
@@ -37,9 +41,8 @@
 }
 .cardBranchImg {
   border-radius: 5px;
-  width: 100%;
-  object-fit:contain; 
-  height: auto;
+  width: 250px;
+  height: 250px;
 }
 .cardBranch a {
   color: black;
@@ -50,27 +53,22 @@
   margin-left: 7%;
 }
 @media screen and (max-width: 800px) {
-  .cardBranch{
+  .cardBranch {
     width: 100%;
-
-  }  
-  .cardBranchImg{
+  }
+  .cardBranchImg {
     width: 80%;
   }
-  .Branches{
-    padding: 0;
-   
-
-  }
-  .cardContainer{
+  .Branches {
     padding: 0;
   }
-  .cardContainer h4{
-    
+  .cardContainer {
+    padding: 0;
+  }
+  .cardContainer h4 {
     display: flex;
-
   }
-  .cardBranch:hover{
-    box-shadow:none;
+  .cardBranch:hover {
+    box-shadow: none;
   }
 }

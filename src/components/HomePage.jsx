@@ -12,7 +12,8 @@ import '../style/HomePage.css';
 
 import Subjects from './Subjects';
 import Centers from './Centers';
-
+import Gallery from './Gallery';
+import Line from './Line';
 const HomePage = () => {
   const subject = [
     {
@@ -23,57 +24,57 @@ const HomePage = () => {
     {
       id: 2,
       body: 'מחקר',
-      img: `${process.env.PUBLIC_URL}/imges/subjecttest.png`,
+      img: `${process.env.PUBLIC_URL}/imges/subjecttest1.png`,
     },
     {
       id: 3,
       body: 'מחקר',
-      img: `${process.env.PUBLIC_URL}/imges/subjecttest.png`,
+      img: `${process.env.PUBLIC_URL}/imges/subjecttest2.png`,
     },
     {
       id: 4,
       body: 'מערך ומזון',
-      img: `${process.env.PUBLIC_URL}/imges/subjecttest.png`,
+      img: `${process.env.PUBLIC_URL}/imges/subjecttest3.png`,
     },
     {
       id: 5,
       body: 'מחקר',
-      img: `${process.env.PUBLIC_URL}/imges/subjecttest.png`,
+      img: `${process.env.PUBLIC_URL}/imges/subjecttest4.png`,
     },
     {
       id: 6,
       body: 'מחקר',
-      img: `${process.env.PUBLIC_URL}/imges/subjecttest.png`,
+      img: `${process.env.PUBLIC_URL}/imges/subjecttest5.png`,
     },
     {
       id: 7,
       body: 'מחקר',
-      img: `${process.env.PUBLIC_URL}/imges/subjecttest.png`,
+      img: `${process.env.PUBLIC_URL}/imges/subjecttest6.png`,
     },
     {
       id: 8,
       body: 'מחקר',
-      img: `${process.env.PUBLIC_URL}/imges/subjecttest.png`,
+      img: `${process.env.PUBLIC_URL}/imges/subjecttest7.png`,
     },
     {
       id: 9,
       body: 'מחקר',
-      img: `${process.env.PUBLIC_URL}/imges/subjecttest.png`,
+      img: `${process.env.PUBLIC_URL}/imges/subjecttest8.png`,
     },
     {
       id: 10,
       body: 'מחקר',
-      img: `${process.env.PUBLIC_URL}/imges/subjecttest.png`,
+      img: `${process.env.PUBLIC_URL}/imges/subjecttest9.png`,
     },
     {
       id: 11,
       body: 'מחקר',
-      img: `${process.env.PUBLIC_URL}/imges/subjecttest.png`,
+      img: `${process.env.PUBLIC_URL}/imges/subjecttest10.png`,
     },
     {
       id: 12,
       body: 'מחקר',
-      img: `${process.env.PUBLIC_URL}/imges/subjecttest.png`,
+      img: `${process.env.PUBLIC_URL}/imges/subjecttest11.png`,
     },
     {
       id: 13,
@@ -90,22 +91,22 @@ const HomePage = () => {
     {
       id: 2,
       body: 'סיעוד',
-      img: `${process.env.PUBLIC_URL}/imges/Center.jpg`,
+      img: `${process.env.PUBLIC_URL}/imges/Center1.jpg`,
     },
     {
       id: 3,
       body: 'מנהלומשק',
-      img: `${process.env.PUBLIC_URL}/imges/Center.jpg`,
+      img: `${process.env.PUBLIC_URL}/imges/Center2.jpg`,
     },
     {
       id: 4,
       body: 'מערך ומזון',
-      img: `${process.env.PUBLIC_URL}/imges/Center.jpg`,
+      img: `${process.env.PUBLIC_URL}/imges/Center3.jpg`,
     },
     {
       id: 5,
       body: 'מערך ',
-      img: `${process.env.PUBLIC_URL}/imges/Center.jpg`,
+      img: `${process.env.PUBLIC_URL}/imges/Center4.jpg`,
     },
   ];
 
@@ -160,11 +161,25 @@ const HomePage = () => {
 
   return (
     <>
-      <SlideShow />
-      <Information />
+      <section className='MainContainer'>
+        <SlideShow />
+        <Information />
+        <Line />
+        <Subjects Sub={subject} />
+        <Line />
+        <Centers Cent={Center} />
+        <Line />
+
+        <News News={news} />
+
+        <Gallery />
+      </section>
+
+      {/*  
+
       <section className='MainSection'>
         <section className='NewsAndEvents'>
-          <News News={news} />
+         
           <Events events={events} />
         </section>
         <section className='Ads'>
@@ -173,9 +188,7 @@ const HomePage = () => {
           <SideWidget photo={img1} />
           <SideWidget photo={img2} />
         </section>
-      </section>
-      <Centers Cent={Center} />
-      <Subjects Sub={subject} />
+      </section> */}
     </>
   );
 };

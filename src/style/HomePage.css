@@ -6,6 +6,11 @@
   width: 100%;
   margin-top: 20px;
 }
+.MainContainer {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 .NewsAndEvents {
   display: flex;
   flex-direction: column;

@@ -1,0 +1,25 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: right;
+  background-color:white;
+  margin-left: 10px;
+  font-size: larger;
+}
+.column {
+  width: 85%;
+  margin: 15px;
+}
+.cardContent{
+    overflow: hidden;
+}
+.p1{
+    float: right;
+    color: black;
+    font-size: large;
+}
+.p2{
+    float: left;
+    color: black;
+    font-size: medium;
+}

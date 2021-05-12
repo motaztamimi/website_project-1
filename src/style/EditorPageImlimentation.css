@@ -1,0 +1,43 @@
+.hide {
+}
+.display {
+  display: block;
+}
+#one {
+  text-align: center;
+}
+#two {
+  display: none;
+  text-align: center;
+}
+#three {
+  display: none;
+  text-align: center;
+}
+#four {
+  display: none;
+  text-align: center;
+}
+
+.dropbtn {
+  background-color: #3498db;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: #2980b9;
+}
+
+.dropdown {
+  text-align: center;
+  margin: auto;
+  padding: 2rem;
+}
+.dropSelect {
+  margin: 2rem;
+}

@@ -1,14 +1,13 @@
-/** @format */
-
+import { Link } from 'react-router-dom';
 const Branch = ({ bbranch }) => {
   return (
     <div className='cardBranch'>
-      <a href='#'>
+      <Link to={`/${bbranch.text}`}>
         <img className='cardBranchImg' src={bbranch.img} />
         <div className='cardContainer'>
           <h4>{bbranch.text}</h4>
         </div>
-      </a>
+      </Link>
     </div>
   );
 };

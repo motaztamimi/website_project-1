@@ -18,7 +18,7 @@ const SlideShow = () => {
     let i;
     let slide = document.getElementsByClassName('myslide');
     let a = Array.from(slide);
-
+    console.log(a);
     let curentindex = n;
     if (curentindex > a.length) {
       curentindex = 1;
@@ -45,28 +45,28 @@ const SlideShow = () => {
   return (
     <div className='slideShow-container'>
       <div className='myslide'>
-        <img src={img1} alt='' />
+        <div>
+          <img src={img1} alt='' />
+          <img src={img2} alt='' />
+        </div>
       </div>
       <div className='myslide'>
-        <img src={img2} alt='' />
+        <div>
+          <img src={img3} alt='' />
+          <img src={img4} alt='' />
+        </div>
       </div>
       <div className='myslide'>
-        <img src={img3} alt='' />
+        <div>
+          <img src={img5} alt='' />
+          <img src={img6} alt='' />
+        </div>
       </div>
       <div className='myslide'>
-        <img src={img4} alt='' />
-      </div>
-      <div className='myslide'>
-        <img src={img5} alt='' />
-      </div>
-      <div className='myslide'>
-        <img src={img6} alt='' />
-      </div>
-      <div className='myslide'>
-        <img src={img7} alt='' />
-      </div>
-      <div className='myslide'>
-        <img src={img8} alt='' />
+        <div>
+          <img src={img7} alt='' />
+          <img src={img8} alt='' />
+        </div>
       </div>
 
       <button className='prev' onClick={() => plusSlides(-1)}>

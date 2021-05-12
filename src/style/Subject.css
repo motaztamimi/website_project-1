@@ -1,31 +1,37 @@
 /** @format */
-
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 .Subject_Container {
   width: 100%;
   direction: rtl;
   display: block;
   margin-top: 40px;
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 30px;
+  font-family: 'Rubik', sans-serif;
+  margin-bottom: 90px;
 }
 .Subject_Container h2 {
   text-align: right;
-  margin-right: 40px;
-  font-size: 2.5rem;
-  color: #151e4d;
-  font-family: 'Poppins', sans-serif;
+  font-size: 43px;
+  margin-bottom: 20px;
   direction: rtl;
+  font-weight: 700;
+  line-height: normal;
+  text-align: right;
+  font-family: 'Rubik' sans-serif;
+  color: #263c4a !important;
 }
 .Subject_Container button {
   background-color: #285c7e !important ;
   color: white;
   font-weight: normal;
+  justify-items: right;
+  justify-content: right;
   font-size: 1.5rem;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-right: 50px;
   padding-left: 50px;
-  margin-right: 40px;
   border-radius: 10px;
 }
 .Subject_row {
@@ -37,18 +43,35 @@
   justify-content: space-between;
 }
 .Subject {
-  width: 16%;
-  padding: 15px;
+  width: 16.667%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  position: relative;
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   direction: rtl;
+  justify-content: center !important;
+  align-items: center;
   flex-wrap: wrap;
 }
 .Subject img {
-  width: 30%;
-  margin: 0 auto;
+  width: 20%;
+  margin-bottom: 15px;
   object-fit: cover;
+}
+.Subject h5 {
+  min-height: 50px;
+  position: relative;
+  align-items: center;
+  font-size: 20px;
+  text-decoration-thickness: auto;
+  line-height: normal;
+  justify-content: center;
+  direction: rtl;
+  color: #285c7e !important;
 }
 .Subject h5 {
   text-align: center;
@@ -56,30 +79,29 @@
   direction: rtl;
   color: #285c7e !important;
 }
-
 @media screen and (max-width: 800px) {
   .Subject_row {
-    flex-direction: row;
-    justify-content: right;
-    flex-wrap: wrap;
+    margin: 0 auto;
   }
   .Subject_Container h2 {
     margin: 0;
   }
+  .Subject h5 {
+    min-height: auto;
+    padding-right: 5px;
+  }
   .Subject {
     width: 50%;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: nowrap;
   }
   .Subject img {
-    width: 20%;
-    margin: 0;
+    align-items: center;
+    width: 30%;
   }
   .Subject_Container {
     max-width: 100%;
+    padding: 0;
     display: inline-block;
-  }
-  .Subject h5 {
-    font-size: 1.8rem;
-    text-align: right;
   }
 }

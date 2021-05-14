@@ -15,7 +15,10 @@
   width: 300px;
   border: 1px;
   border-style: solid;
-  margin: 0 auto;
+  bottom: 90px;
+
+  right: 90px;
+  position: absolute;
 }
 .react-chatbot-kit-chat-bot-message {
   margin-left: 0;

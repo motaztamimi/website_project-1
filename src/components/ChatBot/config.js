@@ -4,9 +4,10 @@ import { createChatBotMessage } from "react-chatbot-kit";
 import BotAvatar from './BotAvatar'
 import Todos from './Todos/Todos'
 import Opthion from './Opthion/Opthion'
+import GeneralOptions from './ManyListOfOption/GeneralOptions'
 const config = {
   initialMessages: [createChatBotMessage(`שלום לכם`,{
-    widget:'opthion'
+    widget:'options'
   })],
   botName: "Motaz",
   customComponents:{
@@ -34,9 +35,8 @@ const config = {
       mapStateToProps: ["todos"],
     },
     {
-      widgetName: "opthion",
-      widgetFunc: (props) => <Opthion {...props} />,
-      mapStateToProps: ["opthion"],
+      widgetName: "options",
+      widgetFunc: (props) => <GeneralOptions {...props} />,
     },
   ]
 }

@@ -20,9 +20,7 @@ class ActionProvider {
 
     erorhandler=()=>{
       const message = this.createChatBotMessage("שלום לך אני לא מבין מה הכנסת נא בבקשה לבחור אחת מהאופציות שלנות",{
-        widget:'opthion'
-
-      
+        widget:'options'
       });
       this.setChatBotMessage(message);
     }

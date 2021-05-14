@@ -3,20 +3,7 @@
 import React from 'react';
 import './Opthion.css';
 const Opthion = (props) => {
-  const opthions = [
-    {
-      text: 'im first opthion',
-      handler: props.actionProvider.listhandler,
-      id: 1,
-    },
-    {
-      text: 'im first second',
-      handler: props.actionProvider.listhandler,
-      id: 2,
-    },
-  ];
-
-  const listOpthion = opthions.map((oop) => (
+  const listOpthion = props.options.map((oop) => (
     <button key={oop.id} onClick={oop.handler} className='optionButton'>
       {oop.text}
     </button>

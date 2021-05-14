@@ -17,6 +17,7 @@ import {Chatbot} from 'react-chatbot-kit'
 import config from './components/ChatBot/config';
 import MessageParser from './components/ChatBot/MessageParser';
 import ActionProvider from './components/ChatBot/ActionProvider';
+import ButtonBot from './components/ChatBot/BottonHomePage/BottonHomePage'
 function App() {
   return (
     <div className='App'>
@@ -33,6 +34,13 @@ function App() {
             <Header />
             <HomePage />
             <Fotter />
+            <Chatbot
+            config={config}
+            messageParser={MessageParser}
+            actionProvider={ActionProvider}
+           />
+           <ButtonBot/>
+
           </Route>
           <Route exact path='/about'>
             <Header />

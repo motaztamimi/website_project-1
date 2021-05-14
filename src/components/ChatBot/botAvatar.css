@@ -1,0 +1,26 @@
+/** @format */
+
+.mm {
+  width: 40px;
+  height: 40px;
+  background-color: cadetblue;
+  border-radius: 50%;
+  display: flex;
+  justify-items: right;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+.react-chatbot-kit-chat-container {
+  width: 300px;
+  border: 1px;
+  border-style: solid;
+  margin: 0 auto;
+}
+.react-chatbot-kit-chat-bot-message {
+  margin-left: 0;
+  height: max-content;
+  background-color: #e8e8eb;
+  text-align: right;
+  color: black;
+}

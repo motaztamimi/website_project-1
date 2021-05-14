@@ -49,7 +49,6 @@ const Centers = ({ Cent }) => {
 
     return n;
   }
-
   function minousCenter(n) {
     first = Centerr.firstone + n;
     second = Centerr.secondone + n;
@@ -65,8 +64,8 @@ const Centers = ({ Cent }) => {
   }
 
   return (
-    <section className='Center_Container'>
-      <h2> המרכז שלנו</h2>
+    <section id="m4" className='Center_Container'>
+      <h2 id="m14"> המרכז שלנו</h2>
       <section className='Center_row'>
         {getCenter().map((cen) => {
           return <Center key={cen.id} CENTER={cen} />;

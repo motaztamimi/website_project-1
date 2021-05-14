@@ -14,6 +14,9 @@ import Subjects from './Subjects';
 import Centers from './Centers';
 import Gallery from './Gallery';
 import Line from './Line';
+import Nav from './Nav';
+import ScrollToTop from './ScrollToTop';
+
 const HomePage = () => {
   const subject = [
     {
@@ -158,28 +161,26 @@ const HomePage = () => {
       img: `${process.env.PUBLIC_URL}/imges/event3.jpg`,
     },
   ];
-
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
   return (
     <>
       <section className='MainContainer'>
+        <Nav/>
         <SlideShow />
         <Information />
-        <Line />
+        {/* <Line /> */}
         <Subjects Sub={subject} />
-        <Line />
+        {/* <Line /> */}
         <Centers Cent={Center} />
-        <Line />
-
+        {/* <Line /> */}
         <News News={news} />
-
         <Gallery />
+        <ScrollToTop/>
       </section>
 
-      {/*  
-
+      {/*
       <section className='MainSection'>
         <section className='NewsAndEvents'>
-         
           <Events events={events} />
         </section>
         <section className='Ads'>
@@ -188,7 +189,8 @@ const HomePage = () => {
           <SideWidget photo={img1} />
           <SideWidget photo={img2} />
         </section>
-      </section> */}
+      </section> 
+      */}
     </>
   );
 };

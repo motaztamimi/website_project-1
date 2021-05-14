@@ -17,7 +17,7 @@ const Information = () => {
   return (
     <section className='Information'>
       <section className='columnBranches'>
-        <h2>מחלקות</h2>
+        <h2 id="m2">מחלקות</h2>
         <Branches />
       </section>
       <section className='columnContactUs'>

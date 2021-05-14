@@ -7,7 +7,7 @@ import '../style/Gallery.css';
 const gallery = () => {
   return (
     <div className="galleryContainer">
-      <h2> גלריה</h2>
+      <h2 id="m6"> גלריה</h2>
       <div className='gallery_row'>
         <div className='photo'>
           <img src={img1} alt='Avatar' className='image1' />

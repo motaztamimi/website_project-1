@@ -30,7 +30,6 @@ const ListOfDep = ({ departmentName }) => {
       </div>
       <div className='Brancheskk'>
         {list.map((item, index) => {
-          console.log(item);
           return <DepListPiece bbranch={item} key={index} />;
         })}
       </div>

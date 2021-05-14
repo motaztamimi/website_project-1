@@ -32,7 +32,7 @@ function App() {
           <Route exact path='/Admin'>
             <AdminLogin />
           </Route>
-          <Route exact path="/ביה''ח כפר שאול">
+          <Route exact path='/kfarShaol'>
             <Header />
             <ListOfDep />
             <Fotter />

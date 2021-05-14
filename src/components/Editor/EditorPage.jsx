@@ -1,18 +1,8 @@
-import { render } from '@testing-library/react';
-import { data } from 'browserslist';
-import database from 'mime-db';
 import React, { useState } from 'react';
 import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import '../../style/EditorPage.css';
-import { DBWrapper } from 'workbox-core/_private';
-import { dataBase, storage, auth } from '../../config/firebase';
 function EditorPage(props) {
-  const Dep = dataBase.collection('Departments').doc('first');
-  Dep.get().then((doc) => {
-    const data = doc.data();
-  });
-
   const [editorHTML, seteditorHTML] = useState('');
 
   const handleChange = (html) => {
@@ -35,10 +25,6 @@ function EditorPage(props) {
             id='btn'
             onClick={() => {
               props.callBack(editorHTML);
-              //  document.getElementById('theText').innerHTML += editorHTML;
-              //   dataBase.collection('Departments').doc('sec').set({
-              //     data: editorHTML,
-              //   });
             }}>
             NEXT
           </button>

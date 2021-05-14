@@ -41,3 +41,17 @@
 .dropSelect {
   margin: 2rem;
 }
+
+.finalStage {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.finalStage input {
+  border: none;
+  border-radius: 5px;
+  background-color: #36a8f5;
+  font-size: 1.34rem;
+  padding: 8px;
+}

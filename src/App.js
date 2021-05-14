@@ -34,10 +34,20 @@ function App() {
           </Route>
           <Route exact path='/kfarShaol'>
             <Header />
-            <ListOfDep />
+            <ListOfDep departmentName='כפר שאול' />
             <Fotter />
           </Route>
-          <Route exact path="/ביה''ח כפר שאול/a">
+          <Route exact path='/Etanim'>
+            <Header />
+            <ListOfDep departmentName='איתנים' />
+            <Fotter />
+          </Route>
+          <Route exact path='/sherotKhelate'>
+            <Header />
+            <ListOfDep departmentName='שירות קהילתי' />
+            <Fotter />
+          </Route>
+          <Route exact path='/kfarShaol/0'>
             <Header />
             <InsidePage3 />
             <Fotter />

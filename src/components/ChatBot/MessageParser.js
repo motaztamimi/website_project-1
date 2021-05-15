@@ -13,6 +13,9 @@ class MessageParser {
       else if ( message.includes("show me list")){
         this.actionProvider.listhandler()
       }
+      else if ( message.includes("يوسف حمار")){
+        this.actionProvider.aa()
+      }
       else{
         this.actionProvider.erorhandler()
       }

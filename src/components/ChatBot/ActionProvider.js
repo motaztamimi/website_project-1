@@ -10,6 +10,12 @@ class ActionProvider {
 
     }
 
+ aa=()=>{
+      const message = this.createChatBotMessage("نعم انه غبي كبير وجحش صغير");
+      this.setChatBotMessage(message);
+
+    }
+    
     listhandler=()=>{
       const message = this.createChatBotMessage("sure i will show u this now",{
         widget:'todos'

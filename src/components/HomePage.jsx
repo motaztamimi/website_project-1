@@ -168,11 +168,11 @@ const HomePage = () => {
         <Nav/>
         <SlideShow />
         <Information />
-        {/* <Line /> */}
+        <Line />
         <Subjects Sub={subject} />
-        {/* <Line /> */}
+        <Line />
         <Centers Cent={Center} />
-        {/* <Line /> */}
+        <Line />
         <News News={news} />
         <Gallery />
         <ScrollToTop/>

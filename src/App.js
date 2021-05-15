@@ -49,7 +49,7 @@ function App() {
           </Route>
           <Route exact path='/kfarShaol/0'>
             <Header />
-            <InsidePage3 />
+            <InsidePage3 department='כפר שאול' url='0' />
             <Fotter />
           </Route>
           <ProtectedRoute

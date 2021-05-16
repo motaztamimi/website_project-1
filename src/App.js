@@ -13,6 +13,7 @@ import AdminEditEvents from './components/AdminEditEvents';
 import EditorPageImlimentation from './components/Editor/EditorPageImlimentation';
 import ListOfDep from './components/ListOfDep';
 import InsidePage3 from './components/InsidePage';
+import AdminAddNews from './components/adminAddNews/AdminAddNews';
 
 function App() {
   return (
@@ -61,6 +62,11 @@ function App() {
             exact
             path='/Admin/EditNews'
             component={AdminEditNews}
+          />
+          <ProtectedRoute
+            exact
+            path='/Admin/EditNews/AddNews'
+            component={AdminAddNews}
           />
           <ProtectedRoute
             exact

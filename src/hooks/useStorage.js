@@ -8,7 +8,14 @@ const useStorage = (file, path, collection) => {
 
   useEffect(() => {
     const storageRef = storage.ref(path + '/' + file.name);
-    const collectionRef = dataBase.collection(collection);
+    let collectionRef;
+
+    if (collection != null) {
+      collectionRef = dataBase.collection(collection);
+    } else {
+      collectionRef = null;
+    }
+
     storageRef.put(file).on(
       'state_changed',
       (snap) => {
@@ -21,7 +28,9 @@ const useStorage = (file, path, collection) => {
       async () => {
         const url = await storageRef.getDownloadURL();
         const createdAt = timestamp();
-        collectionRef.add({ url, createdAt });
+        if (collectionRef != null) {
+          collectionRef.add({ url, createdAt });
+        }
 
         setUrl(url);
       }

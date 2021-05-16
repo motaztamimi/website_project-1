@@ -1,23 +1,30 @@
 import React from 'react'
 // Config starter code
 import { createChatBotMessage } from "react-chatbot-kit";
-import { createClientMessage } from "react-chatbot-kit";
+
 import BotAvatar from './BotAvatar'
 import Todos from './Todos/Todos'
 import GeneralOptions from './ManyListOfOption/GeneralOptions'
 import ImgBot from './ImgBot'
+
+
+
+
 const config = {
   initialMessages: [  createChatBotMessage(
-    "here's a quick overview over what I need to function. ask me about the different parts to dive deeper.",
+    "hello",
     {
       withAvatar: true,
       
-      delay: 500,
-      widget: "imgBOT",
+      
+      widget: "options",
     })
+
 ],
 
+
   
+
   botName: "Motaz",
   
   customComponents:{
@@ -53,6 +60,8 @@ const config = {
       widgetFunc: (props) => <ImgBot {...props} />,
     },
   ]
+
+  
 }
 
 export default config

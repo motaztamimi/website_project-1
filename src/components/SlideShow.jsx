@@ -11,14 +11,32 @@ import img8 from '../imges/8.jpg';
 import '../style/SlideShow.css';
 
 import { useState, useEffect } from 'react';
-const SlideShow = () => {
+const SlideShow = (props) => {//this props is the array that we will get from the server. 
   const [slidenum, setSlide] = useState(1);
   const [firstrender, setfirstrender] = useState(true);
+  var photoArray = [];
+
+  photoArray.push(img1);
+  photoArray.push(img2);
+  photoArray.push(img3);
+  photoArray.push(img4);
+  photoArray.push(img5);
+  photoArray.push(img6);
+  photoArray.push(img7);
+  //photoArray.push(img8);
+  if (photoArray.length % 2 == 1) {
+    photoArray.push(photoArray[0]);
+  }
+  var res = [];
+  while (photoArray.length > 0) {//split the array into twos.
+    const chunk = photoArray.splice(0, 2);
+    res.push(chunk);
+  }
+
   const Showslide = (n) => {
     let i;
     let slide = document.getElementsByClassName('myslide');
     let a = Array.from(slide);
-    console.log(a);
     let curentindex = n;
     if (curentindex > a.length) {
       curentindex = 1;
@@ -44,7 +62,18 @@ const SlideShow = () => {
 
   return (
     <div className='slideShow-container'>
-      <div className='myslide'>
+      {res.map(function (element, i) {
+        return (
+          <div className='myslide'>
+            <div>
+              <img src={element[0]} alt='' />
+              <img src={element[1]} alt='' />
+            </div>
+          </div>
+        );
+      })}
+
+      {/* <div className='myslide'>
         <div>
           <img src={img1} alt='' />
           <img src={img2} alt='' />
@@ -67,7 +96,7 @@ const SlideShow = () => {
           <img src={img7} alt='' />
           <img src={img8} alt='' />
         </div>
-      </div>
+      </div> */}
 
       <button className='prev' onClick={() => plusSlides(-1)}>
         &#10094;

@@ -17,6 +17,8 @@ import {Chatbot} from 'react-chatbot-kit'
 import config from './components/ChatBot/config';
 import MessageParser from './components/ChatBot/MessageParser';
 import ActionProvider from './components/ChatBot/ActionProvider';
+import AdminAddNews from './components/adminAddNews/AdminAddNews';
+
 function App() {
   return (
     <div className='App'>
@@ -42,14 +44,24 @@ function App() {
           <Route exact path='/Admin'>
             <AdminLogin />
           </Route>
-          <Route exact path="/ביה''ח כפר שאול">
+          <Route exact path='/kfarShaol'>
             <Header />
-            <ListOfDep />
+            <ListOfDep departmentName='כפר שאול' />
             <Fotter />
           </Route>
-          <Route exact path="/ביה''ח כפר שאול/a">
+          <Route exact path='/Etanim'>
             <Header />
-            <InsidePage3 />
+            <ListOfDep departmentName='איתנים' />
+            <Fotter />
+          </Route>
+          <Route exact path='/sherotKhelate'>
+            <Header />
+            <ListOfDep departmentName='שירות קהילתי' />
+            <Fotter />
+          </Route>
+          <Route exact path='/kfarShaol/0'>
+            <Header />
+            <InsidePage3 department='כפר שאול' url='0' />
             <Fotter />
           </Route>
           <ProtectedRoute
@@ -61,6 +73,11 @@ function App() {
             exact
             path='/Admin/EditNews'
             component={AdminEditNews}
+          />
+          <ProtectedRoute
+            exact
+            path='/Admin/EditNews/AddNews'
+            component={AdminAddNews}
           />
           <ProtectedRoute
             exact

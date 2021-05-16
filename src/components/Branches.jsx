@@ -7,9 +7,9 @@ import img2 from '../imges/manger2.jpg';
 import '../style/Branches.css';
 const Branches = () => {
   const list = [
-    { id: 1, text: "ביה''ח כפר שאול", img: img0 },
-    { id: 2, text: "ביה''ח איתנים ", img: img1 },
-    { id: 3, text: 'השירות הקהילתי', img: img2 },
+    { id: 1, text: "ביה''ח כפר שאול", img: img0, url: 'kfarShaol' },
+    { id: 2, text: "ביה''ח איתנים ", img: img1, url: 'Etanim' },
+    { id: 3, text: 'השירות הקהילתי', img: img2, url: 'sherotKhelate' },
   ];
 
   return (

@@ -10,6 +10,12 @@ class ActionProvider {
 
     }
 
+    aa=()=>{
+      const message = this.createChatBotMessage("نعم انه غبي كبير وجحش صغير");
+      this.setChatBotMessage(message);
+
+    }
+    
     listhandler=()=>{
       const message = this.createChatBotMessage("sure i will show u this now",{
         widget:'todos'
@@ -27,6 +33,14 @@ class ActionProvider {
     
     setChatBotMessage=(messege)=>{
       this.setState( state => ({...state, messages:[...state.messages , messege]}))
+    }
+    
+
+    deleteFirst=()=>{
+      const classa= document.getElementsByClassName("react-chatbot-kit-chat-bot-message-container");
+      let a =Array.from(classa);
+      a[0].outerHTML="";
+      
     }
   }
   

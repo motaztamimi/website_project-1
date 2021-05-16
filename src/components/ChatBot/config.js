@@ -1,15 +1,32 @@
 import React from 'react'
 // Config starter code
 import { createChatBotMessage } from "react-chatbot-kit";
+
 import BotAvatar from './BotAvatar'
 import Todos from './Todos/Todos'
-import Opthion from './Opthion/Opthion'
 import GeneralOptions from './ManyListOfOption/GeneralOptions'
+import ImgBot from './ImgBot'
+
+
+
+
 const config = {
-  initialMessages: [createChatBotMessage(`שלום לכם`,{
-    widget:'options'
-  })],
+  initialMessages: [  createChatBotMessage(
+    "hello",
+    {
+      withAvatar: true,
+      
+      
+      widget: "options",
+    })
+
+],
+
+
+  
+
   botName: "Motaz",
+  
   customComponents:{
       botAvatar:(props)=> <BotAvatar {...props}/>
   },
@@ -38,7 +55,13 @@ const config = {
       widgetName: "options",
       widgetFunc: (props) => <GeneralOptions {...props} />,
     },
+    {
+      widgetName: "imgBOT",
+      widgetFunc: (props) => <ImgBot {...props} />,
+    },
   ]
+
+  
 }
 
 export default config

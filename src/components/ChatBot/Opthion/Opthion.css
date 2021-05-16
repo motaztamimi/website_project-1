@@ -1,0 +1,24 @@
+/** @format */
+
+.list-Opthion-Container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 45px;
+}
+
+.optionButton {
+  border: 1px;
+  border-style: solid;
+  padding: 3px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: block;
+  width: 50%;
+  font-size: 16px;
+  color: rgb(72, 145, 252);
+  background-color: white;
+  border-color: rgb(72, 145, 252);
+  margin-right: 20px;
+}

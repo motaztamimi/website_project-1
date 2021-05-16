@@ -13,17 +13,36 @@ import AdminEditEvents from './components/AdminEditEvents';
 import EditorPageImlimentation from './components/Editor/EditorPageImlimentation';
 import ListOfDep from './components/ListOfDep';
 import InsidePage3 from './components/InsidePage';
+import {Chatbot} from 'react-chatbot-kit'
+import config from './components/ChatBot/config';
+import MessageParser from './components/ChatBot/MessageParser';
+import ActionProvider from './components/ChatBot/ActionProvider';
 import AdminAddNews from './components/adminAddNews/AdminAddNews';
 
+import ButtonBot from './components/ChatBot/BottonHomePage/BottonHomePage'
 function App() {
   return (
     <div className='App'>
       <Router>
         <Switch>
+        <Route exact path='/Chatbot'>
+           <Chatbot
+            config={config}
+            messageParser={MessageParser}
+            actionProvider={ActionProvider}
+           />
+          </Route>
           <Route exact path='/'>
             <Header />
             <HomePage />
             <Fotter />
+            <Chatbot
+            config={config}
+            messageParser={MessageParser}
+            actionProvider={ActionProvider}
+           />
+           <ButtonBot/>
+
           </Route>
           <Route exact path='/about'>
             <Header />

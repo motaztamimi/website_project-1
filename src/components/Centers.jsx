@@ -1,12 +1,8 @@
 /** @format */
 import '../style/Centers.css';
 import Center from './Center';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 const Centers = ({ Cent }) => {
-  window.onchange = (e) => {
-    getCenter();
-  };
-
   const [Centerr, setCenteer] = useState({
     firstone: 1,
     secondone: 2,
@@ -20,8 +16,8 @@ const Centers = ({ Cent }) => {
     if (window.innerWidth < 800) {
       let lastindex;
 
-      lastindex = cen.filter((act) => act.id == Centerr.firstone);
-      let firstindexinlast = cen.filter((act) => act.id == Centerr.secondone);
+      lastindex = cen.filter((act) => act.id === Centerr.firstone);
+      let firstindexinlast = cen.filter((act) => act.id === Centerr.secondone);
 
       lastindex = [...lastindex, ...firstindexinlast];
 

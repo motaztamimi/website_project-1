@@ -1,3 +1,5 @@
+/** @format */
+
 import { useState } from 'react';
 import './AdminAddNews.css';
 import { dataBase, timestamp, storage } from '../../config/firebase';

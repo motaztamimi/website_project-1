@@ -1,12 +1,20 @@
 /** @format */
-
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://use.typekit.net/lfw8lae.css');
 .AddNewsButton {
-  background-color: bisque;
+  background-color: #285c7e !important ;
+  color: white;
 
-  width: 100px;
+  width: 200px;
   font-size: 1.3rem;
   margin-top: 50px;
+  padding: 5px;
   height: 40px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
 }
 .AddNewsButtonDiv {
   text-align: center;
@@ -27,4 +35,83 @@
 }
 .newcard img {
   width: 300px;
+}
+
+.NewsDiv {
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+
+  float: right;
+
+  width: 60%;
+  padding-right: 30px;
+  margin-top: 10px;
+  margin-bottom: 70px;
+}
+.NewCARD {
+  text-align: unset;
+  display: flex;
+  width: 100%;
+
+  direction: rtl;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.NewCARD h1 {
+  font-family: 'rubik', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-align: right;
+  font-size: 30px;
+
+  line-height: normal;
+
+  color: #285c7e;
+  margin: 10px;
+}
+
+.NewCARD img {
+  width: 300px;
+}
+.NewCARD h3 {
+  font-family: 'rubik', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #272727;
+  text-align: right;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 10px;
+}
+.NewsContent {
+  width: 100%;
+  padding-top: 30px;
+}
+.NewsDiv input {
+  position: relative;
+  font-size: 30px;
+  font-weight: 800;
+  width: 40px;
+  height: 40px;
+  opacity: 0.6;
+  right: 0;
+  background-color: red;
+  border: none;
+  border-radius: 5%;
+}
+.NewsDiv input:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+.MoreNewsButton {
+  background-color: #285c7e !important ;
+  color: white;
+  justify-items: right;
+  justify-content: right;
+  font-size: 1.3rem;
+  margin-right: 20px;
+  margin-bottom: 40px;
+  width: 200px;
+  border-radius: 10px;
 }

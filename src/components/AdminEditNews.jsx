@@ -12,11 +12,13 @@ const AdminEditNews = () => {
   const [isclick, setClick] = useState(false);
   let history = useHistory();
   const News = useDataBase('News');
+
   const deleteNew = (newq) => {
     const colecstion = dataBase.collection('News');
 
     const item = colecstion.doc(newq.id);
-
+    const storageRef = storage.refFromURL(newq.NewsImage);
+    storageRef.delete();
     item.delete();
   };
 
@@ -32,6 +34,7 @@ const AdminEditNews = () => {
   function toggle() {
     setClick(!isclick);
   }
+  console.log(News.docs);
   return (
     <div>
       <div className='AddNewsButtonDiv'>

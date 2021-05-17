@@ -54,28 +54,28 @@ const AdminAddNews = () => {
     <div className='AddNewsPage'>
       {showDiv && div}
       <form className='AddNewsForm' onSubmit={onSubmit}>
-        <label>News photo</label>
+        <label>תמונת החדשות</label>
         <input type='file' onChange={onFileChange} required />
 
-        <label>News title</label>
+        <label>כתורת החדשות</label>
         <input
           type='text'
-          placeholder='News title'
+          placeholder='נא להכניס כתורת החדשות'
           onChange={(e) => {
             SetNewsTitle(e.target.value);
           }}
           required
         />
-        <label> News sub title</label>
+        <label> כתורת משנית לחדשות</label>
         <input
           type='text'
-          placeholder='News sub title'
+          placeholder='נא להכניס כתורת משנית'
           onChange={(e) => {
             setNewsSubTitle(e.target.value);
           }}
           required
         />
-        <label> News body</label>
+        <label> גוף החדשות</label>
         <textarea
           cols='30'
           rows='10'
@@ -83,7 +83,7 @@ const AdminAddNews = () => {
             setNewsBody(e.target.value);
           }}
           required></textarea>
-        <input type='submit' value='submit' />
+        <input className='SubmitButton' type='submit' value='submit' />
       </form>
     </div>
   );

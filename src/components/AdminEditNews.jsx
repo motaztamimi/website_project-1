@@ -19,7 +19,6 @@ const AdminEditNews = () => {
     item.delete();
   };
 
-  console.log(News);
   let max = News.docs.length / 2;
   let len = Math.round(max);
 

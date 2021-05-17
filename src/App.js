@@ -13,6 +13,7 @@ import AdminEditEvents from './components/AdminEditEvents';
 import EditorPageImlimentation from './components/Editor/EditorPageImlimentation';
 import ListOfDep from './components/ListOfDep';
 import InsidePage3 from './components/InsidePage';
+import AllResearchs from './components/Research/AllResearchs';
 
 function App() {
   return (
@@ -52,6 +53,13 @@ function App() {
             <InsidePage3 department='כפר שאול' url='0' />
             <Fotter />
           </Route>
+
+          <Route exact path='/pdf'>
+            <Header />
+            <AllResearchs/>
+            <Fotter />
+          </Route>
+
           <ProtectedRoute
             exact
             path='/Admin/EditGallery'

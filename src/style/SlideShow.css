@@ -12,8 +12,9 @@
   width: 50%;
 
   height: 330px;
-  border: 2px;
-  border-style: solid;
+
+  box-shadow: -1px 0 0 rgb(0 0 0 / 10%), -3px 0 9px rgb(0 0 0 / 15%);
+  box-sizing: border-box;
 }
 
 .slideShow-container {

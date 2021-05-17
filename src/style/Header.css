@@ -57,7 +57,11 @@
 .HeaderUpperSection button:hover {
   background-color: #ea3d84;
 }
-
+@media screen and (max-width:950px) {
+  .Header img {
+    width: 430px;
+  }
+}
 @media screen and (max-width: 800px) {
   .Header {
     display: none;

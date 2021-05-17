@@ -76,8 +76,6 @@ const AdminEditNews = () => {
             onClick={toggle}
           />
         </section>
-
-        {/* {<Events news={News.docs} />} */}
       </div>
     </div>
   );

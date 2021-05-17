@@ -13,7 +13,8 @@ const AdminEditNews = () => {
   let history = useHistory();
   const News = useDataBase('News');
   const deleteNew = (newq) => {
-    const colecstion = dataBase.collection('News').orderBy('', 'desc');
+    const colecstion = dataBase.collection('News');
+
     const item = colecstion.doc(newq.id);
 
     item.delete();

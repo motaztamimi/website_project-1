@@ -69,7 +69,7 @@ const AdminAddNews = () => {
         <label> כתורת משנית לחדשות</label>
         <input
           type='text'
-          placeholder='נא להכניס כתורת משנית'
+          placeholder='נא להכניס כתורת'
           onChange={(e) => {
             setNewsSubTitle(e.target.value);
           }}

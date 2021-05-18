@@ -73,30 +73,7 @@ const SlideShow = (props) => {//this props is the array that we will get from th
         );
       })}
 
-      {/* <div className='myslide'>
-        <div>
-          <img src={img1} alt='' />
-          <img src={img2} alt='' />
-        </div>
-      </div>
-      <div className='myslide'>
-        <div>
-          <img src={img3} alt='' />
-          <img src={img4} alt='' />
-        </div>
-      </div>
-      <div className='myslide'>
-        <div>
-          <img src={img5} alt='' />
-          <img src={img6} alt='' />
-        </div>
-      </div>
-      <div className='myslide'>
-        <div>
-          <img src={img7} alt='' />
-          <img src={img8} alt='' />
-        </div>
-      </div> */}
+     
 
       <button className='prev' onClick={() => plusSlides(-1)}>
         &#10094;

@@ -1,16 +1,28 @@
-import React from 'react';
 import LineInResearchPage from './LineInResearchPage';
 import '../../style/AllResearchs.css';
+import useDataBase from '../../hooks/useDataBase';
 
 function AllResearchs() {
+  var x = '';
+  const { Researches } = useDataBase('Researches');
+
   return (
     <div>
       <h1 id='title'>מחקרים</h1>
       <div className='container'>
-        <LineInResearchPage name='שלום רב זה אחד המחקרים' />
-        <LineInResearchPage name='שלום רב זה אחד המחקרים' />
-        <LineInResearchPage name='שלום רב זה אחד המחקרים' />
-        <LineInResearchPage name='שלום רב זה אחד המחקרים' />
+        {Researches &&
+          Researches.map((item, index) => {
+            {
+              console.log(item);
+            }
+            return (
+              <LineInResearchPage
+                key={index}
+                name={'Researches'}
+                url={item.fileUrl}
+              />
+            );
+          })}
       </div>
     </div>
   );

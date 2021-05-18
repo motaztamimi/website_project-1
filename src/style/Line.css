@@ -2,9 +2,8 @@
 
 .linediv {
   margin-top: 20px;
-
-  height: 5px;
-  border: none;
+  /* height: 5px; */
+  /* border: none; */
   background-color: rgb(59, 58, 114);
-  letter-spacing: 5px;
+  /* letter-spacing: 5px; */
 }

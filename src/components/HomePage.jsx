@@ -14,6 +14,8 @@ import Subjects from './Subjects';
 import Centers from './Centers';
 import Gallery from './Gallery';
 import Line from './Line';
+import Nav from './Nav';
+import ScrollToTop from './ScrollToTop';
 
 const HomePage = () => {
   let Nmews = useDataBase('News');
@@ -139,7 +141,8 @@ const HomePage = () => {
       CardTitle: 'firstone',
       CardSubtitle: 'first',
       date: '2thFeb',
-      body: 'הפלונטר והבחירות לנשיאות: האם יו"ר הכנסת לוין ייכנס לנעלי ריבלין? ',
+      body:
+        'הפלונטר והבחירות לנשיאות: האם יו"ר הכנסת לוין ייכנס לנעלי ריבלין? ',
       img: `${process.env.PUBLIC_URL}/imges/event1.jpg`,
     },
     {
@@ -159,10 +162,11 @@ const HomePage = () => {
       img: `${process.env.PUBLIC_URL}/imges/event3.jpg`,
     },
   ];
-
+  <script src='https://code.iconify.design/1/1.0.7/iconify.min.js'></script>;
   return (
     <>
       <section className='MainContainer'>
+        <Nav />
         <SlideShow />
         <Information />
         <Line />
@@ -170,10 +174,9 @@ const HomePage = () => {
         <Line />
         <Centers Cent={Center} />
         <Line />
-
-        <News News={Nmews.docs} />
-
+        <News News={news} />
         <Gallery />
+        <ScrollToTop />
       </section>
     </>
   );

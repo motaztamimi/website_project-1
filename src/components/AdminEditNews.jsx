@@ -10,6 +10,7 @@ import { useState } from 'react';
 
 const AdminEditNews = () => {
   const [isclick, setClick] = useState(false);
+
   let history = useHistory();
   const News = useDataBase('News');
 

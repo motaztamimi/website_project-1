@@ -141,8 +141,7 @@ const HomePage = () => {
       CardTitle: 'firstone',
       CardSubtitle: 'first',
       date: '2thFeb',
-      body:
-        'הפלונטר והבחירות לנשיאות: האם יו"ר הכנסת לוין ייכנס לנעלי ריבלין? ',
+      body: 'הפלונטר והבחירות לנשיאות: האם יו"ר הכנסת לוין ייכנס לנעלי ריבלין? ',
       img: `${process.env.PUBLIC_URL}/imges/event1.jpg`,
     },
     {
@@ -174,7 +173,7 @@ const HomePage = () => {
         <Line />
         <Centers Cent={Center} />
         <Line />
-        <News News={news} />
+        <News News={Nmews.docs} />
         <Gallery />
         <ScrollToTop />
       </section>

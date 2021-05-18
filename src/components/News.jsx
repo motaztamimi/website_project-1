@@ -9,8 +9,7 @@ const News = ({ News }) => {
   if (News.length >= 3) {
     max = 3;
   } else {
-    max = News.length / 2;
-    max = Math.round(max);
+    max = News.length;
   }
   function getNews() {
     return News.slice(0, max);
@@ -18,7 +17,7 @@ const News = ({ News }) => {
 
   return (
     <section className='News'>
-      <h2 id="m5">חדשות</h2>
+      <h2 id='m5'>חדשות</h2>
       <section className='NewsContainer'>
         {getNews().map((news) => {
           return (

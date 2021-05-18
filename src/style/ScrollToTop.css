@@ -1,25 +1,49 @@
+/** @format */
+
 .cursor-pointer {
   cursor: pointer;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+.Icondiv {
+  width: max-content;
+  width: 90px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 .scrollToTop {
   position: fixed;
   bottom: 12px;
+  padding: 10px;
+  padding-left: 25px;
+  opacity: 0.7;
+
+  width: 70px;
+  height: 30px;
+
   background-color: rgb(0, 0, 0);
   border-radius: 5px;
-  left: 97%;
+  bottom: 0%;
+  left: 50%;
 }
-@media screen and (min-width: 750px) and (max-width:900px) {
+.scrollToTop:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+@media screen and (min-width: 750px) and (max-width: 900px) {
   .scrollToTop {
-    left: 95%;
+    left: 50%;
   }
 }
-@media screen and (min-width: 500px) and (max-width:750px) {
+@media screen and (min-width: 500px) and (max-width: 750px) {
   .scrollToTop {
-    left: 93%;
+    left: 50%;
   }
 }
 @media screen and (max-width: 500px) {
   .scrollToTop {
-    left: 88%;
+    left: 50%;
   }
 }

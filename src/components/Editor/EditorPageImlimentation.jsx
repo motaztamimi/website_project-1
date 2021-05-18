@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import EditorPage from './EditorPage';
 import '../../style/EditorPageImlimentation.css';
+import { dataBase } from '../../config/firebase.js';
 
 function EditorPageImlimentation() {
   const [first, setfirst] = useState('');
@@ -13,6 +14,18 @@ function EditorPageImlimentation() {
 
   const changeSelectOptionHandler = (event) => {
     setSelected(event.target.value);
+  };
+
+  const onSubmit = (e) => {
+    const toAdd = {};
+    toAdd[`${DropDownSecond}`] = { first, second, theird, fourth };
+
+    const collectionRef = dataBase.collection('Departments');
+    const department = collectionRef.doc(dropDownFirst);
+    department.update(toAdd).then(() => {
+      console.log('data updated');
+      window.location.reload();
+    });
   };
 
   const a = [
@@ -133,11 +146,19 @@ function EditorPageImlimentation() {
               ...DropDownSecond,
               document.getElementById('classInClass').value
             );
+            document.getElementById('four').style.display = 'none';
+            Array.from(
+              document.getElementsByClassName('finalStage')
+            )[0].style.display = 'flex';
             /////////////////////////////////////////////?
             //MUSTAFA
             ////////////////////////////
           }}
         />
+      </div>
+
+      <div className='finalStage' style={{ display: 'none' }}>
+        <input type='button' value='Submit' onClick={onSubmit} />
       </div>
     </div>
   );

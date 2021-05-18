@@ -13,16 +13,37 @@ import AdminEditEvents from './components/AdminEditEvents';
 import EditorPageImlimentation from './components/Editor/EditorPageImlimentation';
 import ListOfDep from './components/ListOfDep';
 import InsidePage3 from './components/InsidePage';
+import {Chatbot} from 'react-chatbot-kit'
+import config from './components/ChatBot/config';
+import MessageParser from './components/ChatBot/MessageParser';
+import ActionProvider from './components/ChatBot/ActionProvider';
+import AdminAddNews from './components/adminAddNews/AdminAddNews';
+import AllResearchs from './components/Research/AllResearchs';
 
+import ButtonBot from './components/ChatBot/BottonHomePage/BottonHomePage'
 function App() {
   return (
     <div className='App'>
       <Router>
         <Switch>
+        <Route exact path='/Chatbot'>
+           <Chatbot
+            config={config}
+            messageParser={MessageParser}
+            actionProvider={ActionProvider}
+           />
+          </Route>
           <Route exact path='/'>
             <Header />
             <HomePage />
             <Fotter />
+            <Chatbot
+            config={config}
+            messageParser={MessageParser}
+            actionProvider={ActionProvider}
+           />
+           <ButtonBot/>
+
           </Route>
           <Route exact path='/about'>
             <Header />
@@ -32,16 +53,33 @@ function App() {
           <Route exact path='/Admin'>
             <AdminLogin />
           </Route>
-          <Route exact path="/ביה''ח כפר שאול">
+          <Route exact path='/kfarShaol'>
             <Header />
-            <ListOfDep />
+            <ListOfDep departmentName='כפר שאול' />
             <Fotter />
           </Route>
-          <Route exact path="/ביה''ח כפר שאול/a">
+          <Route exact path='/Etanim'>
             <Header />
-            <InsidePage3 />
+            <ListOfDep departmentName='איתנים' />
             <Fotter />
           </Route>
+          <Route exact path='/sherotKhelate'>
+            <Header />
+            <ListOfDep departmentName='שירות קהילתי' />
+            <Fotter />
+          </Route>
+          <Route exact path='/kfarShaol/0'>
+            <Header />
+            <InsidePage3 department='כפר שאול' url='0' />
+            <Fotter />
+          </Route>
+
+          <Route exact path='/pdf'>
+            <Header />
+            <AllResearchs/>
+            <Fotter />
+          </Route>
+
           <ProtectedRoute
             exact
             path='/Admin/EditGallery'
@@ -51,6 +89,11 @@ function App() {
             exact
             path='/Admin/EditNews'
             component={AdminEditNews}
+          />
+          <ProtectedRoute
+            exact
+            path='/Admin/EditNews/AddNews'
+            component={AdminAddNews}
           />
           <ProtectedRoute
             exact

@@ -3,13 +3,23 @@
 import NewsCard from './NewsCard';
 import React from 'react';
 import '../style/News.css';
-
+import { useState } from 'react';
 const News = ({ News }) => {
+  let max = 0;
+  if (News.length >= 3) {
+    max = 3;
+  } else {
+    max = News.length;
+  }
+  function getNews() {
+    return News.slice(0, max);
+  }
+
   return (
     <section className='News'>
-      <h2>חדשות</h2>
+      <h2 id='m5'>חדשות</h2>
       <section className='NewsContainer'>
-        {News.map((news) => {
+        {getNews().map((news) => {
           return (
             <React.Fragment key={news.id + 100}>
               <NewsCard news={news} key={news.id} />

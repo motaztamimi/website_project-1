@@ -1,3 +1,5 @@
+/** @format */
+
 import useDataBase from '../hooks/useDataBase';
 import { dataBase } from '../config/firebase';
 import { motion } from 'framer-motion';

@@ -1,0 +1,51 @@
+/** @format */
+
+.mm {
+  width: 40px;
+  height: 40px;
+  background-color: cadetblue;
+  border-radius: 50%;
+  display: flex;
+  justify-items: right;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+.react-chatbot-kit-chat-container {
+  z-index: 4;
+  display: none;
+  width: 300px;
+  background-color: #fff;
+  animation-timing-function: linear;
+  animation: mymove 5s infinite;
+  position: fixed;
+
+  bottom: 80px;
+  overflow: initial;
+  pointer-events: all;
+  right: 50px;
+  transform: translate(0);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  animation-iteration-count: 1;
+  box-shadow: -1px 0 0 rgb(0 0 0 / 10%), -3px 0 9px rgb(0 0 0 / 15%);
+  box-sizing: border-box;
+  animation-duration: 1s;
+}
+@keyframes mymove {
+  from {
+    right: 0px;
+  }
+  to {
+    right: 50px;
+  }
+}
+.react-chatbot-kit-chat-bot-message {
+  margin-left: 0;
+  height: max-content;
+  background-color: #e8e8eb;
+  text-align: right;
+  color: black;
+}
+.imgg {
+  width: 250px;
+}

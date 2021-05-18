@@ -41,6 +41,9 @@
 }
 .cardBranchImg {
   border-radius: 5px;
+  box-shadow: -1px 0 0 rgb(0 0 0 / 10%), -3px 0 9px rgb(0 0 0 / 15%);
+  box-sizing: border-box;
+
   width: 250px;
   height: 250px;
 }
@@ -57,7 +60,8 @@
     width: 100%;
   }
   .cardBranchImg {
-    width: 80%;
+    width: 200px;
+    height: 200px;
   }
   .Branches {
     padding: 0;
@@ -67,6 +71,28 @@
   }
   .cardContainer h4 {
     display: flex;
+  }
+  .cardBranch:hover {
+    box-shadow: none;
+  }
+}
+@media screen and (max-width: 650px) {
+  .cardBranch {
+    width: 100%;
+  }
+  .cardBranchImg {
+    width: 85%;
+    height: 140px;
+  }
+  .Branches {
+    padding: 0;
+  }
+  .cardContainer {
+    padding: 0;
+  }
+  .cardContainer h4 {
+    display: flex;
+    font-size: 16px;
   }
   .cardBranch:hover {
     box-shadow: none;

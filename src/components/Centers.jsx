@@ -2,11 +2,14 @@
 import '../style/Centers.css';
 import Center from './Center';
 import { useState, useEffect } from 'react';
+import React from 'react';
 const Centers = ({ Cent }) => {
-  window.onchange = (e) => {
-    getCenter();
-  };
-
+  React.useEffect(() => {
+    function handleResize() {
+      window.location.reload();
+    }
+    window.addEventListener('resize', handleResize);
+  });
   const [Centerr, setCenteer] = useState({
     firstone: 1,
     secondone: 2,
@@ -14,14 +17,13 @@ const Centers = ({ Cent }) => {
   let cen = Cent;
   let first = Centerr.firstone;
   let second = Centerr.secondone;
-
   function getCenter() {
     cen = Cent;
     if (window.innerWidth < 800) {
       let lastindex;
 
-      lastindex = cen.filter((act) => act.id == Centerr.firstone);
-      let firstindexinlast = cen.filter((act) => act.id == Centerr.secondone);
+      lastindex = cen.filter((act) => act.id === Centerr.firstone);
+      let firstindexinlast = cen.filter((act) => act.id === Centerr.secondone);
 
       lastindex = [...lastindex, ...firstindexinlast];
 
@@ -29,6 +31,7 @@ const Centers = ({ Cent }) => {
     }
     return cen;
   }
+
   function plusCenter(n) {
     first = Centerr.firstone + n;
     second = Centerr.secondone + n;
@@ -49,7 +52,6 @@ const Centers = ({ Cent }) => {
 
     return n;
   }
-
   function minousCenter(n) {
     first = Centerr.firstone + n;
     second = Centerr.secondone + n;
@@ -65,8 +67,8 @@ const Centers = ({ Cent }) => {
   }
 
   return (
-    <section className='Center_Container'>
-      <h2> המרכז שלנו</h2>
+    <section id='m4' className='Center_Container'>
+      <h2 id='m14'> המרכז שלנו</h2>
       <section className='Center_row'>
         {getCenter().map((cen) => {
           return <Center key={cen.id} CENTER={cen} />;

@@ -1,5 +1,5 @@
 /** @format */
-
+import { Link } from 'react-router-dom';
 import { BsSearch } from 'react-icons/bs';
 import '../style/MobNav.css';
 
@@ -13,12 +13,24 @@ const MobNav = () => {
         </button>
       </div>
       <ul>
-        <li>מי-אנחנו</li>
-        <li>ביה-כפר-שאול</li>
-        <li>ביה''ח-איתנים</li>
-        <li>השירות-הקהילתי</li>
-        <li>מחקרים,ופעילות-אקדמית</li>
-        <li>רפואה,סיעוד,מינהל</li>
+      <li>
+          <Link to='/about'> מי-אנחנו</Link>
+        </li>
+        <li>
+          <a href="#m2">מחלקות</a>
+        </li>
+        <li>
+          <a href="#m3">נושאים</a>
+        </li>
+        <li>
+          <a className="m4" href="#m4">המרכזשלנו</a>
+        </li>
+        <li>
+          <a href="#m5">חדשות</a>
+        </li>
+        <li>
+          <a href="#m6">גלריה</a>
+        </li>
       </ul>
     </div>
   );

@@ -8,7 +8,11 @@ const AdminAddNews = () => {
   const [file, setFile] = useState(null);
   const [showDiv, setShowDiv] = useState(false);
   const history = useHistory();
-  const div = <div className='loading'>Uploading....</div>;
+  const div = (
+    <div className='loading'>
+      <div className='loader'></div>
+    </div>
+  );
   const [NewsTitle, SetNewsTitle] = useState('');
   const [NewsSubTitle, setNewsSubTitle] = useState('');
   const [NewsBody, setNewsBody] = useState('');

@@ -3,19 +3,14 @@
 import Event from './Event';
 import '../style/Events.css';
 
-const Events = ({ events }) => {
+const Events = ({ news }) => {
   return (
     <section className='EventsContainer'>
-      <h2>אירועים</h2>
       <section className='Events'>
-        {events.map((event) => {
-          return <Event key={event.id} event={event} />;
+        {news.map((newa) => {
+          return <Event key={newa.id} newss={newa} />;
         })}
       </section>
-      <a href='http://' target='_blank' rel='noopener noreferrer'>
-        {' '}
-        עוד אירועים{'   >'}
-      </a>
     </section>
   );
 };

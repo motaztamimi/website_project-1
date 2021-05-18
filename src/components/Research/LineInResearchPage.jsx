@@ -1,7 +1,6 @@
 import React from 'react';
 import '../../style/LineInResearchPage.css';
 
-
 function LineInResearchPage(props) {
   const showPdf = () => {
     console.log('the fuckis ' + props.url);

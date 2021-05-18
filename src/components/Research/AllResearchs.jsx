@@ -1,25 +1,22 @@
 import LineInResearchPage from './LineInResearchPage';
 import '../../style/AllResearchs.css';
 import useDataBase from '../../hooks/useDataBase';
+import { dataBase } from '../../config/firebase';
 
 function AllResearchs() {
-  var x = '';
-  const { Researches } = useDataBase('Researches');
+  const Researches = useDataBase('Researches');
 
   return (
     <div>
       <h1 id='title'>מחקרים</h1>
       <div className='container'>
         {Researches &&
-          Researches.map((item, index) => {
-            {
-              console.log(item);
-            }
+          Researches.docs.map((item) => {
             return (
               <LineInResearchPage
-                key={index}
-                name={'Researches'}
+                name={'dasda'}
                 url={item.fileUrl}
+                key={item.id}
               />
             );
           })}

@@ -1,7 +1,8 @@
 /** @format */
 
 .Event {
-  padding: 5px;
+  padding: 10px;
+  margin-top: 30px;
 }
 .Event:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -15,23 +16,21 @@
 }
 .eventImg {
   width: 100%;
+  object-fit: cover;
+  height: 300px;
 }
 
 .EventsContainer {
   display: flex;
   flex-direction: column;
   width: 100%;
-  direction: rtl;
 }
 
-.EventsContainer h2 {
-  text-align: center;
-}
-.Event h6 {
+.Event h2 {
   text-align: right;
-  margin-right: 10px;
-  font-size: 1.1rem;
-  color: #3f3f3f86;
+  font-size: 1.8rem;
+  direction: rtl;
+  margin-top: 30px;
 }
 
 .Event h5 {
@@ -49,7 +48,21 @@
   color: #1abc9c;
   font-size: 1.4rem;
 }
-
+.DeleteButton {
+  position: absolute;
+  font-size: 30px;
+  font-weight: 800;
+  width: 40px;
+  height: 40px;
+  opacity: 0.6;
+  background-color: red;
+  border: none;
+  border-radius: 5%;
+}
+.DeleteButton:hover {
+  opacity: 1;
+  cursor: pointer;
+}
 @media screen and (max-width: 1300px) {
   .Events {
     grid-template-columns: repeat(2, 1fr);

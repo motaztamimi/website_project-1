@@ -1,13 +1,23 @@
 /** @format */
 
 import React from 'react';
-const Event = ({ event }) => {
+const Event = ({ newss }) => {
+  const deletePhoto = () => {};
   return (
     <div className='Event'>
-      <h6>{event.date}</h6>
-      <img className='eventImg' src={event.img} alt='' />
-      <h3>{event.CardTitle}</h3>
-      <h5>{event.body}</h5>
+      <input
+        className='DeleteButton'
+        type='button'
+        value='X'
+        onClick={() => {
+          deletePhoto();
+        }}
+      />
+      <img className='eventImg' src={newss.NewsImage} alt='' />
+      <div>
+        <h2>{newss.NewsTitle}</h2>
+        <h5>{newss.NewsSubTitle}</h5>
+      </div>
     </div>
   );
 };

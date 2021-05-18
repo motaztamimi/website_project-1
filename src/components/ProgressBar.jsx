@@ -1,3 +1,5 @@
+/** @format */
+
 import useStorage from '../hooks/useStorage';
 import { useEffect } from 'react';
 

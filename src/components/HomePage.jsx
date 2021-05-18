@@ -9,12 +9,14 @@ import Information from './Information';
 import img1 from '../imges/newsimg1.jpg';
 import img2 from '../imges/newsimg2.jpg';
 import '../style/HomePage.css';
-
+import useDataBase from '../hooks/useDataBase';
 import Subjects from './Subjects';
 import Centers from './Centers';
 import Gallery from './Gallery';
 import Line from './Line';
+
 const HomePage = () => {
+  let Nmews = useDataBase('News');
   const subject = [
     {
       id: 1,
@@ -137,8 +139,7 @@ const HomePage = () => {
       CardTitle: 'firstone',
       CardSubtitle: 'first',
       date: '2thFeb',
-      body:
-        'הפלונטר והבחירות לנשיאות: האם יו"ר הכנסת לוין ייכנס לנעלי ריבלין? ',
+      body: 'הפלונטר והבחירות לנשיאות: האם יו"ר הכנסת לוין ייכנס לנעלי ריבלין? ',
       img: `${process.env.PUBLIC_URL}/imges/event1.jpg`,
     },
     {
@@ -170,25 +171,10 @@ const HomePage = () => {
         <Centers Cent={Center} />
         <Line />
 
-        <News News={news} />
+        <News News={Nmews.docs} />
 
         <Gallery />
       </section>
-
-      {/*  
-
-      <section className='MainSection'>
-        <section className='NewsAndEvents'>
-         
-          <Events events={events} />
-        </section>
-        <section className='Ads'>
-          <SideWidget photo={img1} />
-          <SideWidget photo={img2} />
-          <SideWidget photo={img1} />
-          <SideWidget photo={img2} />
-        </section>
-      </section> */}
     </>
   );
 };

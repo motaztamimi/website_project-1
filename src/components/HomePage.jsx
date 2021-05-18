@@ -1,13 +1,9 @@
 /** @format */
 
 import SlideShow from './SlideShow';
-import Events from './Events';
 import News from './News';
-import SideWidget from './SideWidget';
 
 import Information from './Information';
-import img1 from '../imges/newsimg1.jpg';
-import img2 from '../imges/newsimg2.jpg';
 import '../style/HomePage.css';
 import useDataBase from '../hooks/useDataBase';
 import Subjects from './Subjects';

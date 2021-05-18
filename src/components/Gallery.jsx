@@ -7,16 +7,16 @@ import '../style/Gallery.css';
 const gallery = () => {
   return (
     <div className="galleryContainer">
-      <h2> גלריה</h2>
+      <h2 id="m6"> גלריה</h2>
       <div className='gallery_row'>
         <div className='photo'>
-          <img src={img1} alt='Avatar' className='image1' />
+          <img src={img1} alt='Avatar'/>
           <div className='overlay'>
             <div className='text'>תמונות</div>
           </div>
         </div>
         <div className='video'>
-          <img src={img2} alt='Avatar' className='image1' />
+          <img src={img2} alt='Avatar'/>
           <div className='overlay'>
             <div className='text'>סרטונים</div>
           </div>

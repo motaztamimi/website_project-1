@@ -3,10 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 .gallery_row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
-  padding-left: 30px;
-  padding-right: 30px;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 10px;
+  padding-left: 20px;
+  padding-right:20px;
 }
 
 .galleryContainer {
@@ -31,13 +31,16 @@
   color: #263c4a !important;
 }
 
-.image1 {
-  display: block;
+.photo img{
   width: 100%;
   height: auto;
-  border-radius: 25px;
+  border-radius: 5px;
 }
-
+.video img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
 .photo {
   position: relative;
   width: 99%;
@@ -58,7 +61,7 @@
   width: 100%;
   height: 0;
   transition: 0.5s ease;
-  border-radius: 25px;
+  border-radius: 15px;
 }
 
 .photo:hover .overlay {
@@ -76,4 +79,52 @@
   font-family: 'Rubik', sans-serif;
   left: 40%;
   top: 10%;
+}
+@media screen and (max-width: 900px) {
+  .gallery_row {
+    grid-template-columns: repeat(1,1fr);
+  }
+  .photo {
+    width: 100%;
+  }
+  .video{
+    width: 100%;
+  }
+  .photo:hover .overlay {
+    height: 17%;
+  }
+  
+  .video:hover .overlay {
+    height: 17%;
+  }
+  .overlay {
+    border-radius: 5px;
+  }
+  .text {
+    font-size: 24px;
+      }
+}
+@media screen and (max-width: 500px) {
+  .gallery_row {
+    grid-template-columns: repeat(1,1fr);
+  }
+  .photo {
+    width: 100%;
+  }
+  .video{
+    width: 100%;
+  }
+  .photo:hover .overlay {
+    height: 25%;
+  }
+  
+  .video:hover .overlay {
+    height: 25%;
+  }
+  .overlay {
+    border-radius: 5px;
+  }
+  .text {
+font-size: 16px;
+  }
 }

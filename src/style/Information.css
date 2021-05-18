@@ -44,7 +44,7 @@
   color: #263c4a !important;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1250px) {
   .Information {
     flex-direction: column;
     padding: 0;
@@ -65,3 +65,4 @@
     text-align: center;
   }
 }
+

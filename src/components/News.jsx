@@ -18,7 +18,7 @@ const News = ({ News }) => {
 
   return (
     <section className='News'>
-      <h2>חדשות</h2>
+      <h2 id="m5">חדשות</h2>
       <section className='NewsContainer'>
         {getNews().map((news) => {
           return (

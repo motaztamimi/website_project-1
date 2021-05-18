@@ -13,9 +13,12 @@ import AdminEditEvents from './components/AdminEditEvents';
 import EditorPageImlimentation from './components/Editor/EditorPageImlimentation';
 import ListOfDep from './components/ListOfDep';
 import InsidePage3 from './components/InsidePage';
-
+import Photos from './components/Photos';
+import Videos from './components/Videos';
 function App() {
-  return (
+  
+  return ( 
+    
     <div className='App'>
       <Router>
         <Switch>
@@ -40,6 +43,16 @@ function App() {
           <Route exact path="/ביה''ח כפר שאול/a">
             <Header />
             <InsidePage3 />
+            <Fotter />
+          </Route>
+          <Route exact path="/gallery">
+            <Header />
+            <Photos/>
+            <Fotter />
+          </Route>
+          <Route exact path="/Videos">
+            <Header />
+            <Videos/>
             <Fotter />
           </Route>
           <ProtectedRoute

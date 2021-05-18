@@ -34,7 +34,7 @@
 .image1 {
   display: block;
   width: 100%;
-  height: auto;
+  /* height: auto; */
   border-radius: 25px;
 }
 
@@ -76,4 +76,31 @@
   font-family: 'Rubik', sans-serif;
   left: 40%;
   top: 10%;
+}
+@media screen and (max-width: 800px) {
+  /* .galleryContainer {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: 30px;
+  }
+  .galleryContainer h2 {
+    margin-bottom: 30px;
+    margin-right: 0;
+  } */
+  .gallery_row {
+    grid-template-columns: repeat(1, 1fr);
+    /* margin-right: 0;
+    width: 100%; */
+  }
+  /* .image1 {
+    width: 100%;
+  }
+  .photo img {
+    max-width: 150px;
+  }
+  .video img {
+    max-width: 150px;
+  } */
+
+
 }

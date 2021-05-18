@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useWindowScroll } from 'react-use';
 import '../style/ScrollToTop.css';
-import { Icon, InlineIcon } from '@iconify/react';
+import { Icon } from '@iconify/react';
 import chevronUp from '@iconify-icons/fa/chevron-up';
 const ScrollToTop = () => {
   const { y: pageYOffset } = useWindowScroll();

@@ -11,7 +11,7 @@ const Todos = (props) => {
         const moredata = data.slice(0, 6);
         setState((state) => ({ ...state, todos: moredata }));
       });
-  }, []);
+  }, [setState]);
   console.log(props.todos);
   const renderTodos = () => {
     return props.todos.map((todo) => {

@@ -35,22 +35,22 @@ const Fotter = () => {
 
             <ul className='footer_ul_amrc'>
               <li>
-                <a href='#'>חדשות</a>
+                <a href='blank'>חדשות</a>
               </li>
               <li>
-                <a href='#'>אירועים </a>
+                <a href='blank'>אירועים </a>
               </li>
               <li>
-                <a href='#'>צילומים </a>
+                <a href='blank'>צילומים </a>
               </li>
               <li>
-                <a href='#'>מכללה</a>
+                <a href='blank'>מכללה</a>
               </li>
               <li>
-                <a href='#'>הנדסה</a>
+                <a href='blank'>הנדסה</a>
               </li>
               <li>
-                <a href='#'>אני מועתז </a>
+                <a href='blank'>אני מועתז </a>
               </li>
             </ul>
           </div>
@@ -60,22 +60,22 @@ const Fotter = () => {
 
             <ul className='footer_ul_amrc'>
               <li>
-                <a href='#'>צילומים</a>
+                <a href='blank'>צילומים</a>
               </li>
               <li>
-                <a href='#'>צילומים </a>
+                <a href='blank'>צילומים </a>
               </li>
               <li>
-                <a href='#'>צילומים </a>
+                <a href='blank'>צילומים </a>
               </li>
               <li>
-                <a href='#'>צילומים</a>
+                <a href='blank'>צילומים</a>
               </li>
               <li>
-                <a href='#'>צילומים</a>
+                <a href='blank'>צילומים</a>
               </li>
               <li>
-                <a href='#'>צילומים</a>
+                <a href='blank'>צילומים</a>
               </li>
             </ul>
           </div>
@@ -89,50 +89,50 @@ const Fotter = () => {
       <div className='Down_Container'>
         <ul className='foote_bottom_ul_amrc'>
           <li>
-            <a href='#'>דף הבית</a>
+            <a href='blank'>דף הבית</a>
           </li>
           <li>
-            <a href='#'>ף הבית</a>
+            <a href='blank'>ף הבית</a>
           </li>
           <li>
-            <a href='#'>ף הבית</a>
+            <a href='blank'>ף הבית</a>
           </li>
           <li>
-            <a href='#'>ף הבית</a>
+            <a href='blank'>ף הבית</a>
           </li>
           <li>
-            <a href='#'>ף הבית</a>
+            <a href='blank'>ף הבית</a>
           </li>
           <li>
-            <a href='#'>ף הבית</a>
+            <a href='blank'>ף הבית</a>
           </li>
         </ul>
 
         <p className='text-center '>
-          מועתז תמימי | קובי ראית 2017<a href='#'>Samsung</a>
+          מועתז תמימי | קובי ראית 2017<a href='blank'>Samsung</a>
         </p>
 
         <ul className='social_footer_ul'>
           <li>
-            <a href='#'>
+            <a href='blank'>
               {' '}
               <i className='material-icons'>facebook</i>
             </a>
           </li>
           <li>
-            <a href='#'>
+            <a href='blank'>
               {' '}
               <i className='material-icons'>favorite</i>
             </a>
           </li>
           <li>
-            <a href='#'>
+            <a href='blank'>
               {' '}
               <i className='material-icons'>email</i>
             </a>
           </li>
           <li>
-            <a href='#'>
+            <a href='blank'>
               {' '}
               <i className='material-icons'>feedback</i>
             </a>

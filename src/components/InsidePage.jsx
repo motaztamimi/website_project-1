@@ -16,7 +16,7 @@ const InsidePage3 = ({ department, url }) => {
       const dep = item.data()['Deps'][url];
       setSec({ ...item.data()[dep] });
     });
-  }, []);
+  }, [department, url]);
 
   useEffect(() => {
     let manger = Array.from(document.getElementsByClassName('managers'))[0];

@@ -7,11 +7,11 @@ import img4 from '../imges/4.jpg';
 import img5 from '../imges/5.jpg';
 import img6 from '../imges/6.jpg';
 import img7 from '../imges/7.jpg';
-import img8 from '../imges/8.jpg';
 import '../style/SlideShow.css';
 
 import { useState, useEffect } from 'react';
-const SlideShow = (props) => {//this props is the array that we will get from the server. 
+const SlideShow = (props) => {
+  //this props is the array that we will get from the server.
   const [slidenum, setSlide] = useState(1);
   const [firstrender, setfirstrender] = useState(true);
   var photoArray = [];
@@ -24,11 +24,12 @@ const SlideShow = (props) => {//this props is the array that we will get from th
   photoArray.push(img6);
   photoArray.push(img7);
   //photoArray.push(img8);
-  if (photoArray.length % 2 == 1) {
+  if (photoArray.length % 2 === 1) {
     photoArray.push(photoArray[0]);
   }
   var res = [];
-  while (photoArray.length > 0) {//split the array into twos.
+  while (photoArray.length > 0) {
+    //split the array into twos.
     const chunk = photoArray.splice(0, 2);
     res.push(chunk);
   }
@@ -72,8 +73,6 @@ const SlideShow = (props) => {//this props is the array that we will get from th
           </div>
         );
       })}
-
-     
 
       <button className='prev' onClick={() => plusSlides(-1)}>
         &#10094;

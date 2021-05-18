@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from 'react';
 
 const useForm = (validate) => {
   const [values, setValue] = useState({
-    name: "",
-    email: "",
-    phoneNumber: "",
-    message: "",
+    name: '',
+    email: '',
+    phoneNumber: '',
+    message: '',
   });
 
   const [errors, setErrors] = useState({});

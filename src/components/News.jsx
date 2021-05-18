@@ -3,7 +3,6 @@
 import NewsCard from './NewsCard';
 import React from 'react';
 import '../style/News.css';
-import { useState } from 'react';
 const News = ({ News }) => {
   let max = 0;
   if (News.length >= 3) {

@@ -1,7 +1,6 @@
 import LineInResearchPage from './LineInResearchPage';
 import '../../style/AllResearchs.css';
 import useDataBase from '../../hooks/useDataBase';
-import { dataBase } from '../../config/firebase';
 
 function AllResearchs() {
   const Researches = useDataBase('Researches');

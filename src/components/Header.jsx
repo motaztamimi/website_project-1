@@ -1,6 +1,5 @@
 /** @format */
 
-import Nav from './Nav';
 import { BsSearch } from 'react-icons/bs';
 import MoblieHeader from './MobHeader';
 import '../style/Header.css';

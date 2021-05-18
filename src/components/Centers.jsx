@@ -1,7 +1,7 @@
 /** @format */
 import '../style/Centers.css';
 import Center from './Center';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import React from 'react';
 const Centers = ({ Cent }) => {
   React.useEffect(() => {

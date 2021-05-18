@@ -21,7 +21,8 @@ const Videos = () => {
                 width='600'
                 height='338'
                 frameBorder='0'
-                allowFullScreen></iframe>
+                allowFullScreen
+                title={index}></iframe>
             </div>
           </div>
         ))}

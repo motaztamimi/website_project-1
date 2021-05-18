@@ -19,12 +19,12 @@ const ListOfDep = ({ departmentName }) => {
       });
       setList(dataToSet);
     });
-  }, []);
+  }, [departmentName]);
 
   return (
     <section className='Maincontener'>
       <h1>{departmentName}</h1>
-      <img src={img1} />
+      <img src={img1} alt='' />
       <div className='titleText'>
         <p>מחלקות יחידות ושירותים בקמפוס {departmentName}</p>
       </div>

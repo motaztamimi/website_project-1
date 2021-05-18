@@ -30,11 +30,11 @@ const Photos = () => {
         {list.map((element, index) => (
           <div key={index}>
             <a className='lightbox' href={element.h}>
-              <img src={element.img} />
+              <img src={element.img} alt='' />
             </a>
             <div className='lightbox-target' id={element.id}>
-              <img src={element.img} />
-              <a className='lightbox-close' href='#'></a>
+              <img src={element.img} alt='' />
+              <a className='lightbox-close' href='/#'></a>
             </div>
           </div>
         ))}

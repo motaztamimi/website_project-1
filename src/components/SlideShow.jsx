@@ -65,7 +65,7 @@ const SlideShow = (props) => {
     <div className='slideShow-container'>
       {res.map(function (element, i) {
         return (
-          <div className='myslide'>
+          <div className='myslide' key={i}>
             <div>
               <img src={element[0]} alt='' />
               <img src={element[1]} alt='' />

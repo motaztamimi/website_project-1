@@ -18,6 +18,7 @@ import config from './components/ChatBot/config';
 import MessageParser from './components/ChatBot/MessageParser';
 import ActionProvider from './components/ChatBot/ActionProvider';
 import AdminAddNews from './components/adminAddNews/AdminAddNews';
+import AllResearchs from './components/Research/AllResearchs';
 
 import ButtonBot from './components/ChatBot/BottonHomePage/BottonHomePage'
 function App() {
@@ -72,6 +73,13 @@ function App() {
             <InsidePage3 department='כפר שאול' url='0' />
             <Fotter />
           </Route>
+
+          <Route exact path='/pdf'>
+            <Header />
+            <AllResearchs/>
+            <Fotter />
+          </Route>
+
           <ProtectedRoute
             exact
             path='/Admin/EditGallery'

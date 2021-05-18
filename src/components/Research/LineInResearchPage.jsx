@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../style/LineInResearchPage.css';
-import sample from './sample.pdf';
+
 
 function LineInResearchPage(props) {
   const showPdf = () => {

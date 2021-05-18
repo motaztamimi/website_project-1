@@ -21,8 +21,12 @@ import AdminAddNews from './components/adminAddNews/AdminAddNews';
 import AllResearchs from './components/Research/AllResearchs';
 
 import ButtonBot from './components/ChatBot/BottonHomePage/BottonHomePage'
+import Photos from './components/Photos';
+import Videos from './components/Videos';
 function App() {
-  return (
+  
+  return ( 
+    
     <div className='App'>
       <Router>
         <Switch>
@@ -80,6 +84,16 @@ function App() {
             <Fotter />
           </Route>
 
+          <Route exact path="/gallery">
+            <Header />
+            <Photos/>
+            <Fotter />
+          </Route>
+          <Route exact path="/Videos">
+            <Header />
+            <Videos/>
+            <Fotter />
+          </Route>
           <ProtectedRoute
             exact
             path='/Admin/EditGallery'

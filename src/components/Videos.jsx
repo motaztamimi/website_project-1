@@ -13,16 +13,14 @@ const Videos = () => {
     <div className='videos_gal'>
       <h1>גלריית סרטונים</h1>
       <div className='videos_cont'>
-        {videos_gallery.map((element) => (
-          <div class='video-container'>
-            <div class='responsive-video'>
+        {videos_gallery.map((element, index) => (
+          <div className='video-container' key={index}>
+            <div className='responsive-video'>
               <iframe
                 src={element}
                 width='600'
                 height='338'
-                frameborder='0'
-                webkitAllowFullScreen
-                mozallowfullscreen
+                frameBorder='0'
                 allowFullScreen></iframe>
             </div>
           </div>

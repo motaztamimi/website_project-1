@@ -12,35 +12,33 @@ import img7 from '../imges/7.jpg';
 import img8 from '../imges/8.jpg';
 
 const Photos = () => {
-  
   const list = [
-    { id: 1,img: img1 , h:"#1" },
-    { id: 2,img: img2 , h:"#2" },
-    { id: 3,img: img3 , h:"#3" },
-    { id: 4,img: img4, h:"#4"  },
-    { id: 5,img: img5, h:"#5" },
-    { id: 6,img: img6 , h:"#6" },
-    { id: 7,img: img7 , h:"#7" },
-    { id: 8,img: img8 , h:"#8" },
+    { id: 1, img: img1, h: '#1' },
+    { id: 2, img: img2, h: '#2' },
+    { id: 3, img: img3, h: '#3' },
+    { id: 4, img: img4, h: '#4' },
+    { id: 5, img: img5, h: '#5' },
+    { id: 6, img: img6, h: '#6' },
+    { id: 7, img: img7, h: '#7' },
+    { id: 8, img: img8, h: '#8' },
   ];
-  
+
   return (
-    <div className="photo_g">
-    <h1>גלריית תמונות</h1>
-    <div className="photos-gal">
-     
-      {list.map((element) => (
-        <div>
-          <a class='lightbox' href={element.h}>
-            <img src={element.img} />
-          </a>
-          <div class='lightbox-target' id={element.id}>
-            <img src={element.img} />
-            <a class='lightbox-close' href='#'></a>
+    <div className='photo_g'>
+      <h1>גלריית תמונות</h1>
+      <div className='photos-gal'>
+        {list.map((element, index) => (
+          <div key={index}>
+            <a className='lightbox' href={element.h}>
+              <img src={element.img} />
+            </a>
+            <div className='lightbox-target' id={element.id}>
+              <img src={element.img} />
+              <a className='lightbox-close' href='#'></a>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
     </div>
   );
 };

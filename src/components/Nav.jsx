@@ -6,22 +6,24 @@ const Nav = () => {
     <div className='NavBar'>
       <ul>
         <li>
-          <Link to='/about'> מי-אנחנו</Link>
+          <Link to='/AboutUs'> מי-אנחנו</Link>
         </li>
         <li>
-          <a href="#m2">מחלקות</a>
+          <a href='#m2'>מחלקות</a>
         </li>
         <li>
-          <a href="#m3">נושאים</a>
+          <a href='#m3'>נושאים</a>
         </li>
         <li>
-          <a className="m4" href="#m4">המרכזשלנו</a>
+          <a className='m4' href='#m4'>
+            המרכזשלנו
+          </a>
         </li>
         <li>
-          <a href="#m5">חדשות</a>
+          <a href='#m5'>חדשות</a>
         </li>
         <li>
-          <a href="#m6">גלריה</a>
+          <a href='#m6'>גלריה</a>
         </li>
       </ul>
     </div>

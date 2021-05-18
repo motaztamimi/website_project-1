@@ -1,9 +1,11 @@
+/** @format */
+
 import './App.css';
 import Fotter from './components/Fotter';
 import HomePage from './components/HomePage';
 import Header from './components/Header';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import About from './components/About';
+import AboutUs from './components/AboutUs/AboutUs';
 import AdminLogin from './components/AdminLogin';
 import ProtectedRoute from './components/ProtectedRoute';
 import AdminEditGallery from './components/AdminEditGallery';
@@ -13,41 +15,40 @@ import AdminEditEvents from './components/AdminEditEvents';
 import EditorPageImlimentation from './components/Editor/EditorPageImlimentation';
 import ListOfDep from './components/ListOfDep';
 import InsidePage3 from './components/InsidePage';
-import {Chatbot} from 'react-chatbot-kit'
+import { Chatbot } from 'react-chatbot-kit';
 import config from './components/ChatBot/config';
 import MessageParser from './components/ChatBot/MessageParser';
 import ActionProvider from './components/ChatBot/ActionProvider';
 import AdminAddNews from './components/adminAddNews/AdminAddNews';
 import AllResearchs from './components/Research/AllResearchs';
-
-import ButtonBot from './components/ChatBot/BottonHomePage/BottonHomePage'
+import ContactUsFormV1 from './components/ContactUsFormV1/ContactUsFormV1';
+import ButtonBot from './components/ChatBot/BottonHomePage/BottonHomePage';
 function App() {
   return (
     <div className='App'>
       <Router>
         <Switch>
-        <Route exact path='/Chatbot'>
-           <Chatbot
-            config={config}
-            messageParser={MessageParser}
-            actionProvider={ActionProvider}
-           />
+          <Route exact path='/Chatbot'>
+            <Chatbot
+              config={config}
+              messageParser={MessageParser}
+              actionProvider={ActionProvider}
+            />
           </Route>
           <Route exact path='/'>
             <Header />
             <HomePage />
             <Fotter />
             <Chatbot
-            config={config}
-            messageParser={MessageParser}
-            actionProvider={ActionProvider}
-           />
-           <ButtonBot/>
-
+              config={config}
+              messageParser={MessageParser}
+              actionProvider={ActionProvider}
+            />
+            <ButtonBot />
           </Route>
-          <Route exact path='/about'>
+          <Route exact path='/AboutUs'>
             <Header />
-            <About />
+            <AboutUs />
             <Fotter />
           </Route>
           <Route exact path='/Admin'>
@@ -76,7 +77,13 @@ function App() {
 
           <Route exact path='/pdf'>
             <Header />
-            <AllResearchs/>
+            <AllResearchs />
+            <Fotter />
+          </Route>
+
+          <Route exact path='/ContactUs'>
+            <Header />
+            <ContactUsFormV1 />
             <Fotter />
           </Route>
 

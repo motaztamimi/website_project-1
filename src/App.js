@@ -5,7 +5,7 @@ import Fotter from './components/Fotter';
 import HomePage from './components/HomePage';
 import Header from './components/Header';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import About from './components/About';
+import AboutUs from './components/AboutUs/AboutUs';
 import AdminLogin from './components/AdminLogin';
 import ProtectedRoute from './components/ProtectedRoute';
 import AdminEditGallery from './components/AdminEditGallery';
@@ -46,9 +46,9 @@ function App() {
             />
             <ButtonBot />
           </Route>
-          <Route exact path='/about'>
+          <Route exact path='/AboutUs'>
             <Header />
-            <About />
+            <AboutUs />
             <Fotter />
           </Route>
           <Route exact path='/Admin'>

@@ -1,7 +1,10 @@
 /** @format */
 
+import { useHistory } from 'react-router-dom';
+
 import '../style/ContactUs.css';
 const ContactUs = ({ details }) => {
+  const history = useHistory();
   return (
     <div className='contactUS'>
       <h5> מוקד זימון תורים</h5>
@@ -35,7 +38,10 @@ const ContactUs = ({ details }) => {
           href='button'
           name='BureauButton'
           target='_blank'
-          title='יחידות קבלת קהל'>
+          title='יחידות קבלת קהל'
+          onClick={() => {
+            history.push('/ContactUs');
+          }}>
           <div>
             <span>יחידות קבלת קהל</span>
           </div>

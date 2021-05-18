@@ -13,6 +13,10 @@
       height: 70%;
     }
   }
+  .MobNav a{
+    text-decoration: none;
+    color: white;
+  }
   .MobNav {
     display: none;
     position: absolute;

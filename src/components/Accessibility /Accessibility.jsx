@@ -54,10 +54,24 @@ function Accessibility() {
 
   return (
     <div>
-      <button onClick={increaseFont}>increase Font</button>
-      <button onClick={originalFont}>original Font </button>
-      <button onClick={decreaseFont}>decrease Font</button>
-      <button onClick={invertColor}>invert color</button>
+      <div className='triangle'>
+        <div className='up'>
+          <a className='circle' onClick={decreaseFont}>
+            <span> א -</span>
+          </a>
+          <a className='circle' onClick={originalFont}>
+            <span> א</span>
+          </a>
+          <a className='circle' onClick={increaseFont}>
+            <span> א + </span>
+          </a>
+        </div>
+        <div className='down circle'>
+          <a onClick={invertColor}>
+            <span>עוורי צבעים</span>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

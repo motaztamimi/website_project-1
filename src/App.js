@@ -25,9 +25,11 @@ import ContactUsFormV1 from "./components/ContactUsFormV1/ContactUsFormV1";
 import ButtonBot from "./components/ChatBot/BottonHomePage/BottonHomePage";
 import Photos from "./components/Photos";
 import Videos from "./components/Videos";
+import Accessibility from "./components/Accessibility /Accessibility";
 function App() {
   return (
     <div className='App'>
+      <Accessibility/>
       <Router>
         <Switch>
           <Route exact path='/Chatbot'>

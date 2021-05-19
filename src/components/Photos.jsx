@@ -1,3 +1,5 @@
+/** @format */
+
 import React from 'react';
 
 import '../style/Photos.css';
@@ -7,7 +9,7 @@ import img2 from '../imges/2.jpg';
 import img3 from '../imges/3.jpg';
 import img4 from '../imges/4.jpg';
 import img5 from '../imges/5.jpg';
-import img6 from '../imges/6.jpg';
+import img6 from '../imges/OIP.jpg';
 import img7 from '../imges/7.jpg';
 import img8 from '../imges/8.jpg';
 
@@ -28,7 +30,7 @@ const Photos = () => {
       <h1>גלריית תמונות</h1>
       <div className='photos-gal'>
         {list.map((element, index) => (
-          <div key={index}>
+          <div className='Photosbox' key={index}>
             <a className='lightbox' href={element.h}>
               <img src={element.img} alt='' />
             </a>

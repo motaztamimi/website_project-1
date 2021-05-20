@@ -2,7 +2,7 @@
 
 import location from '../imges/Location.png';
 import '../style/Fotter.css';
-import logo from '../imges/Logo3.jpg';
+import logo from '../imges/LOGOx.png'
 
 const Fotter = () => {
   return (

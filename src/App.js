@@ -2,7 +2,9 @@
 
 import './App.css';
 import Fotter from './components/Fotter';
+
 import HomePage from './components/HomePage';
+import Googlemap from './components/GoogleMap/Googlemap';
 import Header from './components/Header';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AboutUs from './components/AboutUs/AboutUs';
@@ -93,6 +95,9 @@ function App() {
             <Header />
             <Photos />
             <Fotter />
+          </Route>
+          <Route exact path='/map'>
+            <Googlemap />
           </Route>
           <Route exact path='/Videos'>
             <Header />

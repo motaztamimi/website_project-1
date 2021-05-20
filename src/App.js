@@ -27,6 +27,7 @@ import ContactUsFormV1 from './components/ContactUsFormV1/ContactUsFormV1';
 import ButtonBot from './components/ChatBot/BottonHomePage/BottonHomePage';
 import Photos from './components/Photos';
 import Videos from './components/Videos';
+import AllNewsPage from './components/AllNewsPage/AllNewsPage';
 function App() {
   return (
     <div className='App'>
@@ -102,6 +103,12 @@ function App() {
           <Route exact path='/Videos'>
             <Header />
             <Videos />
+            <Fotter />
+          </Route>
+
+          <Route exact path='/NewsList'>
+            <Header />
+            <AllNewsPage />
             <Fotter />
           </Route>
           <ProtectedRoute

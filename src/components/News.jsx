@@ -2,8 +2,11 @@
 
 import NewsCard from './NewsCard';
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import '../style/News.css';
-const News = ({ News }) => {
+const News = ({ News, howmany }) => {
+  let history = useHistory();
   let max = 0;
   if (News.length >= 3) {
     max = 3;
@@ -11,7 +14,11 @@ const News = ({ News }) => {
     max = News.length;
   }
   function getNews() {
-    return News.slice(0, max);
+    if (howmany) {
+      return News.slice(0, max);
+    } else {
+      return News;
+    }
   }
 
   return (
@@ -26,10 +33,12 @@ const News = ({ News }) => {
             </React.Fragment>
           );
         })}
-        <a href='http://' target='_blank' rel='noopener noreferrer'>
-          {' '}
-          עוד חדשות{'   >'}
-        </a>
+        {howmany && (
+          <a href='/NewsList' id='moreNews'>
+            {' '}
+            עוד חדשות{'   >'}
+          </a>
+        )}
       </section>
     </section>
   );

@@ -2,7 +2,11 @@
 
 import './App.css';
 import Fotter from './components/Fotter';
+
 import HomePage from './components/HomePage';
+import NewsPagebyid from './components/NewsPagebyid/NewsPagebyid';
+import Googlemap from './components/GoogleMap/Googlemap';
+
 import Header from './components/Header';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AboutUs from './components/AboutUs/AboutUs';
@@ -25,6 +29,7 @@ import ContactUsFormV1 from './components/ContactUsFormV1/ContactUsFormV1';
 import ButtonBot from './components/ChatBot/BottonHomePage/BottonHomePage';
 import Photos from './components/Photos';
 import Videos from './components/Videos';
+import AllNewsPage from './components/AllNewsPage/AllNewsPage';
 function App() {
   return (
     <div className='App'>
@@ -119,14 +124,29 @@ function App() {
             <Fotter />
           </Route>
 
-          <Route exact path='/gallery'>
+          <Route exact path='/Gallery'>
             <Header />
             <Photos />
             <Fotter />
           </Route>
+          <Route exact path='/map'>
+            <Googlemap />
+          </Route>
           <Route exact path='/Videos'>
             <Header />
             <Videos />
+            <Fotter />
+          </Route>
+
+          <Route exact path='/NewsList'>
+            <Header />
+            <AllNewsPage />
+            <Fotter />
+          </Route>
+
+          <Route exact path='/News/:id'>
+            <Header />
+            <NewsPagebyid />
             <Fotter />
           </Route>
           <ProtectedRoute

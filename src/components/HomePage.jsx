@@ -122,7 +122,7 @@ const HomePage = () => {
         <Line />
         <Centers Cent={Center} />
         <Line />
-        <News News={Nmews.docs} />
+        <News News={Nmews.docs} howmany={true} />
         <Gallery />
         <ScrollToTop />
       </section>

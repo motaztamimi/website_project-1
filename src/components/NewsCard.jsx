@@ -1,8 +1,14 @@
 /** @format */
+import { useHistory } from 'react-router-dom';
 
 const NewsCard = ({ news }) => {
+  let history = useHistory();
   return (
-    <div className='NewsCard'>
+    <div
+      className='NewsCard'
+      onClick={() => {
+        history.push(`News/${news.id}`);
+      }}>
       <div className='CardImg'>
         <img className='NewsCardimg' src={news.NewsImage} alt='' />
       </div>

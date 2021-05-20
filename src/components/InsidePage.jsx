@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../style/InsidePage.css';
 import { dataBase } from '../config/firebase';
+import DoctorSlid from './DoctorSlid'
 const InsidePage3 = ({ department, url }) => {
   const [sec, setSec] = useState({
     first: '',
@@ -31,7 +32,10 @@ const InsidePage3 = ({ department, url }) => {
     contact.innerHTML = '<h1>צור קשר</h1>' + sec['theird'];
   }, [sec]);
   return (
+  <div>
+  <DoctorSlid/>
     <section className='page003'>
+      
       <div className='titlePage'>
         <h1>מחלקה פעילה (סגורה) א'</h1>
       </div>
@@ -48,6 +52,7 @@ const InsidePage3 = ({ department, url }) => {
         </div>
       </div>
     </section>
+    </div>
   );
 };
 

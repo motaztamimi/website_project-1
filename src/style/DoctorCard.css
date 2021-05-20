@@ -1,0 +1,19 @@
+.one-card img{
+width: 100%;
+height: 250px;
+}
+.one-card {
+    box-shadow: 0 8px 16px 0 rgba(69, 1, 255, 0.2);
+    transition: 0.3s;
+    height: 350px;
+  }
+  
+  .one-card:hover {
+    background-color: rgba(189, 184, 184, 0.8);
+  }
+  
+  .card-container {
+    /* padding: 2px 16px; */
+    padding-bottom: 2px;
+    text-align: center;
+  }

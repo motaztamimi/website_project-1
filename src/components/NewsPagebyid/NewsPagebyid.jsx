@@ -1,14 +1,29 @@
 /** @format */
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { dataBase } from '../../config/firebase';
 import useDataBase from '../../hooks/useDataBase';
 const NewsPagebyid = () => {
-  let Nmews = useDataBase('News');
-
+  const qq = useDataBase('Research');
+  console.log(qq);
+  const collectionRef = dataBase.collection('News');
+  const [news, setnews] = useState(undefined);
   const currentURL = window.location.href;
   let resa = currentURL.split('/');
-  let newq = Nmews.docs.filter((neq) => neq.id === resa[4]);
-  return <div>{currentURL} </div>;
+  useEffect(() => {
+    collectionRef
+      .doc(resa[4])
+      .get()
+      .then((item) => {
+        setnews(item.data());
+        console.log(item.data());
+      });
+  }, []);
+  return (
+    <div className='NewsPageContainerId'>
+      <h2>{news && news.NewsTitle}</h2>
+    </div>
+  );
 };
 
 export default NewsPagebyid;

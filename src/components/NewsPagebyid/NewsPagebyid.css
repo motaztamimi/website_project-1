@@ -1,0 +1,9 @@
+/** @format */
+
+.NewsPageContainerId {
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 58%;
+  display: flex;
+  flex-direction: column;
+}

@@ -2,7 +2,6 @@
 
 import NewsCard from './NewsCard';
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import '../style/News.css';
 const News = ({ News, howmany }) => {

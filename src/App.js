@@ -4,6 +4,7 @@ import './App.css';
 import Fotter from './components/Fotter';
 
 import HomePage from './components/HomePage';
+import NewsPagebyid from './components/NewsPagebyid/NewsPagebyid';
 import Googlemap from './components/GoogleMap/Googlemap';
 import Header from './components/Header';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -109,6 +110,12 @@ function App() {
           <Route exact path='/NewsList'>
             <Header />
             <AllNewsPage />
+            <Fotter />
+          </Route>
+
+          <Route exact path='/News/:id'>
+            <Header />
+            <NewsPagebyid />
             <Fotter />
           </Route>
           <ProtectedRoute

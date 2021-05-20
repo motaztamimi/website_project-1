@@ -13,42 +13,41 @@ const AdminAddResearch = () => {
       <div className='loader'></div>
     </div>
   );
-  const [NewsTitle, SetNewsTitle] = useState('');
-  const [NewsSubTitle, setNewsSubTitle] = useState('');
-  const [NewsBody, setNewsBody] = useState('');
+  const [ResearchName, SetResearchName] = useState('');
+
   const [error, setError] = useState(null);
-  const types = ['image/png', 'image/jpeg', 'img/jpg'];
-  const collectionRef = dataBase.collection('News');
+  const types = ['file/pdf'];
+  const collectionRef = dataBase.collection('Researches');
   const onFileChange = (e) => {
     let selected = e.target.files[0];
-    if (selected && types.includes(selected.type)) {
+
+    // && types.includes(selected.type)
+    if (selected) {
       setFile(selected);
+
       setError('');
     } else {
       setFile(null);
-      setError('Please Select an image file (png , jpeg or jpg)');
+      setError('Please Select a pdf file');
     }
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const storageRef = storage.ref(`News/${file.name}`);
+    const storageRef = storage.ref(`Researches/${file.name}`);
     let url;
     setShowDiv(true);
     storageRef.put(file).then((snapshot) => {
       storageRef.getDownloadURL().then((data) => {
         url = data;
-
         collectionRef
           .add({
-            NewsImage: url,
-            NewsTitle: NewsTitle,
-            NewsSubTitle: NewsSubTitle,
-            NewsBody: NewsBody,
+            fileUrl: url,
+            name: ResearchName,
             createdAt: timestamp(),
           })
           .then((value) => {
-            history.push('/Admin/EditNews');
+            history.push('/Admin/AdminResearch');
           });
       });
     });
@@ -58,35 +57,19 @@ const AdminAddResearch = () => {
     <div className='AddNewsPage'>
       {showDiv && div}
       <form className='AddNewsForm' onSubmit={onSubmit}>
-        <label>תמונת החדשות</label>
+        <label>המחקר כ pdf</label>
         <input type='file' onChange={onFileChange} required />
 
-        <label>כתורת החדשות</label>
+        <label>כתורת המחקר</label>
         <input
           type='text'
-          placeholder='נא להכניס כתורת החדשות'
+          placeholder='נא להכניס כתורת המחקר'
           onChange={(e) => {
-            SetNewsTitle(e.target.value);
+            SetResearchName(e.target.value);
           }}
           required
         />
-        <label> כתורת משנית לחדשות</label>
-        <input
-          type='text'
-          placeholder='נא להכניס כתורת'
-          onChange={(e) => {
-            setNewsSubTitle(e.target.value);
-          }}
-          required
-        />
-        <label> גוף החדשות</label>
-        <textarea
-          cols='30'
-          rows='10'
-          onChange={(e) => {
-            setNewsBody(e.target.value);
-          }}
-          required></textarea>
+
         <input className='SubmitButton' type='submit' value='submit' />
       </form>
     </div>

@@ -13,7 +13,7 @@ function AllResearchs() {
           Researches.docs.map((item) => {
             return (
               <LineInResearchPage
-                name={'dasda'}
+                name={item.name}
                 url={item.fileUrl}
                 key={item.id}
               />

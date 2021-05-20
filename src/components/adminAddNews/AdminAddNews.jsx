@@ -21,6 +21,7 @@ const AdminAddNews = () => {
   const collectionRef = dataBase.collection('News');
   const onFileChange = (e) => {
     let selected = e.target.files[0];
+
     if (selected && types.includes(selected.type)) {
       setFile(selected);
       setError('');

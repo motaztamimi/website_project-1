@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../style/InsidePage.css';
 import { dataBase } from '../config/firebase';
-import DoctorSlid from './DoctorSlid'
 const InsidePage3 = ({ department, url }) => {
   const [sec, setSec] = useState({
     first: '',
@@ -34,26 +33,24 @@ const InsidePage3 = ({ department, url }) => {
     contact.innerHTML = '<h1>צור קשר</h1>' + sec['theird'];
   }, [sec]);
   return (
-  <div>
-  <DoctorSlid/>
-    <section className='page003'>
-      
-      <div className='titlePage'>
-        <h1>{header}</h1>
-      </div>
-      <div className='page002'>
-        <div className='sidePage'>
-          <div className='managers'></div>
-          <div className='contact'>
-            <p>מספרי הטלפון הציבורי במחלקה: 02-6551530, 02-6551531</p>
+    <div>
+      <section className='page003'>
+        <div className='titlePage'>
+          <h1>{header}</h1>
+        </div>
+        <div className='page002'>
+          <div className='sidePage'>
+            <div className='managers'></div>
+            <div className='contact'>
+              <p>מספרי הטלפון הציבורי במחלקה: 02-6551530, 02-6551531</p>
+            </div>
+            <div className='workingDays'></div>
           </div>
-          <div className='workingDays'></div>
+          <div className='fewWords'>
+            <p className='ql-align-right'>&nbsp;</p>
+          </div>
         </div>
-        <div className='fewWords'>
-          <p className='ql-align-right'>&nbsp;</p>
-        </div>
-      </div>
-    </section>
+      </section>
     </div>
   );
 };

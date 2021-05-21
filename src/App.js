@@ -79,6 +79,36 @@ function App() {
             <InsidePage3 department='כפר שאול' url='0' />
             <Fotter />
           </Route>
+          <Route exact path='/kfarShaol/1'>
+            <Header />
+            <InsidePage3 department='כפר שאול' url='1' />
+            <Fotter />
+          </Route>
+          <Route exact path='/kfarShaol/2'>
+            <Header />
+            <InsidePage3 department='כפר שאול' url='2' />
+            <Fotter />
+          </Route>
+          <Route exact path='/kfarShaol/3'>
+            <Header />
+            <InsidePage3 department='כפר שאול' url='3' />
+            <Fotter />
+          </Route>
+          <Route exact path='/kfarShaol/4'>
+            <Header />
+            <InsidePage3 department='כפר שאול' url='4' />
+            <Fotter />
+          </Route>
+          <Route exact path='/kfarShaol/5'>
+            <Header />
+            <InsidePage3 department='כפר שאול' url='5' />
+            <Fotter />
+          </Route>
+          <Route exact path='/kfarShaol/6'>
+            <Header />
+            <InsidePage3 department='כפר שאול' url='6' />
+            <Fotter />
+          </Route>
 
           <Route exact path='/pdf'>
             <Header />

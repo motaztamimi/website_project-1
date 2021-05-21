@@ -9,6 +9,7 @@ const InsidePage3 = ({ department, url }) => {
     second: '',
     theird: '',
   });
+  const [header, setHeder] = useState('');
   useEffect(() => {
     const collectionRef = dataBase.collection('Departments');
     const doc = collectionRef.doc(department);
@@ -16,6 +17,7 @@ const InsidePage3 = ({ department, url }) => {
     doc.get().then((item) => {
       const dep = item.data()['Deps'][url];
       setSec({ ...item.data()[dep] });
+      setHeder(dep);
     });
   }, [department, url]);
 
@@ -37,7 +39,7 @@ const InsidePage3 = ({ department, url }) => {
     <section className='page003'>
       
       <div className='titlePage'>
-        <h1>מחלקה פעילה (סגורה) א'</h1>
+        <h1>{header}</h1>
       </div>
       <div className='page002'>
         <div className='sidePage'>

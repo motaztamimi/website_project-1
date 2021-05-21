@@ -1,6 +1,14 @@
 /** @format */
 
 .map {
-  margin: 0 auto;
+  width: max-content;
+  height: max-content;
   background-color: aquamarine;
+}
+.Mapdiv {
+  position: absolute;
+
+  background-color: beige;
+  height: max-content;
+  width: max-content;
 }

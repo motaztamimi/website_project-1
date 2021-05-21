@@ -25,6 +25,9 @@ import ContactUsFormV1 from "./components/ContactUsFormV1/ContactUsFormV1";
 import ButtonBot from "./components/ChatBot/BottonHomePage/BottonHomePage";
 import Photos from "./components/Photos";
 import Videos from "./components/Videos";
+import AdminEditDoctors from "./components/AdminEditDoctors";
+import AddDoctors from "./components/AdminAddDoctors/AddDoctors"
+
 function App() {
   return (
     <div className='App'>
@@ -128,6 +131,16 @@ function App() {
             exact
             path='/Admin/EditPages'
             component={EditorPageImlimentation}
+          />
+          <ProtectedRoute
+            exact
+            path='/Admin/AdminEditDoctors'
+            component={AdminEditDoctors}
+          />
+          <ProtectedRoute
+            exact
+            path='/Admin/AdminAddDoctors/AddDoctors'
+            component={AddDoctors}
           />
         </Switch>
       </Router>

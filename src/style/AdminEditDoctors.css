@@ -1,0 +1,116 @@
+/** @format */
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://use.typekit.net/lfw8lae.css');
+.AddDoctorsButton {
+  background-color: #285c7e !important ;
+  color: white;
+  width: 200px;
+  font-size: 1.3rem;
+  margin-top: 50px;
+  padding: 5px;
+  height: 40px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+}
+.AddDoctorsButtonDiv {
+  text-align: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 200px;
+}
+.ContentContainer {
+  width: 100%;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+}
+.Dcard {
+  width: 100%;
+  border: 1px;
+  border-style: solid;
+}
+.Dcard img {
+  width: 300px;
+}
+
+.DoctorsDiv {
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+
+  float: right;
+
+  width: 60%;
+  padding-right: 30px;
+  margin-top: 10px;
+  margin-bottom: 70px;
+}
+.DCARD {
+  text-align: unset;
+  display: flex;
+  width: 100%;
+
+  direction: rtl;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.DCARD h1 {
+  font-family: 'rubik', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-align: right;
+  font-size: 30px;
+
+  line-height: normal;
+
+  color: #285c7e;
+  margin: 10px;
+}
+
+.DCARD img {
+  width: 300px;
+}
+.DCARD h3 {
+  font-family: 'rubik', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #272727;
+  text-align: right;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 10px;
+}
+.DContent {
+  width: 100%;
+  padding-top: 30px;
+}
+.x {
+  position: relative;
+  font-size: 30px;
+  font-weight: 800;
+  width: 40px;
+  height: 40px;
+  opacity: 0.6;
+  right: 0;
+  background-color: red;
+  border: none;
+  border-radius: 5%;
+}
+.x:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+.MoreDoctorsButton {
+  background-color: #285c7e !important ;
+  color: white;
+  justify-items: right;
+  justify-content: right;
+  font-size: 1.3rem;
+  margin-right: 20px;
+  margin-bottom: 40px;
+  width: 200px;
+  border-radius: 10px;
+}

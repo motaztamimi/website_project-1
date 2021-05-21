@@ -25,7 +25,7 @@ const DoctorSlid = () => {
     <div className="DoctorSlid">
     <Swiper
       spaceBetween={20}
-      slidesPerView={3}
+      slidesPerView={4}
       navigation
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}>

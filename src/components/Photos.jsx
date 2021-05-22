@@ -9,7 +9,6 @@ const Photos = () => {
 
   return (
     <div className='GalleryPhotos'>
-      <PreveiwMode photo={list.docs[0].url} />
       {list.docs.map((item) => {
         return (
           <div className='GalleryImg'>

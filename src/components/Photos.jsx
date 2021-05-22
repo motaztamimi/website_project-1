@@ -1,3 +1,5 @@
+/** @format */
+
 import '../style/Photos.css';
 import useDataBase from '../hooks/useDataBase';
 import PreveiwMode from './preveiwMode/PreveiwMode';
@@ -7,6 +9,7 @@ const Photos = () => {
 
   return (
     <div className='GalleryPhotos'>
+      <PreveiwMode photo={list.docs[0].url} />
       {list.docs.map((item) => {
         return (
           <div className='GalleryImg'>

@@ -45,7 +45,7 @@ const ListOfDep = ({ departmentName }) => {
           }}
           id='HowWeCanComeButton'>
           {' '}
-          ?איך מגיעים
+          איך מגיעים
         </button>
       </div>
     </section>

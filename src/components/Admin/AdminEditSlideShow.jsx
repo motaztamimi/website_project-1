@@ -29,16 +29,20 @@ const AdminSlideShow = () => {
     if (file) {
       const storageRef = storage.ref(`${selectedValue}/slideShow/${file.name}`);
       let docs;
-      if (selectedValue == 'kfarShaol') {
+      let collectionRef;
+      if (selectedValue === 'kfarShaol') {
         docs = 'כפר שאול';
-      } else if (selectedValue == 'SherotKhelate') {
+        collectionRef = dataBase.collection(`Departments/${docs}/slideShow`);
+      } else if (selectedValue === 'SherotKhelate') {
         docs = 'שירות קהילתי';
+        collectionRef = dataBase.collection(`Departments/${docs}/slideShow`);
+      } else if (selectedValue === 'HomePage') {
+        collectionRef = dataBase.collection('HomePage/photos/slideShow');
       } else {
         docs = 'איתנים';
+        collectionRef = dataBase.collection(`Departments/${docs}/slideShow`);
       }
-      const collectionRef = dataBase.collection(
-        `Departments/${docs}/slideShow`
-      );
+
       setShowDiv(true);
       storageRef.put(file).then((snapshot) => {
         storageRef.getDownloadURL().then((value) => {
@@ -72,8 +76,10 @@ const AdminSlideShow = () => {
               setCollectionToSend(`Departments/כפר שאול/slideShow`);
             } else if (e.target.value === 'Etanim') {
               setCollectionToSend('Departments/איתנים/slideShow');
+            } else if (e.target.value === 'HomePage') {
+              setCollectionToSend('HomePage/photos/slideShow');
             } else {
-              setCollectionToSend('Departments/שירות קהלתי/sildeShow');
+              setCollectionToSend('Departments/שירות קהילתי/slideShow');
             }
           }}>
           <option value='kfarShaol' defaultValue>
@@ -81,6 +87,7 @@ const AdminSlideShow = () => {
           </option>
           <option value='SherotKhelate'>{'שירות קהילתי'} </option>
           <option value='Etanim'>{'איתנים'} </option>
+          <option value='HomePage'>{'דף הבית'} </option>
         </select>
         <input
           type='file'

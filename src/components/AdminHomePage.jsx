@@ -51,6 +51,12 @@ const AdminHomePage = () => {
             <h3>עריכת מחלקות </h3>
           </Link>
         </div>
+        <div className='AdminHomePageOp'>
+          <Link to='/Admin/AdminEditDoctors'>
+            <BiNews size='150px'></BiNews>
+            <h3>רופאים</h3>
+          </Link>
+        </div>
       </section>
     </div>
   );

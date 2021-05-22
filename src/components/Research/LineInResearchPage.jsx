@@ -19,11 +19,11 @@ function LineInResearchPage(props) {
   return (
     <div>
       <div className='theLine'>
-        <div className=" col-9">
-        <div className='hebrewText'>{props.name}</div>
+        <div className=' col-9 hebrwTextDiv'>
+          <div className='hebrewText'>{props.name}</div>
         </div>
-      
-        <div className=' allButtons col-3'>
+
+        <div className='allButtons col-3'>
           <button className='button ' onClick={printPdf}>
             <span> הדפס</span>
           </button>
@@ -36,7 +36,6 @@ function LineInResearchPage(props) {
             <span> הצג</span>
           </button>
         </div>
-       
       </div>
     </div>
 

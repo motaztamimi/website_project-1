@@ -122,6 +122,91 @@ function App() {
             <Fotter />
           </Route>
 
+          <Route exact path='/Etanim/0'>
+            <Header />
+            <InsidePage3 department='איתנים' url='0' />
+            <Fotter />
+          </Route>
+          <Route exact path='/Etanim/1'>
+            <Header />
+            <InsidePage3 department='איתנים' url='1' />
+            <Fotter />
+          </Route>
+          <Route exact path='/Etanim/2'>
+            <Header />
+            <InsidePage3 department='איתנים' url='2' />
+            <Fotter />
+          </Route>
+          <Route exact path='/Etanim/3'>
+            <Header />
+            <InsidePage3 department='איתנים' url='3' />
+            <Fotter />
+          </Route>
+          <Route exact path='/Etanim/4'>
+            <Header />
+            <InsidePage3 department='איתנים' url='4' />
+            <Fotter />
+          </Route>
+          <Route exact path='/Etanim/5'>
+            <Header />
+            <InsidePage3 department='איתנים' url='5' />
+            <Fotter />
+          </Route>
+          <Route exact path='/Etanim/6'>
+            <Header />
+            <InsidePage3 department='איתנים' url='6' />
+            <Fotter />
+          </Route>
+          <Route exact path='/sherotKhelate/0'>
+            <Header />
+            <InsidePage3 department='שירות קהילתי' url='0' />
+            <Fotter />
+          </Route>
+          <Route exact path='/sherotKhelate/1'>
+            <Header />
+            <InsidePage3 department='שירות קהילתי' url='1' />
+            <Fotter />
+          </Route>
+          <Route exact path='/sherotKhelate/2'>
+            <Header />
+            <InsidePage3 department='שירות קהילתי' url='2' />
+            <Fotter />
+          </Route>
+          <Route exact path='/sherotKhelate/3'>
+            <Header />
+            <InsidePage3 department='שירות קהילתי' url='3' />
+            <Fotter />
+          </Route>
+          <Route exact path='/sherotKhelate/4'>
+            <Header />
+            <InsidePage3 department='שירות קהילתי' url='4' />
+            <Fotter />
+          </Route>
+          <Route exact path='/sherotKhelate/5'>
+            <Header />
+            <InsidePage3 department='שירות קהילתי' url='5' />
+            <Fotter />
+          </Route>
+          <Route exact path='/sherotKhelate/6'>
+            <Header />
+            <InsidePage3 department='שירות קהילתי' url='6' />
+            <Fotter />
+          </Route>
+          <Route exact path='/sherotKhelate/7'>
+            <Header />
+            <InsidePage3 department='שירות קהילתי' url='7' />
+            <Fotter />
+          </Route>
+          <Route exact path='/sherotKhelate/8'>
+            <Header />
+            <InsidePage3 department='שירות קהילתי' url='8' />
+            <Fotter />
+          </Route>
+          <Route exact path='/sherotKhelate/9'>
+            <Header />
+            <InsidePage3 department='שירות קהילתי' url='9' />
+            <Fotter />
+          </Route>
           <Route exact path='/pdf'>
             <Header />
             <AllResearchs />

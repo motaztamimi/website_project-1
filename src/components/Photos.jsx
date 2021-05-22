@@ -1,30 +1,19 @@
-/** @format */
-
-import React from 'react';
-
 import '../style/Photos.css';
-
 import useDataBase from '../hooks/useDataBase';
+import PreveiwMode from './preveiwMode/PreveiwMode';
 
 const Photos = () => {
   const list = useDataBase('GalleryImges');
 
   return (
-    <div className='photo_g'>
-      <h1>גלריית תמונות</h1>
-      <div className='photos-gal'>
-        {list.docs.map((element, index) => (
-          <div key={index}>
-            <a className='lightbox' href={`#${index}`}>
-              <img src={element.url} alt='' />
-            </a>
-            <div className='lightbox-target' id={index}>
-              <img src={element.url} alt='' />
-              <a className='lightbox-close' href='#'></a>
-            </div>
+    <div className='GalleryPhotos'>
+      {list.docs.map((item) => {
+        return (
+          <div className='GalleryImg'>
+            <img src={item.url} alt='img' />
           </div>
-        ))}
-      </div>
+        );
+      })}
     </div>
   );
 };

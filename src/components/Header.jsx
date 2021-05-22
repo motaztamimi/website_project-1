@@ -3,7 +3,7 @@
 import { BsSearch } from 'react-icons/bs';
 import MoblieHeader from './MobHeader';
 import '../style/Header.css';
-
+import Accessibility from './Accessibility/Accessibility';
 const Header = () => {
   return (
     <>
@@ -14,10 +14,15 @@ const Header = () => {
               <img src={`${process.env.PUBLIC_URL}/imges/LOGONEW.jpg`} alt='' />
             </a>
             <div>
-              <input type='text' placeholder='חיפוש' />
-              <button>
-                <BsSearch size='20px' color='white' />
-              </button>
+              <div className='accessLeft'>
+                <input type='text' placeholder='חיפוש' />
+                <div className='accessLeft'>
+                  <button>
+                    <BsSearch size='20px' color='white' />
+                  </button>
+                  <Accessibility />
+                </div>
+              </div>
             </div>
           </div>
           {/*    <Nav /> */}

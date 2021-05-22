@@ -59,3 +59,23 @@
 
   width: 50%;
 }
+@media screen and (max-width: 800px) {
+  .newsBody {
+    width: 100%;
+    margin-right: 0;
+  }
+  .NewsPageContainerId img {
+    width: 90%;
+    margin-right: 0;
+  }
+  .NewsPageContainerId h2 {
+    margin-right: 0;
+  }
+  .NewsPageContainerId h3 {
+    margin-right: 0;
+  }
+  .hrdiv {
+    width: 70%;
+    border-bottom: 2px solid #d2d2d2;
+  }
+}

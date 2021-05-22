@@ -47,7 +47,7 @@ const AdminEditNews = () => {
           Add news
         </button>
       </div>
-      <div className='container'>
+      <div className='containerr'>
         {getNews().map((Newa) => {
           return (
             <motion.div className='NewsDiv' key={Newa.id} layout>

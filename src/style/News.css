@@ -79,8 +79,11 @@
   text-align: right;
   width: 100%;
   color: #285c7e;
-  font-size: 25px;
+  font-size: 30px;
   line-height: 24px;
+}
+.News a:hover {
+  color: #1abc9c;
 }
 
 @media screen and (max-width: 1300px) {

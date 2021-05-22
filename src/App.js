@@ -1,38 +1,37 @@
 /** @format */
 
-import './App.css';
-import Fotter from './components/Fotter';
-import HomePage from './components/HomePage';
+import "./App.css";
+import Fotter from "./components/Fotter";
+import HomePage from "./components/HomePage";
+import Header from "./components/Header";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import AboutUs from "./components/AboutUs/AboutUs";
+import AdminLogin from "./components/AdminLogin";
+import ProtectedRoute from "./components/ProtectedRoute";
+import AdminEditGallery from "./components/AdminEditGallery";
+import AdminEditSlideShow from "./components/Admin/AdminEditSlideShow";
+import AdminEditNews from "./components/AdminEditNews";
+import AdminEditEvents from "./components/AdminEditEvents";
+import EditorPageImlimentation from "./components/Editor/EditorPageImlimentation";
+import ListOfDep from "./components/ListOfDep";
+import InsidePage3 from "./components/InsidePage";
+import { Chatbot } from "react-chatbot-kit";
+import config from "./components/ChatBot/config";
+import MessageParser from "./components/ChatBot/MessageParser";
+import ActionProvider from "./components/ChatBot/ActionProvider";
+import AdminAddNews from "./components/adminAddNews/AdminAddNews";
+import AllResearchs from "./components/Research/AllResearchs";
+import ContactUsFormV1 from "./components/ContactUsFormV1/ContactUsFormV1";
+import ButtonBot from "./components/ChatBot/BottonHomePage/BottonHomePage";
+import Photos from "./components/Photos";
+import Videos from "./components/Videos";
+import AdminEditDoctors from "./components/AdminEditDoctors";
+import AddDoctors from "./components/AdminAddDoctors/AddDoctors"
 import NewsPagebyid from './components/NewsPagebyid/NewsPagebyid';
 import Googlemap from './components/GoogleMap/Googlemap';
-import Header from './components/Header';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import AboutUs from './components/AboutUs/AboutUs';
-import AdminLogin from './components/AdminLogin';
-import ProtectedRoute from './components/ProtectedRoute';
-import AdminEditGallery from './components/AdminEditGallery';
-import AdminEditSlideShow from './components/Admin/AdminEditSlideShow';
-import AdminEditNews from './components/AdminEditNews';
-import AdminEditEvents from './components/AdminEditEvents';
-import EditorPageImlimentation from './components/Editor/EditorPageImlimentation';
-import ListOfDep from './components/ListOfDep';
-import InsidePage3 from './components/InsidePage';
-import { Chatbot } from 'react-chatbot-kit';
-import config from './components/ChatBot/config';
-import MessageParser from './components/ChatBot/MessageParser';
-import ActionProvider from './components/ChatBot/ActionProvider';
-import AdminAddNews from './components/adminAddNews/AdminAddNews';
-import AllResearchs from './components/Research/AllResearchs';
-import ContactUsFormV1 from './components/ContactUsFormV1/ContactUsFormV1';
-import ButtonBot from './components/ChatBot/BottonHomePage/BottonHomePage';
-import Photos from './components/Photos';
-import Videos from './components/Videos';
 import AllNewsPage from './components/AllNewsPage/AllNewsPage';
-import AdminEditDoctors from './components/AdminEditDoctors';
-import AddDoctors from './components/AdminAddDoctors/AddDoctors';
 import AdminAddResearch from './components/AdminResearch/AdminAddResearch';
 import AdminResearch from './components/AdminResearch/AdminResearch';
-
 function App() {
   return (
     <div className='App'>

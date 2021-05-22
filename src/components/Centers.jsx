@@ -4,12 +4,23 @@ import Center from './Center';
 import { useState } from 'react';
 import React from 'react';
 const Centers = ({ Cent }) => {
-  React.useEffect(() => {
-    function handleResize() {
-      window.location.reload();
-    }
-    window.addEventListener('resize', handleResize);
+  /************************************************************** */
+  const isSSR = typeof window !== "undefined";
+  const [windowSize, setWindowSize] = React.useState({
+    width: isSSR ? 1200 : window.innerWidth,
+    height: isSSR ? 800 : window.innerHeight,
   });
+  function changeWindowSize() {
+    setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+  }
+  React.useEffect(() => {
+    window.addEventListener("resize", changeWindowSize);
+
+    return () => {
+      window.removeEventListener("resize", changeWindowSize);
+    };
+  }, []);
+  /********************************************************************** */
   const [Centerr, setCenteer] = useState({
     firstone: 1,
     secondone: 2,
@@ -19,14 +30,11 @@ const Centers = ({ Cent }) => {
   let second = Centerr.secondone;
   function getCenter() {
     cen = Cent;
-    if (window.innerWidth < 800) {
+    if (windowSize.width < 800) {
       let lastindex;
-
       lastindex = cen.filter((act) => act.id === Centerr.firstone);
       let firstindexinlast = cen.filter((act) => act.id === Centerr.secondone);
-
       lastindex = [...lastindex, ...firstindexinlast];
-
       return lastindex;
     }
     return cen;

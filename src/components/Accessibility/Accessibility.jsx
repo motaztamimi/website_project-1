@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState } from 'react';
 import './Accessibility.css';
 import accessIMG from './accessibility.png';
@@ -59,7 +61,13 @@ function Accessibility() {
   return (
     <div className='dropDown'>
       {/* <div className='circleDive' onClick={func}> */}
-        <img className='circleDive' id='accessIMG'onClick={func} src={accessIMG} alt='nothing' />
+      <img
+        className='circleDive'
+        id='accessIMG'
+        onClick={func}
+        src={accessIMG}
+        alt='nothing'
+      />
       {/* </div> */}
 
       <div id='myDropdown' className='triangle dropdown-content'>

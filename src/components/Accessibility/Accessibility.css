@@ -1,3 +1,5 @@
+/** @format */
+
 .triangle {
   height: 70px;
   width: 12rem;
@@ -58,6 +60,7 @@
 }
 .circleDive {
   height: 43px;
+  margin-right: 5px;
   text-decoration: none;
   border-style: none;
   border-radius: 30px;
@@ -86,4 +89,3 @@
 .show {
   display: block;
 }
-

@@ -1,38 +1,41 @@
 /** @format */
 
-import img1 from '../imges/1.jpg';
-import img2 from '../imges/2.jpg';
-import img3 from '../imges/3.jpg';
-import img4 from '../imges/4.jpg';
-import img5 from '../imges/5.jpg';
-import img6 from '../imges/6.jpg';
-import img7 from '../imges/7.jpg';
 import '../style/SlideShow.css';
 
 import { useState, useEffect } from 'react';
-const SlideShow = (props) => {
+import useDataBase from '../hooks/useDataBase';
+const SlideShow = ({ collection }) => {
   //this props is the array that we will get from the server.
   const [slidenum, setSlide] = useState(1);
-  const [firstrender, setfirstrender] = useState(true);
-  var photoArray = [];
+  const [firstrender, setfirstrender] = useState(false);
+  var photoArray = useDataBase(collection).docs;
 
-  photoArray.push(img1);
-  photoArray.push(img2);
-  photoArray.push(img3);
-  photoArray.push(img4);
-  photoArray.push(img5);
-  photoArray.push(img6);
-  photoArray.push(img7);
-  //photoArray.push(img8);
-  if (photoArray.length % 2 === 1) {
-    photoArray.push(photoArray[0]);
-  }
-  var res = [];
-  while (photoArray.length > 0) {
-    //split the array into twos.
-    const chunk = photoArray.splice(0, 2);
-    res.push(chunk);
-  }
+  const [res, setRes] = useState([]);
+
+  useEffect(() => {
+    if (photoArray.length === 0) {
+      return;
+    }
+    setfirstrender(true);
+    if (photoArray.length % 2 === 1) {
+      photoArray.push(photoArray[0]);
+    }
+    const temp = [];
+    while (photoArray.length > 0) {
+      //split the array into twos.
+      const chunk = photoArray.splice(0, 2);
+      temp.push(chunk);
+    }
+    setfirstrender(true);
+    setRes(temp);
+  }, [photoArray]);
+
+  useEffect(() => {
+    if (firstrender) {
+      Showslide(1);
+    }
+    setfirstrender(false);
+  }, [firstrender]);
 
   const Showslide = (n) => {
     let i;
@@ -56,19 +59,15 @@ const SlideShow = (props) => {
   function plusSlides(n) {
     Showslide(slidenum + n);
   }
-  useEffect(() => {
-    Showslide(1);
-    setfirstrender(false);
-  }, [firstrender]);
 
   return (
     <div className='slideShow-container'>
       {res.map(function (element, i) {
         return (
-          <div className='myslide' key={i}>
+          <div className='myslide' key={i} style={{ display: 'none' }}>
             <div>
-              <img src={element[0]} alt='' />
-              <img src={element[1]} alt='' />
+              <img src={element[0].url} alt='' />
+              <img src={element[1].url} alt='' />
             </div>
           </div>
         );

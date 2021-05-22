@@ -4,9 +4,17 @@ import 'react-quill/dist/quill.snow.css';
 import '../../style/EditorPage.css';
 function EditorPage(props) {
   const [editorHTML, seteditorHTML] = useState('');
+  const [Preview, setPreview] = useState('');
 
-  const handleChange = (html) => {
+  const handleChange = (html, delta, source, editor) => {
     seteditorHTML(html);
+
+    setPreview(editor.getHTML());
+    if (document.getElementById('theText') != null)
+      document.getElementById('theText').innerHTML = Preview;
+    console.log(editor.getHTML()); // rich text
+    console.log(editor.getText()); // plain text
+    console.log(editor.getLength());
   };
   return (
     <div>
@@ -30,6 +38,7 @@ function EditorPage(props) {
           </button>
         </div>
       </div>
+      <div id='theText'>hello</div>
     </div>
   );
 }

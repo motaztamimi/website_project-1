@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Accessibility.css';
+import accessIMG from './accessibility.png';
 function Accessibility() {
   const [font, setfont] = useState(100);
   var max = 130;
@@ -51,10 +52,17 @@ function Accessibility() {
     setfont(original);
   };
   document.body.style.zoom = font + '%';
+  const func = () => {
+    document.getElementById('myDropdown').classList.toggle('show');
+  };
 
   return (
-    <div>
-      <div className='triangle'>
+    <div className='dropDown'>
+      {/* <div className='circleDive' onClick={func}> */}
+        <img className='circleDive' id='accessIMG'onClick={func} src={accessIMG} alt='nothing' />
+      {/* </div> */}
+
+      <div id='myDropdown' className='triangle dropdown-content'>
         <div className='up'>
           <a className='circle' onClick={decreaseFont}>
             <span> א -</span>

@@ -11,6 +11,7 @@ const MobNav = () => {
         <button>
           <BsSearch size='20px' color='white' />
         </button>
+        
       </div>
       <ul>
       <li>

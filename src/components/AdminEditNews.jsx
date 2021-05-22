@@ -27,7 +27,7 @@ const AdminEditNews = () => {
   let len = Math.round(max);
 
   function getNews() {
-    if (isclick) { 
+    if (isclick) {
       return News.docs;
     }
     return News.docs.slice(0, len);

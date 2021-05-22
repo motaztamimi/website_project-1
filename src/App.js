@@ -27,7 +27,9 @@ import Photos from "./components/Photos";
 import Videos from "./components/Videos";
 import AdminEditDoctors from "./components/AdminEditDoctors";
 import AddDoctors from "./components/AdminAddDoctors/AddDoctors"
-
+import NewsPagebyid from './components/NewsPagebyid/NewsPagebyid';
+import Googlemap from './components/GoogleMap/Googlemap';
+import AllNewsPage from './components/AllNewsPage/AllNewsPage';
 function App() {
   return (
     <div className='App'>
@@ -122,14 +124,29 @@ function App() {
             <Fotter />
           </Route>
 
-          <Route exact path='/gallery'>
+          <Route exact path='/Gallery'>
             <Header />
             <Photos />
             <Fotter />
           </Route>
+          <Route exact path='/map'>
+            <Googlemap />
+          </Route>
           <Route exact path='/Videos'>
             <Header />
             <Videos />
+            <Fotter />
+          </Route>
+
+          <Route exact path='/NewsList'>
+            <Header />
+            <AllNewsPage />
+            <Fotter />
+          </Route>
+
+          <Route exact path='/News/:id'>
+            <Header />
+            <NewsPagebyid />
             <Fotter />
           </Route>
           <ProtectedRoute

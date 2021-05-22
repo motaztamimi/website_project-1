@@ -115,7 +115,7 @@ const HomePage = () => {
     <>
       <section className='MainContainer'>
         <Nav />
-        <SlideShow />
+        <SlideShow collection={'HomePage/photos/slideShow'} />
         <Information />
         <Line />
         <Subjects Sub={subject} />

@@ -10,7 +10,7 @@ import img7 from '../imges/7.jpg';
 import '../style/SlideShow.css';
 
 import { useState, useEffect } from 'react';
-const SlideShow = (props) => {
+const SlideShow = ({ collection }) => {
   //this props is the array that we will get from the server.
   const [slidenum, setSlide] = useState(1);
   const [firstrender, setfirstrender] = useState(true);

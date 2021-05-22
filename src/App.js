@@ -30,6 +30,8 @@ import Videos from './components/Videos';
 import AllNewsPage from './components/AllNewsPage/AllNewsPage';
 import AdminEditDoctors from './components/AdminEditDoctors';
 import AddDoctors from './components/AdminAddDoctors/AddDoctors';
+import AdminAddResearch from './components/AdminResearch/AdminAddResearch';
+import AdminResearch from './components/AdminResearch/AdminResearch';
 
 function App() {
   return (
@@ -189,6 +191,16 @@ function App() {
             exact
             path='/Admin/AdminAddDoctors/AddDoctors'
             component={AddDoctors}
+          />
+          <ProtectedRoute
+            exact
+            path='/Admin/AdminResearch'
+            component={AdminResearch}
+          />
+          <ProtectedRoute
+            exact
+            path='/Admin/AdminResearch/AddResearch'
+            component={AdminAddResearch}
           />
         </Switch>
       </Router>

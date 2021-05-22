@@ -56,6 +56,10 @@ const AdminHomePage = () => {
             <BiNews size='150px'></BiNews>
             <h3>רופאים</h3>
           </Link>
+          <Link to='/Admin/AdminResearch'>
+            <BiSlideshow size='150px'></BiSlideshow>
+            <h3>עריכת מחקרים </h3>
+          </Link>
         </div>
       </section>
     </div>

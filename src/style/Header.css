@@ -67,3 +67,7 @@
     display: none;
   }
 }
+.accessLeft{
+display: grid;
+grid-template-columns: auto auto;
+}

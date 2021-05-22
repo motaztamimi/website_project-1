@@ -41,7 +41,7 @@ const ListOfDep = ({ departmentName }) => {
         <button
           className='HowWeCanComeButton'
           onClick={() => {
-            history.push('./');
+            history.push('./map');
           }}
           id='HowWeCanComeButton'>
           {' '}

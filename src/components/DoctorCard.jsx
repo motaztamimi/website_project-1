@@ -2,14 +2,14 @@ import React from 'react';
 import '../style/DoctorCard.css'
 const DoctorCard = ({ index }) => {
   return (
-    <div>
+    <div className="contenerS">
       <div class='one-card'>
-        <img src={index.img} alt='Avatar'/>
+        <img src={index.DoctorImage} alt='Avatar'/>
         <div class='card-container'>
           <h4>
-            <b>{index.name}</b>
+            <b>{index.DoctorName}</b>
           </h4>
-          <p>{index.text}</p>
+          <p>{index.DoctorSpecialty}</p>
         </div>
       </div>
     </div>

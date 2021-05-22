@@ -14,7 +14,8 @@ const AddDoctors = () => {
   );
   const [DoctorName, SetDoctorName] = useState('');
   const [DoctorSpecialty, setDoctorSpecialty] = useState('');
-  const [Department, SetDepartment] = useState('');
+  const [DepartmentOut, SetDepartmentOut] = useState('');
+  const [DepartmentIn, SetDepartmentIn] = useState('');
   const [error, setError] = useState(null);
   const types = ['image/png', 'image/jpeg', 'img/jpg'];
   const collectionRef = dataBase.collection('Doctors');
@@ -42,7 +43,8 @@ const AddDoctors = () => {
             DoctorImage: url,
             DoctorName: DoctorName,
             DoctorSpecialty: DoctorSpecialty,
-            Department:Department,
+            DepartmentOut: DepartmentOut,
+            DepartmentIn: DepartmentIn,
             createdAt: timestamp(),
           })
           .then((value) => {
@@ -51,7 +53,9 @@ const AddDoctors = () => {
       });
     });
   };
-
+  const changeSelectOptionHandler = (event) => {
+    SetDepartmentOut(event.target.value);
+  };
   return (
     <div>
       <div className='AddDoctorsPage'>
@@ -78,12 +82,30 @@ const AddDoctors = () => {
             }}
             required
           />
-          <label>מחלקה</label>
+          <label> מחלקה חיצונית</label>
+          <select
+            id='classes'
+            className='dropSelect'
+            onChange={changeSelectOptionHandler}>
+            <option key='4' value='' defaultValue>
+              choees branch
+            </option>
+            <option key='1' value='כפר שאול' defaultValue>
+              כפר שאול
+            </option>
+            <option key='2' value='איתנים'>
+              איתנים
+            </option>
+            <option key='3' value='שירות קהילתי'>
+              שירות קהילתי{' '}
+            </option>
+          </select>
+          <label> מחלקה פנימית</label>
           <input
             type='text'
-            placeholder='נא להכניס מחלקה'
+            placeholder='נא להכניס שם מחלקה פנימית'
             onChange={(e) => {
-              SetDepartment(e.target.value);
+              SetDepartmentIn(e.target.value);
             }}
             required
           />

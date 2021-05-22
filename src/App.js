@@ -9,7 +9,7 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import AdminLogin from "./components/AdminLogin";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AdminEditGallery from "./components/AdminEditGallery";
-import AdminEditSlideShow from "./components/AdminEditSlideShow";
+import AdminEditSlideShow from "./components/Admin/AdminEditSlideShow";
 import AdminEditNews from "./components/AdminEditNews";
 import AdminEditEvents from "./components/AdminEditEvents";
 import EditorPageImlimentation from "./components/Editor/EditorPageImlimentation";
@@ -30,6 +30,8 @@ import AddDoctors from "./components/AdminAddDoctors/AddDoctors"
 import NewsPagebyid from './components/NewsPagebyid/NewsPagebyid';
 import Googlemap from './components/GoogleMap/Googlemap';
 import AllNewsPage from './components/AllNewsPage/AllNewsPage';
+import AdminAddResearch from './components/AdminResearch/AdminAddResearch';
+import AdminResearch from './components/AdminResearch/AdminResearch';
 function App() {
   return (
     <div className='App'>

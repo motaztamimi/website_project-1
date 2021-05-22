@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import './AddDoctors.css';
 import { dataBase, timestamp, storage } from '../../config/firebase';
 import { useState } from 'react';

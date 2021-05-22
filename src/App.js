@@ -31,6 +31,13 @@ import Photos from './components/Photos';
 import Videos from './components/Videos';
 import AllNewsPage from './components/AllNewsPage/AllNewsPage';
 function App() {
+  const detailKfarSahoulMap = {
+    width: '300',
+    height: '300',
+    src1: 'https://maps.google.com/maps?width=300&amp;height=300&amp;hl=en&amp;q=abu%20tor%20jerusalem+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed',
+    src2: 'https://embedmaps.com/google-maps-authorization/script.js?id=97feefe6d324d091355df0c5d72a94599ff5dd91',
+    id: 'kfarsahol',
+  };
   return (
     <div className='App'>
       <Router>
@@ -130,7 +137,7 @@ function App() {
             <Fotter />
           </Route>
           <Route exact path='/map'>
-            <Googlemap />
+            <Googlemap details={detailKfarSahoulMap} />
           </Route>
           <Route exact path='/Videos'>
             <Header />

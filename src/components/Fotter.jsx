@@ -82,7 +82,7 @@ const Fotter = () => {
           <div className='cols'>
             <h5 className='col_white_amrc pt2'>המיקום שלנו</h5>
             {/* <img src={location} className='location' alt='' /> */}
-            <Googlemap />
+            {/* <Googlemap /> */}
           </div>
         </div>
       </div>

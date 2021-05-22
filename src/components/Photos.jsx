@@ -1,3 +1,5 @@
+/** @format */
+
 import '../style/Photos.css';
 import useDataBase from '../hooks/useDataBase';
 import PreveiwMode from './preveiwMode/PreveiwMode';

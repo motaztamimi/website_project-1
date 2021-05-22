@@ -2,9 +2,17 @@
 
 import location from '../imges/Location.png';
 import '../style/Fotter.css';
-import logo from '../imges/LOGOx.png'
+import logo from '../imges/Logo3.jpg';
+import Googlemap from '../components/GoogleMap/Googlemap';
 
 const Fotter = () => {
+  const detailKfarSahoulMap = {
+    width: '300',
+    height: '300',
+    src1: 'https://maps.google.com/maps?width=300&amp;height=300&amp;hl=en&amp;q=abu%20tor%20jerusalem+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed',
+    src2: 'https://embedmaps.com/google-maps-authorization/script.js?id=97feefe6d324d091355df0c5d72a94599ff5dd91',
+    id: 'gmap_canvas',
+  };
   return (
     <footer className='footer'>
       <div className='Containers '>
@@ -81,7 +89,8 @@ const Fotter = () => {
           </div>
           <div className='cols'>
             <h5 className='col_white_amrc pt2'>המיקום שלנו</h5>
-            <img src={location} className='location' alt='' />
+
+            <Googlemap details={detailKfarSahoulMap} />
           </div>
         </div>
       </div>

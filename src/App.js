@@ -33,6 +33,13 @@ import AllNewsPage from './components/AllNewsPage/AllNewsPage';
 import AdminAddResearch from './components/AdminResearch/AdminAddResearch';
 import AdminResearch from './components/AdminResearch/AdminResearch';
 function App() {
+  const detailKfarSahoulMap = {
+    width: '500',
+    height: '500',
+    src1: 'https://maps.google.com/maps?width=300&amp;height=300&amp;hl=en&amp;q=abu%20tor%20jerusalem+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed',
+    src2: 'https://embedmaps.com/google-maps-authorization/script.js?id=97feefe6d324d091355df0c5d72a94599ff5dd91',
+    id: 'gmap_canvas',
+  };
   return (
     <div className='App'>
       <Router>
@@ -217,7 +224,9 @@ function App() {
             <Fotter />
           </Route>
           <Route exact path='/map'>
-            <Googlemap />
+            <Header />
+            <Googlemap details={detailKfarSahoulMap} />
+            <Fotter />
           </Route>
           <Route exact path='/Videos'>
             <Header />

@@ -1,10 +1,14 @@
+/** @format */
+
 import DepListPiece from './DepListPiece';
 import '../style/ListOfDep.css';
 import img1 from '../imges/kfarShaul2.jpg';
 import { dataBase } from '../config/firebase';
 import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const ListOfDep = ({ departmentName }) => {
+  const history = useHistory();
   const [list, setList] = useState([]);
 
   useEffect(() => {
@@ -32,6 +36,17 @@ const ListOfDep = ({ departmentName }) => {
         {list.map((item, index) => {
           return <DepListPiece bbranch={item} key={index} />;
         })}
+      </div>
+      <div className='HowWeCanComeDiv'>
+        <button
+          className='HowWeCanComeButton'
+          onClick={() => {
+            history.push('./');
+          }}
+          id='HowWeCanComeButton'>
+          {' '}
+          ?איך מגיעים
+        </button>
       </div>
     </section>
   );

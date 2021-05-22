@@ -10,7 +10,9 @@ const Header = () => {
       <div className='Header'>
         <div className='HeaderContanier'>
           <div className='HeaderUpperSection'>
-            <img src={`${process.env.PUBLIC_URL}/imges/LOGONEW.jpg`} alt='' />
+            <a href='./'>
+              <img src={`${process.env.PUBLIC_URL}/imges/LOGONEW.jpg`} alt='' />
+            </a>
             <div>
               <input type='text' placeholder='חיפוש' />
               <button>

@@ -83,3 +83,45 @@
     transform: rotate(360deg);
   }
 }
+.EditSlideShowPage .SlideShowPhotos {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.EditSlideShowPage .SlideShowPhotos .SlidePhoto img {
+  width: 300px;
+  box-shadow: -1px 0 0 rgb(0 0 0 / 10%), -3px 0 9px rgb(0 0 0 / 15%);
+  box-sizing: border-box;
+  border-radius: 30px;
+  height: 300px;
+}
+.EditSlideShowPage .SlideShowPhotos .SlidePhoto {
+  direction: rtl;
+  width: 300px;
+  box-shadow: -1px 0 0 rgb(0 0 0 / 10%), -3px 0 9px rgb(0 0 0 / 15%);
+  box-sizing: border-box;
+  border-radius: 30px;
+  height: 300px;
+}
+
+.EditSlideShowPage .SlideShowPhotos .SlidePhoto .SlidePhotoDelete {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  font-size: 1.4rem;
+  padding: 7px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(228, 72, 72);
+  margin-right: 5px;
+  margin-top: 6px;
+  opacity: 0.3;
+}
+
+.EditSlideShowPage .SlideShowPhotos .SlidePhoto .SlidePhotoDelete:hover {
+  opacity: 1;
+}

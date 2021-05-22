@@ -1,10 +1,14 @@
 import './AdminEditSlideShow.css';
 import { useState } from 'react';
 import { storage, dataBase, timestamp } from '../../config/firebase';
+import AdminSlideShowPhotos from './AdminSlideShowPhotos';
 const AdminSlideShow = () => {
   const [file, setFile] = useState(null);
   const [selectedValue, setSelectedValue] = useState('kfarShaol');
   const types = ['image/png', 'image/jpeg', 'img/jpg'];
+  const [collectionToSend, setCollectionToSend] = useState(
+    'Departments/כפר שאול/slideShow'
+  );
   const [showDiv, setShowDiv] = useState(false);
   const div = (
     <div className='loading'>
@@ -64,6 +68,13 @@ const AdminSlideShow = () => {
           id='selectDep'
           onChange={(e) => {
             setSelectedValue(e.target.value);
+            if (e.target.value === 'kfarShaol') {
+              setCollectionToSend(`Departments/כפר שאול/slideShow`);
+            } else if (e.target.value === 'Etanim') {
+              setCollectionToSend('Departments/איתנים/slideShow');
+            } else {
+              setCollectionToSend('Departments/שירות קהלתי/sildeShow');
+            }
           }}>
           <option value='kfarShaol' defaultValue>
             {'כפר שאול'}{' '}
@@ -80,6 +91,10 @@ const AdminSlideShow = () => {
 
         <input type='submit' value='upload' className='submitPhoto' />
       </form>
+
+      {collectionToSend && (
+        <AdminSlideShowPhotos collection={collectionToSend} />
+      )}
     </div>
   );
 };

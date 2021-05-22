@@ -3,12 +3,11 @@
 .map {
   width: max-content;
   height: max-content;
-  margin-right: 60px;
 }
 .Mapdiv {
   display: flex;
   direction: rtl;
-
+  justify-content: center;
   box-sizing: border-box;
   height: max-content;
   width: 100%;

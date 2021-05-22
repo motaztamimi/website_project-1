@@ -33,6 +33,7 @@ import AllNewsPage from './components/AllNewsPage/AllNewsPage';
 function App() {
   return (
     <div className='App'>
+     
       <Router>
         <Switch>
           <Route exact path='/Chatbot'>
@@ -178,6 +179,16 @@ function App() {
             exact
             path='/Admin/EditPages'
             component={EditorPageImlimentation}
+          />
+           <ProtectedRoute
+            exact
+            path='/Admin/AdminResearch'
+            component={AdminResearch}
+          />
+           <ProtectedRoute
+            exact
+            path='/Admin/AdminResearch/AddResearch'
+            component={AdminAddResearch}
           />
         </Switch>
       </Router>

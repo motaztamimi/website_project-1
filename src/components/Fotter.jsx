@@ -3,7 +3,7 @@
 import location from '../imges/Location.png';
 import '../style/Fotter.css';
 import logo from '../imges/Logo3.jpg';
-
+import Googlemap from '../components/GoogleMap/Googlemap';
 const Fotter = () => {
   return (
     <footer className='footer'>
@@ -81,7 +81,8 @@ const Fotter = () => {
           </div>
           <div className='cols'>
             <h5 className='col_white_amrc pt2'>המיקום שלנו</h5>
-            <img src={location} className='location' alt='' />
+            {/* <img src={location} className='location' alt='' /> */}
+            <Googlemap />
           </div>
         </div>
       </div>

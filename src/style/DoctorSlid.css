@@ -1,6 +1,50 @@
-.DoctorSlid{
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-    border: 2px solid black;
+.sliderr {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: 170px;
+}
+.nextt {
+  border-radius: 3px 0 0 3px;
+  width: 50%;
+  height: 70px;
+  text-align: left;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.Backk {
+  border-radius: 3px 0 0 3px;
+  width: 85%;
+  height: 70px;
+  text-align: right;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.Backk button:hover,
+.nextt button:hover {
+  background-color: #555555;
+  color: white;
+}
+.nextt button {
+  width: 30%;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: xx-large;
+  background-color: white;
+}
+.Backk button {
+  background-color: white;
+  width: 17%;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: xx-large;
+}
+@media screen and (max-width: 700px) {
+  .nextt button {
+    width: 50%;
+    font-size: x-large;
+  }
+  .Backk button {
+    width: 30%;
+    font-size: x-large;
+  }
 }

@@ -1,67 +1,57 @@
-import React from 'react'
+/** @format */
+
+import React from 'react';
 // Config starter code
-import { createChatBotMessage } from "react-chatbot-kit";
+import { createChatBotMessage } from 'react-chatbot-kit';
 
-import BotAvatar from './BotAvatar'
-import Todos from './Todos/Todos'
-import GeneralOptions from './ManyListOfOption/GeneralOptions'
-import ImgBot from './ImgBot'
-
-
-
+import BotAvatar from './BotAvatar';
+import Todos from './Todos/Todos';
+import GeneralOptions from './ManyListOfOption/GeneralOptions';
+import ImgBot from './ImgBot';
 
 const config = {
-  initialMessages: [  createChatBotMessage(
-    "hello",
-    {
+  initialMessages: [
+    createChatBotMessage('ברוכים הבאים למרכז הירושלמי לבריאות הנפש ', {
       withAvatar: true,
-      
-      
-      widget: "options",
-    })
 
-],
+      widget: 'options',
+    }),
+  ],
 
+  botName: 'Motaz',
 
-  
-
-  botName: "Motaz",
-  
-  customComponents:{
-      botAvatar:(props)=> <BotAvatar {...props}/>
+  customComponents: {
+    botAvatar: (props) => <BotAvatar {...props} />,
   },
   customStyles: {
     // Overrides the chatbot message styles
     botMessageBox: {
-      backgroundColor: "#E8E8EB",
-    
+      backgroundColor: '#E8E8EB',
     },
     // Overrides the chat button styles
     chatButton: {
-      backgroundColor: "#5ccc9d",
+      backgroundColor: '#5ccc9d',
     },
   },
-  state:{
-      todos:[],
-      opthion:[]
+  state: {
+    todos: [],
+    opthion: [],
   },
-  widgets:[
+  widgets: [
     {
-      widgetName: "todos",
+      widgetName: 'todos',
       widgetFunc: (props) => <Todos {...props} />,
-      mapStateToProps: ["todos"],
+      mapStateToProps: ['todos'],
     },
     {
-      widgetName: "options",
+      widgetName: 'options',
       widgetFunc: (props) => <GeneralOptions {...props} />,
     },
     {
-      widgetName: "imgBOT",
+      widgetName: 'imgBOT',
       widgetFunc: (props) => <ImgBot {...props} />,
     },
-  ]
+  ],
+};
 
-  
-}
-
-export default config
+export default config;

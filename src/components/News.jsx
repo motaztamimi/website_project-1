@@ -2,10 +2,8 @@
 
 import NewsCard from './NewsCard';
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 import '../style/News.css';
 const News = ({ News, howmany }) => {
-  let history = useHistory();
   let max = 0;
   if (News.length >= 3) {
     max = 3;

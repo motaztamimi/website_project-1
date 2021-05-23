@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../style/InsidePage.css';
 import { dataBase } from '../config/firebase';
+import DoctorSlid from '../components/DoctorSlid'
 const InsidePage3 = ({ department, url }) => {
   const [sec, setSec] = useState({
     first: '',
@@ -29,7 +30,12 @@ const InsidePage3 = ({ department, url }) => {
     let contact = Array.from(document.getElementsByClassName('contact'))[0];
     manger.innerHTML = '<h1>מנהלים</h1>' + sec['second'];
     info.innerHTML = '<h1>מידע</h1>' + sec['first'];
-    workingDays.innerHTML = '<h1>ימי פעולה</h1>' + sec['fourth'];
+    if(sec['fourth']!=''){
+      workingDays.innerHTML = '<h1>ימי פעולה</h1>' + sec['fourth'];
+    }else{
+      workingDays.innerHTML = '';
+    }
+    
     contact.innerHTML = '<h1>צור קשר</h1>' + sec['theird'];
   }, [sec]);
   return (
@@ -51,6 +57,7 @@ const InsidePage3 = ({ department, url }) => {
           </div>
         </div>
       </section>
+      <DoctorSlid/>
     </div>
   );
 };

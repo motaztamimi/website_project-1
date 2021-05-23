@@ -2,11 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { dataBase } from '../../config/firebase';
-import useDataBase from '../../hooks/useDataBase';
 import './NewsPagebyid.css';
 const NewsPagebyid = () => {
-  const qq = useDataBase('Research');
-  console.log(qq);
   const collectionRef = dataBase.collection('News');
   const [news, setnews] = useState(undefined);
   const currentURL = window.location.href;

@@ -8,7 +8,6 @@ import {useState}from 'react';
 const AdminEditDoctors = () => {
   const [isclick, setClick] = useState(false);
   const history = useHistory();
-
   const routeChange = () => {
     let path = '/Admin/AdminAddDoctors/AddDoctors';
     history.push(path);
@@ -50,7 +49,8 @@ const AdminEditDoctors = () => {
                 <div className='DContent'>
                   <h1>{element.DoctorName}</h1>
                   <h3>{element.DoctorSpecialty}</h3>
-                  <h3>{element.Department}</h3>
+                  <h3>{element.DepartmentOut}</h3>
+                  <h3>{element.DepartmentIn}</h3>
                 </div>
               </div>
               <hr />

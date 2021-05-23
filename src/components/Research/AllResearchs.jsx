@@ -1,3 +1,5 @@
+/** @format */
+
 import LineInResearchPage from './LineInResearchPage';
 import '../../style/AllResearchs.css';
 import useDataBase from '../../hooks/useDataBase';
@@ -8,7 +10,7 @@ function AllResearchs() {
   return (
     <div>
       <h1 id='title'>מחקרים</h1>
-      <div className='container'>
+      <div className='AllResearchContainer'>
         {Researches &&
           Researches.docs.map((item) => {
             return (

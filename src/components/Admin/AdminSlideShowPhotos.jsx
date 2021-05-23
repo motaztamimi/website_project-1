@@ -18,7 +18,7 @@ const AdminSlideShowPhotos = ({ collection }) => {
     <motion.div className='SlideShowPhotos' layout>
       {photos.docs.map((photo, index) => {
         return (
-          <div className='SlidePhoto' key={index}>
+          <motion.div className='SlidePhoto' key={index}>
             <button
               className='SlidePhotoDelete'
               onClick={() => {
@@ -28,7 +28,7 @@ const AdminSlideShowPhotos = ({ collection }) => {
               X{' '}
             </button>
             <img src={photo.url} alt='picture' />
-          </div>
+          </motion.div>
         );
       })}
     </motion.div>

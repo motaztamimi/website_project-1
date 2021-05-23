@@ -3,12 +3,12 @@
 .map {
   width: max-content;
   height: max-content;
-  background-color: aquamarine;
 }
 .Mapdiv {
-  position: absolute;
-
-  background-color: beige;
+  display: flex;
+  direction: rtl;
+  justify-content: center;
+  box-sizing: border-box;
   height: max-content;
-  width: max-content;
+  width: 100%;
 }

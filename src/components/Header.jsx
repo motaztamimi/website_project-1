@@ -4,7 +4,6 @@ import { BsSearch } from 'react-icons/bs';
 import MoblieHeader from './MobHeader';
 import '../style/Header.css';
 import Accessibility from './Accessibility/Accessibility';
-import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <>
@@ -22,9 +21,6 @@ const Header = () => {
                     <BsSearch size='20px' color='white' />
                   </button>
                   <Accessibility />
-                  <Link to='/Admin' className='AdminButton'>
-                    Admin Login
-                  </Link>
                 </div>
               </div>
             </div>

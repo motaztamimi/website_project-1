@@ -57,7 +57,7 @@
 .HeaderUpperSection button:hover {
   background-color: #ea3d84;
 }
-@media screen and (max-width: 950px) {
+@media screen and (max-width:950px) {
   .Header img {
     width: 430px;
   }
@@ -67,18 +67,7 @@
     display: none;
   }
 }
-.accessLeft {
-  display: grid;
-  grid-template-columns: auto auto;
-}
-
-.AdminButton {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: none;
-  border-radius: 5px;
-  background-color: rgb(0, 183, 255);
-  padding: 10px;
-  font-size: 1.3rem;
+.accessLeft{
+display: grid;
+grid-template-columns: auto auto;
 }

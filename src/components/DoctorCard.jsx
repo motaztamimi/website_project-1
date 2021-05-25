@@ -1,11 +1,11 @@
 import React from 'react';
-import '../style/DoctorCard.css'
+import '../style/DoctorCard.css';
 const DoctorCard = ({ index }) => {
   return (
-    <div className="contenerS">
-      <div class='one-card'>
-        <img src={index.DoctorImage} alt='Avatar'/>
-        <div class='card-container'>
+    <div className='contenerS'>
+      <div className='one-card'>
+        <img src={index.DoctorImage} alt='Avatar' />
+        <div className='card-container'>
           <h4>
             <b>{index.DoctorName}</b>
           </h4>

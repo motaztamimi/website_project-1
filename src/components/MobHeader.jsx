@@ -6,6 +6,7 @@ import { IoClose } from 'react-icons/io5';
 import MobNav from './MobNav';
 import { useState } from 'react';
 import '../style/MobHeader.css';
+import Accessibility from './Accessibility/Accessibility';
 
 const MobHeader = () => {
   const [toogle, setToogle] = useState(false);
@@ -28,7 +29,10 @@ const MobHeader = () => {
           )}{' '}
         </button>
         <img src={`${process.env.PUBLIC_URL}/imges/LOGO.jpg`} alt='' />
+        <Accessibility />
+        {/* <a href="/">
         <AiFillHome size='30px' color='#151e4d' />
+        </a> */}
       </div>
       <MobNav />
     </>

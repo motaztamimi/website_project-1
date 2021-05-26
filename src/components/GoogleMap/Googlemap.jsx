@@ -15,7 +15,9 @@ const Googlemap = ({ details }) => {
           marginWidth='0'
           id='gmap_canvas'
           src='https://maps.google.com/maps?width=500&amp;height=500&amp;hl=en&amp;q=abu%20tor%20jerusalem+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'></iframe>{' '}
-        <script type='text/javascript' src={details.src2}></script>
+        <script
+          type='text/javascript'
+          src='https://embedmaps.com/google-maps-authorization/script.js?id=97feefe6d324d091355df0c5d72a94599ff5dd91'></script>
       </div>
     </div>
   );

@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import './Accessibility.css';
 import accessIMG from './accessibility.png';
+import { AiFillHome } from 'react-icons/ai';
+import { AiOutlineUser } from 'react-icons/ai';
 function Accessibility() {
   const [font, setfont] = useState(100);
   var max = 130;
@@ -63,11 +65,18 @@ function Accessibility() {
       {/* <div className='circleDive' onClick={func}> */}
       <img
         className='circleDive'
+        title="Accessibility"
         id='accessIMG'
         onClick={func}
         src={accessIMG}
         alt='nothing'
       />
+      <a href='/'>
+      <AiFillHome title="HomePage" className='circleDive2' id='accessIMG' color='#151e4d' />
+      </a>
+      <a href='/Admin'>
+      <AiOutlineUser title="AdminPage" className='circleDive3' id='accessIMG' color='#151e4d' />
+      </a>
       {/* </div> */}
 
       <div id='myDropdown' className='triangle dropdown-content'>

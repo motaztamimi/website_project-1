@@ -50,6 +50,22 @@
   top: 1%;
   right: 1%;
 }
+.logOutButton2{
+  height: 50px;
+  margin-right: 5px;
+  text-decoration: none;
+  border-style: none;
+  border-radius: 30px;
+  font-size: 1.4rem;
+  width: 80px;
+  border: none;
+  z-index: 10;
+  position: absolute;
+  direction: rtl;
+  display: block;
+  text-align: center;
+  right: 5%;
+}
 .logOutButton:hover {
   cursor: pointer;
 }

@@ -5,7 +5,7 @@ import { GrGallery } from 'react-icons/gr';
 import { BiNews, BiCalendarEvent, BiSlideshow } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import { auth } from '../config/firebase';
-
+import { AiFillHome } from 'react-icons/ai';
 const AdminHomePage = () => {
   return (
     <div className='AdminHomePage'>
@@ -20,6 +20,9 @@ const AdminHomePage = () => {
         src={`${process.env.PUBLIC_URL}/imges/AdminHomePageBackGround.jpeg`}
         alt=''
       />
+      <a href='/'>
+        <AiFillHome className='logOutButton2' color='#151e4d' />
+      </a>
       <section className='gridSec'>
         <div className='AdminHomePageOp'>
           <Link to='/Admin/EditGallery'>

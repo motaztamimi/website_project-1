@@ -22,9 +22,6 @@ const Header = () => {
                     <BsSearch size='20px' color='white' />
                   </button>
                   <Accessibility />
-                  <Link to='/Admin' className='AdminButton'>
-                    Admin Login
-                  </Link>
                 </div>
               </div>
             </div>

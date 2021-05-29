@@ -2,10 +2,11 @@
 
 import DepListPiece from './DepListPiece';
 import '../style/ListOfDep.css';
-import img1 from '../imges/kfarShaul2.jpg';
 import { dataBase } from '../config/firebase';
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+
+import SlideShow from './SlideShow';
 
 const ListOfDep = ({ departmentName }) => {
   const history = useHistory();
@@ -28,7 +29,8 @@ const ListOfDep = ({ departmentName }) => {
   return (
     <section className='Maincontener'>
       <h1>{departmentName}</h1>
-      <img src={img1} alt='' />
+      <SlideShow collection={'Departments/'+departmentName+'/slideShow'} />
+
       <div className='titleText'>
         <p>מחלקות יחידות ושירותים בקמפוס {departmentName}</p>
       </div>

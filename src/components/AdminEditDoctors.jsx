@@ -4,6 +4,7 @@ import useDataBase from '../hooks/useDataBase';
 import { useHistory } from 'react-router-dom';
 import { storage } from '../config/firebase';
 import { dataBase } from '../config/firebase';
+import { AiOutlineUser } from 'react-icons/ai';
 import DoctorCard from './DoctorCard';
 import { AiFillEdit } from 'react-icons/ai';
 import { event } from 'jquery';
@@ -85,6 +86,9 @@ const AdminEditDoctors = () => {
   return (
     <div className='DoctorBody'>
       <div className='buttonAddDoctors'>
+         <a href='/Admin'>
+      <AiOutlineUser title="AdminPage" className='EditSlideShowPage2' id='accessIMG' color='#151e4d' />
+      </a>
         <button onClick={routeChange}>Add Doctors</button>
       </div>
       <div className='doctoerDetails'>

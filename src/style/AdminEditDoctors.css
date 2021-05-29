@@ -1,6 +1,42 @@
 /** @format */
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 @import url('https://use.typekit.net/lfw8lae.css');
+.AddDoctorsButton {
+  background-color: #285c7e !important ;
+  color: white;
+  width: 200px;
+  font-size: 1.3rem;
+  margin-top: 50px;
+  padding: 5px;
+  height: 40px;
+}
+.EditSlideShowPage2{
+  height: 43px;
+  margin-right: 5px;
+  text-decoration: none;
+  position: absolute;
+  right:0%;
+  top:0%;
+  border-style: none;
+  text-align: left;
+  border-radius: 30px;
+  font-size: 1.4rem;
+  /* background-color: #171f73; */
+  width: 60px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+}
+.AddDoctorsButtonDiv {
+  text-align: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 200px;
+}
+.ContentContainer {
+  width: 100%;}
 .DoctorBody{
   display: grid;
   grid-template-rows: auto auto auto;

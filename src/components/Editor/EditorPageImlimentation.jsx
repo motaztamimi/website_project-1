@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import EditorPage from './EditorPage';
 import '../../style/EditorPageImlimentation.css';
+import { dataBase } from '../../config/firebase.js';
+import { AiOutlineUser } from 'react-icons/ai';
+
 import useDataBase from '../../hooks/useDataBase';
-import { dataBase } from '../../config/firebase';
 function EditorPageImlimentation() {
   const [data, setData] = useState();
   const [DropDownFirst, setDropDownFirst] = useState('');
@@ -110,6 +112,9 @@ function EditorPageImlimentation() {
     <div>
       <div className='BigEditorContainer'>
         <div id='gridTitle'>בחר המקום המיועד לשינוי</div>
+        <a href='/Admin'>
+      <AiOutlineUser title="AdminPage" className='EditSlideShowPage2' id='accessIMG' color='#151e4d' />
+      </a>
         <div className='threeColumnEditor'>
           <div className='BigEditorContainer'>
             <h2>קמפוס</h2>

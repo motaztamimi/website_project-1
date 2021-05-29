@@ -68,6 +68,26 @@
   background-color: #171f73;
   width: 60px;
 }
+.circleDive2 {
+  height: 43px;
+  margin-right: 5px;
+  text-decoration: none;
+  border-style: none;
+  border-radius: 30px;
+  font-size: 1.4rem;
+  /* background-color: #171f73; */
+  width: 60px;
+}
+.circleDive {
+  height: 43px;
+  margin-right: 5px;
+  text-decoration: none;
+  border-style: none;
+  border-radius: 30px;
+  font-size: 1.4rem;
+  /* background-color: #171f73; */
+  width: 60px;
+}
 
 .circleDive :hover {
   background-color: #ea3d84;
@@ -88,4 +108,10 @@
 }
 .show {
   display: block;
+}
+
+@media screen and (max-width: 800px) {
+  .circleDive3  {
+    display: none;
+  }
 }

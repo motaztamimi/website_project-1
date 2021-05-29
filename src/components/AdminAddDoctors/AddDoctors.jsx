@@ -3,6 +3,8 @@ import './AddDoctors.css';
 import { dataBase, timestamp, storage } from '../../config/firebase';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { AiOutlineUser } from 'react-icons/ai';
+
 const AddDoctors = () => {
   const [file, setFile] = useState(null);
   const [showDiv, setShowDiv] = useState(false);
@@ -103,7 +105,11 @@ const AddDoctors = () => {
   }
   return (
     <div>
+      
       <div className='AddDoctorsPage'>
+      <a href='/Admin'>
+      <AiOutlineUser title="AdminPage" className='EditSlideShowPage2' id='accessIMG' color='#151e4d' />
+      </a>
         {showDiv && div}
         <form className='AddDoctorsForm' onSubmit={onSubmit}>
           <label>תמונת הרופא</label>

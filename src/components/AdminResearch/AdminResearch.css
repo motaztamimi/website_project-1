@@ -11,6 +11,21 @@
   padding: 5px;
   height: 40px;
 }
+.EditSlideShowPage2{
+  height: 43px;
+  margin-right: 5px;
+  text-decoration: none;
+  position: absolute;
+  right:0%;
+  top:0%;
+  border-style: none;
+  text-align: left;
+  border-radius: 30px;
+  font-size: 1.4rem;
+  /* background-color: #171f73; */
+  width: 60px;
+}
+
 .container {
   display: flex;
   flex-direction: column;

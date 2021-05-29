@@ -25,6 +25,7 @@
   /* background-color: #171f73; */
   width: 60px;
 }
+
 .container {
   display: flex;
   flex-direction: column;

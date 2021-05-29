@@ -6,10 +6,10 @@ const Videos = () => {
   const videos_gallery = [
     'https://www.youtube.com/embed/9jyK4NhXjgE',
     'https://www.youtube.com/embed/JuVHjhJlcyA',
-    'https://www.youtube.com/embed/6v2L2UGZJAM?rel=0&amp;showinfo=0',
-    'https://www.youtube.com/embed/6v2L2UGZJAM?rel=0&amp;showinfo=0',
-    'https://www.youtube.com/embed/6v2L2UGZJAM?rel=0&amp;showinfo=0',
-    'https://www.youtube.com/embed/6v2L2UGZJAM?rel=0&amp;showinfo=0',
+    'https://www.youtube.com/embed/_I6YHmfUEy0',
+    'https://www.youtube.com/embed/eL08QD3Kp1A',
+    'https://www.youtube.com/embed/PxkoKDpopNk',
+    'https://www.youtube.com/embed/4FmbhP4MVb0',
   ];
   return (
     <div className='videos_gal'>

@@ -59,12 +59,13 @@ function App() {
             <Header />
             <HomePage />
             <Fotter />
-            <Chatbot
+            {/* <Chatbot
               config={config}
               messageParser={MessageParser}
               actionProvider={ActionProvider}
             />
-            <ButtonBot />
+            <ButtonBot /> */}
+            <MyNewChatBot />
           </Route>
           <Route exact path='/AboutUs'>
             <Header />

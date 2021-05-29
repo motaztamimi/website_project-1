@@ -2,6 +2,8 @@ import './AdminEditSlideShow.css';
 import { useState } from 'react';
 import { storage, dataBase, timestamp } from '../../config/firebase';
 import AdminSlideShowPhotos from './AdminSlideShowPhotos';
+import { AiOutlineUser } from 'react-icons/ai';
+
 const AdminSlideShow = () => {
   const [file, setFile] = useState(null);
   const [selectedValue, setSelectedValue] = useState('kfarShaol');
@@ -67,6 +69,9 @@ const AdminSlideShow = () => {
       {showDiv && div}
       <form className='EditSlideShowForm' onSubmit={submithandeler}>
         <span>עלית תמונה מתחלפת</span>
+        <a href='/Admin'>
+      <AiOutlineUser title="AdminPage" className='EditSlideShowPage2' id='accessIMG' color='#151e4d' />
+      </a>
         <select
           name=''
           id='selectDep'

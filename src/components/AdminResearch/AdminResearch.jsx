@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import useDataBase from '../../hooks/useDataBase';
 import { storage } from '../../config/firebase';
 import { dataBase } from '../../config/firebase';
+import { AiOutlineUser } from 'react-icons/ai';
 
 import { motion } from 'framer-motion';
 import './AdminResearch.css';
@@ -39,6 +40,9 @@ const AdminResearch = () => {
   return (
     <div>
       <div className='AddResearchesButtonDiv'>
+      <a href='/Admin'>
+      <AiOutlineUser title="AdminPage" className='EditSlideShowPage2' id='accessIMG' color='#151e4d' />
+      </a>
         <button
           onClick={() => {
             history.push('/Admin/AdminResearch/AddResearch');

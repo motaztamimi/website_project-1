@@ -4,6 +4,8 @@ import { useState } from 'react';
 import './AdminAddResearch.css';
 import { dataBase, timestamp, storage } from '../../config/firebase';
 import { useHistory } from 'react-router-dom';
+import { AiOutlineUser } from 'react-icons/ai';
+
 const AdminAddResearch = () => {
   const [file, setFile] = useState(null);
   const [showDiv, setShowDiv] = useState(false);
@@ -57,6 +59,9 @@ const AdminAddResearch = () => {
     <div className='AddNewsPage'>
       {showDiv && div}
       <form className='AddNewsForm' onSubmit={onSubmit}>
+      <a href='/Admin'>
+      <AiOutlineUser title="AdminPage" className='EditSlideShowPage2' id='accessIMG' color='#151e4d' />
+      </a>
         <label>המחקר כ pdf</label>
         <input type='file' onChange={onFileChange} required />
 

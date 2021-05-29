@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import EditorPage from './EditorPage';
 import '../../style/EditorPageImlimentation.css';
 import { dataBase } from '../../config/firebase.js';
+import { AiOutlineUser } from 'react-icons/ai';
 
 function EditorPageImlimentation() {
   const [first, setfirst] = useState('');
@@ -79,6 +80,9 @@ function EditorPageImlimentation() {
     <div>
       <div className='dropdown'>
         <select id='classInClass'>{options}</select>
+        <a href='/Admin'>
+      <AiOutlineUser title="AdminPage" className='EditSlideShowPage2' id='accessIMG' color='#151e4d' />
+      </a>
         <select
           id='classes'
           className='dropSelect'

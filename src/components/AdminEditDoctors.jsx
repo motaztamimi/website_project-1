@@ -5,6 +5,8 @@ import { useHistory } from 'react-router-dom';
 import { storage } from '../config/firebase';
 import { dataBase } from '../config/firebase';
 import {useState}from 'react';
+import { AiOutlineUser } from 'react-icons/ai';
+
 const AdminEditDoctors = () => {
   const [isclick, setClick] = useState(false);
   const history = useHistory();
@@ -34,6 +36,9 @@ const AdminEditDoctors = () => {
   return (
     <div>
       <div className='AddDoctorsButtonDiv'>
+      <a href='/Admin'>
+      <AiOutlineUser title="AdminPage" className='EditSlideShowPage2' id='accessIMG' color='#151e4d' />
+      </a>
         <button onClick={routeChange} className='AddDoctorsButton'>
           Add Doctors
         </button>

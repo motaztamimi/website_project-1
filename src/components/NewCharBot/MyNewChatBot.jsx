@@ -12,17 +12,17 @@ const MyNewChatBot = () => {
   const Departments = dataBase.collection('Departments');
   const [item, setitem] = useState(null);
   const [item1, setitem1] = useState(null);
+  const arraya = [];
 
   useEffect(() => {
-    Departments.doc('איתנים')
+    Departments.doc('כפר שאול')
       .get()
       .then((value) => {
-        setitem(value.data()['מחלקה נשים']['fourth']);
+        setitem(value.data());
       });
   }, [true]);
 
   useEffect(() => {
-    console.log(item);
     setitem1(item);
   }, [item]);
 
@@ -34,7 +34,7 @@ const MyNewChatBot = () => {
     // the input string. Replacing the identified
     // HTML tag with a null string.
     const stringa = str.replace(/&nbsp;/gi, '');
-    console.log(stringa);
+
     return stringa.replace(/(<([^>]+)>)/gi, '');
   }
 
@@ -80,36 +80,122 @@ const MyNewChatBot = () => {
     },
     {
       id: '3',
-      delay: 0,
+
       options: [
-        { value: 1, label: ' כפר שאול', trigger: 'כפר שאול' },
+        {
+          value: 'כפר שאול',
+          label: ' כפר שאול',
+          trigger: (previousValue) => {
+            arraya.push(previousValue.value);
+            console.log(previousValue.value);
+            return previousValue.value;
+          },
+        },
         { value: 2, label: 'איתנים ', trigger: 'איתנים' },
         { value: 3, label: 'השירות הקהילתי', trigger: 'השירות הקהילתי' },
       ],
     },
     {
       id: 'כפר שאול',
-      options: [{ value: 1, label: 'מיון והשהיה', trigger: 'details' }],
+      options: [
+        {
+          value: 'מיון והשהייה',
+          label: 'מיון והשהייה',
+          trigger: (previousValue) => {
+            arraya.push(previousValue.value);
+            return previousValue.value;
+          },
+        },
+        {
+          value: 'מחלקה פעילה (סגורה) א׳',
+          label: 'מחלקה פעילה (סגורה) א׳',
+          trigger: (previousValue) => {
+            arraya.push(previousValue.value);
+            return previousValue.value;
+          },
+        },
+        {
+          value: 'מחלקה פעילה ממושכת ג׳(פסיכוגריאטריה)',
+          label: 'מחלקה פעילה ממושכת ג׳(פסיכוגריאטריה)',
+          trigger: (previousValue) => {
+            arraya.push(previousValue.value);
+            return previousValue.value;
+          },
+        },
+      ],
     },
     {
-      id: 'details',
+      id: 'מיון והשהייה',
+
       delay: 1000,
       message: () => {
-        const a = removeTags(item);
-
+        const a = removeTags(item[arraya[1]]['fourth']);
+        arraya.pop();
+        arraya.pop();
         return a;
       },
-      end: true,
+      trigger: 'finish',
+    },
+    {
+      id: 'מחלקה פעילה (סגורה) א׳',
+
+      delay: 1000,
+      message: () => {
+        const a = removeTags(item[arraya[1]]['fourth']);
+        arraya.pop();
+        arraya.pop();
+        return a;
+      },
+      trigger: 'finish',
+    },
+    {
+      id: 'מחלקה פעילה ממושכת ג׳(פסיכוגריאטריה)',
+
+      delay: 1000,
+      message: () => {
+        const a = removeTags(item[arraya[1]]['fourth']);
+        arraya.pop();
+        arraya.pop();
+        return a;
+      },
+      trigger: 'finish',
     },
     {
       id: 'איתנים',
-      message: 'ok',
+      message: 'אני  עוד בבניה של המחלקות',
       end: true,
     },
     {
       id: 'השירות הקהילתי',
 
-      message: 'ok',
+      message: 'אני  עוד בבניה של המחלקות',
+      end: true,
+    },
+    {
+      id: 'finish',
+      message: 'האם  צריך עוד משהו',
+      trigger: 'ask',
+    },
+    {
+      id: 'ask',
+      options: [
+        {
+          value: 'כן',
+          label: 'כן',
+          trigger: () => {
+            return '2';
+          },
+        },
+        {
+          value: 'לא',
+          label: 'לא',
+          trigger: 'bye',
+        },
+      ],
+    },
+    {
+      id: 'bye',
+      message: 'להתראות',
       end: true,
     },
   ];

@@ -82,6 +82,17 @@
     -webkit-animation: spin 2s linear infinite; /* Safari */
     animation: spin 2s linear infinite;
   }
+  .dropSelect {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    direction: rtl;
+    font-size: 1rem;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }  
   @-webkit-keyframes spin {
     0% {
       -webkit-transform: rotate(0deg);

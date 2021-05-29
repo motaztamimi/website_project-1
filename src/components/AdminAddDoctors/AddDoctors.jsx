@@ -7,6 +7,7 @@ const AddDoctors = () => {
   const [file, setFile] = useState(null);
   const [showDiv, setShowDiv] = useState(false);
   const history = useHistory();
+  const [selected, setSelected] = useState('');
   const div = (
     <div className='loading'>
       <div className='loader'></div>
@@ -53,9 +54,53 @@ const AddDoctors = () => {
       });
     });
   };
+  const a = [
+    'מיון והשהייה',
+    'מחלקה פעילה (סגורה) א׳',
+    'מחלקה פעילה (פתוחה) ב׳',
+    'מחלקה פעילה ממושכת ג׳(פסיכוגריאטריה)',
+    'מחלקה פעילה ממושכת (סגורה) ד׳',
+    'מחלקה פעילה (סגורה) ה׳(פסיכוגריאטריה)',
+    'אשפוז יום',
+  ];
+  const b = [
+    'חדר מיון',
+    'מחלקה פעילה (סגורה) א׳',
+    'מחלקה פעילה (פתוחה) ב׳',
+    'מחלקת אוטיסטים',
+    'מחלקה נשים',
+    'מחלקת המשך (אוטיסטים)',
+    'המחלקה לטיפול בילדים ובנוער על-שם דונלד כהן',
+  ];
+  const c = [
+    'המרפאה הקהילתית לבריאות הנפש-רח׳ שלום יהודה',
+    'המרפאה הקהילתית לבריאות הנפש-קרית יובל (בוגרים)',
+    'התחנה לבריאות הנפש-קרית יובל (ילדים ונוער)',
+    'המרפאה הקהיתית לבריאות הנפש - בית שמש',
+    'המרפאה הקהיתית לבריאות הנפש - מעלה אדומים',
+    'המכון לטיפול בבעיות סמים ותחלואה כפולה - תלפיות',
+    'התחנה לטיפול בילד ובנוער - רח׳ החי״ש קטמון',
+    'היחידה לגיל הרך',
+    'מרפאה שיקומית - עיר גנים',
+    'המרכז לטיפול יום אינטנסיבי - ארנונה',
+  ];
+  let type = null;
+  let options = null;
+  if (selected === 'כפר שאול') {
+    type = a;
+  } else if (selected === 'איתנים') {
+    type = b;
+  } else if (selected === 'שירות קהילתי') {
+    type = c;
+  }
+
   const changeSelectOptionHandler = (event) => {
     SetDepartmentOut(event.target.value);
+    setSelected(event.target.value);
   };
+  if (type) {
+    options = type.map((el) => <option key={el}>{el}</option>);
+  }
   return (
     <div>
       <div className='AddDoctorsPage'>
@@ -84,11 +129,12 @@ const AddDoctors = () => {
           />
           <label> מחלקה חיצונית</label>
           <select
+            required
             id='classes'
             className='dropSelect'
             onChange={changeSelectOptionHandler}>
             <option key='4' value='' defaultValue>
-              choees branch
+              בחר קמפוס
             </option>
             <option key='1' value='כפר שאול' defaultValue>
               כפר שאול
@@ -97,18 +143,20 @@ const AddDoctors = () => {
               איתנים
             </option>
             <option key='3' value='שירות קהילתי'>
-              שירות קהילתי{' '}
+              שירות קהילתי
             </option>
           </select>
           <label> מחלקה פנימית</label>
-          <input
-            type='text'
-            placeholder='נא להכניס שם מחלקה פנימית'
-            onChange={(e) => {
+          <select onChange={(e) => {
               SetDepartmentIn(e.target.value);
             }}
             required
-          />
+              className='dropSelect'>
+              <option>
+                בחר מחלקה
+              </option>
+            {options}
+          </select>
           <input className='SubmitButton' type='submit' value='submit' />
         </form>
       </div>

@@ -1,16 +1,8 @@
 import React from 'react';
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-} from 'pure-react-carousel';
+import {CarouselProvider,Slider,Slide,ButtonBack,ButtonNext} 
+from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import DoctorCard from './DoctorCard';
-import img0 from '../imges/manger.jpg';
-import img1 from '../imges/manger3.jpg';
-import img2 from '../imges/manger2.jpg';
 import '../style/DoctorSlid.css';
 import useDataBase from '../hooks/useDataBase';
 const DoctorSlid = () => {
@@ -72,51 +64,72 @@ const DoctorSlid = () => {
   let depIn=inn[flagg].text[depI];
   const oout=DataDoctors.filter(e=>e.DepartmentOut==nameDepO[flagg].text);
   const iin = oout.filter(e=>e.DepartmentIn==depIn);
-    const isSSR = typeof window !== "undefined";
-    const [windowSize, setWindowSize] = React.useState({
-      width: isSSR ? 1200 : window.innerWidth,
-      height: isSSR ? 800 : window.innerHeight,
-    });
-    function changeWindowSize() {
-      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+  const isSSR = typeof window !== "undefined";
+  const [windowSize, setWindowSize] = React.useState({
+    width: isSSR ? 1200 : window.innerWidth,
+    height: isSSR ? 800 : window.innerHeight,
+  });
+  function changeWindowSize() {
+    setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+  }
+  React.useEffect(() => {
+    window.addEventListener("resize", changeWindowSize);
+
+    return () => {
+      window.removeEventListener("resize", changeWindowSize);
+    };
+  }, []);
+  let count = 5;
+  if (windowSize.width>3100) {
+    count=7;
+    if(inn.length<count){
+      count=inn.length
     }
-    React.useEffect(() => {
-      window.addEventListener("resize", changeWindowSize);
-  
-      return () => {
-        window.removeEventListener("resize", changeWindowSize);
-      };
-    }, []);
-    let count = 5;
-    if (windowSize.width>3100) {
-      count=7;
+  }
+  if (windowSize.width>=2200 && windowSize.width<=3100) {
+    count=6;
+    if(inn.length<count){
+      count=inn.length
     }
-    if (windowSize.width>=2200 && windowSize.width<=3100) {
-      count=6;
+  }
+  if (windowSize.width>=1150 && windowSize.width<2200) {
+    count=5;
+    if(inn.length<count){
+      count=inn.length
     }
-    if (windowSize.width>=1150 && windowSize.width<2200) {
-      count=5;
+  }
+  if (windowSize.width>=900 && windowSize.width<1150) {
+    count=4;
+    if(inn.length<count){
+      count=inn.length
     }
-    if (windowSize.width>=900 && windowSize.width<1150) {
-      count=4;
+  }
+  if (windowSize.width>=700 && windowSize.width<900) {
+    count=3;
+    if(inn.length<count){
+      count=inn.length
     }
-    if (windowSize.width>=700 && windowSize.width<900) {
-      count=3;
+  }
+  if (windowSize.width>=500 && windowSize.width<700) {
+    count=2;
+    if(inn.length<count){
+      count=inn.length
     }
-    if (windowSize.width>=500 && windowSize.width<700) {
-      count=2;
+  }
+  if (windowSize.width<500) {
+    count=1;
+    if(inn.length<count){
+      count=inn.length
     }
-    if (windowSize.width<500) {
-      count=1;
-    }
+  }
   return (
     <CarouselProvider
-        naturalSlideWidth={100}
-        naturalSlideHeight={120}
-        totalSlides={iin.length}
-        visibleSlides={count}
-        touchEnabled={true}>
-        <div className='sliderr'>
+      naturalSlideWidth={100}
+      naturalSlideHeight={120}
+      totalSlides={iin.length}
+      visibleSlides={count}
+      touchEnabled={true}>
+      <div className='sliderr'>
           <div className='Backk'>
             <ButtonBack>&#10094;</ButtonBack>
           </div>
@@ -133,8 +146,7 @@ const DoctorSlid = () => {
             <ButtonNext>&#10095;</ButtonNext>
           </div>
         </div>
-      </CarouselProvider>
+    </CarouselProvider>
   )
 }
-
 export default DoctorSlid

@@ -1,6 +1,14 @@
 import React from 'react';
 import '../style/DoctorCard.css';
-const DoctorCard = ({ index }) => {
+const DoctorCard = ({ index, tt }) => {
+  function styleDep() {
+    if (tt !== 1) {
+      const f={
+      display: "none"
+      }
+      return f;
+    }
+  }
   return (
     <div className='contenerS'>
       <div className='one-card'>
@@ -10,6 +18,10 @@ const DoctorCard = ({ index }) => {
             <b>{index.DoctorName}</b>
           </h4>
           <p>{index.DoctorSpecialty}</p>
+          <div id='dep' style={styleDep()}>
+            <p>{index.DepartmentOut}</p>
+            <p>{index.DepartmentIn}</p>
+          </div>
         </div>
       </div>
     </div>

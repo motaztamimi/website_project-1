@@ -1,31 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import EditorPage from './EditorPage';
 import '../../style/EditorPageImlimentation.css';
-import { dataBase } from '../../config/firebase.js';
-
+import useDataBase from '../../hooks/useDataBase';
+import { dataBase } from '../../config/firebase';
 function EditorPageImlimentation() {
-  const [first, setfirst] = useState('');
-  const [second, setsecond] = useState('');
-  const [theird, settheird] = useState('');
-  const [fourth, setfourth] = useState('');
-  const [dropDownFirst, setdropDownFirst] = useState('');
+  const [data, setData] = useState();
+  const [DropDownFirst, setDropDownFirst] = useState('');
   const [DropDownSecond, setDropDownSecond] = useState('');
-  const [selected, setSelected] = useState('כפר שאול');
+  const [DropDownThird, setDropDownThird] = useState('');
+  const [inSquare, setinSquare] = useState('');
+  const Departments = useDataBase('/Departments');
+
+  console.log(DropDownSecond);
+  const num = [
+    { hebrew: 'מידע', english: 'first' },
+    { hebrew: 'מנהלים', english: 'second' },
+    { hebrew: 'צור קשר', english: 'theird' },
+    { hebrew: 'ימי פעולה', english: 'fourth' },
+  ];
 
   const changeSelectOptionHandler = (event) => {
-    setSelected(event.target.value);
+    setDropDownFirst(event.target.value);
+    setDropDownSecond('');
   };
-
+  const changeSecondSelectOptionHandler = (event) => {
+    setDropDownSecond(event.target.value);
+  };
+  const changeDropDownThird = (event) => {
+    setDropDownThird(event.target.value);
+  };
+  const getDataFromDataBase = () => {
+    if (DropDownFirst != '' && DropDownSecond != '' && DropDownThird != '') {
+      const collectionRef = dataBase.collection('Departments');
+      const therd = num.filter((e) => e.hebrew == DropDownThird);
+      const f = collectionRef.doc(DropDownFirst);
+      f.get().then((item) => {
+        const dep = item.data()[DropDownSecond];
+        if (dep == null) return;
+        console.log(dep[therd[0].english]);
+        document.getElementById('theText').innerHTML = dep[therd[0].english];
+        setinSquare(dep[therd[0].english]);
+      });
+    }
+  };
   const onSubmit = (e) => {
-    const toAdd = {};
-    toAdd[`${DropDownSecond}`] = { first, second, theird, fourth };
-
-    const collectionRef = dataBase.collection('Departments');
-    const department = collectionRef.doc(dropDownFirst);
-    department.update(toAdd).then(() => {
-      console.log('data updated');
-      window.location.reload();
-    });
+    const en = num.filter((e) => e.hebrew == DropDownThird);
+    const toTheBase = {};
+    const ans = {};
+    ans[en[0].english] = data;
+    toTheBase[DropDownSecond] = ans;
+    dataBase
+      .collection('Departments')
+      .doc(DropDownFirst)
+      .set(toTheBase, { merge: true });
   };
 
   const a = [
@@ -63,11 +90,11 @@ function EditorPageImlimentation() {
 
   let options = null;
 
-  if (selected === 'כפר שאול') {
+  if (DropDownFirst === 'כפר שאול') {
     type = a;
-  } else if (selected === 'איתנים') {
+  } else if (DropDownFirst === 'איתנים') {
     type = b;
-  } else if (selected === 'שירות קהילתי') {
+  } else if (DropDownFirst === 'שירות קהילתי') {
     type = c;
   }
 
@@ -75,90 +102,94 @@ function EditorPageImlimentation() {
     options = type.map((el) => <option key={el}>{el}</option>);
   }
 
+  if (DropDownSecond != '' && DropDownThird != '') {
+    getDataFromDataBase();
+  }
+
   return (
     <div>
-      <div className='dropdown'>
-        <select id='classInClass'>{options}</select>
-        <select
-          id='classes'
-          className='dropSelect'
-          onChange={changeSelectOptionHandler}>
-          <option key='1' value='כפר שאול' defaultValue>
-            כפר שאול
-          </option>
-          <option key='2' value='איתנים'>
-            איתנים
-          </option>
-          <option key='3' value='שירות קהילתי'>
-            שירות קהילתי{' '}
-          </option>
-        </select>
+      <div className='BigEditorContainer'>
+        <div id='gridTitle'>בחר המקום המיועד לשינוי</div>
+        <div className='threeColumnEditor'>
+          <div className='BigEditorContainer'>
+            <h2>קמפוס</h2>
+            <select
+              required
+              id='classes'
+              className='dropSelect'
+              onChange={changeSelectOptionHandler}>
+              <option key='1' value='' defaultValue>
+                בחר קאמפוס
+              </option>
+              <option key='2' value='כפר שאול'>
+                כפר שאול
+              </option>
+              <option key='3' value='איתנים'>
+                איתנים
+              </option>
+              <option key='4' value='שירות קהילתי'>
+                שירות קהילתי
+              </option>
+            </select>
+          </div>
+          <div className='BigEditorContainer'>
+            <h2>תת מחלקה</h2>
+            <select
+              className='dropSelect'
+              id='classInClass'
+              onChange={changeSecondSelectOptionHandler}
+              required>
+              <option key='' value='' defaultValue>
+                בחר תת מחלקה
+              </option>
+              {options}
+            </select>
+          </div>
+          <div className='BigEditorContainer'>
+            <h2>חלק מהדף</h2>
+            <select
+              required
+              id='classes'
+              className='dropSelect'
+              onChange={changeDropDownThird}>
+              <option key='5' value='' defaultValue>
+                בחר חלק מהדף
+              </option>
+              <option key='6' value='מידע'>
+                מידע
+              </option>
+              <option key='7' value='מנהלים'>
+                מנהלים
+              </option>
+              <option key='8' value='צור קשר'>
+                צור קשר
+              </option>
+              <option key='9' value='ימי פעולה'>
+                ימי פעולה
+              </option>
+            </select>
+          </div>
+        </div>
       </div>
+      <div className='dropdown'>{/* page of the part choosen*/}</div>
 
       <div id='one'>
-        <h1>ראשון</h1>
+        <h1>{DropDownThird}</h1>
         <EditorPage
+          value={inSquare}
           callBack={(e) => {
-            setfirst(...first, e);
-            if (e) {
-              document.getElementById('one').style.display = 'none';
-              document.getElementById('two').style.display = 'block';
-            }
-          }}
-        />
-      </div>
-      <div id='two'>
-        <h1>שני</h1>
-        <EditorPage
-          callBack={(e) => {
-            setsecond(...second, e);
-            if (e) {
-              document.getElementById('two').style.display = 'none';
-              document.getElementById('three').style.display = 'block';
-            }
+            setData(e);
           }}
         />
       </div>
 
-      <div id='three'>
-        <h1>שלישי</h1>
-        <EditorPage
-          callBack={(e) => {
-            settheird(...theird, e);
-            if (e) {
-              document.getElementById('three').style.display = 'none';
-              document.getElementById('four').style.display = 'block';
-            }
-          }}
-        />
-      </div>
-
-      <div id='four'>
-        <h1>רביעי</h1>
-        <EditorPage
-          callBack={(e) => {
-            setfourth(...fourth, e);
-            setdropDownFirst(
-              ...dropDownFirst,
-              document.getElementById('classes').value
-            );
-            setDropDownSecond(
-              ...DropDownSecond,
-              document.getElementById('classInClass').value
-            );
-            document.getElementById('four').style.display = 'none';
-            Array.from(
-              document.getElementsByClassName('finalStage')
-            )[0].style.display = 'flex';
-            /////////////////////////////////////////////?
-            //MUSTAFA
-            ////////////////////////////
-          }}
-        />
-      </div>
-
-      <div className='finalStage' style={{ display: 'none' }}>
-        <input type='button' value='Submit' onClick={onSubmit} />
+      <div className='finalStage'>
+        <div className='beforeButton'>
+          <button className='EditorButton' type='button' onClick={onSubmit}>
+            Submit
+          </button>
+        </div>
+        <div id='theText'></div>
       </div>
     </div>
   );

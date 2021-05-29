@@ -26,7 +26,6 @@ const Header = () => {
               </div>
             </div>
           </div>
-          {/*    <Nav /> */}
         </div>
       </div>
       <MoblieHeader />

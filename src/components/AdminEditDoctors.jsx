@@ -1,3 +1,5 @@
+/** @format */
+
 import { React, useState } from 'react';
 import '../style/AdminEditDoctors.css';
 import useDataBase from '../hooks/useDataBase';
@@ -28,7 +30,7 @@ const AdminEditDoctors = () => {
     setDoctorSpecialty0(doctor.DoctorSpecialty);
     SetDepartmentOut0(doctor.DepartmentOut);
     SetDepartmentIn0(doctor.DepartmentIn);
-    console.log(document.getElementById("input1").value)
+    console.log(document.getElementById('input1').value);
   };
   const DataDoctors = useDataBase('Doctors');
   let max = DataDoctors.docs.length / 1.25;
@@ -46,25 +48,29 @@ const AdminEditDoctors = () => {
     storageRef.delete();
     item.delete();
   };
-  function editDoctor00(e){
+  function editDoctor00(e) {
     e.preventDefault();
-    const colecstion = dataBase.collection('Doctors').doc(doctorE.id).update({
-      DoctorName: DoctorName0,
-      DoctorSpecialty: DoctorSpecialty0,
-      DepartmentOut: DepartmentOut0,
-      DepartmentIn: DepartmentIn0,
-    }).then(() => {
-      console.log("Document successfully written!");
-  })
-  .catch((error) => {
-      console.error("Error writing document: ", error);
-  });
-  
+    const colecstion = dataBase
+      .collection('Doctors')
+      .doc(doctorE.id)
+      .update({
+        DoctorName: DoctorName0,
+        DoctorSpecialty: DoctorSpecialty0,
+        DepartmentOut: DepartmentOut0,
+        DepartmentIn: DepartmentIn0,
+      })
+      .then(() => {
+        console.log('Document successfully written!');
+      })
+      .catch((error) => {
+        console.error('Error writing document: ', error);
+      });
+
     // const item = colecstion
     // const storageRef = storage.refFromURL(doctorE.DoctorImage);
     // storageRef.updateMetadata();
     // item.update
-  };
+  }
   function toggle() {
     setClick(!isclick);
   }
@@ -86,9 +92,14 @@ const AdminEditDoctors = () => {
   return (
     <div className='DoctorBody'>
       <div className='buttonAddDoctors'>
-         <a href='/Admin'>
-      <AiOutlineUser title="AdminPage" className='EditSlideShowPage2' id='accessIMG' color='#151e4d' />
-      </a>
+        <a href='/Admin'>
+          <AiOutlineUser
+            title='AdminPage'
+            className='EditSlideShowPage2'
+            id='accessIMG'
+            color='#151e4d'
+          />
+        </a>
         <button onClick={routeChange}>Add Doctors</button>
       </div>
       <div className='doctoerDetails'>
@@ -127,23 +138,47 @@ const AdminEditDoctors = () => {
       </div>
       <div className='editorDoctor' style={styleEdit()}>
         <form id='FORMD' onSubmit={editDoctor00}>
-          <label >שם הרופה:</label>
-          <input id ="input1" type='text' defaultValue={DoctorName0} onChange={(e) => {
+          <label>שם הרופה:</label>
+          <input
+            className='motaz'
+            id='input1'
+            type='text'
+            defaultValue={DoctorName0}
+            onChange={(e) => {
               SetDoctorName0(e.target.value);
-            }}/>
-          <label >תפקיד הרופה:</label>
-          <input type='text' id ="input2" defaultValue={DoctorSpecialty0} onChange={(e) => {
+            }}
+          />
+          <label>תפקיד הרופה:</label>
+          <input
+            className='motaz'
+            type='text'
+            id='input2'
+            defaultValue={DoctorSpecialty0}
+            onChange={(e) => {
               setDoctorSpecialty0(e.target.value);
-            }}/>
-          <label >קאמפוס:</label>
-          <input type='text' id ="input3" defaultValue={DepartmentOut0} onChange={(e) => {
+            }}
+          />
+          <label>קאמפוס:</label>
+          <input
+            className='motaz'
+            type='text'
+            id='input3'
+            defaultValue={DepartmentOut0}
+            onChange={(e) => {
               SetDepartmentOut0(e.target.value);
-            }}/>
-          <label >מחלקה:</label>
-          <input type='text' id ="input4" defaultValue={DepartmentIn0} onChange={(e) => {
+            }}
+          />
+          <label>מחלקה:</label>
+          <inpu
+            className='motaz'
+            type='text'
+            id='input4'
+            defaultValue={DepartmentIn0}
+            onChange={(e) => {
               SetDepartmentIn0(e.target.value);
-            }}/>
-          <input type="submit" value="Submit"/>
+            }}
+          />
+          <input type='submit' value='Submit' />
         </form>
       </div>
     </div>

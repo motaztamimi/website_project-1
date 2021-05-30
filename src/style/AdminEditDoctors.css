@@ -10,13 +10,13 @@
   padding: 5px;
   height: 40px;
 }
-.EditSlideShowPage2{
+.EditSlideShowPage2 {
   height: 43px;
   margin-right: 5px;
   text-decoration: none;
   position: absolute;
-  right:0%;
-  top:0%;
+  right: 0%;
+  top: 0%;
   border-style: none;
   text-align: left;
   border-radius: 30px;
@@ -36,52 +36,54 @@
   width: 200px;
 }
 .ContentContainer {
-  width: 100%;}
-.DoctorBody{
+  width: 100%;
+}
+.DoctorBody {
   display: grid;
   grid-template-rows: auto auto auto;
 }
-.buttonAddDoctors ,.buttonShowDoctor{
+.buttonAddDoctors,
+.buttonShowDoctor {
   text-align: center;
   padding-bottom: 5px;
   padding-top: 5px;
 }
 .buttonAddDoctors button {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #008CBA;
+  background-color: white;
+  color: black;
+  border: 2px solid #008cba;
   font-size: 1.5rem;
   font-weight: bold;
 }
-.buttonShowDoctor button{
-  background-color: white; 
-  color: black; 
-  border: 2px solid #008CBA;
+.buttonShowDoctor button {
+  background-color: white;
+  color: black;
+  border: 2px solid #008cba;
   font-size: 1.5rem;
   font-weight: bold;
 }
 .buttonAddDoctors button:hover {
-  background-color: #008CBA;
+  background-color: #008cba;
   color: white;
 }
-.buttonShowDoctor button:hover{
-  background-color: #008CBA;
+.buttonShowDoctor button:hover {
+  background-color: #008cba;
   color: white;
 }
-.doctoerDetails{
+.doctoerDetails {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   width: 80%;
   margin: auto;
   gap: 2px;
 }
-.doctoerDetailsIn{
-  border: 2px solid #008CBA;
+.doctoerDetailsIn {
+  border: 2px solid #008cba;
 }
-.cardd{
-  padding-left: 70px
+.cardd {
+  padding-left: 70px;
 }
-.buttonX{
+.buttonX {
   font-size: 30px;
   font-weight: 40px;
   color: black;
@@ -90,28 +92,28 @@
   background-color: red;
   border: none;
 }
-.editorD{
+.editorD {
   font-size: 30px;
   width: 40px;
   height: 40px;
 }
-.towButton{
+.towButton {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
-.ff{
-direction: rtl;
+.ff {
+  direction: rtl;
 }
-input[type=text] {
+.motaz {
   width: 100%;
   box-sizing: border-box;
   border: 3px solid #ccc;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-input[type=text]:focus {
-  border: 3px solid #555;
-}
-.editorDoctor{display: grid;
+
+.editorDoctor {
+  display: grid;
   direction: rtl;
-  text-align: center;}
+  text-align: center;
+}

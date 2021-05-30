@@ -23,62 +23,62 @@ const HomePage = () => {
     },
     {
       id: 2,
-      body: 'מחקר',
+      body: 'מרכז מיצוי זכוית',
       img: `${process.env.PUBLIC_URL}/imges/subjecttest1.png`,
     },
     {
       id: 3,
-      body: 'מחקר',
+      body: 'פניות הציבור',
       img: `${process.env.PUBLIC_URL}/imges/subjecttest2.png`,
     },
     {
       id: 4,
-      body: 'מערך ומזון',
+      body: 'אגוד ידידים',
       img: `${process.env.PUBLIC_URL}/imges/subjecttest3.png`,
     },
     {
       id: 5,
-      body: 'מחקר',
+      body: 'תרומות',
       img: `${process.env.PUBLIC_URL}/imges/subjecttest4.png`,
     },
     {
       id: 6,
-      body: 'מחקר',
+      body: 'ועד משפחות',
       img: `${process.env.PUBLIC_URL}/imges/subjecttest5.png`,
     },
     {
       id: 7,
-      body: 'מחקר',
+      body: 'תמנדבים במרכז',
       img: `${process.env.PUBLIC_URL}/imges/subjecttest6.png`,
     },
     {
       id: 8,
-      body: 'מחקר',
+      body: 'פר"א',
       img: `${process.env.PUBLIC_URL}/imges/subjecttest7.png`,
     },
     {
       id: 9,
-      body: 'מחקר',
+      body: 'שירות סוציאלי',
       img: `${process.env.PUBLIC_URL}/imges/subjecttest8.png`,
     },
     {
       id: 10,
-      body: 'מחקר',
+      body: 'שירות פסיכולוגי',
       img: `${process.env.PUBLIC_URL}/imges/subjecttest9.png`,
     },
     {
       id: 11,
-      body: 'מחקר',
+      body: 'ריפוי בעיסוק',
       img: `${process.env.PUBLIC_URL}/imges/subjecttest10.png`,
     },
     {
       id: 12,
-      body: 'מחקר',
+      body: 'תזונת ודיאטה',
       img: `${process.env.PUBLIC_URL}/imges/subjecttest11.png`,
     },
     {
       id: 13,
-      body: 'מחקר',
+      body: 'קבלת חולים',
       img: `${process.env.PUBLIC_URL}/imges/subjecttest.png`,
     },
   ];
@@ -95,17 +95,17 @@ const HomePage = () => {
     },
     {
       id: 3,
-      body: 'מנהלומשק',
+      body: 'מנהל ומשק',
       img: `${process.env.PUBLIC_URL}/imges/Center2.jpg`,
     },
     {
       id: 4,
-      body: 'מערך ומזון',
+      body: 'פעוליות אקדמיות',
       img: `${process.env.PUBLIC_URL}/imges/Center3.jpg`,
     },
     {
       id: 5,
-      body: 'מערך ',
+      body: 'יחידת מחקר',
       img: `${process.env.PUBLIC_URL}/imges/Center4.jpg`,
     },
   ];

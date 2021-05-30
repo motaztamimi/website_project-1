@@ -1,66 +1,71 @@
 /** @format */
 
-import "./App.css";
-import Fotter from "./components/Fotter";
-import HomePage from "./components/HomePage";
-import Header from "./components/Header";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import AboutUs from "./components/AboutUs/AboutUs";
-import AdminLogin from "./components/AdminLogin";
-import ProtectedRoute from "./components/ProtectedRoute";
-import AdminEditGallery from "./components/AdminEditGallery";
-import AdminEditSlideShow from "./components/Admin/AdminEditSlideShow";
-import AdminEditNews from "./components/AdminEditNews";
-import AdminEditEvents from "./components/AdminEditEvents";
-import EditorPageImlimentation from "./components/Editor/EditorPageImlimentation";
-import ListOfDep from "./components/ListOfDep";
-import InsidePage3 from "./components/InsidePage";
-import { Chatbot } from "react-chatbot-kit";
-import config from "./components/ChatBot/config";
-import MessageParser from "./components/ChatBot/MessageParser";
-import ActionProvider from "./components/ChatBot/ActionProvider";
-import AdminAddNews from "./components/adminAddNews/AdminAddNews";
-import AllResearchs from "./components/Research/AllResearchs";
-import ContactUsFormV1 from "./components/ContactUsFormV1/ContactUsFormV1";
-import ButtonBot from "./components/ChatBot/BottonHomePage/BottonHomePage";
-import Photos from "./components/Photos";
-import Videos from "./components/Videos";
-import AdminEditDoctors from "./components/AdminEditDoctors";
-import AddDoctors from "./components/AdminAddDoctors/AddDoctors"
+import './App.css';
+import Fotter from './components/Fotter';
+import HomePage from './components/HomePage';
+import Header from './components/Header';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import AboutUs from './components/AboutUs/AboutUs';
+import AdminLogin from './components/AdminLogin';
+import ProtectedRoute from './components/ProtectedRoute';
+import AdminEditGallery from './components/AdminEditGallery';
+import AdminEditSlideShow from './components/Admin/AdminEditSlideShow';
+import AdminEditNews from './components/AdminEditNews';
+import AdminEditEvents from './components/AdminEditEvents';
+import EditorPageImlimentation from './components/Editor/EditorPageImlimentation';
+import ListOfDep from './components/ListOfDep';
+import InsidePage3 from './components/InsidePage';
+import { Chatbot } from 'react-chatbot-kit';
+import config from './components/ChatBot/config';
+import MessageParser from './components/ChatBot/MessageParser';
+import ActionProvider from './components/ChatBot/ActionProvider';
+import AdminAddNews from './components/adminAddNews/AdminAddNews';
+import AllResearchs from './components/Research/AllResearchs';
+import ContactUsFormV1 from './components/ContactUsFormV1/ContactUsFormV1';
+import ButtonBot from './components/ChatBot/BottonHomePage/BottonHomePage';
+import Photos from './components/Photos';
+import Videos from './components/Videos';
+import AdminEditDoctors from './components/AdminEditDoctors';
+import AddDoctors from './components/AdminAddDoctors/AddDoctors';
 import NewsPagebyid from './components/NewsPagebyid/NewsPagebyid';
 import Googlemap from './components/GoogleMap/Googlemap';
 import AllNewsPage from './components/AllNewsPage/AllNewsPage';
 import AdminAddResearch from './components/AdminResearch/AdminAddResearch';
 import AdminResearch from './components/AdminResearch/AdminResearch';
+import ChatBot from 'react-simple-chatbot';
+import styled from 'styled-components';
+import MyNewChatBot from '../src/components/NewCharBot/MyNewChatBot';
 function App() {
   const detailKfarSahoulMap = {
     width: '500',
     height: '500',
-    src1: 'https://maps.google.com/maps?width=300&amp;height=300&amp;hl=en&amp;q=abu%20tor%20jerusalem+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed',
-    src2: 'https://embedmaps.com/google-maps-authorization/script.js?id=97feefe6d324d091355df0c5d72a94599ff5dd91',
+    src1:
+      'https://maps.google.com/maps?width=300&amp;height=300&amp;hl=en&amp;q=abu%20tor%20jerusalem+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed',
+    src2:
+      'https://embedmaps.com/google-maps-authorization/script.js?id=97feefe6d324d091355df0c5d72a94599ff5dd91',
     id: 'gmap_canvas',
   };
+  const div = styled.h2`
+    text-align: center;
+  `;
   return (
     <div className='App'>
       <Router>
         <Switch>
           <Route exact path='/Chatbot'>
-            <Chatbot
-              config={config}
-              messageParser={MessageParser}
-              actionProvider={ActionProvider}
-            />
+            <MyNewChatBot />
           </Route>
           <Route exact path='/'>
             <Header />
             <HomePage />
             <Fotter />
-            <Chatbot
+            {/* <Chatbot
               config={config}
               messageParser={MessageParser}
               actionProvider={ActionProvider}
             />
-            <ButtonBot />
+            <ButtonBot /> */}
+            <MyNewChatBot />
           </Route>
           <Route exact path='/AboutUs'>
             <Header />

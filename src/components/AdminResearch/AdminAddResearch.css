@@ -16,7 +16,20 @@
     display: flex;
     flex-direction: column;
   }
-  
+  .EditSlideShowPage2{
+    height: 43px;
+    margin-right: 5px;
+    text-decoration: none;
+    position: absolute;
+    right:0%;
+    top:0%;
+    border-style: none;
+    text-align: left;
+    border-radius: 30px;
+    font-size: 1.4rem;
+    /* background-color: #171f73; */
+    width: 60px;
+  }
   .AddNewsForm input {
     width: 100%;
     padding: 12px 20px;

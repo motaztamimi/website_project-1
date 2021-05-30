@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import useDataBase from '../hooks/useDataBase';
 import { storage } from '../config/firebase';
 import { dataBase } from '../config/firebase';
-
+import { AiOutlineUser } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 import '../style/AdminEditNews.css';
 import { useState } from 'react';
@@ -46,6 +46,9 @@ const AdminEditNews = () => {
           className='AddNewsButton'>
           Add news
         </button>
+        <a href='/Admin'>
+      <AiOutlineUser title="AdminPage" className='EditSlideShowPage2' id='accessIMG' color='#151e4d' />
+      </a>
       </div>
       <div className='containerr'>
         {getNews().map((Newa) => {

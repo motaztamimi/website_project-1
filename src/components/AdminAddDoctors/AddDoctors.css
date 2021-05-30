@@ -7,7 +7,20 @@
     width: 100%;
     height: 100vh;
   }
-  
+  .EditSlideShowPage2{
+    height: 43px;
+    margin-right: 5px;
+    text-decoration: none;
+    position: absolute;
+    right:0%;
+    top:0%;
+    border-style: none;
+    text-align: left;
+    border-radius: 30px;
+    font-size: 1.4rem;
+    /* background-color: #171f73; */
+    width: 60px;
+  }
   .AddDoctorsForm {
     width: 50%;
     border-radius: 5px;
@@ -82,6 +95,17 @@
     -webkit-animation: spin 2s linear infinite; /* Safari */
     animation: spin 2s linear infinite;
   }
+  .dropSelect {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    direction: rtl;
+    font-size: 1rem;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }  
   @-webkit-keyframes spin {
     0% {
       -webkit-transform: rotate(0deg);

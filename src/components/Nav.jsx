@@ -16,7 +16,7 @@ const Nav = () => {
         </li>
         <li>
           <a className='m4' href='#m4'>
-            המרכזשלנו
+            המרכז-שלנו
           </a>
         </li>
         <li>

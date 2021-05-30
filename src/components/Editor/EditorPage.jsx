@@ -17,6 +17,7 @@ function EditorPage(props) {
       <div className='ReactQuill'>
         <ReactQuill
           style={{}}
+          
           onChange={handleChange}
           modules={EditorPage.modules}
           theme={'snow'}

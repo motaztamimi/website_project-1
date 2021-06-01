@@ -3,6 +3,27 @@
 .imgsize {
   width: 300px;
 }
+.jCkMTG {
+  -webkit-animation: Lmuha 0.3s ease forwards;
+  animation: Lmuha 0.3s ease forwards;
+  background: #e8e8eb;
+  border-radius: 0 18px 18px 18px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 15%);
+  color: black;
+  display: inline-block;
+  font-size: 14px;
+  max-width: 50%;
+  margin: -5px 5px 10px 41px;
+  overflow: hidden;
+  position: relative;
+  padding: 12px;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+}
 .fpamDd {
   -webkit-animation: Lmuha 0.3s ease forwards;
   animation: Lmuha 0.3s ease forwards;
@@ -13,7 +34,7 @@
   display: inline-block;
   font-size: 14px;
   max-width: 50%;
-  margin: -8px 0 10px 41px;
+  margin: -5px 5px 10px 41px;
   overflow: hidden;
   position: relative;
   padding: 12px;
@@ -28,4 +49,14 @@
   margin: 2px 0 12px 41px;
   flex-direction: row;
   padding: 0 6px;
+}
+.eSRrVD {
+  background: rgb(72, 145, 252);
+  border: 0;
+  border-radius: 22px;
+  color: white;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 15%);
+  display: inline-block;
+  font-size: 14px;
+  padding: 12px;
 }

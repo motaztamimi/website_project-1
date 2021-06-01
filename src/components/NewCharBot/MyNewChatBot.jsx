@@ -1,9 +1,7 @@
 /** @format */
-
 import React, { useEffect, useState } from 'react';
 import { dataBase } from '../../config/firebase';
 import { ThemeProvider } from 'styled-components';
-
 import ChatBot from 'react-simple-chatbot';
 import './ChatBott.css';
 import ImgBot from '../../components/ChatBot/ImgBot';
@@ -37,15 +35,15 @@ const MyNewChatBot = () => {
     return stringa.replace(/(<([^>]+)>)/gi, '');
   }
   const theme = {
-    background: '#f5f8fb',
+    background: 'white',
     fontFamily: 'Rubik',
     headerBgColor: '#1AAFB3',
     headerFontColor: '#fff',
     headerFontSize: '15px',
-    botBubbleColor: '#1AAFB3',
-    botFontColor: '#fff',
-    userBubbleColor: '#fff',
-    userFontColor: '#4a4a4a',
+    botBubbleColor: '#E8E8EB',
+    botFontColor: 'black',
+    userBubbleColor: 'rgb(72, 145, 252)',
+    userFontColor: 'white',
   };
   const config = {
     width: '400px',
@@ -56,28 +54,6 @@ const MyNewChatBot = () => {
     headerTitle: 'Interested in Pet Insurance?',
   };
 
-  // const config = {
-  //   width: '400px',
-  //   height: '500px',
-  //   floating: true,
-  //   botDelay: 1500,
-  //   avatarStyle: {
-  //     borderRadius: '50%',
-  //   },
-  //   contentStyle: {
-  //     backgroundColor: '#fff',
-  //   },
-  //   bubbleStyle: {
-  //     backgroundColor: '#e8e8eb',
-  //     color: 'black',
-  //   },
-  //   floatingStyle: {
-  //     backgroundColor: ' rgb(72, 145, 252)',
-  //   },
-  //   style: {
-  //     backgroundColor: '#e8e8eb',
-  //   },
-  // };
   const steps = [
     {
       id: '1',

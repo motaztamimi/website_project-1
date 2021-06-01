@@ -32,9 +32,9 @@ function EditorPageImlimentation() {
     setDropDownThird(event.target.value);
   };
   const getDataFromDataBase = () => {
-    if (DropDownFirst != '' && DropDownSecond != '' && DropDownThird != '') {
+    if (DropDownFirst !== '' && DropDownSecond !== '' && DropDownThird !== '') {
       const collectionRef = dataBase.collection('Departments');
-      const therd = num.filter((e) => e.hebrew == DropDownThird);
+      const therd = num.filter((e) => e.hebrew === DropDownThird);
       const f = collectionRef.doc(DropDownFirst);
       f.get().then((item) => {
         const dep = item.data()[DropDownSecond];
@@ -46,7 +46,7 @@ function EditorPageImlimentation() {
     }
   };
   const onSubmit = (e) => {
-    const en = num.filter((e) => e.hebrew == DropDownThird);
+    const en = num.filter((e) => e.hebrew === DropDownThird);
     const toTheBase = {};
     const ans = {};
     ans[en[0].english] = data;
@@ -56,6 +56,7 @@ function EditorPageImlimentation() {
       .doc(DropDownFirst)
       .set(toTheBase, { merge: true });
   };
+   
 
   const a = [
     'מיון והשהייה',
@@ -104,7 +105,7 @@ function EditorPageImlimentation() {
     options = type.map((el) => <option key={el}>{el}</option>);
   }
 
-  if (DropDownSecond != '' && DropDownThird != '') {
+  if (DropDownSecond !== '' && DropDownThird !== '') {
     getDataFromDataBase();
   }
 
@@ -190,9 +191,11 @@ function EditorPageImlimentation() {
 
       <div className='finalStage'>
         <div className='beforeButton'>
+         
           <button className='EditorButton' type='button' onClick={onSubmit}>
             Submit
           </button>
+        
         </div>
         <div id='theText'></div>
       </div>

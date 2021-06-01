@@ -1,12 +1,10 @@
 /** @format */
 
 import React, { useEffect, useState } from 'react';
-import useDataBase from '../../hooks/useDataBase';
 import { dataBase } from '../../config/firebase';
 import { ThemeProvider } from 'styled-components';
 
 import ChatBot from 'react-simple-chatbot';
-import immg from './LOGONEW.jpg';
 import './ChatBott.css';
 import ImgBot from '../../components/ChatBot/ImgBot';
 const MyNewChatBot = () => {

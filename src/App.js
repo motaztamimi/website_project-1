@@ -34,6 +34,8 @@ import AdminAddResearch from './components/AdminResearch/AdminAddResearch';
 import AdminResearch from './components/AdminResearch/AdminResearch';
 import ChatBot from 'react-simple-chatbot';
 import styled from 'styled-components';
+import axios from 'axios';
+
 import MyNewChatBot from '../src/components/NewCharBot/MyNewChatBot';
 function App() {
   const detailKfarSahoulMap = {

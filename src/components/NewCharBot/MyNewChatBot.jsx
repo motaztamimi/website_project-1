@@ -3,11 +3,12 @@
 import React, { useEffect, useState } from 'react';
 import useDataBase from '../../hooks/useDataBase';
 import { dataBase } from '../../config/firebase';
+import { ThemeProvider } from 'styled-components';
 
 import ChatBot from 'react-simple-chatbot';
 import immg from './LOGONEW.jpg';
 import './ChatBott.css';
-
+import ImgBot from '../../components/ChatBot/ImgBot';
 const MyNewChatBot = () => {
   const Departments = dataBase.collection('Departments');
   const [item, setitem] = useState(null);
@@ -37,38 +38,52 @@ const MyNewChatBot = () => {
 
     return stringa.replace(/(<([^>]+)>)/gi, '');
   }
-
+  const theme = {
+    background: '#f5f8fb',
+    fontFamily: 'Rubik',
+    headerBgColor: '#1AAFB3',
+    headerFontColor: '#fff',
+    headerFontSize: '15px',
+    botBubbleColor: '#1AAFB3',
+    botFontColor: '#fff',
+    userBubbleColor: '#fff',
+    userFontColor: '#4a4a4a',
+  };
   const config = {
     width: '400px',
     height: '500px',
+    hideUserAvatar: true,
     floating: true,
-    botDelay: 1500,
-    avatarStyle: {
-      borderRadius: '50%',
-    },
-    contentStyle: {
-      backgroundColor: '#fff',
-    },
-    bubbleStyle: {
-      backgroundColor: '#e8e8eb',
-      color: 'black',
-    },
-    floatingStyle: {
-      backgroundColor: ' rgb(72, 145, 252)',
-    },
-    style: {
-      backgroundColor: '#e8e8eb',
-    },
+    placeholder: 'Type your response.',
+    headerTitle: 'Interested in Pet Insurance?',
   };
+
+  // const config = {
+  //   width: '400px',
+  //   height: '500px',
+  //   floating: true,
+  //   botDelay: 1500,
+  //   avatarStyle: {
+  //     borderRadius: '50%',
+  //   },
+  //   contentStyle: {
+  //     backgroundColor: '#fff',
+  //   },
+  //   bubbleStyle: {
+  //     backgroundColor: '#e8e8eb',
+  //     color: 'black',
+  //   },
+  //   floatingStyle: {
+  //     backgroundColor: ' rgb(72, 145, 252)',
+  //   },
+  //   style: {
+  //     backgroundColor: '#e8e8eb',
+  //   },
+  // };
   const steps = [
     {
       id: '1',
-      component: (
-        <div className='imgsize'>
-          <img className='imgsize' src={immg} alt='' />{' '}
-        </div>
-      ),
-
+      component: <ImgBot />,
       trigger: '2',
     },
     {
@@ -93,6 +108,7 @@ const MyNewChatBot = () => {
         },
         { value: 2, label: 'איתנים ', trigger: 'איתנים' },
         { value: 3, label: 'השירות הקהילתי', trigger: 'השירות הקהילתי' },
+        { value: 4, label: ' מטבח', trigger: 'מטבח' },
       ],
     },
     {
@@ -198,8 +214,50 @@ const MyNewChatBot = () => {
       message: 'להתראות',
       end: true,
     },
+    {
+      id: 'מטבח',
+      message: 'נא בבקשה לבחור אחת מהשאלות שלנו',
+      trigger: 'שאלות מטבח',
+    },
+    {
+      id: 'שאלות מטבח',
+      options: [
+        {
+          value: 1,
+          label: 'איפה אוכלים בבית החולים ?',
+          trigger: 'איפה אוכלים בבית החולים ?',
+        },
+        // { value: 2, label: 'מה כולל התפריט?', trigger: 'מה כולל התפריט?' },
+        // {
+        //   value: 3,
+        //   label: 'תפריטים מיוחדים?',
+        //   trigger: 'תפריטים מיוחדים?',
+        // },
+        // {
+        //   value: 4,
+        //   label: 'ומה בנוגע לכשרות?',
+        //   trigger: 'ומה בנוגע לכשרות?',
+        // },
+      ],
+    },
+    {
+      id: 'איפה אוכלים בבית החולים ?',
+      message: 'מטופלים - במחלקות השונות.',
+      trigger: 'more',
+    },
+    {
+      id: 'more',
+      avatar: 'true',
+      message: 'עובדי המרכז – בחדרי האוכל בכל קמפוס',
+      end: true,
+    },
   ];
-  return <div>{item ? <ChatBot steps={steps} {...config} /> : 'hello'}</div>;
+  // return
+  return (
+    <ThemeProvider theme={theme}>
+      <div>{item ? <ChatBot steps={steps} {...config} /> : 'hello'}</div>
+    </ThemeProvider>
+  );
 };
 
 export default MyNewChatBot;

@@ -35,6 +35,7 @@ import AdminResearch from './components/AdminResearch/AdminResearch';
 import ChatBot from 'react-simple-chatbot';
 import styled from 'styled-components';
 import MyNewChatBot from '../src/components/NewCharBot/MyNewChatBot';
+import Search from './search/Search';
 function App() {
   const detailKfarSahoulMap = {
     width: '500',
@@ -300,6 +301,12 @@ function App() {
             path='/Admin/AdminResearch/AddResearch'
             component={AdminAddResearch}
           />
+
+          <Route exact path='/Search'>
+            <Header />
+            <Search />
+            <Fotter />
+          </Route>
         </Switch>
       </Router>
     </div>

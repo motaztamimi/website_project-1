@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import ChatBot from 'react-simple-chatbot';
 import './ChatBott.css';
 import ImgBot from '../../components/ChatBot/ImgBot';
+import Message from './Message';
 const MyNewChatBot = () => {
   const Departments = dataBase.collection('Departments');
   const [item, setitem] = useState(null);
@@ -53,6 +54,160 @@ const MyNewChatBot = () => {
     placeholder: 'Type your response.',
     headerTitle: 'Interested in Pet Insurance?',
   };
+
+  const newStep = [
+    {
+      id: 'imageStarting',
+      component: <ImgBot />,
+      trigger: 'WellcomeMessage',
+    },
+    {
+      id: 'WellcomeMessage',
+
+      message:
+        'בורכים הבאים למרכזה הירושלמי לבריאות המפש נא בבקשה לבחור אחת מהאופציות שלנו',
+      trigger: 'MainOpthion',
+    },
+    {
+      id: 'MainOpthion',
+      options: [
+        {
+          value: 'רשומות רפואיות',
+          label: 'רשומות רפואיות',
+          trigger: 'רשומות רפואיות',
+        },
+        {
+          value: 'עובדים סוציאליים',
+          label: 'עובדים סוציאליים',
+          trigger: 'עובדים סוציאליים',
+        },
+        {
+          value: 'מטבח',
+          label: 'מטבח',
+          trigger: 'מטבח',
+        },
+      ],
+    },
+    {
+      id: 'רשומות רפואיות',
+      message: 'הבנתי אנא בבקשה לבחור אחת מהשאלות הבאות',
+      end: true,
+    },
+    {
+      id: 'עובדים סוציאליים',
+      message: 'הבנתי אנא בבקשה לבחור אחת מהשאלות הבאות',
+      end: true,
+    },
+    {
+      id: 'מטבח',
+      message: 'הבנתי אנא בבקשה לבחור אחת מהשאלות הבאות',
+      trigger: 'אופציות למטבח',
+    },
+
+    //החלק של המטבח
+    {
+      id: 'אופציות למטבח',
+      options: [
+        {
+          value: 'איפה אוכלים בבית החולים ',
+          label: 'איפה אוכלים בבית החולים ',
+          trigger: 'איפה אוכלים בבית החולים ',
+        },
+        {
+          value: 'מה כולל התפריט',
+          label: 'מה כולל התפריט',
+          trigger: 'מה כולל התפריט',
+        },
+        {
+          value: 'תפריטים מיוחדים',
+          label: 'תפריטים מיוחדים',
+          trigger: 'תפריטים מיוחדים',
+        },
+        {
+          value: 'ומה בנוגע לכשרות',
+          label: 'ומה בנוגע לכשרות',
+          trigger: 'ומה בנוגע לכשרות',
+        },
+      ],
+    },
+    //האפציות של מטבח
+    {
+      id: 'איפה אוכלים בבית החולים ',
+      asMessage: true,
+      component: (
+        <Message
+          Mesg='מטופלים - במחלקות השונות.
+      עובדי המרכז – בחדרי האוכל בכל קמפוס
+      '
+        />
+      ),
+      trigger: 'end Question',
+    },
+    {
+      id: 'מה כולל התפריט',
+      asMessage: true,
+      component: (
+        <Message Mesg='התפריט נבנה בהתאם להנחיות סל המזון וע"פ עקרונות התזונה הנכונה' />
+      ),
+      trigger: 'המשך לתפריט',
+    },
+    {
+      id: 'המשך לתפריט',
+      asMessage: true,
+      component: (
+        <Message Mesg='בכל ארוחה תמצאו חלבונים/ פחמימות / שומנים / ויטמינים ומינרליים' />
+      ),
+      trigger: 'end Question',
+    },
+    {
+      id: 'תפריטים מיוחדים',
+      component: (
+        <Message Mesg='תפריטים מיוחדים כגון תפריט טבעוני, ללא גלוטן, צמחוני או תפריטים למצבי מחלה שונים מוגשים בהתאם לצרכי המטופלים ולפי המלצות הדיאטניות.' />
+      ),
+      asMessage: true,
+      trigger: 'end Question',
+    },
+    {
+      id: 'ומה בנוגע לכשרות',
+      component: (
+        <Message
+          Mesg='הכנת המזון וחלוקתו במחלקות מתבצעת בפיקוח של משגיח כשרות במשרה מלאה.
+      המזון הוא בכשרות הרבנות הראשית
+      '
+        />
+      ),
+      asMessage: true,
+      trigger: 'end Question opthion',
+    },
+    //סיום השאלות של המטבח
+    // סיום החלק של המטבח
+
+    //end Question
+    {
+      id: 'end Question',
+      message: 'האם את/ה צריך עוד משהו',
+      trigger: 'end Question opthion',
+    },
+    {
+      id: 'end Question opthion',
+      options: [
+        { value: 'כן', label: 'כן', trigger: 'כן' },
+
+        { value: 'לא', label: 'לא', trigger: 'לא' },
+      ],
+    },
+    {
+      id: 'כן',
+      message: 'בכיף',
+      trigger: 'MainOpthion',
+    },
+    {
+      id: 'לא',
+      message: 'אני מקווה שעזרתי לך להתראות',
+      end: true,
+    },
+    //end the end Question
+  ];
 
   const steps = [
     {
@@ -229,7 +384,7 @@ const MyNewChatBot = () => {
   // return
   return (
     <ThemeProvider theme={theme}>
-      <div>{item ? <ChatBot steps={steps} {...config} /> : 'hello'}</div>
+      <div>{item ? <ChatBot steps={newStep} {...config} /> : 'hello'}</div>
     </ThemeProvider>
   );
 };

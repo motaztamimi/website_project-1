@@ -12,7 +12,7 @@ function Noseem({ department, url }) {
       console.log(item.data()['pages'][url]);
       const dep = item.data()['pages'][url];
       // console.log(item.data()[dep].data);
-      settheData(item.data()[dep].data);
+      settheData(item.data()[dep].first);
       setHeder(dep);
     });
   }, [department, url]);

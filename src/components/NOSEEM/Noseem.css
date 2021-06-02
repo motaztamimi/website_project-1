@@ -1,0 +1,10 @@
+#root {
+  padding-top: 2%;
+  margin: auto;
+  width: 80%;
+  direction: rtl;
+}
+.noseemHeader {
+  text-align: center;
+  padding-bottom: 5%;
+}

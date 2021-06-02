@@ -48,7 +48,7 @@ const HomePage = () => {
     },
     {
       id: 7,
-      body: 'תמנדבים במרכז',
+      body: 'מתנדבים במרכז',
       img: `${process.env.PUBLIC_URL}/imges/subjecttest6.png`,
     },
     {

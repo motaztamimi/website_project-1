@@ -87,7 +87,20 @@ function EditorPageImlimentation() {
     'מרפאה שיקומית - עיר גנים',
     'המרכז לטיפול יום אינטנסיבי - ארנונה',
   ];
-
+  const d = [
+    'מרכז מיצוי זכוית',
+    'פניות הציבור',
+    'אגוד ידידים',
+    'תרומות',
+    'ועד משפחות',
+    'מתנדבים במרכז',
+    'פר"א',
+    'שירות סוציאלי',
+    'שירות פסיכולוגי',
+    'ריפוי בעיסוק',
+    'תזונת ודיאטה',
+    'קבלת חולים',
+  ];
   let type = null;
 
   let options = null;
@@ -98,10 +111,14 @@ function EditorPageImlimentation() {
     type = b;
   } else if (DropDownFirst === 'שירות קהילתי') {
     type = c;
+  } else if (DropDownFirst === 'אחר') {
+    type = d;
   }
 
   if (type) {
     options = type.map((el) => <option key={el}>{el}</option>);
+  }
+  if (type == d) {
   }
 
   if (DropDownSecond != '' && DropDownThird != '') {
@@ -113,8 +130,13 @@ function EditorPageImlimentation() {
       <div className='BigEditorContainer'>
         <div id='gridTitle'>בחר המקום המיועד לשינוי</div>
         <a href='/Admin'>
-      <AiOutlineUser title="AdminPage" className='EditSlideShowPage2' id='accessIMG' color='#151e4d' />
-      </a>
+          <AiOutlineUser
+            title='AdminPage'
+            className='EditSlideShowPage2'
+            id='accessIMG'
+            color='#151e4d'
+          />
+        </a>
         <div className='threeColumnEditor'>
           <div className='BigEditorContainer'>
             <h2>קמפוס</h2>
@@ -134,6 +156,9 @@ function EditorPageImlimentation() {
               </option>
               <option key='4' value='שירות קהילתי'>
                 שירות קהילתי
+              </option>
+              <option key='10' value='אחר'>
+                אחר
               </option>
             </select>
           </div>
@@ -160,6 +185,7 @@ function EditorPageImlimentation() {
               <option key='5' value='' defaultValue>
                 בחר חלק מהדף
               </option>
+
               <option key='6' value='מידע'>
                 מידע
               </option>

@@ -6,24 +6,38 @@ import ChatBot from 'react-simple-chatbot';
 import './ChatBott.css';
 import ImgBot from '../../components/ChatBot/ImgBot';
 import Message from './Message';
+
 const MyNewChatBot = () => {
   const Departments = dataBase.collection('Departments');
   const [item, setitem] = useState(null);
-  const [item1, setitem1] = useState(null);
+  let temp = [];
+  const [bollean, setbollean] = useState(false);
+  const [bollean1, setbollean1] = useState(false);
   const arraya = [];
+  const [data, setdata] = useState(null);
+  const collectionRef = dataBase.collection('ChatBot');
 
   useEffect(() => {
-    Departments.doc('כפר שאול')
+    collectionRef
+      .doc('kitchen')
       .get()
-      .then((value) => {
-        setitem(value.data());
+      .then((snapshot) => {
+        let x = snapshot.data()['Steps'];
+        setdata(x);
+        setbollean(true);
       });
   }, [true]);
-
   useEffect(() => {
-    setitem1(item);
-  }, [item]);
-
+    if (bollean) {
+      temp = [...newFiree];
+      for (let vla in data) {
+        temp.push(data[vla]);
+      }
+      setdata(temp);
+      setbollean1(true);
+      console.log(temp);
+    }
+  }, [bollean]);
   function removeTags(str) {
     if (str === null || str === '') return false;
     else str = str.toString();
@@ -52,8 +66,65 @@ const MyNewChatBot = () => {
     hideUserAvatar: true,
     floating: true,
     placeholder: 'Type your response.',
-    headerTitle: 'Interested in Pet Insurance?',
+    headerTitle: 'מענה אוטומטי מהמרכז',
   };
+  const newFiree = [
+    {
+      id: 'imageStarting',
+      component: <ImgBot />,
+      trigger: 'WellcomeMessage',
+    },
+    {
+      id: 'WellcomeMessage',
+
+      message:
+        'בורכים הבאים למרכזה הירושלמי לבריאות המפש נא בבקשה לבחור אחת מהאופציות שלנו',
+      trigger: 'MainOpthion',
+    },
+    {
+      id: 'MainOpthion',
+      options: [
+        {
+          value: 'מטבח',
+          label: 'מטבח',
+          trigger: 'מטבח',
+        },
+      ],
+    },
+    {
+      id: 'מטבח',
+      message: 'הבנתי אנא בבקשה לבחור אחת מהשאלות הבאות',
+      trigger: 'אופציות למטבח',
+    },
+    {
+      id: 'אופציות למטבח',
+      message: 'הבנתי אנא בבקשה לבחור אחת מהשאלות הבאות',
+      end: true,
+    },
+    {
+      id: 'end Question',
+      message: 'האם את/ה צריך עוד משהו',
+      trigger: 'end Question opthion',
+    },
+    {
+      id: 'end Question opthion',
+      options: [
+        { value: 'כן', label: 'כן', trigger: 'כן' },
+
+        { value: 'לא', label: 'לא', trigger: 'לא' },
+      ],
+    },
+    {
+      id: 'כן',
+      message: 'בכיף',
+      trigger: 'MainOpthion',
+    },
+    {
+      id: 'לא',
+      message: 'אני מקווה שעזרתי לך להתראות',
+      end: true,
+    },
+  ];
 
   const newStep = [
     {
@@ -91,20 +162,19 @@ const MyNewChatBot = () => {
     {
       id: 'רשומות רפואיות',
       message: 'הבנתי אנא בבקשה לבחור אחת מהשאלות הבאות',
-      end: true,
+      trigger: ' אופציות לרשומות רפואיות',
     },
     {
       id: 'עובדים סוציאליים',
       message: 'הבנתי אנא בבקשה לבחור אחת מהשאלות הבאות',
       end: true,
     },
+    //החלק של המטבח
     {
       id: 'מטבח',
       message: 'הבנתי אנא בבקשה לבחור אחת מהשאלות הבאות',
       trigger: 'אופציות למטבח',
     },
-
-    //החלק של המטבח
     {
       id: 'אופציות למטבח',
       options: [
@@ -181,6 +251,54 @@ const MyNewChatBot = () => {
     },
     //סיום השאלות של המטבח
     // סיום החלק של המטבח
+
+    //ההתחלה של רשומות רפואיות
+    {
+      id: ' אופציות לרשומות רפואיות',
+      message: 'הבנתי אנא בבקשה לבחור אחת מהשאלות הבאות',
+      trigger: 'רשימת האופציות',
+    },
+
+    {
+      id: 'רשימת האופציות',
+      options: [
+        {
+          value: 'איך פונים לקבל מידע',
+          label: 'איך פונים לקבל מידע',
+          trigger: 'איך פונים לקבל מידע',
+        },
+        {
+          value: 'כיצד עו"ד יכול לבקש מידע ממחלקת רשומות רפואיות',
+          label: 'כיצד עו"ד יכול לבקש מידע ממחלקת רשומות רפואיות',
+          trigger: 'כיצד עו"ד יכול לבקש מידע ממחלקת רשומות רפואיות',
+        },
+      ],
+    },
+    {
+      id: 'איך פונים לקבל מידע',
+      component: (
+        <Message
+          Mesg='שולחים בקשה בפקס 02-6551410 בה מציינים בבירור איזה מידע מתבקש ומצרפים צילום תעודת זהות או בדואר לידי מחלקת רשומות רפואיות בית חולים כפר שאול - רחוב הרב רפאל קצנלבוגן 101, ירושלים
+      לידיעתך, נוהלי משרד הבריאות קובעים כי קבלת העתק של רשומה רפואית מחויב בתשלום.
+      '
+        />
+      ),
+      asMessage: true,
+      trigger: 'end Question',
+    },
+
+    {
+      id: 'כיצד עו"ד יכול לבקש מידע ממחלקת רשומות רפואיות',
+      component: (
+        <Message
+          Mesg='כל בקשת מידע תועבר למחלקת הרשומה אשר תטפל / תנתב הבקשה.
+      מספר הפקס של מחלקת הרשומה 02-6551410 או בדואר לכתובת 
+      '
+        />
+      ),
+      asMessage: true,
+      trigger: 'end Question',
+    },
 
     //end Question
     {
@@ -381,10 +499,10 @@ const MyNewChatBot = () => {
       end: true,
     },
   ];
-  // return
+  console.log(data);
   return (
     <ThemeProvider theme={theme}>
-      <div>{item ? <ChatBot steps={newStep} {...config} /> : 'hello'}</div>
+      <div>{bollean1 ? <ChatBot steps={data} {...config} /> : 'hello'}</div>
     </ThemeProvider>
   );
 };

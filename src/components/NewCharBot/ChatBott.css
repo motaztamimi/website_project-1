@@ -108,3 +108,16 @@
 .rsc-ts-bubble {
   direction: rtl;
 }
+.dropBot {
+  width: 50%;
+
+  padding: 12px 20px;
+  margin: 8px 0;
+  margin-bottom: 80px;
+  display: block;
+  border: 1px solid #ccc;
+  direction: rtl;
+  font-size: 1rem;
+  border-radius: 4px;
+  box-sizing: border-box;
+}

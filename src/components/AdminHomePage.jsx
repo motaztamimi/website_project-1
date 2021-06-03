@@ -38,6 +38,12 @@ const AdminHomePage = () => {
           </Link>
         </div>
         <div className='AdminHomePageOp'>
+          <Link to='/Admin/AddChatBot'>
+            <BiNews size='150px'></BiNews>
+            <h3> עריכת CHATBOT</h3>
+          </Link>
+        </div>
+        <div className='AdminHomePageOp'>
           <Link to='/Admin/EditEvents'>
             <BiCalendarEvent size='150px'></BiCalendarEvent>
             <h3>עריכת אירועים</h3>

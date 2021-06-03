@@ -8,13 +8,15 @@ import ImgBot from '../../components/ChatBot/ImgBot';
 import Message from './Message';
 
 const MyNewChatBot = () => {
-  const Departments = dataBase.collection('Departments');
   const [item, setitem] = useState(null);
   let temp = [];
   const [bollean, setbollean] = useState(false);
   const [bollean1, setbollean1] = useState(false);
   const arraya = [];
   const [data, setdata] = useState(null);
+  const [data1, setdata1] = useState(null);
+  const [data2, setdata2] = useState(null);
+
   const collectionRef = dataBase.collection('ChatBot');
 
   useEffect(() => {
@@ -24,6 +26,20 @@ const MyNewChatBot = () => {
       .then((snapshot) => {
         let x = snapshot.data()['Steps'];
         setdata(x);
+      });
+    collectionRef
+      .doc('ListHealth')
+      .get()
+      .then((snapshot) => {
+        let x = snapshot.data()['Steps'];
+        setdata1(x);
+      });
+    collectionRef
+      .doc('Workers')
+      .get()
+      .then((snapshot) => {
+        let x = snapshot.data()['Steps'];
+        setdata2(x);
         setbollean(true);
       });
   }, [true]);
@@ -32,6 +48,12 @@ const MyNewChatBot = () => {
       temp = [...newFiree];
       for (let vla in data) {
         temp.push(data[vla]);
+      }
+      for (let vla in data1) {
+        temp.push(data1[vla]);
+      }
+      for (let vla in data2) {
+        temp.push(data2[vla]);
       }
       setdata(temp);
       setbollean1(true);
@@ -89,6 +111,16 @@ const MyNewChatBot = () => {
           label: 'מטבח',
           trigger: 'מטבח',
         },
+        {
+          value: 'רשומות רפואיות',
+          label: 'רשומות רפואיות',
+          trigger: 'רשומות רפואיות',
+        },
+        {
+          value: 'עובדים סוציאליים',
+          label: 'עובדים סוציאליים',
+          trigger: 'עובדים סוציאליים',
+        },
       ],
     },
     {
@@ -98,6 +130,26 @@ const MyNewChatBot = () => {
     },
     {
       id: 'אופציות למטבח',
+      message: 'הבנתי אנא בבקשה לבחור אחת מהשאלות הבאות',
+      end: true,
+    },
+    {
+      id: 'רשומות רפואיות',
+      message: 'הבנתי אנא בבקשה לבחור אחת מהשאלות הבאות',
+      trigger: 'אופציות רשומות',
+    },
+    {
+      id: 'אופציות רשומות',
+      message: 'הבנתי אנא בבקשה לבחור אחת מהשאלות הבאות',
+      end: true,
+    },
+    {
+      id: 'עובדים סוציאליים',
+      message: 'הבנתי אנא בבקשה לבחור אחת מהשאלות הבאות',
+      trigger: 'אופציות עובדים',
+    },
+    {
+      id: 'אופציות עובדים',
       message: 'הבנתי אנא בבקשה לבחור אחת מהשאלות הבאות',
       end: true,
     },

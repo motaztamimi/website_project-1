@@ -11,10 +11,12 @@ const AdminAddChatBotQuestion = () => {
   const [Doc, setDoc] = useState('');
   const [data, setdata] = useState('');
   const [data1, setdata1] = useState('');
+  const [data2, setdata2] = useState('');
+
   const [nameDoc, setnameDoc] = useState('');
   const [BotQuestion, setBotQuestion] = useState('');
   const [BotAnswer, setBotAnswer] = useState('');
-  const Bot = useDataBase('ChatBot');
+
   const collectionRef = dataBase.collection('ChatBot');
   const num = [
     { hebrew: 'רשומות רפואיות', english: 'ListHealth' },
@@ -36,6 +38,13 @@ const AdminAddChatBotQuestion = () => {
         let x = snapshot.data()['Steps'];
         setdata1(x);
       });
+    collectionRef
+      .doc('Workers')
+      .get()
+      .then((snapshot) => {
+        let x = snapshot.data()['Steps'];
+        setdata2(x);
+      });
   }, []);
   useEffect(() => {
     if (nameDoc === 'kitchen') {
@@ -46,11 +55,14 @@ const AdminAddChatBotQuestion = () => {
       setResultToUPload(data1);
       setbollean(false);
     }
+    if (nameDoc === 'Workers') {
+      setResultToUPload(data2);
+      setbollean(false);
+    }
   }, [bollean]);
   const onSubmit = (e) => {
     e.preventDefault();
     const en = num.filter((e) => e.hebrew === Doc);
-
     let name = en[0].english;
     setnameDoc(name);
     if (name === 'kitchen') {
@@ -59,7 +71,9 @@ const AdminAddChatBotQuestion = () => {
     if (name === 'ListHealth') {
       setbollean(true);
     }
-
+    if (name === 'Workers') {
+      setbollean(true);
+    }
     let OPthions = {
       value: BotQuestion,
       label: BotQuestion,

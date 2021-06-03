@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import React from 'react';
 import './../AdminAddDoctors/AddDoctors.css';
 import '../adminAddNews/AdminAddNews.css';
+import AdminShowQuestions from './AdminShowQuestions';
+import './ChatBott.css';
 import useDataBase from '../../hooks/useDataBase';
 import { dataBase, timestamp } from '../../config/firebase';
 const AdminAddChatBotQuestion = () => {
@@ -94,48 +96,51 @@ const AdminAddChatBotQuestion = () => {
     setDoc(event.target.value);
   };
   return (
-    <div className='AddNewsPage'>
-      <form className='AddNewsForm' onSubmit={onSubmit}>
-        <label> חלק </label>
-        <select
-          id='classes'
-          className='dropBot'
-          required
-          onChange={changeSelectOptionHandler}>
-          <option key='0' value='' defaultValue>
-            בחר נושא
-          </option>
-          <option key='4' value='רשומות רפואיות'>
-            רשומות רפואיות
-          </option>
-          <option key='1' value='עובדים סוציאליים'>
-            עובדים סוציאליים
-          </option>
-          <option key='2' value='מטבח'>
-            מטבח
-          </option>
-        </select>
-        <label> שאלה </label>
-        <input
-          type='text'
-          placeholder='נא להכניס שאלה להוספה'
-          onChange={(e) => {
-            setBotQuestion(e.target.value);
-          }}
-          required
-        />
-        <label>תשובה</label>
-        <input
-          type='text'
-          placeholder='נא להכניס תשובה'
-          onChange={(e) => {
-            setBotAnswer(e.target.value);
-          }}
-          required
-        />
+    <div className='BotContainer'>
+      <div className='BotformDiv'>
+        <form className='AddNewsForm Botform' onSubmit={onSubmit}>
+          <label> חלק </label>
+          <select
+            id='classes'
+            className='dropBot'
+            required
+            onChange={changeSelectOptionHandler}>
+            <option key='0' value='' defaultValue>
+              בחר נושא
+            </option>
+            <option key='4' value='רשומות רפואיות'>
+              רשומות רפואיות
+            </option>
+            <option key='1' value='עובדים סוציאליים'>
+              עובדים סוציאליים
+            </option>
+            <option key='2' value='מטבח'>
+              מטבח
+            </option>
+          </select>
+          <label> שאלה </label>
+          <input
+            type='text'
+            placeholder='נא להכניס שאלה להוספה'
+            onChange={(e) => {
+              setBotQuestion(e.target.value);
+            }}
+            required
+          />
+          <label>תשובה</label>
+          <input
+            type='text'
+            placeholder='נא להכניס תשובה'
+            onChange={(e) => {
+              setBotAnswer(e.target.value);
+            }}
+            required
+          />
 
-        <input className='SubmitButton' type='submit' value='submit' />
-      </form>
+          <input className='SubmitButton' type='submit' value='submit' />
+        </form>
+      </div>
+      <AdminShowQuestions key='AdminShowQuestions' />
     </div>
   );
 };

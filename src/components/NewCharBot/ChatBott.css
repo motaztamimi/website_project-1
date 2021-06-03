@@ -119,3 +119,33 @@
   border-radius: 4px;
   box-sizing: border-box;
 }
+.BotDataShow {
+  width: 80%;
+}
+.BotTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+.BotTable tr,
+td {
+  direction: rtl;
+  text-align: right;
+  padding: 8px;
+}
+.BotTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.Botform {
+  width: 100%;
+}
+.BotContaine {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  direction: rtl;
+  width: 100%;
+
+  flex-wrap: nowrap;
+}
+.BotformDiv {
+  width: 50%;
+}

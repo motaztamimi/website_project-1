@@ -109,11 +109,9 @@
   direction: rtl;
 }
 .dropBot {
-  width: 50%;
-
   padding: 12px 20px;
-  margin: 8px 0;
-  margin-bottom: 80px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   display: block;
   border: 1px solid #ccc;
   direction: rtl;

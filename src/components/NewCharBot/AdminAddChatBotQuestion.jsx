@@ -12,11 +12,9 @@ const AdminAddChatBotQuestion = () => {
   const [data, setdata] = useState('');
   const [data1, setdata1] = useState('');
   const [data2, setdata2] = useState('');
-
   const [nameDoc, setnameDoc] = useState('');
   const [BotQuestion, setBotQuestion] = useState('');
   const [BotAnswer, setBotAnswer] = useState('');
-
   const collectionRef = dataBase.collection('ChatBot');
   const num = [
     { hebrew: 'רשומות רפואיות', english: 'ListHealth' },
@@ -97,25 +95,26 @@ const AdminAddChatBotQuestion = () => {
   };
   return (
     <div className='AddNewsPage'>
-      <select
-        required
-        id='classes'
-        className='dropBot'
-        onChange={changeSelectOptionHandler}>
-        <option key='0' value='' defaultValue>
-          בחר נושא
-        </option>
-        <option key='4' value='רשומות רפואיות' defaultValue>
-          רשומות רפואיות
-        </option>
-        <option key='1' value='עובדים סוציאליים' defaultValue>
-          עובדים סוציאליים
-        </option>
-        <option key='2' value='מטבח'>
-          מטבח
-        </option>
-      </select>
       <form className='AddNewsForm' onSubmit={onSubmit}>
+        <label> חלק </label>
+        <select
+          id='classes'
+          className='dropBot'
+          required
+          onChange={changeSelectOptionHandler}>
+          <option key='0' value='' defaultValue>
+            בחר נושא
+          </option>
+          <option key='4' value='רשומות רפואיות'>
+            רשומות רפואיות
+          </option>
+          <option key='1' value='עובדים סוציאליים'>
+            עובדים סוציאליים
+          </option>
+          <option key='2' value='מטבח'>
+            מטבח
+          </option>
+        </select>
         <label> שאלה </label>
         <input
           type='text'

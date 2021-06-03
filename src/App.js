@@ -289,11 +289,10 @@ function App() {
             component={AdminEditDoctors}
           />
 
-          <ProtectedRoute
-            exact
-            path='/Admin/AddChatBot'
-            component={AdminAddChatBotQuestion}
-          />
+          <Route exact path='/Admin/AddChatBot'>
+            <AdminAddChatBotQuestion />
+          </Route>
+
           <ProtectedRoute
             exact
             path='/Admin/AddChatBot'

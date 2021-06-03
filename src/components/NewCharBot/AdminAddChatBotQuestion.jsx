@@ -17,7 +17,14 @@ const AdminAddChatBotQuestion = () => {
   const [nameDoc, setnameDoc] = useState('');
   const [BotQuestion, setBotQuestion] = useState('');
   const [BotAnswer, setBotAnswer] = useState('');
+  const [showDiv, setShowDiv] = useState(false);
+
   const collectionRef = dataBase.collection('ChatBot');
+  const div = (
+    <div className='Botloading'>
+      <div className='Botloader'></div>
+    </div>
+  );
   const num = [
     { hebrew: 'רשומות רפואיות', english: 'ListHealth' },
     { hebrew: 'עובדים סוציאליים', english: 'Workers' },
@@ -65,6 +72,7 @@ const AdminAddChatBotQuestion = () => {
     const en = num.filter((e) => e.hebrew === Doc);
     let name = en[0].english;
     setnameDoc(name);
+
     if (name === 'kitchen') {
       setbollean(true);
     }
@@ -80,7 +88,7 @@ const AdminAddChatBotQuestion = () => {
       trigger: BotQuestion,
     };
     if (ResultToUPload) {
-      console.log(ResultToUPload);
+      setShowDiv(true);
       ResultToUPload[0].options.push(OPthions);
       let Question = {
         id: BotQuestion,
@@ -88,7 +96,12 @@ const AdminAddChatBotQuestion = () => {
         trigger: 'end Question',
       };
       ResultToUPload.push(Question);
-      collectionRef.doc(nameDoc).update({ Steps: ResultToUPload });
+      collectionRef
+        .doc(nameDoc)
+        .update({ Steps: ResultToUPload })
+        .then(() => {
+          window.location.reload();
+        });
     }
   };
   const changeSelectOptionHandler = (event) => {
@@ -98,6 +111,7 @@ const AdminAddChatBotQuestion = () => {
   return (
     <div className='BotContainer'>
       <div className='BotformDiv'>
+        {showDiv && div}
         <form className='AddNewsForm Botform' onSubmit={onSubmit}>
           <label> חלק </label>
           <select
@@ -139,6 +153,9 @@ const AdminAddChatBotQuestion = () => {
 
           <input className='SubmitButton' type='submit' value='submit' />
         </form>
+      </div>
+      <div className='vLine1'>
+        <div className='vLine'></div>
       </div>
       <AdminShowQuestions key='AdminShowQuestions' />
     </div>

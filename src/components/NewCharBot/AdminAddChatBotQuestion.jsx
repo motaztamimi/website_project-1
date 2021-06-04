@@ -69,10 +69,35 @@ const AdminAddChatBotQuestion = () => {
   }, [bollean]);
   const onSubmit = (e) => {
     e.preventDefault();
-    const en = num.filter((e) => e.hebrew === Doc);
+
+    let OPthions = {
+      value: BotQuestion,
+      label: BotQuestion,
+      trigger: BotQuestion,
+    };
+
+    setShowDiv(true);
+    ResultToUPload[0].options.push(OPthions);
+    let Question = {
+      id: BotQuestion,
+      message: BotAnswer,
+      trigger: 'end Question',
+    };
+    ResultToUPload.push(Question);
+    collectionRef
+      .doc(nameDoc)
+      .update({ Steps: ResultToUPload })
+      .then(() => {
+        window.location.reload();
+      });
+  };
+  const changeSelectOptionHandler = (event) => {
+    console.log(event.target.value);
+    setDoc(event.target.value);
+    let namea = event.target.value;
+    const en = num.filter((e) => e.hebrew === namea);
     let name = en[0].english;
     setnameDoc(name);
-
     if (name === 'kitchen') {
       setbollean(true);
     }
@@ -82,31 +107,6 @@ const AdminAddChatBotQuestion = () => {
     if (name === 'Workers') {
       setbollean(true);
     }
-    let OPthions = {
-      value: BotQuestion,
-      label: BotQuestion,
-      trigger: BotQuestion,
-    };
-    if (ResultToUPload) {
-      setShowDiv(true);
-      ResultToUPload[0].options.push(OPthions);
-      let Question = {
-        id: BotQuestion,
-        message: BotAnswer,
-        trigger: 'end Question',
-      };
-      ResultToUPload.push(Question);
-      collectionRef
-        .doc(nameDoc)
-        .update({ Steps: ResultToUPload })
-        .then(() => {
-          window.location.reload();
-        });
-    }
-  };
-  const changeSelectOptionHandler = (event) => {
-    console.log(event.target.value);
-    setDoc(event.target.value);
   };
   return (
     <div className='BotContainer'>

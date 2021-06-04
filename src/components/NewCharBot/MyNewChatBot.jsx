@@ -63,11 +63,7 @@ const MyNewChatBot = () => {
   const steps = [
     {
       id: '1',
-      component: (
-        <div className='imgsize'>
-          <img className='imgsize' src={immg} alt='' />{' '}
-        </div>
-      ),
+      message: 'dsadsada',
 
       trigger: '2',
     },

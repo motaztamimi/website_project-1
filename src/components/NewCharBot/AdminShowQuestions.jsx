@@ -90,6 +90,7 @@ const AdminShowQuestions = () => {
 
   return (
     <div className='BotDataShow'>
+      <h1>הצגת השאלות</h1>
       <select
         id='classes'
         className='dropBot'

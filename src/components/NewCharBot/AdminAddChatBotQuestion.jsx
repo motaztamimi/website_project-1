@@ -112,6 +112,7 @@ const AdminAddChatBotQuestion = () => {
     <div className='BotContainer'>
       <div className='BotformDiv'>
         {showDiv && div}
+        <h1>הוספת שאלות</h1>
         <form className='AddNewsForm Botform' onSubmit={onSubmit}>
           <label> חלק </label>
           <select
@@ -157,6 +158,7 @@ const AdminAddChatBotQuestion = () => {
       <div className='vLine1'>
         <div className='vLine'></div>
       </div>
+
       <AdminShowQuestions key='AdminShowQuestions' />
     </div>
   );

@@ -2,8 +2,9 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import useSearch from '../hooks/useSearch';
 import { dataBase } from '../config/firebase';
+import './Search.css';
 const Search = () => {
-  const searchString = 'מחשבים, מתקני ספורט , טיפול משפחתי, טיפול באומנות ועוד';
+  const searchString = 'מועתז';
   const [newsFromSearch, setNewsFromSearch] = useState(null);
   const [departmentsFromSearch, setDepartmentsFromSearch] = useState(null);
   const sections = ['איתנים', 'כפר שאול', 'שירות קהילתי'];
@@ -153,28 +154,40 @@ const Search = () => {
   console.log(contentSec);
 
   return (
-    <div>
+    <div className='SearchResults'>
       <div className='NewsFormSearch'>
-        {newsFromSearch &&
-          newsFromSearch.map((newsItem) => {
-            return (
-              <Link to={`News/${newsItem.id}`} key={newsItem.id}>
-                <div className='NewsItemfromSearch'>
-                  <h1>{newsItem.NewsTitle}</h1>
-                  <img src={newsItem.NewsImage} alt='img' />
-                </div>
-              </Link>
-            );
-          })}
-      </div>
-
-      <div className='SectionsFromSearch'>
-        {sectionsFromSearch && (
-          <div className='SectionFromSearch'>
-            <h1>{sectionsFromSearch}</h1>
-          </div>
+        {newsFromSearch && newsFromSearch.length !== 0 && (
+          <>
+            <h1 className='NewsFromSearchTitle'>חדשות</h1>
+            {newsFromSearch.map((newsItem) => {
+              return (
+                <Link to={`News/${newsItem.id}`} key={newsItem.id}>
+                  <div className='NewsItemfromSearch'>
+                    <img src={newsItem.NewsImage} alt='img' />
+                    <div>
+                      <h1>{newsItem.NewsTitle}</h1>
+                      <h3>{newsItem.NewsSubTitle}</h3>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+            <hr />
+          </>
         )}
       </div>
+
+      {sectionsFromSearch && (
+        <div className='SectionFromSearch'>
+          <h1 className='SectionFromSearchTitle'>מרפאות</h1>
+          <Link to=''>
+            <div className='SectionFromSearchContent'>
+              {<h1>{sectionsFromSearch}</h1>}
+            </div>
+          </Link>
+          <hr />
+        </div>
+      )}
     </div>
   );
 };

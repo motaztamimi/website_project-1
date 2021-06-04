@@ -33,7 +33,7 @@ const AdminEditDoctors = () => {
     console.log(document.getElementById('input1').value);
   };
   const DataDoctors = useDataBase('Doctors');
-  let max = DataDoctors.docs.length / 1.25;
+  let max = DataDoctors.docs.length / 2;
   let len = Math.round(max);
   function getDoctors() {
     if (isclick) {

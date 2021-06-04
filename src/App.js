@@ -38,6 +38,8 @@ import axios from 'axios';
 import AdminAddChatBotQuestion from './components/NewCharBot/AdminAddChatBotQuestion';
 
 import MyNewChatBot from '../src/components/NewCharBot/MyNewChatBot';
+import Search from './search/Search';
+import Noseem from './components/NOSEEM/Noseem';
 function App() {
   const detailKfarSahoulMap = {
     width: '500',
@@ -214,6 +216,76 @@ function App() {
             <InsidePage3 department='שירות קהילתי' url='9' />
             <Fotter />
           </Route>
+
+          <Route exact path='/aher/0'>
+            <Header />
+            <Noseem department='מרכז מיצוי זכוית' url='0' />
+            <Fotter />
+          </Route>
+
+          <Route exact path='/aher/1'>
+            <Header />
+            <Noseem department='פניות הציבור' url='1' />
+            <Fotter />
+          </Route>
+          <Route exact path='/aher/2'>
+            <Header />
+            <Noseem department='אגוד ידידים' url='2' />
+            <Fotter />
+          </Route>
+
+          <Route exact path='/aher/3'>
+            <Header />
+            <Noseem department='תרומות' url='3' />
+            <Fotter />
+          </Route>
+          <Route exact path='/aher/4'>
+            <Header />
+            <Noseem department='ועד משפחות' url='4' />
+            <Fotter />
+          </Route>
+          <Route exact path='/aher/5'>
+            <Header />
+            <Noseem department='מתנדבים במרכז' url='5' />
+            <Fotter />
+          </Route>
+
+          <Route exact path='/aher/6'>
+            <Header />
+            <Noseem department='פר"א' url='6' />
+            <Fotter />
+          </Route>
+
+          <Route exact path='/aher/7'>
+            <Header />
+            <Noseem department='שירות סוציאלי' url='7' />
+            <Fotter />
+          </Route>
+
+          <Route exact path='/aher/8'>
+            <Header />
+            <Noseem department='שירות פסיכולוגי' url='8' />
+            <Fotter />
+          </Route>
+
+          <Route exact path='/aher/9'>
+            <Header />
+            <Noseem department='ריפוי בעיסוק' url='9' />
+            <Fotter />
+          </Route>
+
+          <Route exact path='/aher/10'>
+            <Header />
+            <Noseem department='תזונת ודיאטה' url='10' />
+            <Fotter />
+          </Route>
+
+          <Route exact path='/aher/11'>
+            <Header />
+            <Noseem department='קבלת חולים' url='11' />
+            <Fotter />
+          </Route>
+
           <Route exact path='/pdf'>
             <Header />
             <AllResearchs />
@@ -308,6 +380,12 @@ function App() {
             path='/Admin/AdminResearch/AddResearch'
             component={AdminAddResearch}
           />
+
+          <Route exact path='/Search'>
+            <Header />
+            <Search />
+            <Fotter />
+          </Route>
         </Switch>
       </Router>
     </div>

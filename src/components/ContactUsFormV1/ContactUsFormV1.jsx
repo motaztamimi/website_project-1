@@ -13,6 +13,8 @@ function ContactUsFormV1() {
         values.email +
         '?subject=' +
         values.name +
+        '     ' +
+        values.phoneNumber +
         '&body=' +
         values.message
     );

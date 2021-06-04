@@ -101,9 +101,11 @@ function EditorPageImlimentation() {
     'תזונת ודיאטה',
     'קבלת חולים',
   ];
+  const f = ['מידע', 'מנהלים', 'צור קשר', 'ימי פעולה'];
   let type = null;
 
   let options = null;
+  let lastOption = null;
 
   if (DropDownFirst === 'כפר שאול') {
     type = a;
@@ -119,7 +121,32 @@ function EditorPageImlimentation() {
     options = type.map((el) => <option key={el}>{el}</option>);
   }
   if (type == d) {
+    lastOption = <option key='10'> מידע </option>;
+  } else {
+    lastOption = f.map((el) => <option key={el}>{el}</option>);
   }
+
+  const lastDrop = () => {
+    if (type == d) {
+      console.log('wtf1');
+      return <div></div>;
+    } else {
+      console.log('wtf');
+      return (
+        <div>
+          <option key='7' value='מנהלים'>
+            מנהלים
+          </option>
+          <option key='8' value='צור קשר'>
+            צור קשר
+          </option>
+          <option key='9' value='ימי פעולה'>
+            ימי פעולה
+          </option>
+        </div>
+      );
+    }
+  };
 
   if (DropDownSecond != '' && DropDownThird != '') {
     getDataFromDataBase();
@@ -185,19 +212,7 @@ function EditorPageImlimentation() {
               <option key='5' value='' defaultValue>
                 בחר חלק מהדף
               </option>
-
-              <option key='6' value='מידע'>
-                מידע
-              </option>
-              <option key='7' value='מנהלים'>
-                מנהלים
-              </option>
-              <option key='8' value='צור קשר'>
-                צור קשר
-              </option>
-              <option key='9' value='ימי פעולה'>
-                ימי פעולה
-              </option>
+              {lastOption}
             </select>
           </div>
         </div>

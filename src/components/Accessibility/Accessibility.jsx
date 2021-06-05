@@ -5,6 +5,7 @@ import './Accessibility.css';
 import accessIMG from './accessibility.png';
 import { AiFillHome } from 'react-icons/ai';
 import { AiOutlineUser } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 function Accessibility() {
   const [font, setfont] = useState(100);
   var max = 130;
@@ -25,8 +26,8 @@ function Accessibility() {
       window.counter = 1;
     } else {
       window.counter++;
-      if (window.counter % 2 == 0) {
-        var css =
+      if (window.counter % 2 === 0) {
+        css =
           'html {-webkit-filter: invert(0%); -moz-filter:    invert(0%); -o-filter: invert(0%); -ms-filter: invert(0%); }';
       }
     }
@@ -62,39 +63,47 @@ function Accessibility() {
 
   return (
     <div className='dropDown'>
-      {/* <div className='circleDive' onClick={func}> */}
       <img
         className='circleDive'
-        title="Accessibility"
+        title='Accessibility'
         id='accessIMG'
         onClick={func}
         src={accessIMG}
         alt='nothing'
       />
-      <a href='/'>
-      <AiFillHome title="HomePage" className='circleDive2' id='accessIMG' color='#151e4d' />
-      </a>
-      <a href='/Admin'>
-      <AiOutlineUser title="AdminPage" className='circleDive3' id='accessIMG' color='#151e4d' />
-      </a>
-      {/* </div> */}
+      <Link to='/'>
+        <AiFillHome
+          title='HomePage'
+          className='circleDive2'
+          id='accessIMG'
+          color='#151e4d'
+        />
+      </Link>
+      <Link to='/Admin'>
+        <AiOutlineUser
+          title='AdminPage'
+          className='circleDive3'
+          id='accessIMG'
+          color='#151e4d'
+        />
+      </Link>
 
       <div id='myDropdown' className='triangle dropdown-content'>
         <div className='up'>
-          <a className='circle' onClick={decreaseFont}>
+          <button className='circle' onClick={decreaseFont}>
             <span> א -</span>
-          </a>
-          <a className='circle' onClick={originalFont}>
+          </button>
+          <button className='circle' onClick={originalFont}>
             <span> א</span>
-          </a>
-          <a className='circle' onClick={increaseFont}>
+          </button>
+          <button className='circle' onClick={increaseFont}>
             <span> א + </span>
-          </a>
+          </button>
         </div>
         <div className='down circle'>
-          <a onClick={invertColor}>
+          <button onClick={invertColor}>
             <span>עוורי צבעים</span>
-          </a>
+          </button>
         </div>
       </div>
     </div>

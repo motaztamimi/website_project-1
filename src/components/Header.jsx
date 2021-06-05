@@ -4,7 +4,6 @@ import { BsSearch } from 'react-icons/bs';
 import MoblieHeader from './MobHeader';
 import '../style/Header.css';
 import Accessibility from './Accessibility/Accessibility';
-import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <>

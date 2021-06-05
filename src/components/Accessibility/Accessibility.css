@@ -39,7 +39,6 @@
 
 .circle span:after {
   content: '\00bb';
-  /* position: absolute; */
   opacity: 0;
   top: 0;
   right: -20px;
@@ -111,7 +110,7 @@
 }
 
 @media screen and (max-width: 800px) {
-  .circleDive3  {
+  .circleDive3 {
     display: none;
   }
 }

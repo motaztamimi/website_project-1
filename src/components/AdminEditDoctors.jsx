@@ -9,7 +9,6 @@ import { dataBase } from '../config/firebase';
 import { AiOutlineUser } from 'react-icons/ai';
 import DoctorCard from './DoctorCard';
 import { AiFillEdit } from 'react-icons/ai';
-import { event } from 'jquery';
 const AdminEditDoctors = () => {
   const [DoctorName0, SetDoctorName0] = useState('');
   const [DoctorSpecialty0, setDoctorSpecialty0] = useState('');
@@ -50,7 +49,7 @@ const AdminEditDoctors = () => {
   };
   function editDoctor00(e) {
     e.preventDefault();
-    const colecstion = dataBase
+    dataBase
       .collection('Doctors')
       .doc(doctorE.id)
       .update({

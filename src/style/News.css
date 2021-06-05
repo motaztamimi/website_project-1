@@ -63,9 +63,17 @@
   line-height: 24px;
   margin: 10px;
 }
+.CardImg {
+  height: 200px;
+}
 /* add thid for the img becuse there are diferent in the size*/
 .NewsCard img {
   width: 300px;
+}
+
+.NewsCardimg {
+  height: 200px;
+  object-fit: fill;
 }
 .NewsContainer {
   margin-right: 26.0125px;

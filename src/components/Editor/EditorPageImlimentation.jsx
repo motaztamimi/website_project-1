@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react';
+/** @format */
+
+import React, { useState } from 'react';
 import EditorPage from './EditorPage';
 import '../../style/EditorPageImlimentation.css';
 import { dataBase } from '../../config/firebase.js';
 import { AiOutlineUser } from 'react-icons/ai';
 
-import useDataBase from '../../hooks/useDataBase';
 function EditorPageImlimentation() {
   const [data, setData] = useState();
   const [DropDownFirst, setDropDownFirst] = useState('');
   const [DropDownSecond, setDropDownSecond] = useState('');
   const [DropDownThird, setDropDownThird] = useState('');
   const [inSquare, setinSquare] = useState('');
-  const Departments = useDataBase('/Departments');
 
   console.log(DropDownSecond);
   const num = [
@@ -32,9 +32,9 @@ function EditorPageImlimentation() {
     setDropDownThird(event.target.value);
   };
   const getDataFromDataBase = () => {
-    if (DropDownFirst != '' && DropDownSecond != '' && DropDownThird != '') {
+    if (DropDownFirst !== '' && DropDownSecond !== '' && DropDownThird !== '') {
       const collectionRef = dataBase.collection('Departments');
-      const therd = num.filter((e) => e.hebrew == DropDownThird);
+      const therd = num.filter((e) => e.hebrew === DropDownThird);
       const f = collectionRef.doc(DropDownFirst);
       f.get().then((item) => {
         const dep = item.data()[DropDownSecond];
@@ -46,7 +46,7 @@ function EditorPageImlimentation() {
     }
   };
   const onSubmit = (e) => {
-    const en = num.filter((e) => e.hebrew == DropDownThird);
+    const en = num.filter((e) => e.hebrew === DropDownThird);
     const toTheBase = {};
     const ans = {};
     ans[en[0].english] = data;
@@ -148,7 +148,7 @@ function EditorPageImlimentation() {
     }
   };
 
-  if (DropDownSecond != '' && DropDownThird != '') {
+  if (DropDownSecond !== '' && DropDownThird !== '') {
     getDataFromDataBase();
   }
 

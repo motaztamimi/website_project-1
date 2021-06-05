@@ -15,14 +15,11 @@ import AdminEditEvents from './components/AdminEditEvents';
 import EditorPageImlimentation from './components/Editor/EditorPageImlimentation';
 import ListOfDep from './components/ListOfDep';
 import InsidePage3 from './components/InsidePage';
-import { Chatbot } from 'react-chatbot-kit';
-import config from './components/ChatBot/config';
-import MessageParser from './components/ChatBot/MessageParser';
-import ActionProvider from './components/ChatBot/ActionProvider';
+
 import AdminAddNews from './components/adminAddNews/AdminAddNews';
 import AllResearchs from './components/Research/AllResearchs';
 import ContactUsFormV1 from './components/ContactUsFormV1/ContactUsFormV1';
-import ButtonBot from './components/ChatBot/BottonHomePage/BottonHomePage';
+
 import Photos from './components/Photos';
 import Videos from './components/Videos';
 import AdminEditDoctors from './components/AdminEditDoctors';
@@ -32,9 +29,7 @@ import Googlemap from './components/GoogleMap/Googlemap';
 import AllNewsPage from './components/AllNewsPage/AllNewsPage';
 import AdminAddResearch from './components/AdminResearch/AdminAddResearch';
 import AdminResearch from './components/AdminResearch/AdminResearch';
-import ChatBot from 'react-simple-chatbot';
 import styled from 'styled-components';
-import axios from 'axios';
 import AdminAddChatBotQuestion from './components/NewCharBot/AdminAddChatBotQuestion';
 
 import MyNewChatBot from '../src/components/NewCharBot/MyNewChatBot';
@@ -64,12 +59,7 @@ function App() {
             <Header />
             <HomePage />
             <Fotter />
-            {/* <Chatbot
-              config={config}
-              messageParser={MessageParser}
-              actionProvider={ActionProvider}
-            />
-            <ButtonBot /> */}
+
             <MyNewChatBot />
           </Route>
           <Route exact path='/AboutUs'>
@@ -324,6 +314,7 @@ function App() {
             <Header />
             <NewsPagebyid />
             <Fotter />
+            <MyNewChatBot />
           </Route>
           <ProtectedRoute
             exact

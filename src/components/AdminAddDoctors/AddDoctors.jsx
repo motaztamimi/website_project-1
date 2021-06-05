@@ -1,6 +1,5 @@
 /** @format */
 
-// import React from 'react';
 import './AddDoctors.css';
 import { dataBase, timestamp, storage } from '../../config/firebase';
 import { useState } from 'react';
@@ -21,7 +20,6 @@ const AddDoctors = () => {
   const [DoctorSpecialty, setDoctorSpecialty] = useState('');
   const [DepartmentOut, SetDepartmentOut] = useState('');
   const [DepartmentIn, SetDepartmentIn] = useState('');
-
   const types = ['image/png', 'image/jpeg', 'img/jpg'];
   const collectionRef = dataBase.collection('Doctors');
   const onFileChange = (e) => {

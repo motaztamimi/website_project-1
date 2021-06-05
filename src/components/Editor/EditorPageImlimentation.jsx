@@ -1,11 +1,11 @@
 /** @format */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import EditorPage from './EditorPage';
 import '../../style/EditorPageImlimentation.css';
 import { dataBase } from '../../config/firebase.js';
 import { AiOutlineUser } from 'react-icons/ai';
-import ListAdmin from '../ListAdmin';
+
 import useDataBase from '../../hooks/useDataBase';
 function EditorPageImlimentation() {
   const [data, setData] = useState();
@@ -13,6 +13,7 @@ function EditorPageImlimentation() {
   const [DropDownSecond, setDropDownSecond] = useState('');
   const [DropDownThird, setDropDownThird] = useState('');
   const [inSquare, setinSquare] = useState('');
+  const Departments = useDataBase('/Departments');
 
   console.log(DropDownSecond);
   const num = [
@@ -33,9 +34,9 @@ function EditorPageImlimentation() {
     setDropDownThird(event.target.value);
   };
   const getDataFromDataBase = () => {
-    if (DropDownFirst !== '' && DropDownSecond !== '' && DropDownThird !== '') {
+    if (DropDownFirst != '' && DropDownSecond != '' && DropDownThird != '') {
       const collectionRef = dataBase.collection('Departments');
-      const therd = num.filter((e) => e.hebrew === DropDownThird);
+      const therd = num.filter((e) => e.hebrew == DropDownThird);
       const f = collectionRef.doc(DropDownFirst);
       f.get().then((item) => {
         const dep = item.data()[DropDownSecond];
@@ -47,7 +48,7 @@ function EditorPageImlimentation() {
     }
   };
   const onSubmit = (e) => {
-    const en = num.filter((e) => e.hebrew === DropDownThird);
+    const en = num.filter((e) => e.hebrew == DropDownThird);
     const toTheBase = {};
     const ans = {};
     ans[en[0].english] = data;
@@ -57,7 +58,6 @@ function EditorPageImlimentation() {
       .doc(DropDownFirst)
       .set(toTheBase, { merge: true });
   };
-   
 
   const a = [
     'מיון והשהייה',
@@ -150,107 +150,95 @@ function EditorPageImlimentation() {
     }
   };
 
-  if (DropDownSecond !== '' && DropDownThird !== '') {
+  if (DropDownSecond != '' && DropDownThird != '') {
     getDataFromDataBase();
   }
 
   return (
-    <div className='listAdminInEP'>
-      <div className='listP'>
-        <ListAdmin />
-      </div>
-      <div>
-        <div className='BigEditorContainer'>
-          <div id='gridTitle'>בחר המקום המיועד לשינוי</div>
-          <a href='/Admin'>
-            <AiOutlineUser
-              title='AdminPage'
-              className='EditSlideShowPage2'
-              id='accessIMG'
-              color='#151e4d'
-            />
-          </a>
-          <div className='threeColumnEditor'>
-            <div className='BigEditorContainer'>
-              <h2>קמפוס</h2>
-              <select
-                required
-                id='classes'
-                className='dropSelect'
-                onChange={changeSelectOptionHandler}>
-                <option key='1' value='' defaultValue>
-                  בחר קאמפוס
-                </option>
-                <option key='2' value='כפר שאול'>
-                  כפר שאול
-                </option>
-                <option key='3' value='איתנים'>
-                  איתנים
-                </option>
-                <option key='4' value='שירות קהילתי'>
-                  שירות קהילתי
-                </option>
-              </select>
-            </div>
-            <div className='BigEditorContainer'>
-              <h2>תת מחלקה</h2>
-              <select
-                className='dropSelect'
-                id='classInClass'
-                onChange={changeSecondSelectOptionHandler}
-                required>
-                <option key='' value='' defaultValue>
-                  בחר תת מחלקה
-                </option>
-                {options}
-              </select>
-            </div>
-            <div className='BigEditorContainer'>
-              <h2>חלק מהדף</h2>
-              <select
-                required
-                id='classes'
-                className='dropSelect'
-                onChange={changeDropDownThird}>
-                <option key='5' value='' defaultValue>
-                  בחר חלק מהדף
-                </option>
-                <option key='6' value='מידע'>
-                  מידע
-                </option>
-                <option key='7' value='מנהלים'>
-                  מנהלים
-                </option>
-                <option key='8' value='צור קשר'>
-                  צור קשר
-                </option>
-                <option key='9' value='ימי פעולה'>
-                  ימי פעולה
-                </option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div className='dropdown'>{/* page of the part choosen*/}</div>
-
-        <div id='one'>
-          <h1>{DropDownThird}</h1>
-          <EditorPage
-            value={inSquare}
-            callBack={(e) => {
-              setData(e);
-            }}
+    <div>
+      <div className='BigEditorContainer'>
+        <div id='gridTitle'>בחר המקום המיועד לשינוי</div>
+        <a href='/Admin'>
+          <AiOutlineUser
+            title='AdminPage'
+            className='EditSlideShowPage2'
+            id='accessIMG'
+            color='#151e4d'
           />
-        </div>
-
-        <div className='finalStage'>
-          <div className='beforeButton'>
-            <button className='EditorButton' type='button' onClick={onSubmit}>
-              Submit
-            </button>
+        </a>
+        <div className='threeColumnEditor'>
+          <div className='BigEditorContainer'>
+            <h2>קמפוס</h2>
+            <select
+              required
+              id='classes'
+              className='dropSelect'
+              onChange={changeSelectOptionHandler}>
+              <option key='1' value='' defaultValue>
+                בחר קאמפוס
+              </option>
+              <option key='2' value='כפר שאול'>
+                כפר שאול
+              </option>
+              <option key='3' value='איתנים'>
+                איתנים
+              </option>
+              <option key='4' value='שירות קהילתי'>
+                שירות קהילתי
+              </option>
+              <option key='10' value='אחר'>
+                אחר
+              </option>
+            </select>
           </div>
-          <div id='theText'></div>
+          <div className='BigEditorContainer'>
+            <h2>תת מחלקה</h2>
+            <select
+              className='dropSelect'
+              id='classInClass'
+              onChange={changeSecondSelectOptionHandler}
+              required>
+              <option key='' value='' defaultValue>
+                בחר תת מחלקה
+              </option>
+              {options}
+            </select>
+          </div>
+          <div className='BigEditorContainer'>
+            <h2>חלק מהדף</h2>
+            <select
+              required
+              id='classes'
+              className='dropSelect'
+              onChange={changeDropDownThird}>
+              <option key='5' value='' defaultValue>
+                בחר חלק מהדף
+              </option>
+
+              {lastOption}
+            </select>
+          </div>
         </div>
+      </div>
+      <div className='dropdown'>{/* page of the part choosen*/}</div>
+
+      <div id='one'>
+        <h1>{DropDownThird}</h1>
+        <EditorPage
+          value={inSquare}
+          callBack={(e) => {
+            setData(e);
+          }}
+        />
+      </div>
+
+      <div className='finalStage'>
+        <div className='beforeButton'>
+          <button className='EditorButton' type='button' onClick={onSubmit}>
+            Submit
+          </button>
+        </div>
+        <div id='theText'></div>
       </div>
     </div>
   );

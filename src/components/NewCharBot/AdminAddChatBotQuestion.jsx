@@ -50,7 +50,7 @@ const AdminAddChatBotQuestion = () => {
         let x = snapshot.data()['Steps'];
         setdata2(x);
       });
-  });
+  }, [true]);
   useEffect(() => {
     if (nameDoc === 'kitchen') {
       setResultToUPload(data);
@@ -67,13 +67,11 @@ const AdminAddChatBotQuestion = () => {
   }, [bollean]);
   const onSubmit = (e) => {
     e.preventDefault();
-
     let OPthions = {
       value: BotQuestion,
       label: BotQuestion,
       trigger: BotQuestion,
     };
-
     setShowDiv(true);
     ResultToUPload[0].options.push(OPthions);
     let Question = {
@@ -82,6 +80,8 @@ const AdminAddChatBotQuestion = () => {
       trigger: 'end Question',
     };
     ResultToUPload.push(Question);
+
+    console.log(ResultToUPload);
     collectionRef
       .doc(nameDoc)
       .update({ Steps: ResultToUPload })

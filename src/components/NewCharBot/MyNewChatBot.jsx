@@ -1,201 +1,177 @@
 /** @format */
-
 import React, { useEffect, useState } from 'react';
-import useDataBase from '../../hooks/useDataBase';
 import { dataBase } from '../../config/firebase';
-
+import { ThemeProvider } from 'styled-components';
 import ChatBot from 'react-simple-chatbot';
-import immg from './LOGONEW.jpg';
 import './ChatBott.css';
+import ImgBot from '../../components/ChatBot/ImgBot';
+import Message from './Message';
 
 const MyNewChatBot = () => {
-  const Departments = dataBase.collection('Departments');
   const [item, setitem] = useState(null);
-  const [item1, setitem1] = useState(null);
+  let temp = [];
+  const [bollean, setbollean] = useState(false);
+  const [bollean1, setbollean1] = useState(false);
   const arraya = [];
+  const [data, setdata] = useState(null);
+  const [data1, setdata1] = useState(null);
+  const [data2, setdata2] = useState(null);
+
+  const collectionRef = dataBase.collection('ChatBot');
 
   useEffect(() => {
-    Departments.doc('כפר שאול')
+    collectionRef
+      .doc('kitchen')
       .get()
-      .then((value) => {
-        setitem(value.data());
+      .then((snapshot) => {
+        let x = snapshot.data()['Steps'];
+        setdata(x);
+      });
+    collectionRef
+      .doc('ListHealth')
+      .get()
+      .then((snapshot) => {
+        let x = snapshot.data()['Steps'];
+        setdata1(x);
+      });
+    collectionRef
+      .doc('Workers')
+      .get()
+      .then((snapshot) => {
+        let x = snapshot.data()['Steps'];
+        setdata2(x);
+        setbollean(true);
       });
   }, [true]);
-
   useEffect(() => {
-    setitem1(item);
-  }, [item]);
+    if (bollean) {
+      temp = [...newFiree];
+      for (let vla in data) {
+        temp.push(data[vla]);
+      }
+      for (let vla in data1) {
+        temp.push(data1[vla]);
+      }
+      for (let vla in data2) {
+        temp.push(data2[vla]);
+      }
+      setdata(temp);
+      setbollean1(true);
+    }
+  }, [bollean]);
 
-  function removeTags(str) {
-    if (str === null || str === '') return false;
-    else str = str.toString();
-
-    // Regular expression to identify HTML tags in
-    // the input string. Replacing the identified
-    // HTML tag with a null string.
-    const stringa = str.replace(/&nbsp;/gi, '');
-
-    return stringa.replace(/(<([^>]+)>)/gi, '');
-  }
-
+  const theme = {
+    background: 'white',
+    fontFamily: 'Rubik',
+    headerBgColor: '#1AAFB3',
+    headerFontColor: '#fff',
+    headerFontSize: '15px',
+    botBubbleColor: '#E8E8EB',
+    botFontColor: 'black',
+    userBubbleColor: 'rgb(72, 145, 252)',
+    userFontColor: 'white',
+  };
   const config = {
     width: '400px',
     height: '500px',
+    hideUserAvatar: true,
     floating: true,
-    botDelay: 1500,
-    avatarStyle: {
-      borderRadius: '50%',
-    },
-    contentStyle: {
-      backgroundColor: '#fff',
-    },
-    bubbleStyle: {
-      backgroundColor: '#e8e8eb',
-      color: 'black',
-    },
-    floatingStyle: {
-      backgroundColor: ' rgb(72, 145, 252)',
-    },
-    style: {
-      backgroundColor: '#e8e8eb',
-    },
+    placeholder: 'Type your response.',
+    headerTitle: 'מענה אוטומטי מהמרכז',
   };
-  const steps = [
+  const newFiree = [
     {
-      id: '1',
-      message: 'dsadsada',
-
-      trigger: '2',
+      id: 'imageStarting',
+      component: <ImgBot />,
+      trigger: 'WellcomeMessage',
     },
     {
-      id: '2',
+      id: 'WellcomeMessage',
 
       message:
         'בורכים הבאים למרכזה הירושלמי לבריאות המפש נא בבקשה לבחור אחת מהאופציות שלנו',
-      trigger: '3',
+      trigger: 'MainOpthion',
     },
     {
-      id: '3',
-
+      id: 'MainOpthion',
       options: [
         {
-          value: 'כפר שאול',
-          label: ' כפר שאול',
-          trigger: (previousValue) => {
-            arraya.push(previousValue.value);
-            console.log(previousValue.value);
-            return previousValue.value;
-          },
-        },
-        { value: 2, label: 'איתנים ', trigger: 'איתנים' },
-        { value: 3, label: 'השירות הקהילתי', trigger: 'השירות הקהילתי' },
-      ],
-    },
-    {
-      id: 'כפר שאול',
-      options: [
-        {
-          value: 'מיון והשהייה',
-          label: 'מיון והשהייה',
-          trigger: (previousValue) => {
-            arraya.push(previousValue.value);
-            return previousValue.value;
-          },
+          value: 'מטבח',
+          label: 'מטבח',
+          trigger: 'מטבח',
         },
         {
-          value: 'מחלקה פעילה (סגורה) א׳',
-          label: 'מחלקה פעילה (סגורה) א׳',
-          trigger: (previousValue) => {
-            arraya.push(previousValue.value);
-            return previousValue.value;
-          },
+          value: 'רשומות רפואיות',
+          label: 'רשומות רפואיות',
+          trigger: 'רשומות רפואיות',
         },
         {
-          value: 'מחלקה פעילה ממושכת ג׳(פסיכוגריאטריה)',
-          label: 'מחלקה פעילה ממושכת ג׳(פסיכוגריאטריה)',
-          trigger: (previousValue) => {
-            arraya.push(previousValue.value);
-            return previousValue.value;
-          },
+          value: 'עובדים סוציאליים',
+          label: 'עובדים סוציאליים',
+          trigger: 'עובדים סוציאליים',
         },
       ],
     },
     {
-      id: 'מיון והשהייה',
-
-      delay: 1000,
-      message: () => {
-        const a = removeTags(item[arraya[1]]['fourth']);
-        arraya.pop();
-        arraya.pop();
-        return a;
-      },
-      trigger: 'finish',
+      id: 'מטבח',
+      message: 'הבנתי אנא בבקשה לבחור אחת מהשאלות הבאות',
+      trigger: 'אופציות למטבח',
     },
     {
-      id: 'מחלקה פעילה (סגורה) א׳',
-
-      delay: 1000,
-      message: () => {
-        const a = removeTags(item[arraya[1]]['fourth']);
-        arraya.pop();
-        arraya.pop();
-        return a;
-      },
-      trigger: 'finish',
-    },
-    {
-      id: 'מחלקה פעילה ממושכת ג׳(פסיכוגריאטריה)',
-
-      delay: 1000,
-      message: () => {
-        const a = removeTags(item[arraya[1]]['fourth']);
-        arraya.pop();
-        arraya.pop();
-        return a;
-      },
-      trigger: 'finish',
-    },
-    {
-      id: 'איתנים',
-      message: 'אני  עוד בבניה של המחלקות',
+      id: 'אופציות למטבח',
+      message: 'הבנתי אנא בבקשה לבחור אחת מהשאלות הבאות',
       end: true,
     },
     {
-      id: 'השירות הקהילתי',
-
-      message: 'אני  עוד בבניה של המחלקות',
+      id: 'רשומות רפואיות',
+      message: 'הבנתי אנא בבקשה לבחור אחת מהשאלות הבאות',
+      trigger: 'אופציות רשומות',
+    },
+    {
+      id: 'אופציות רשומות',
+      message: 'הבנתי אנא בבקשה לבחור אחת מהשאלות הבאות',
       end: true,
     },
     {
-      id: 'finish',
-      message: 'האם  צריך עוד משהו',
-      trigger: 'ask',
+      id: 'עובדים סוציאליים',
+      message: 'הבנתי אנא בבקשה לבחור אחת מהשאלות הבאות',
+      trigger: 'אופציות עובדים',
     },
     {
-      id: 'ask',
+      id: 'אופציות עובדים',
+      message: 'הבנתי אנא בבקשה לבחור אחת מהשאלות הבאות',
+      end: true,
+    },
+    {
+      id: 'end Question',
+      message: 'האם את/ה צריך עוד משהו',
+      trigger: 'end Question opthion',
+    },
+    {
+      id: 'end Question opthion',
       options: [
-        {
-          value: 'כן',
-          label: 'כן',
-          trigger: () => {
-            return '2';
-          },
-        },
-        {
-          value: 'לא',
-          label: 'לא',
-          trigger: 'bye',
-        },
+        { value: 'כן', label: 'כן', trigger: 'כן' },
+
+        { value: 'לא', label: 'לא', trigger: 'לא' },
       ],
     },
     {
-      id: 'bye',
-      message: 'להתראות',
+      id: 'כן',
+      message: 'בכיף',
+      trigger: 'MainOpthion',
+    },
+    {
+      id: 'לא',
+      message: 'אני מקווה שעזרתי לך להתראות',
       end: true,
     },
   ];
-  return <div>{item ? <ChatBot steps={steps} {...config} /> : 'hello'}</div>;
+
+  return (
+    <ThemeProvider theme={theme}>
+      <div>{bollean1 ? <ChatBot steps={data} {...config} /> : ''}</div>
+    </ThemeProvider>
+  );
 };
 
 export default MyNewChatBot;

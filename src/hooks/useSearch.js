@@ -1,6 +1,9 @@
-import { useEffect, useState } from 'react';
+/** @format */
+/*/*/ /************************* */
+// motaz commit it becuse it make Warning
+// import { useEffect, useState } from 'react';
 import { dataBase } from '../config/firebase';
-import useDatabase from './useDataBase';
+// import useDatabase from './useDataBase';
 
 //this custom made hook will help in making the srearching functionality easier to handel
 // this hook will retrive the nescassary data form the dataBase server then will start the search Functionality on the data

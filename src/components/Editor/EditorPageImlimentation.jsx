@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+/** @format */
+
+import React, { useState } from 'react';
 import EditorPage from './EditorPage';
 import '../../style/EditorPageImlimentation.css';
 import { dataBase } from '../../config/firebase.js';
@@ -11,7 +13,6 @@ function EditorPageImlimentation() {
   const [DropDownSecond, setDropDownSecond] = useState('');
   const [DropDownThird, setDropDownThird] = useState('');
   const [inSquare, setinSquare] = useState('');
-  const Departments = useDataBase('/Departments');
 
   console.log(DropDownSecond);
   const num = [
@@ -32,9 +33,9 @@ function EditorPageImlimentation() {
     setDropDownThird(event.target.value);
   };
   const getDataFromDataBase = () => {
-    if (DropDownFirst != '' && DropDownSecond != '' && DropDownThird != '') {
+    if (DropDownFirst !== '' && DropDownSecond !== '' && DropDownThird !== '') {
       const collectionRef = dataBase.collection('Departments');
-      const therd = num.filter((e) => e.hebrew == DropDownThird);
+      const therd = num.filter((e) => e.hebrew === DropDownThird);
       const f = collectionRef.doc(DropDownFirst);
       f.get().then((item) => {
         const dep = item.data()[DropDownSecond];
@@ -46,7 +47,7 @@ function EditorPageImlimentation() {
     }
   };
   const onSubmit = (e) => {
-    const en = num.filter((e) => e.hebrew == DropDownThird);
+    const en = num.filter((e) => e.hebrew === DropDownThird);
     const toTheBase = {};
     const ans = {};
     ans[en[0].english] = data;
@@ -56,6 +57,7 @@ function EditorPageImlimentation() {
       .doc(DropDownFirst)
       .set(toTheBase, { merge: true });
   };
+   
 
   const a = [
     'מיון והשהייה',
@@ -148,15 +150,15 @@ function EditorPageImlimentation() {
     }
   };
 
-  if (DropDownSecond != '' && DropDownThird != '') {
+  if (DropDownSecond !== '' && DropDownThird !== '') {
     getDataFromDataBase();
   }
 
   return (
-    <div className="listAdminInEP">
-      <div className="listP">
-        <ListAdmin/>
-      </div>        
+    <div className='listAdminInEP'>
+      <div className='listP'>
+        <ListAdmin />
+      </div>
       <div>
         <div className='BigEditorContainer'>
           <div id='gridTitle'>בחר המקום המיועד לשינוי</div>

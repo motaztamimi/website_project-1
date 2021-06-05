@@ -12,6 +12,7 @@ const ContactUs = ({ details }) => {
         <h4>{details.moked_num}</h4>
       </a>
       <h5>{details.address}</h5>
+      <h5>{details.address2}</h5>
       <h5>
         דואר אלקטרוני :
         <a href='niogsnreiogne@gmail.com'>
@@ -20,7 +21,7 @@ const ContactUs = ({ details }) => {
       </h5>
       <h5>
         {' '}
-        טלפון:
+        מספר נייד:
         <a href='tel'>
           <span> {details.tel} </span>
         </a>

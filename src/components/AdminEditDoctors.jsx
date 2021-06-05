@@ -6,6 +6,8 @@ import { useHistory } from 'react-router-dom';
 import { storage } from '../config/firebase';
 import { dataBase } from '../config/firebase';
 import { AiOutlineUser } from 'react-icons/ai';
+import DoctorCard from './DoctorCard';
+import { AiFillEdit } from 'react-icons/ai';
 import ListAdmin from './ListAdmin';
 const AdminEditDoctors = () => {
   const [DoctorName0, SetDoctorName0] = useState('');
@@ -112,9 +114,9 @@ const AdminEditDoctors = () => {
           const storageRef = storage.refFromURL(doctorE.DoctorImage);
           storageRef.delete();
           dataBase
-          .collection('Doctors')
-          .doc(doctorE.id)
-          .update({ DoctorImage: url });
+            .collection('Doctors')
+            .doc(doctorE.id)
+            .update({ DoctorImage: url });
         });
       });
     }

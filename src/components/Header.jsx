@@ -4,16 +4,13 @@ import { BsSearch } from 'react-icons/bs';
 import MoblieHeader from './MobHeader';
 import '../style/Header.css';
 import Accessibility from './Accessibility/Accessibility';
-import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <>
       <div className='Header'>
         <div className='HeaderContanier'>
           <div className='HeaderUpperSection'>
-            <a href='/'>
-              <img src={`${process.env.PUBLIC_URL}/imges/LOGONEW.jpg`} alt='' />
-            </a>
+            <img src={`${process.env.PUBLIC_URL}/imges/LOGONEW.jpg`} alt='' />
             <div>
               <div className='accessLeft'>
                 <input type='text' placeholder='חיפוש' />

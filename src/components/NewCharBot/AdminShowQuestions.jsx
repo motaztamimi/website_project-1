@@ -7,13 +7,11 @@ import { useEffect, useState } from 'react';
 
 const AdminShowQuestions = () => {
   const DataToShow = dataBase.collection('ChatBot');
-  const DataToShow1 = useDataBase('ChatBot');
   const [data, setdata] = useState('');
   const [nameDoc, setnameDoc] = useState('');
   const [data1, setdata1] = useState('');
   const [data2, setdata2] = useState('');
   const [bolean, setbollean] = useState(false);
-  const [doc, setDoc] = useState('');
   const [ResultToUPload, setResultToUPload] = useState('');
   const num = [
     { hebrew: 'רשומות רפואיות', english: 'ListHealth' },

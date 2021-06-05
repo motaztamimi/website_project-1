@@ -1,5 +1,6 @@
 /** @format */
 import { useHistory } from 'react-router-dom';
+import '../style/News.css';
 
 const NewsCard = ({ news }) => {
   let history = useHistory();

@@ -26,7 +26,6 @@ const News = ({ News, howmany }) => {
           return (
             <React.Fragment key={news.id + 100}>
               <NewsCard news={news} key={news.id} />
-              <hr key={news.id + 10} />
             </React.Fragment>
           );
         })}

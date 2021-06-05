@@ -5,12 +5,10 @@ import './../AdminAddDoctors/AddDoctors.css';
 import '../adminAddNews/AdminAddNews.css';
 import AdminShowQuestions from './AdminShowQuestions';
 import './ChatBott.css';
-import useDataBase from '../../hooks/useDataBase';
-import { dataBase, timestamp } from '../../config/firebase';
+import { dataBase } from '../../config/firebase';
 const AdminAddChatBotQuestion = () => {
   const [ResultToUPload, setResultToUPload] = useState('');
   const [bollean, setbollean] = useState(false);
-  const [Doc, setDoc] = useState('');
   const [data, setdata] = useState('');
   const [data1, setdata1] = useState('');
   const [data2, setdata2] = useState('');
@@ -52,7 +50,7 @@ const AdminAddChatBotQuestion = () => {
         let x = snapshot.data()['Steps'];
         setdata2(x);
       });
-  }, []);
+  });
   useEffect(() => {
     if (nameDoc === 'kitchen') {
       setResultToUPload(data);
@@ -92,8 +90,6 @@ const AdminAddChatBotQuestion = () => {
       });
   };
   const changeSelectOptionHandler = (event) => {
-    console.log(event.target.value);
-    setDoc(event.target.value);
     let namea = event.target.value;
     const en = num.filter((e) => e.hebrew === namea);
     let name = en[0].english;

@@ -1,9 +1,9 @@
 /** @format */
 
 import Branch from './Branch';
-import img0 from '../imges/manger.jpg';
-import img1 from '../imges/manger3.jpg';
-import img2 from '../imges/manger2.jpg';
+import img0 from '../imges/Mangerr.jpg';
+import img1 from '../imges/Mangerr1.jpg';
+import img2 from '../imges/Mangerr2.jpg';
 import '../style/Branches.css';
 const Branches = () => {
   const list = [

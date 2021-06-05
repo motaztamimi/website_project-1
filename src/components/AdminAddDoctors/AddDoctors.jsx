@@ -1,3 +1,5 @@
+/** @format */
+
 // import React from 'react';
 import './AddDoctors.css';
 import { dataBase, timestamp, storage } from '../../config/firebase';
@@ -19,17 +21,15 @@ const AddDoctors = () => {
   const [DoctorSpecialty, setDoctorSpecialty] = useState('');
   const [DepartmentOut, SetDepartmentOut] = useState('');
   const [DepartmentIn, SetDepartmentIn] = useState('');
-  const [error, setError] = useState(null);
+
   const types = ['image/png', 'image/jpeg', 'img/jpg'];
   const collectionRef = dataBase.collection('Doctors');
   const onFileChange = (e) => {
     let selected = e.target.files[0];
     if (selected && types.includes(selected.type)) {
       setFile(selected);
-      setError('');
     } else {
       setFile(null);
-      setError('Please Select an image file (png , jpeg or jpg)');
     }
   };
   const onSubmit = (e) => {
@@ -105,11 +105,15 @@ const AddDoctors = () => {
   }
   return (
     <div>
-      
       <div className='AddDoctorsPage'>
-      <a href='/Admin'>
-      <AiOutlineUser title="AdminPage" className='EditSlideShowPage2' id='accessIMG' color='#151e4d' />
-      </a>
+        <a href='/Admin'>
+          <AiOutlineUser
+            title='AdminPage'
+            className='EditSlideShowPage2'
+            id='accessIMG'
+            color='#151e4d'
+          />
+        </a>
         {showDiv && div}
         <form className='AddDoctorsForm' onSubmit={onSubmit}>
           <label>תמונת הרופא</label>
@@ -153,14 +157,13 @@ const AddDoctors = () => {
             </option>
           </select>
           <label> מחלקה פנימית</label>
-          <select onChange={(e) => {
+          <select
+            onChange={(e) => {
               SetDepartmentIn(e.target.value);
             }}
             required
-              className='dropSelect'>
-              <option>
-                בחר מחלקה
-              </option>
+            className='dropSelect'>
+            <option>בחר מחלקה</option>
             {options}
           </select>
           <input className='SubmitButton' type='submit' value='submit' />

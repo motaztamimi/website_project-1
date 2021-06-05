@@ -1,7 +1,7 @@
 /** @format */
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 @import url('https://use.typekit.net/lfw8lae.css');
-.AddNewsButton {
+/* .AddNewsButton {
   background-color: #285c7e !important ;
   color: white;
 
@@ -10,17 +10,24 @@
   margin-top: 50px;
   padding: 5px;
   height: 40px;
+} */
+.addNewsGrid{
+display: grid;
+grid-template-columns: 30% 70%;
+direction: rtl;
 }
 .containerr {
   display: flex;
   flex-direction: column;
   direction: rtl;
+  width: 100%;
+  margin-top:40px
 }
 .AddNewsButtonDiv {
   text-align: center;
   justify-content: center;
   margin: 0 auto;
-  width: 200px;
+  width: 100%;
 }
 .ContentContainer {
   width: 100%;
@@ -55,19 +62,16 @@
   display: flex;
   flex-direction: column;
   direction: rtl;
-
   float: right;
-
-  width: 60%;
-  padding-right: 30px;
-  margin-top: 10px;
-  margin-bottom: 70px;
+  width: 100%;
+  padding-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 .NewCARD {
   text-align: unset;
   display: flex;
   width: 100%;
-
   direction: rtl;
   margin-bottom: 10px;
   margin-top: 10px;
@@ -100,10 +104,30 @@
 }
 .NewsContent {
   width: 100%;
-  padding-top: 30px;
+  padding-top: 20px;
+  padding-right: 5px;
+}
+.DeleteAndEditNews{
+  display: grid;
+  grid-template-columns: 5% 5%;
+}
+.EditioNEWS{
+  /* position: relative; */
+  font-size: 30px;
+  font-weight: 800;
+  width: 40px;
+  height: 40px;
+  opacity: 0.6;
+  right: 0;
+  border: 3px solid #ccc;
+  border-radius: 5%;
+}
+.EditioNEWS:hover{
+  opacity: 0.9;
+  cursor: pointer;
 }
 .NewsDiv input {
-  position: relative;
+  /* position: relative; */
   font-size: 30px;
   font-weight: 800;
   width: 40px;
@@ -128,4 +152,41 @@
   margin-bottom: 40px;
   width: 200px;
   border-radius: 10px;
+}
+.overlyEditNews{
+  width: 50%;
+  height: 85%;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin: auto;
+  position: absolute;
+  top: 120px;
+  left: 120px;
+  
+}
+.overlyEditNews label {
+  padding-right: 5px;
+  font-size: 1.3rem;
+}
+.overlyEditNews input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  direction: rtl;
+  font-size: 1rem;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.submitButtonNews{
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }

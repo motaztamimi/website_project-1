@@ -55,9 +55,9 @@ const AdminAddNews = () => {
   };
 
   return (
-    <div className='AddNewsPage'>
+    <div className='AddNewsPage0'>
       {showDiv && div}
-      <form className='AddNewsForm' onSubmit={onSubmit}>
+      <form className='AddNewsForm0' onSubmit={onSubmit}>
         <label>תמונת החדשות</label>
         <input type='file' onChange={onFileChange} required />
 

@@ -13,13 +13,6 @@
 right: 510px;
 top: 250px;
 }
-.wholePageD{
-  /* height: 100vh;
-  margin-left: auto;
-  margin-right: auto; */
-   /* position: absolute; */
-  /* height: 100%; */
-}
 .headerDoctors {
   display: grid;
   grid-template-rows: auto auto;
@@ -42,8 +35,8 @@ top: 250px;
  
 }
 .ll {
-  background-color: #f1f1f1;
-  height: 100vh;
+  /* background-color: #f1f1f1; */
+  /* height: 100vh; */
 }
 
 .llo {

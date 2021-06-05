@@ -39,7 +39,7 @@ const AdminHomePage = () => {
         </div>
         <div className='AdminHomePageOp'>
           <Link to='/Admin/AddChatBot'>
-            <BiNews size='150px'></BiNews>
+          <BiBot size='100px'></BiBot>
             <h3> עריכת CHATBOT</h3>
           </Link>
         </div>
@@ -47,12 +47,6 @@ const AdminHomePage = () => {
           <Link to='/Admin/EditEvents'>
             <BiVideo size='100px'></BiVideo>
             <h3>עריכת סרטונים</h3>
-          </Link>
-        </div>
-        <div className='AdminHomePageOp'>
-          <Link to='/Admin/EditEvents'>
-            <BiBot size='100px'></BiBot>
-            <h3>עריכת בוט</h3>
           </Link>
         </div>
         </section>

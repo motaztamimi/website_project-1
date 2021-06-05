@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { storage, dataBase, timestamp } from '../../config/firebase';
 import AdminSlideShowPhotos from './AdminSlideShowPhotos';
 import { AiOutlineUser } from 'react-icons/ai';
+import ListAdmin from '../ListAdmin';
 
 const AdminSlideShow = () => {
   const [file, setFile] = useState(null);
@@ -65,6 +66,10 @@ const AdminSlideShow = () => {
   };
 
   return (
+    <div className="listAdminPSS">
+      <div className="listPSS">
+        <ListAdmin/>
+      </div>
     <div className='EditSlideShowPage'>
       {showDiv && div}
       <form className='EditSlideShowForm' onSubmit={submithandeler}>
@@ -107,6 +112,7 @@ const AdminSlideShow = () => {
       {collectionToSend && (
         <AdminSlideShowPhotos collection={collectionToSend} />
       )}
+    </div>
     </div>
   );
 };

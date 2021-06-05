@@ -25,7 +25,14 @@
   /* background-color: #171f73; */
   width: 60px;
 }
-
+.listAdminInR{
+  display: grid;
+grid-template-columns: 10% 90%;
+direction: rtl;
+}
+.listR{
+  margin-top: 30%;
+}
 .container {
   display: flex;
   flex-direction: column;

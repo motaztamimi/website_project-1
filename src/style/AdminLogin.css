@@ -1,7 +1,7 @@
 .LoginForm {
   position: absolute;
-  top: 30%;
-  left: 40%;
+  top: 25%;
+  left: 60%;
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -33,6 +33,10 @@
   text-align: right;
   padding: 10px;
 }
-.LoginBackGround {
-  max-width: 100%;
+.LoginBackGround  {
+width: 100%;
+height:100%;
+position: fixed;
+overflow-y: hidden;
 }
+

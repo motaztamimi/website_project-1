@@ -57,6 +57,7 @@ function EditorPageImlimentation() {
       .doc(DropDownFirst)
       .set(toTheBase, { merge: true });
   };
+   
 
   const a = [
     'מיון והשהייה',

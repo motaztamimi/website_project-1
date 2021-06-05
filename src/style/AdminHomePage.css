@@ -9,7 +9,7 @@
   position: fixed;
 }
 .AdminHomePage img {
-  width: 100%;
+  width: 100%; 
 }
 .AdminHomePage a {
   text-decoration: none;
@@ -20,13 +20,32 @@
 
 .gridSec {
   position: absolute;
-  top: 25%;
-  left: 26%;
+  top: 20%;
+  left: 16%;
+  right:2%;
   display: grid;
   z-index: 1;
-  gap: 40px;
-  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  grid-template-rows:repeat(2,1fr);
+  /* direction: rtl; */
+}
+.gridSec0 {
+  /* position: absolute; */
+ 
+  display: grid;
+  z-index: 1;
+  gap: 20px;
+  grid-template-columns:repeat(6,1fr);
   direction: rtl;
+}
+.gridSec1 {
+ 
+  display: grid;
+  z-index: 1;
+  gap: 20px;
+  grid-template-columns:repeat(6,1fr);
+  direction: rtl;
+
 }
 .AdminHomePageOp {
   direction: rtl;
@@ -34,12 +53,15 @@
   text-align: center;
   border-radius: 5%;
   opacity: 0.9;
+  border: 1px solid black;
+  
 }
 .AdminHomePageOp h3 {
   padding: 10px;
 }
 .AdminHomePageOp:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.9);
+  transform: translateY(-12px);
   cursor: pointer;
 }
 .logOutButton {

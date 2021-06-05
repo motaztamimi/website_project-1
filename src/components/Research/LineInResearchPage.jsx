@@ -9,11 +9,12 @@ function LineInResearchPage(props) {
   };
   const printPdf = () => {
     const hello = window.open(props.url);
+  //  hello.print();
 
-    setTimeout(() => {
-      hello.focus();
-      hello.print();
-    }, 500);
+    // setTimeout(() => {
+    //   hello.focus();
+    //   hello.print();
+    // }, 500);
   };
 
   return (
@@ -27,7 +28,7 @@ function LineInResearchPage(props) {
           <button className='button ' onClick={printPdf}>
             <span> הדפס</span>
           </button>
-          <a download={props.name} href={props.url}>
+          <a href={props.name} download rel={props.url}target="_blank">
             <button className='button '>
               <span>הורד</span>
             </button>

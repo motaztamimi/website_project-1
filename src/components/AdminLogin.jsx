@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import '../style/AdminLogin.css';
 import AdminHomePage from './AdminHomePage';
 import { auth } from '../config/firebase';
+import AdminImg from '../imges/ADMIN2.jpg'
 const AdminLogin = () => {
   const [LoggedIn, setLoggedIn] = useState(false);
   const [userName, setUserName] = useState('');
@@ -51,7 +52,7 @@ const AdminLogin = () => {
     <>
       <img
         className='LoginBackGround'
-        src={`${process.env.PUBLIC_URL}/imges/LoginBackGround.jpeg`}
+        src={AdminImg}
         alt=''
       />
       <form className='LoginForm' onSubmit={formSubmit}>

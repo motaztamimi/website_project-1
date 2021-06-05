@@ -25,8 +25,8 @@ function Accessibility() {
       window.counter = 1;
     } else {
       window.counter++;
-      if (window.counter % 2 == 0) {
-        var css =
+      if (window.counter % 2 === 0) {
+         css =
           'html {-webkit-filter: invert(0%); -moz-filter:    invert(0%); -o-filter: invert(0%); -ms-filter: invert(0%); }';
       }
     }

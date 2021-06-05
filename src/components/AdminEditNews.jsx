@@ -49,6 +49,7 @@ const AdminEditNews = () => {
   const editorNews = (News) => {
     setStyleFlag(1);
     setNewsE(News);
+    setFile(null);
     setNewsTitleE(News.NewsTitle);
     setNewsSubTitleE(News.NewsSubTitle);
     setNewsBodyE(News.NewsBody);

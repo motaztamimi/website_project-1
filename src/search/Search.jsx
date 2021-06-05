@@ -1,12 +1,13 @@
 /** @format */
 
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import useSearch from '../hooks/useSearch';
 import { dataBase } from '../config/firebase';
 import './Search.css';
 const Search = () => {
-  const searchString = 'מועתז';
+  const stringToSearch = useParams();
+  const searchString = stringToSearch['stringToSearch'];
+  console.log(searchString);
   const [newsFromSearch, setNewsFromSearch] = useState(null);
   const [departmentsFromSearch, setDepartmentsFromSearch] = useState(null);
   const sections = ['איתנים', 'כפר שאול', 'שירות קהילתי'];

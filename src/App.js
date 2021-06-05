@@ -372,7 +372,7 @@ function App() {
             component={AdminAddResearch}
           />
 
-          <Route exact path='/Search'>
+          <Route exact path='/Search/:stringToSearch'>
             <Header />
             <Search />
             <Fotter />

@@ -358,7 +358,7 @@ function App() {
 
           <ProtectedRoute
             exact
-            path='/Admin/AddChatBot'
+            path='/Admin/AdminAddDoctors/AddDoctors'
             component={AddDoctors}
           />
           <ProtectedRoute

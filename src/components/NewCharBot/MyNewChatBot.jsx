@@ -5,7 +5,6 @@ import { ThemeProvider } from 'styled-components';
 import ChatBot from 'react-simple-chatbot';
 import './ChatBott.css';
 import ImgBot from '../../components/ChatBot/ImgBot';
-import Message from './Message';
 
 const MyNewChatBot = () => {
   const [item, setitem] = useState(null);

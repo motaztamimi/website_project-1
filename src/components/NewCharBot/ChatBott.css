@@ -3,20 +3,21 @@
 .imgsize {
   width: 300px;
 }
+
 .jCkMTG {
   -webkit-animation: Lmuha 0.3s ease forwards;
   animation: Lmuha 0.3s ease forwards;
   background: #e8e8eb;
   border-radius: 0 18px 18px 18px;
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 15%);
-  color: black;
+  color: black !important;
   display: inline-block;
-  font-size: 14px;
-  max-width: 50%;
-  margin: -5px 5px 10px 41px;
+  font-size: 14px !important;
+  max-width: 50% !important;
+  margin: -5px 5px 10px 41px !important;
   overflow: hidden;
   position: relative;
-  padding: 12px;
+  padding: 12px !important;
   -webkit-transform: scale(0);
   -ms-transform: scale(0);
   transform: scale(0);
@@ -51,14 +52,14 @@
   padding: 0 6px;
 }
 .eSRrVD {
-  background: rgb(72, 145, 252);
-  border: 0;
-  border-radius: 22px;
-  color: white;
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 15%);
-  display: inline-block;
-  font-size: 14px;
-  padding: 12px;
+  border: 0 !important;
+  border-radius: 22px !important;
+  color: white !important;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 15%) !important;
+  display: inline-block !important;
+  font-size: 14px !important;
+  padding: 12px !important;
+  background: rgb(72, 145, 252) !important;
 }
 .ddGuwm {
   -webkit-animation: Lmuha 0.3s ease forwards;
@@ -106,7 +107,7 @@
   transform-origin: top left;
 }
 .rsc-ts-bubble {
-  direction: rtl;
+  direction: rtl !important;
 }
 .dropBot {
   padding: 12px 20px;

@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+/** @format */
+
+import React, { useState } from 'react';
 import EditorPage from './EditorPage';
 import '../../style/EditorPageImlimentation.css';
 import { dataBase } from '../../config/firebase.js';
@@ -11,7 +13,6 @@ function EditorPageImlimentation() {
   const [DropDownSecond, setDropDownSecond] = useState('');
   const [DropDownThird, setDropDownThird] = useState('');
   const [inSquare, setinSquare] = useState('');
-  const Departments = useDataBase('/Departments');
 
   console.log(DropDownSecond);
   const num = [
@@ -149,15 +150,15 @@ function EditorPageImlimentation() {
     }
   };
 
-  if (DropDownSecond != '' && DropDownThird != '') {
+  if (DropDownSecond !== '' && DropDownThird !== '') {
     getDataFromDataBase();
   }
 
   return (
-    <div className="listAdminInEP">
-      <div className="listP">
-        <ListAdmin/>
-      </div>        
+    <div className='listAdminInEP'>
+      <div className='listP'>
+        <ListAdmin />
+      </div>
       <div>
         <div className='BigEditorContainer'>
           <div id='gridTitle'>בחר המקום המיועד לשינוי</div>

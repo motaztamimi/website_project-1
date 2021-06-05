@@ -164,7 +164,11 @@ const Search = () => {
             <h1 className='NewsFromSearchTitle'>חדשות</h1>
             {newsFromSearch.map((newsItem) => {
               return (
-                <Link to={`News/${newsItem.id}`} key={newsItem.id}>
+                <Link
+                  to={{
+                    pathname: `/News/${newsItem.id}`,
+                  }}
+                  key={newsItem.id}>
                   <div className='NewsItemfromSearch'>
                     <img src={newsItem.NewsImage} alt='img' />
                     <div>

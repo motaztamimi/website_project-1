@@ -1,11 +1,14 @@
-import React from "react";
-import "../../style/AboutUs.css";
+/** @format */
+
+import React from 'react';
+import '../../style/AboutUs.css';
+
 function AboutUs() {
   return (
     <div>
-      <div className="container">
+      <div className='container'>
         <h1>עלינו</h1>
-        <div className="grid-container">
+        <div className='grid-container'>
           <p>
             המרכז הירושלמי לבריאות הנפש (כפר שאול-איתנים) משרת את אוכלוסיית
             הערים ירושלים, בית שמש, מעלה אדומים ומבשרת ציון כמו גם את אוכלוסיית
@@ -36,7 +39,7 @@ function AboutUs() {
           <p>
             בבית החולים מתקיים רצף טיפולי החל מהקליטה במיון, בהמשך במחלקות
             הפעילות המאשפזות ועד להמשך הטיפול בקהילה. בעת הצורך יעמדו לרשות
-            החולה גם יחידות קדם-שיקומיות.{" "}
+            החולה גם יחידות קדם-שיקומיות.{' '}
           </p>
 
           <p>
@@ -67,35 +70,35 @@ function AboutUs() {
           </p>
         </div>
       </div>
-      <div className="container-Without-bg">
+      <div className='container-Without-bg'>
         <h1>יעוד, חזון והשקפת עולם טיפולית</h1>
-        <div className="grid-container container-Without-bg-title">
-          <p className="grid_item">
+        <div className='grid-container container-Without-bg-title'>
+          <p className='grid_item'>
             ליישם את מדיניות הבריאות הלאומית בתחום בריאות הנפש באזור ירושלים,
             בדרך של אשפוז ו/ או טיפול מרפאתי קהילתי
           </p>
-          <p className="grid_item">
+          <p className='grid_item'>
             לפעול להשגת יעדי המשרד בסבירות, בתום לב ועל פי ההנחיות והנהלים
             הנקבעים מעת לעת ע"י משרד הבריאות ואגף שירותי בריאות הנפש
           </p>
-          <p className="grid_item">
+          <p className='grid_item'>
             לעמוד בהוראות חקיקת הבריאות ותקנותיה, לרבות חוק טיפול בחולי נפש וחוק
             שיקום חולי נפש בקהילה, בכל הקשור לטיפול בלוקים במחלות נפש, בסובלים
             ממצוקות חיים ובחסרי ישע – ילדים, בני נוער וקשישים.
           </p>
-          <p className="grid_item">
+          <p className='grid_item'>
             להוות מרכז הערכה, הסתכלות וטיפול מתוקף צווים שיפוטיים, הוראות אשפוז
             והוראות טיפול מרפאתי כפוי.
           </p>
-          <p className="grid_item">להיות משענת ותמיכה למשפחות המטופלים</p>
-          <p className="grid_item">
+          <p className='grid_item'>להיות משענת ותמיכה למשפחות המטופלים</p>
+          <p className='grid_item'>
             לקדם את הידע, המחקר וההכשרה המקצועית בתחום ברה"ן
           </p>
-          <p className="grid_item">
+          <p className='grid_item'>
             להעניק למטופל רשת תמיכה כוללנית של שירותים: קהילתיים ואשפוזיים, לפי
             צרכיו, ולכבד את זכויותיו עפ"י חוק זכויות החולה.
           </p>
-          <p className="grid_item">
+          <p className='grid_item'>
             לאמץ מגמה טיפולית לפיה נמנעים ככל האפשר מאשפוז ולחזק את המסגרות
             המשפחתיות-קהילתיות
           </p>

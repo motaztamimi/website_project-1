@@ -6,6 +6,7 @@ import { BiNews, BiCalendarEvent, BiSlideshow } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import { auth } from '../config/firebase';
 import { AiFillHome } from 'react-icons/ai';
+
 const AdminHomePage = () => {
   return (
     <div className='AdminHomePage'>
@@ -34,6 +35,12 @@ const AdminHomePage = () => {
           <Link to='/Admin/EditNews'>
             <BiNews size='150px'></BiNews>
             <h3> עריכת חדשות</h3>
+          </Link>
+        </div>
+        <div className='AdminHomePageOp'>
+          <Link to='/Admin/AddChatBot'>
+            <BiNews size='150px'></BiNews>
+            <h3> עריכת CHATBOT</h3>
           </Link>
         </div>
         <div className='AdminHomePageOp'>

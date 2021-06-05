@@ -87,10 +87,25 @@ function EditorPageImlimentation() {
     'מרפאה שיקומית - עיר גנים',
     'המרכז לטיפול יום אינטנסיבי - ארנונה',
   ];
-
+  const d = [
+    'מרכז מיצוי זכוית',
+    'פניות הציבור',
+    'אגוד ידידים',
+    'תרומות',
+    'ועד משפחות',
+    'מתנדבים במרכז',
+    'פר"א',
+    'שירות סוציאלי',
+    'שירות פסיכולוגי',
+    'ריפוי בעיסוק',
+    'תזונת ודיאטה',
+    'קבלת חולים',
+  ];
+  const f = ['מידע', 'מנהלים', 'צור קשר', 'ימי פעולה'];
   let type = null;
 
   let options = null;
+  let lastOption = null;
 
   if (DropDownFirst === 'כפר שאול') {
     type = a;
@@ -98,11 +113,40 @@ function EditorPageImlimentation() {
     type = b;
   } else if (DropDownFirst === 'שירות קהילתי') {
     type = c;
+  } else if (DropDownFirst === 'אחר') {
+    type = d;
   }
 
   if (type) {
     options = type.map((el) => <option key={el}>{el}</option>);
   }
+  if (type == d) {
+    lastOption = <option key='10'> מידע </option>;
+  } else {
+    lastOption = f.map((el) => <option key={el}>{el}</option>);
+  }
+
+  const lastDrop = () => {
+    if (type == d) {
+      console.log('wtf1');
+      return <div></div>;
+    } else {
+      console.log('wtf');
+      return (
+        <div>
+          <option key='7' value='מנהלים'>
+            מנהלים
+          </option>
+          <option key='8' value='צור קשר'>
+            צור קשר
+          </option>
+          <option key='9' value='ימי פעולה'>
+            ימי פעולה
+          </option>
+        </div>
+      );
+    }
+  };
 
   if (DropDownSecond != '' && DropDownThird != '') {
     getDataFromDataBase();

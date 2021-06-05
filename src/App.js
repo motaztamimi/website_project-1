@@ -34,6 +34,9 @@ import AdminAddResearch from './components/AdminResearch/AdminAddResearch';
 import AdminResearch from './components/AdminResearch/AdminResearch';
 import ChatBot from 'react-simple-chatbot';
 import styled from 'styled-components';
+import axios from 'axios';
+import AdminAddChatBotQuestion from './components/NewCharBot/AdminAddChatBotQuestion';
+
 import MyNewChatBot from '../src/components/NewCharBot/MyNewChatBot';
 import Search from './search/Search';
 import Noseem from './components/NOSEEM/Noseem';
@@ -357,9 +360,14 @@ function App() {
             path='/Admin/AdminEditDoctors'
             component={AdminEditDoctors}
           />
+
+          <Route exact path='/Admin/AddChatBot'>
+            <AdminAddChatBotQuestion />
+          </Route>
+
           <ProtectedRoute
             exact
-            path='/Admin/AdminAddDoctors/AddDoctors'
+            path='/Admin/AddChatBot'
             component={AddDoctors}
           />
           <ProtectedRoute

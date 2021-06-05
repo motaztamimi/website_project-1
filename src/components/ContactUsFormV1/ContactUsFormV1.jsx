@@ -13,6 +13,9 @@ function ContactUsFormV1() {
         values.email +
         '?subject=' +
         values.name +
+        '     ' +
+        values.phoneNumber +
+        'בקשה מאתר' +
         '&body=' +
         values.message
     );

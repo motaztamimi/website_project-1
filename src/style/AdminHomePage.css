@@ -1,9 +1,12 @@
+/** @format */
+
 .AdminHomePage {
   display: flex;
   width: 100%;
   height: 100%;
-  position: fixed;
+  max-height: max-content;
   overflow-y: hidden;
+  position: fixed;
 }
 .AdminHomePage img {
   width: 100%; 
@@ -74,7 +77,7 @@
   top: 1%;
   right: 1%;
 }
-.logOutButton2{
+.logOutButton2 {
   height: 50px;
   margin-right: 5px;
   text-decoration: none;

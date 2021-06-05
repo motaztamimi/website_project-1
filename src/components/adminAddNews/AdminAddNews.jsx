@@ -60,7 +60,6 @@ const AdminAddNews = () => {
       <form className='AddNewsForm0' onSubmit={onSubmit}>
         <label>תמונת החדשות</label>
         <input type='file' onChange={onFileChange} required />
-
         <label>כתורת החדשות</label>
         <input
           type='text'

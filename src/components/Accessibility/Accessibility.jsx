@@ -90,20 +90,20 @@ function Accessibility() {
 
       <div id='myDropdown' className='triangle dropdown-content'>
         <div className='up'>
-          <button className='circle' onClick={decreaseFont}>
+          <a className='circle' onClick={decreaseFont}>
             <span> א -</span>
-          </button>
-          <button className='circle' onClick={originalFont}>
+          </a>
+          <a className='circle' onClick={originalFont}>
             <span> א</span>
-          </button>
-          <button className='circle' onClick={increaseFont}>
+          </a>
+          <a className='circle' onClick={increaseFont}>
             <span> א + </span>
-          </button>
+          </a>
         </div>
         <div className='down circle'>
-          <button onClick={invertColor}>
+          <a onClick={invertColor}>
             <span>עוורי צבעים</span>
-          </button>
+          </a>
         </div>
       </div>
     </div>

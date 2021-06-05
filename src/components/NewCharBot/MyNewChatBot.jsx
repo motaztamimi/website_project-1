@@ -7,9 +7,11 @@ import './ChatBott.css';
 import ImgBot from '../../components/ChatBot/ImgBot';
 
 const MyNewChatBot = () => {
+  const [item, setitem] = useState(null);
   let temp = [];
   const [bollean, setbollean] = useState(false);
   const [bollean1, setbollean1] = useState(false);
+  const arraya = [];
   const [data, setdata] = useState(null);
   const [data1, setdata1] = useState(null);
   const [data2, setdata2] = useState(null);
@@ -39,7 +41,7 @@ const MyNewChatBot = () => {
         setdata2(x);
         setbollean(true);
       });
-  });
+  }, [true]);
   useEffect(() => {
     if (bollean) {
       temp = [...newFiree];
@@ -71,7 +73,6 @@ const MyNewChatBot = () => {
   const config = {
     width: '400px',
     height: '500px',
-
     hideUserAvatar: true,
     floating: true,
     placeholder: 'Type your response.',

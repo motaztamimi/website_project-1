@@ -1,5 +1,5 @@
 /** @format */
-import { React, useState } from 'react';
+import { React, useState ,useEffect } from 'react';
 import '../style/AdminEditDoctors.css';
 import useDataBase from '../hooks/useDataBase';
 import { useHistory } from 'react-router-dom';
@@ -29,11 +29,9 @@ const AdminEditDoctors = () => {
     setdoctorE(doctor);
     SetDoctorName0(doctor.DoctorName);
     setDoctorImage0(doctor.DoctorImage);
-    console.log(DoctorImage0);
     setDoctorSpecialty0(doctor.DoctorSpecialty);
     SetDepartmentOut0(doctor.DepartmentOut);
     SetDepartmentIn0(doctor.DepartmentIn);
-    console.log(document.getElementById('input1').value);
   };
   /***************************************************** */
 
@@ -95,7 +93,7 @@ const AdminEditDoctors = () => {
     );
     const doctorFilterIn = doctorFilter.filter((e) => e.DepartmentIn === part);
     return doctorFilterIn;
-  }
+  };
   const deleteDoctor = (doctor) => {
     const colecstion = dataBase.collection('Doctors');
     const item = colecstion.doc(doctor.id);
@@ -138,8 +136,10 @@ const AdminEditDoctors = () => {
         console.error('Error writing document: ', error);
       });
     seteditorS(0);
+    setFile(null);
   }
   const onFileChange = (e) => {
+    e.preventDefault();
     let selectedFile = e.target.files[0];
     if (selectedFile && types.includes(selectedFile.type)) {
       setFile(selectedFile);
@@ -162,23 +162,24 @@ const AdminEditDoctors = () => {
     };
   }
   function exitFormB(e) {
+    e.preventDefault();
     seteditorS(0);
+    setFile(null);
   }
   return (
     <div className='wholePageD'>
       <div className='overlyForm' style={styleEdit()}>
         <button onClick={exitFormB}>X</button>
         <h1 id='editorTitle'>עריכת הרופא הרצוי</h1>
-        <form id='FORMD' onSubmit={editDoctor00}>
+        <form  onSubmit={editDoctor00}>
           <label>תמונת הרופא</label>
-          <input type='file' onChange={onFileChange} />
+          <input type='file' key={51}  onChange={onFileChange} />
           <br />
           <label>שם הרופה:</label>
           <input
             className='motaz'
-            id='input1'
             type='text'
-            defaultValue={DoctorName0}
+            value={DoctorName0}
             onChange={(e) => {
               SetDoctorName0(e.target.value);
             }}
@@ -187,8 +188,8 @@ const AdminEditDoctors = () => {
           <input
             className='motaz'
             type='text'
-            id='input2'
-            defaultValue={DoctorSpecialty0}
+            // id='input2'
+            value={DoctorSpecialty0}
             onChange={(e) => {
               setDoctorSpecialty0(e.target.value);
             }}
@@ -197,8 +198,8 @@ const AdminEditDoctors = () => {
           <input
             className='motaz'
             type='text'
-            id='input3'
-            defaultValue={DepartmentOut0}
+            // id='input3'
+            value={DepartmentOut0}
             onChange={(e) => {
               SetDepartmentOut0(e.target.value);
             }}
@@ -207,8 +208,8 @@ const AdminEditDoctors = () => {
           <input
             className='motaz'
             type='text'
-            id='input4'
-            defaultValue={DepartmentIn0}
+            // id='input4'
+            value={DepartmentIn0}
             onChange={(e) => {
               SetDepartmentIn0(e.target.value);
             }}

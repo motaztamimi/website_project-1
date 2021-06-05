@@ -1,5 +1,13 @@
 .hide {
 }
+.listAdminInEP{
+  display: grid;
+  grid-template-columns: 10% 90%;
+  direction: rtl;
+}
+.listP{
+  margin-top: 40px;
+}
 .display {
   display: block;
 }

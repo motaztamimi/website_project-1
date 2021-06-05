@@ -9,6 +9,14 @@
   height: 100%;
   background-color: rgba(245, 245, 245, 0.87);
 }
+.listAdminInG{
+  display: grid;
+  grid-template-columns: 10% 90%;
+  direction: rtl;
+}
+.listt{
+  margin-top: 40px;
+}
 .AdminGallery .UploadPhotoForm {
   display: flex;
   width: 100%;

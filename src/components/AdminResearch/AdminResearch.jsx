@@ -4,7 +4,7 @@ import useDataBase from '../../hooks/useDataBase';
 import { storage } from '../../config/firebase';
 import { dataBase } from '../../config/firebase';
 import { AiOutlineUser } from 'react-icons/ai';
-
+import ListAdmin from '../ListAdmin';
 import { motion } from 'framer-motion';
 import './AdminResearch.css';
 import { useState } from 'react';
@@ -36,50 +36,59 @@ const AdminResearch = () => {
   function toggle() {
     setClick(!isclick);
   }
-  // console.log(Researches.docs);
   return (
-    <div>
-      <div className='AddResearchesButtonDiv'>
-      <a href='/Admin'>
-      <AiOutlineUser title="AdminPage" className='EditSlideShowPage2' id='accessIMG' color='#151e4d' />
-      </a>
-        <button
-          onClick={() => {
-            history.push('/Admin/AdminResearch/AddResearch');
-          }}
-          className='AddResearchesButton'>
-          Add Research
-        </button>
+    <div className="listAdminInR">
+      <div className="listR">
+        <ListAdmin/>
       </div>
-      <div className='container'>
-        {getResearches().map((research) => {
-          console.log("the res is "+research.name);
-          return (
-            <motion.div className='ResearchesDiv' key={research.id} layout>
-              <input
-                type='button'
-                value='X'
-                onClick={() => {
-                  deleteResearch(research);
-                }}
-              />
-              <div className='NewCARD'>
-                <div className='ResearchesContent'>
-                  <h3>{research.name}</h3>
+      <div>
+        <div className='AddResearchesButtonDiv'>
+          <a href='/Admin'>
+            <AiOutlineUser
+              title='AdminPage'
+              className='EditSlideShowPage2'
+              id='accessIMG'
+              color='#151e4d'
+            />
+          </a>
+          <button
+            onClick={() => {
+              history.push('/Admin/AdminResearch/AddResearch');
+            }}
+            className='AddResearchesButton'>
+            Add Research
+          </button>
+        </div>
+        <div className='container'>
+          {getResearches().map((research) => {
+            console.log('the res is ' + research.name);
+            return (
+              <motion.div className='ResearchesDiv' key={research.id} layout>
+                <input
+                  type='button'
+                  value='X'
+                  onClick={() => {
+                    deleteResearch(research);
+                  }}
+                />
+                <div className='NewCARD'>
+                  <div className='ResearchesContent'>
+                    <h3>{research.name}</h3>
+                  </div>
                 </div>
-              </div>
-              <hr />
-            </motion.div>
-          );
-        })}
-        <section>
-          <input
-            className='MoreResearchesButton'
-            type='button'
-            value={isclick ? 'חסר מחקרים' : 'עוד מחקרים'}
-            onClick={toggle}
-          />
-        </section>
+                <hr />
+              </motion.div>
+            );
+          })}
+          <section>
+            <input
+              className='MoreResearchesButton'
+              type='button'
+              value={isclick ? 'חסר מחקרים' : 'עוד מחקרים'}
+              onClick={toggle}
+            />
+          </section>
+        </div>
       </div>
     </div>
   );
@@ -105,7 +114,7 @@ export default AdminResearch;
 
 //   const deleteNew = (newq) => {
 //     const colecstion = dataBase.collection('Researches');
-    
+
 //     const item = colecstion.doc(newq.id);
 //     const storageRef = storage.refFromURL(newq.fileUrl);
 //     storageRef.delete();

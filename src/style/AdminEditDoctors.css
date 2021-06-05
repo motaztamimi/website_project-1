@@ -1,14 +1,53 @@
 /** @format */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 @import url('https://use.typekit.net/lfw8lae.css');
-.AddDoctorsButton {
-  background-color: #285c7e !important ;
-  color: white;
-  width: 200px;
-  font-size: 1.3rem;
-  margin-top: 50px;
-  padding: 5px;
-  height: 40px;
+.overlyForm{
+  z-index: 9;
+  position: absolute;
+  direction: rtl;
+  text-align: center;
+  background-color: #008cba;
+  width: 650px;
+  height: 400px;
+right: 510px;
+top: 250px;
+}
+.wholePageD{
+  /* height: 100vh;
+  margin-left: auto;
+  margin-right: auto; */
+   /* position: absolute; */
+  /* height: 100%; */
+}
+.headerDoctors {
+  display: grid;
+  grid-template-rows: auto auto;
+}
+.chooseTheCampos {
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+.chooseTheCampos select {
+  font-size: large;
+  width: fit-content;
+  padding-right: 15px;
+}
+.listAdminn {
+  display: grid;
+  grid-template-columns: 10% 90%;
+  direction: rtl;
+ 
+}
+.ll {
+  background-color: #f1f1f1;
+  height: 100vh;
+}
+
+.llo {
+  margin-top: 30%;
 }
 .EditSlideShowPage2 {
   height: 43px;
@@ -21,88 +60,38 @@
   text-align: left;
   border-radius: 30px;
   font-size: 1.4rem;
-  /* background-color: #171f73; */
   width: 60px;
 }
-.container {
-  display: flex;
-  flex-direction: column;
-  direction: rtl;
-}
-.AddDoctorsButtonDiv {
-  text-align: center;
-  justify-content: center;
-  margin: 0 auto;
-  width: 200px;
-}
-.ContentContainer {
-  width: 100%;
-}
-.DoctorBody {
-  display: grid;
-  grid-template-rows: auto auto auto;
-}
-.buttonAddDoctors,
-.buttonShowDoctor {
-  text-align: center;
-  padding-bottom: 5px;
-  padding-top: 5px;
-}
-.buttonAddDoctors button {
+.ButtonAddD {
   background-color: white;
   color: black;
   border: 2px solid #008cba;
-  font-size: 1.5rem;
-  font-weight: bold;
+  width: fit-content;
+  font-size: large;
 }
-.buttonShowDoctor button {
-  background-color: white;
-  color: black;
-  border: 2px solid #008cba;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-.buttonAddDoctors button:hover {
-  background-color: #008cba;
-  color: white;
-}
-.buttonShowDoctor button:hover {
+
+.ButtonAddD:hover {
   background-color: #008cba;
   color: white;
 }
 .doctoerDetails {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  width: 80%;
-  margin: auto;
-  gap: 2px;
-}
-.doctoerDetailsIn {
-  border: 2px solid #008cba;
-}
-.cardd {
-  padding-left: 70px;
-}
-.buttonX {
-  font-size: 30px;
-  font-weight: 40px;
-  color: black;
-  width: 40px;
-  height: 40px;
-  background-color: red;
-  border: none;
+  margin-right: 15px;
+  margin-top: 50px;
+  row-gap: 20px;
 }
 .editorD {
   font-size: 30px;
   width: 40px;
   height: 40px;
 }
-.towButton {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+#FORMD {
+  width: 60%;
+  margin: auto;
 }
-.ff {
-  direction: rtl;
+#FORMD label {
+  font-size: x-large;
 }
 .motaz {
   width: 100%;
@@ -110,10 +99,64 @@
   border: 3px solid #ccc;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  font-size: large;
 }
-
-.editorDoctor {
-  display: grid;
-  direction: rtl;
-  text-align: center;
+.wrapper,
+.wrapper .img-area{
+  background: #ecf0f3;
+  box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+}
+.wrapper {
+  width: 90%;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.wrapper .img-area {
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inner-area img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+}
+.wrapper .name {
+  font-size: 23px;
+  font-weight: 500;
+  color: #31344b;
+  margin: 10px 0 5px 0;
+}
+.wrapper .about {
+  color: #44476a;
+  font-weight: 400;
+  font-size: 16px;
+}
+.wrapper .buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.buttonE {
+  background-color: khaki;
+  border-radius: 5px;
+  font-size: 17px;
+  padding: 12px 0;
+  width: 100%;
+  border: none;
+  padding-left: 15px;
+}
+.buttonD {
+  background-color: firebrick;
+  border-radius: 5px;
+  font-size: 17px;
+  padding: 12px 0;
+  width: 100%;
+  border: none;
+  padding-left: 15px;
 }

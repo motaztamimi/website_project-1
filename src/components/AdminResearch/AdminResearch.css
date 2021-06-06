@@ -11,13 +11,87 @@
   padding: 5px;
   height: 40px;
 }
-.EditSlideShowPage2{
+.AdminResarchDiv {
+  background-color: rgb(255, 255, 255);
+  box-shadow: -1px 0 0 rgb(0 0 0 / 10%), -3px 0 9px rgb(0 0 0 / 15%);
+  box-sizing: border-box;
+  margin-top: 40px !important;
+}
+.AdminResarchline .hebrwTextDiv {
+  margin-top: 20px;
+}
+.AdminResarchline .allButtons {
+  margin-top: 20px;
+}
+.ResearchesDivAdmin {
+  background-color: rgba(245, 245, 245, 0.26);
+  width: 80% !important;
+}
+.AddResearchesButton,
+.MoreResearchesButton {
+  opacity: 0.8;
+}
+.AddResearchesButton:hover {
+  opacity: 1;
+  width: 95%;
+}
+.MoreResearchesButton:hover {
+  opacity: 1;
+}
+
+.btnn {
+  border: none;
+  display: block;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #222;
+  padding: 17px 60px;
+  margin: 0 auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btnn span {
+  position: relative;
+  z-index: 1;
+}
+
+.btnn:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 490%;
+  width: 140%;
+  background-color: rgba(40, 92, 126, 0.842) !important;
+
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
+
+.btnn:hover:after {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+.allButtonsAdmin {
+  width: 100% !important;
+}
+.EditSlideShowPage2 {
   height: 43px;
   margin-right: 5px;
   text-decoration: none;
   position: absolute;
-  right:0%;
-  top:0%;
+  right: 0%;
+  top: 0%;
   border-style: none;
   text-align: left;
   border-radius: 30px;
@@ -25,12 +99,12 @@
   /* background-color: #171f73; */
   width: 60px;
 }
-.listAdminInR{
+.listAdminInR {
   display: grid;
-grid-template-columns: 10% 90%;
-direction: rtl;
+  grid-template-columns: 10% 90%;
+  direction: rtl;
 }
-.listR{
+.listR {
   margin-top: 30%;
 }
 .container {

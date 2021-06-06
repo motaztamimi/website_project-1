@@ -29,7 +29,7 @@ const ListOfDep = ({ departmentName }) => {
   return (
     <section className='Maincontener'>
       <h1>{departmentName}</h1>
-      <SlideShow collection={'Departments/'+departmentName+'/slideShow'} />
+      <SlideShow collection={'Departments/' + departmentName + '/slideShow'} />
 
       <div className='titleText'>
         <p>מחלקות יחידות ושירותים בקמפוס {departmentName}</p>
@@ -43,7 +43,14 @@ const ListOfDep = ({ departmentName }) => {
         <button
           className='HowWeCanComeButton'
           onClick={() => {
-            history.push('./map');
+            if (departmentName === 'כפר שאול') {
+              history.push('./map1');
+            }
+            if (departmentName === 'איתנים') {
+              history.push('./map');
+            } else {
+              history.push('./map1');
+            }
           }}
           id='HowWeCanComeButton'>
           {' '}

@@ -6,9 +6,13 @@
 }
 .Mapdiv {
   display: flex;
+  padding: 20px;
+  padding-top: 0;
   direction: rtl;
+  align-items: center;
   justify-content: center;
+  margin: 0 auto;
   box-sizing: border-box;
   height: max-content;
-  width: 100%;
+  width: 80%;
 }

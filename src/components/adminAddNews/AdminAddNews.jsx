@@ -48,7 +48,8 @@ const AdminAddNews = () => {
             createdAt: timestamp(),
           })
           .then((value) => {
-            history.push('/Admin/EditNews');
+            window.location.reload();
+            // history.push('/Admin/EditNews');
           });
       });
     });

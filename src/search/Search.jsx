@@ -7,7 +7,6 @@ import './Search.css';
 const Search = () => {
   const stringToSearch = useParams();
   const searchString = stringToSearch['stringToSearch'];
-  console.log(searchString);
   const [newsFromSearch, setNewsFromSearch] = useState(null);
   const [departmentsFromSearch, setDepartmentsFromSearch] = useState(null);
   const sections = ['איתנים', 'כפר שאול', 'שירות קהילתי'];
@@ -84,66 +83,126 @@ const Search = () => {
                 let id = '';
                 if (doc.id === 'כפר שאול') {
                   id = 'kfarShaol';
-                } else if (doc.id === 'אינתים') {
+                } else if (doc.id === 'איתנים') {
                   id = 'Etanim';
                 } else {
                   id = 'sherotKhelate';
                 }
-                contentSecToAdd.push({
-                  contentText: searchString,
-                  url: `${id}/${index}`,
-                });
+                let contentText = '';
+                var toConnect = removeTags(data[dep].first);
+                var temp = toConnect.search(searchString);
+
+                for (var i = temp; i < temp + 40; i++) {
+                  contentText += toConnect[i];
+                }
+                contentText = removeTags(contentText);
+
+                contentSecToAdd = [
+                  ...contentSecToAdd,
+                  ...[
+                    {
+                      contentText: contentText,
+                      url: `${id}/${index}`,
+                      title: `${dep}/${doc.id}`,
+                    },
+                  ],
+                ];
                 setContentSec(contentSecToAdd);
-              }
-            }
-            if (data[dep] !== undefined) {
-              if (data[dep].second && data[dep].second.includes(searchString)) {
+              } else if (
+                data[dep].second &&
+                data[dep].second.includes(searchString)
+              ) {
                 let id = '';
                 if (doc.id === 'כפר שאול') {
                   id = 'kfarShaol';
-                } else if (doc.id === 'אינתים') {
+                } else if (doc.id === 'איתנים') {
                   id = 'Etanim';
                 } else {
                   id = 'sherotKhelate';
                 }
-                contentSecToAdd.push({
-                  contentText: searchString,
-                  url: `${id}/${index}`,
-                });
+                let contentText = '';
+                var toConnect = removeTags(data[dep].second);
+                var temp = toConnect.search(searchString);
+
+                for (var i = temp; i < temp + 40; i++) {
+                  contentText += toConnect[i];
+                }
+                contentText = removeTags(contentText);
+
+                contentSecToAdd = [
+                  ...contentSecToAdd,
+                  ...[
+                    {
+                      contentText: contentText,
+                      url: `${id}/${index}`,
+                      title: `${dep}/${doc.id}`,
+                    },
+                  ],
+                ];
                 setContentSec(contentSecToAdd);
-              }
-            }
-            if (data[dep] !== undefined) {
-              if (data[dep].theird && data[dep].theird.includes(searchString)) {
+              } else if (
+                data[dep].theird &&
+                data[dep].theird.includes(searchString)
+              ) {
                 let id = '';
                 if (doc.id === 'כפר שאול') {
                   id = 'kfarShaol';
-                } else if (doc.id === 'אינתים') {
+                } else if (doc.id === 'איתנים') {
                   id = 'Etanim';
                 } else {
                   id = 'sherotKhelate';
                 }
-                contentSecToAdd.push({
-                  contentText: searchString,
-                  url: `${id}/${index}`,
-                });
+                let contentText = '';
+                var toConnect = removeTags(data[dep].theird);
+                var temp = toConnect.search(searchString);
+
+                for (var i = temp; i < temp + 40; i++) {
+                  contentText += toConnect[i];
+                }
+                contentText = removeTags(contentText);
+
+                contentSecToAdd = [
+                  ...contentSecToAdd,
+                  ...[
+                    {
+                      contentText: contentText,
+                      url: `${id}/${index}`,
+                      title: `${dep}/${doc.id}`,
+                    },
+                  ],
+                ];
                 setContentSec(contentSecToAdd);
-              }
-            }
-            if (data[dep] !== undefined) {
-              if (data[dep].fourth && data[dep].fourth.includes(searchString)) {
+              } else if (
+                data[dep].fourth &&
+                data[dep].fourth.includes(searchString)
+              ) {
                 let id = '';
                 if (doc.id === 'כפר שאול') {
                   id = 'kfarShaol';
-                } else if (doc.id === 'אינתים') {
+                } else if (doc.id === 'איתנים') {
                   id = 'Etanim';
                 } else {
                   id = 'sherotKhelate';
                 }
-                contentSecToAdd.push({
-                  contentText: searchString,
-                  url: `${id}/${index}`,
-                });
+                let contentText = '';
+                var toConnect = removeTags(data[dep].fourth);
+                var temp = toConnect.search(searchString);
+
+                for (var i = temp; i < temp + 40; i++) {
+                  contentText += toConnect[i];
+                }
+                contentText = removeTags(contentText);
+
+                contentSecToAdd = [
+                  ...contentSecToAdd,
+                  ...[
+                    {
+                      contentText: contentText,
+                      url: `${id}/${index}`,
+                      title: `${dep}/${doc.id}`,
+                    },
+                  ],
+                ];
                 setContentSec(contentSecToAdd);
               }
             }
@@ -153,9 +212,16 @@ const Search = () => {
     });
   }, []);
 
-  console.log(departmentsFromSearch);
-  console.log(contentSec);
+  const removeTags = (str) => {
+    if (str === null || str === '') return false;
+    else str = str.toString();
 
+    // Regular expression to identify HTML tags in
+    // the input string. Replacing the identified
+    // HTML tag with a null string.
+    const stringa = str.replace(/&nbsp;/gi, '');
+    return stringa.replace(/(<([^>]+)>)/gi, '');
+  };
   return (
     <div className='SearchResults'>
       <div className='NewsFormSearch'>
@@ -195,8 +261,54 @@ const Search = () => {
           <hr />
         </div>
       )}
+      {departmentsFromSearch && departmentsFromSearch.length !== 0 && (
+        <>
+          <h1>מחלקות</h1>
+          <div className='DepartmentsFormSearch'>
+            {departmentsFromSearch.map((item, index) => {
+              return (
+                <Link to={`/${item.url}`} key={`${index}/${item.url}`}>
+                  <div className='DepartmentFomSearch'>
+                    <span>{item.title}</span>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+          <hr />
+        </>
+      )}
+      {contentSec && contentSec.length !== 0 && (
+        <>
+          <h1>תוכן מחלקות</h1>
+          <div className='DepartmentsContentFromSearch'>
+            {contentSec.map((item, index) => {
+              return (
+                <Link to={`/${item.url}`} key={`${index}/${item.url}`}>
+                  <div className='DepartmentContentFormSearch'>
+                    <p>
+                      {item.title}
+                      {':'}
+                    </p>
+                    <p>{item.contentText}</p>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </>
+      )}
+      {!sectionsFromSearch && !departmentsFromSearch && !contentSec && (
+        <div className='NoResults'>לא נמצא נתונים עבור מה שחפשתה</div>
+      )}
     </div>
   );
 };
 
 export default Search;
+
+/* contentSecToAdd.push({
+  contentText: contentText,
+  url: `${id}/${index}`,
+  title: `${dep}/${doc.id}`,
+}); */

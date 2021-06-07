@@ -1,7 +1,6 @@
 /** @format */
 
 import '../style/SlideShow.css';
-
 import { useState, useEffect } from 'react';
 import useDataBase from '../hooks/useDataBase';
 const SlideShow = ({ collection }) => {
@@ -9,9 +8,7 @@ const SlideShow = ({ collection }) => {
   const [slidenum, setSlide] = useState(1);
   const [firstrender, setfirstrender] = useState(false);
   var photoArray = useDataBase(collection).docs;
-
   const [res, setRes] = useState([]);
-
   useEffect(() => {
     if (photoArray.length === 0) {
       return;
@@ -20,6 +17,7 @@ const SlideShow = ({ collection }) => {
     if (photoArray.length % 2 === 1) {
       photoArray.push(photoArray[0]);
     }
+
     const temp = [];
     while (photoArray.length > 0) {
       //split the array into twos.
@@ -62,7 +60,7 @@ const SlideShow = ({ collection }) => {
 
   return (
     <div className='slideShow-container'>
-      {res.map(function (element, i) {
+      {res.map(function(element, i) {
         return (
           <div className='myslide' key={i} style={{ display: 'none' }}>
             <div>

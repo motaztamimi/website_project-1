@@ -81,12 +81,13 @@ const AdminAddChatBotQuestion = () => {
     };
     ResultToUPload.push(Question);
 
-    console.log(ResultToUPload);
     collectionRef
       .doc(nameDoc)
       .update({ Steps: ResultToUPload })
       .then(() => {
-        window.location.reload();
+        document.getElementById('BotQuestion').value = ' ';
+        document.getElementById('BotAnswer').value = ' ';
+        setShowDiv(false);
       });
   };
   const changeSelectOptionHandler = (event) => {
@@ -116,7 +117,7 @@ const AdminAddChatBotQuestion = () => {
             className='dropBot'
             required
             onChange={changeSelectOptionHandler}>
-            <option key='0' value='' defaultValue>
+            <option key='0' value='רשומות רפואיות' defaultValue>
               בחר נושא
             </option>
             <option key='4' value='רשומות רפואיות'>
@@ -132,7 +133,8 @@ const AdminAddChatBotQuestion = () => {
           <label> שאלה </label>
           <input
             type='text'
-            placeholder='נא להכניס שאלה להוספה'
+            id='BotQuestion'
+            placeholder='נא להכניס שאלה להוספה בעברית'
             onChange={(e) => {
               setBotQuestion(e.target.value);
             }}
@@ -141,6 +143,7 @@ const AdminAddChatBotQuestion = () => {
           <label>תשובה</label>
           <input
             type='text'
+            id='BotAnswer'
             placeholder='נא להכניס תשובה'
             onChange={(e) => {
               setBotAnswer(e.target.value);

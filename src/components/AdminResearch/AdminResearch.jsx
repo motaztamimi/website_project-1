@@ -26,13 +26,15 @@ const AdminResearch = () => {
   };
 
   let max = Researches.docs.length / 2;
+  if (max < 3) {
+    max = Researches.docs.length;
+  }
   let len = Math.round(max);
   const showPdf = (url) => {
     window.open(url);
   };
   function getResearches() {
     if (isclick) {
-      console.log(Researches.doc);
       return Researches.docs;
     }
     return Researches.docs.slice(0, len);

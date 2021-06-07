@@ -8,9 +8,7 @@ import ListAdmin from '../ListAdmin';
 import { motion } from 'framer-motion';
 import './AdminResearch.css';
 import '../../style/AllResearchs.css';
-
 import '../../style/LineInResearchPage.css';
-
 import { useState } from 'react';
 
 const AdminResearch = () => {
@@ -72,13 +70,6 @@ const AdminResearch = () => {
                 className='ResearchesDiv ResearchesDivAdmin'
                 key={research.id}
                 layout>
-                <input
-                  type='button'
-                  value='X'
-                  onClick={() => {
-                    deleteResearch(research);
-                  }}
-                />
                 <div>
                   <div className='theLine AdminResarchline '>
                     <div className=' col-9 hebrwTextDiv'>
@@ -91,6 +82,13 @@ const AdminResearch = () => {
                           showPdf(research.fileUrl);
                         }}>
                         <span> הצג</span>
+                      </button>
+                      <button
+                        className='btnn btnDelete'
+                        onClick={() => {
+                          deleteResearch(research);
+                        }}>
+                        <span>מחק </span>
                       </button>
                     </div>
                   </div>

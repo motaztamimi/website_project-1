@@ -4,7 +4,6 @@
 .AddResearchesButton {
   background-color: #285c7e !important ;
   color: white;
-
   width: 200px;
   font-size: 1.3rem;
   margin-top: 50px;
@@ -38,7 +37,9 @@
 .MoreResearchesButton:hover {
   opacity: 1;
 }
-
+.btnDelete::after {
+  background-color: rgba(255, 17, 0, 0.842) !important;
+}
 .btnn {
   border: none;
   display: block;
@@ -70,8 +71,7 @@
   top: 0;
   height: 490%;
   width: 140%;
-  background-color: rgba(40, 92, 126, 0.842) !important;
-
+  background-color: rgba(40, 92, 126, 0.842);
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
@@ -96,7 +96,7 @@
   text-align: left;
   border-radius: 30px;
   font-size: 1.4rem;
-  /* background-color: #171f73; */
+
   width: 60px;
 }
 .listAdminInR {

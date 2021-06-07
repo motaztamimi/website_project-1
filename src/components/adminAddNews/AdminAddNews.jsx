@@ -47,9 +47,12 @@ const AdminAddNews = () => {
             NewsBody: NewsBody,
             createdAt: timestamp(),
           })
-          .then((value) => {
-            window.location.reload();
-            // history.push('/Admin/EditNews');
+          .then(() => {
+            document.getElementById('FileName').value = null;
+            document.getElementById('Title').value = ' ';
+            document.getElementById('SubTitle').value = ' ';
+            document.getElementById('Body').value = ' ';
+            setShowDiv(false);
           });
       });
     });
@@ -60,11 +63,12 @@ const AdminAddNews = () => {
       {showDiv && div}
       <form className='AddNewsForm0' onSubmit={onSubmit}>
         <label>תמונת החדשות</label>
-        <input type='file' onChange={onFileChange} required />
+        <input id='FileName' type='file' onChange={onFileChange} required />
         <label>כתורת החדשות</label>
         <input
           type='text'
           placeholder='נא להכניס כתורת החדשות'
+          id='Title'
           onChange={(e) => {
             SetNewsTitle(e.target.value);
           }}
@@ -74,6 +78,7 @@ const AdminAddNews = () => {
         <input
           type='text'
           placeholder='נא להכניס כתורת'
+          id='SubTitle'
           onChange={(e) => {
             setNewsSubTitle(e.target.value);
           }}
@@ -83,11 +88,17 @@ const AdminAddNews = () => {
         <textarea
           cols='30'
           rows='10'
+          id='Body'
           onChange={(e) => {
             setNewsBody(e.target.value);
           }}
           required></textarea>
-        <input className='SubmitButton' type='submit' value='submit' />
+        <input
+          className='SubmitButton'
+          id='Submit'
+          type='submit'
+          value='submit'
+        />
       </form>
     </div>
   );

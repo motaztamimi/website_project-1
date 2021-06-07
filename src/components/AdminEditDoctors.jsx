@@ -141,6 +141,7 @@ const AdminEditDoctors = () => {
   const onFileChange = (e) => {
     e.preventDefault();
     let selectedFile = e.target.files[0];
+    
     if (selectedFile && types.includes(selectedFile.type)) {
       setFile(selectedFile);
     } else {

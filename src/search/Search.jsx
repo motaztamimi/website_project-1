@@ -121,10 +121,10 @@ const Search = () => {
                   id = 'sherotKhelate';
                 }
                 let contentText = '';
-                var toConnect = removeTags(data[dep].second);
-                var temp = toConnect.search(searchString);
+                toConnect = removeTags(data[dep].second);
+                temp = toConnect.search(searchString);
 
-                for (var i = temp; i < temp + 40; i++) {
+                for (i = temp; i < temp + 40; i++) {
                   contentText += toConnect[i];
                 }
                 contentText = removeTags(contentText);
@@ -153,10 +153,10 @@ const Search = () => {
                   id = 'sherotKhelate';
                 }
                 let contentText = '';
-                var toConnect = removeTags(data[dep].theird);
-                var temp = toConnect.search(searchString);
+                toConnect = removeTags(data[dep].theird);
+                temp = toConnect.search(searchString);
 
-                for (var i = temp; i < temp + 40; i++) {
+                for (i = temp; i < temp + 40; i++) {
                   contentText += toConnect[i];
                 }
                 contentText = removeTags(contentText);
@@ -185,10 +185,10 @@ const Search = () => {
                   id = 'sherotKhelate';
                 }
                 let contentText = '';
-                var toConnect = removeTags(data[dep].fourth);
-                var temp = toConnect.search(searchString);
+                toConnect = removeTags(data[dep].fourth);
+                temp = toConnect.search(searchString);
 
-                for (var i = temp; i < temp + 40; i++) {
+                for (i = temp; i < temp + 40; i++) {
                   contentText += toConnect[i];
                 }
                 contentText = removeTags(contentText);

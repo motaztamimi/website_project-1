@@ -39,12 +39,10 @@ const Header = () => {
                     setSearchString(e.target.value);
                   }}
                 />
-                <div className='accessLeft'>
-                  <button onClick={SearchButtonClick} className='SearchButton'>
-                    <BsSearch size='20px' color='white' />
-                  </button>
-                  <Accessibility />
-                </div>
+                <button onClick={SearchButtonClick} className='SearchButton'>
+                  <BsSearch size='20px' color='white' />
+                </button>
+                <Accessibility />
               </div>
             </div>
           </div>

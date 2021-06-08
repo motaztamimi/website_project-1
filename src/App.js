@@ -31,6 +31,7 @@ import AdminAddResearch from './components/AdminResearch/AdminAddResearch';
 import AdminResearch from './components/AdminResearch/AdminResearch';
 import styled from 'styled-components';
 import AdminAddChatBotQuestion from './components/NewCharBot/AdminAddChatBotQuestion';
+import AdminVideos from './components/AdminAddVideos/AdminVideos';
 
 import MyNewChatBot from '../src/components/NewCharBot/MyNewChatBot';
 import Search from './search/Search';
@@ -371,7 +372,11 @@ function App() {
             path='/Admin/AdminResearch/AddResearch'
             component={AdminAddResearch}
           />
-
+          <ProtectedRoute
+            exact
+            path='/Admin/AdminVideos'
+            component={AdminVideos}
+          />
           <Route exact path='/Search/:stringToSearch'>
             <Header />
             <Search />

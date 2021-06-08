@@ -9,7 +9,7 @@ import '../style/AdminEditNews.css';
 import { React, useState } from 'react';
 import AdminAddNews from './adminAddNews/AdminAddNews.jsx';
 import { AiFillEdit } from 'react-icons/ai';
-
+import ListAdmin from './ListAdmin'
 const AdminEditNews = () => {
   const [isclick, setClick] = useState(false);
   const [NewsTitleE, setNewsTitleE] = useState('');
@@ -114,6 +114,10 @@ const AdminEditNews = () => {
   }
   console.log(News.docs);
   return (
+    <div className="listAdminn">
+      <div className='ll'>
+        <ListAdmin/>
+      </div>
     <div className='addNewsGrid'>
       <div className='overlyEditNews' style={styleEditNews()}>
         <button onClick={exitFormEditNews}>X</button>
@@ -229,6 +233,7 @@ const AdminEditNews = () => {
           />
         </section>
       </div>
+    </div>
     </div>
   );
 };

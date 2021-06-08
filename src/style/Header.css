@@ -57,17 +57,26 @@
 .HeaderUpperSection button:hover {
   background-color: #ea3d84;
 }
-@media screen and (max-width: 950px) {
+.accessLeft {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+@media screen and (max-width: 1024px) {
   .Header img {
     width: 430px;
+  }
+  .accessLeft {
+    /* display: grid; */
+    grid-template-columns: auto auto auto;
   }
 }
 @media screen and (max-width: 800px) {
   .Header {
     display: none;
   }
-}
-.accessLeft {
-  display: grid;
-  grid-template-columns: auto auto;
+  .accessLeft {
+    /* display: grid; */
+    grid-template-columns: auto auto auto;
+  }
 }

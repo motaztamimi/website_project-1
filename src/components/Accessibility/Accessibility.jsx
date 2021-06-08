@@ -63,6 +63,7 @@ function Accessibility() {
 
   return (
     <div className='dropDown'>
+      <div className="buttonsHeader">
       <img
         className='circleDive'
         title='Accessibility'
@@ -87,7 +88,7 @@ function Accessibility() {
           color='#151e4d'
         />
       </Link>
-
+      </div>
       <div id='myDropdown' className='triangle dropdown-content'>
         <div className='up'>
           <a className='circle' onClick={decreaseFont}>

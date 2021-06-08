@@ -15,7 +15,7 @@ const ContactUs = ({ details }) => {
       <h5>{details.address2}</h5>
       <h5>
         דואר אלקטרוני :
-        <a href='niogsnreiogne@gmail.com'>
+        <a href='mailto:p.tzibur@moh.gov.il'>
           <span>{details.email} </span>
         </a>
       </h5>

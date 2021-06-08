@@ -104,10 +104,10 @@ const AdminEditNews1 = () => {
   return (
     <div>
       {bollean1 ? (
-        <div className='overlyEditNews'>
-          <h1 id='editorTitleNews'>עריכת חדשות </h1>
+        <div className='AddDoctorsPage'>
           {showDiv && div}
-          <form id='FormEditor' onSubmit={onSubmit}>
+          <form id='FormEditor' className='AddDoctorsForm' onSubmit={onSubmit}>
+            <h1 id='editorTitleNews'>עריכת חדשות </h1>
             <label>תמונת החדשות</label>
             <br />
 

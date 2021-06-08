@@ -11,17 +11,17 @@
   padding: 5px;
   height: 40px;
 } */
-.addNewsGrid{
-display: grid;
-grid-template-columns: 30% 70%;
-direction: rtl;
+.addNewsGrid {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  direction: rtl;
 }
 .containerr {
   display: flex;
   flex-direction: column;
   direction: rtl;
   width: 100%;
-  margin-top:40px
+  margin-top: 40px;
 }
 .AddNewsButtonDiv {
   text-align: center;
@@ -35,13 +35,13 @@ direction: rtl;
   gap: 10px;
   grid-template-columns: repeat(4, 1fr);
 }
-.EditSlideShowPage2{
+.EditSlideShowPage2 {
   height: 43px;
   margin-right: 5px;
   text-decoration: none;
   position: absolute;
-  right:0%;
-  top:0%;
+  right: 0%;
+  top: 0%;
   border-style: none;
   text-align: left;
   border-radius: 30px;
@@ -107,11 +107,11 @@ direction: rtl;
   padding-top: 20px;
   padding-right: 5px;
 }
-.DeleteAndEditNews{
+.DeleteAndEditNews {
   display: grid;
   grid-template-columns: 5% 5%;
 }
-.EditioNEWS{
+.EditioNEWS {
   /* position: relative; */
   font-size: 30px;
   font-weight: 800;
@@ -122,7 +122,7 @@ direction: rtl;
   border: 3px solid #ccc;
   border-radius: 5%;
 }
-.EditioNEWS:hover{
+.EditioNEWS:hover {
   opacity: 0.9;
   cursor: pointer;
 }
@@ -153,7 +153,7 @@ direction: rtl;
   width: 200px;
   border-radius: 10px;
 }
-.overlyEditNews{
+.overlyEditNews {
   width: 50%;
   height: 85%;
   border-radius: 5px;
@@ -163,7 +163,6 @@ direction: rtl;
   position: absolute;
   top: 120px;
   left: 120px;
-  
 }
 .overlyEditNews label {
   padding-right: 5px;
@@ -180,7 +179,7 @@ direction: rtl;
   border-radius: 4px;
   box-sizing: border-box;
 }
-.submitButtonNews{
+.submitButtonNews {
   width: 100%;
   background-color: #4caf50;
   color: white;
@@ -189,4 +188,7 @@ direction: rtl;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+#editorTitleNews {
+  margin: 0 auto;
 }

@@ -9,7 +9,6 @@ footer {
   direction: rtl;
   font-family: 'Poppins', sans-serif;
 }
-
 .Containers {
   width: 100%;
   max-width: fit-content;
@@ -37,11 +36,9 @@ footer {
   justify-content: space-between;
   flex: 1;
 }
-
 .cols.firstCol {
   flex: 2;
 }
-
 .pt2 {
   padding-top: 40px;
   margin-bottom: 20px;
@@ -52,7 +49,7 @@ footer p {
   padding-bottom: 3px;
   margin-bottom: 8px;
   direction: rtl;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 2.2rem;
   font-size: 1.2rem;
 }
@@ -70,7 +67,7 @@ footer p {
 .footer_ul_amrc li {
   padding-bottom: 10px;
   font-size: 1.1rem;
-  font-weight: 900;
+  font-weight: 500;
   list-style: none;
 }
 .footer_ul_amrc li a {
@@ -152,9 +149,12 @@ footer p {
 }
 .logoFotter1 {
   margin-right: 30px;
+  margin-top: -10px;
   width: 50%;
 }
 .col_white_amrc {
+  margin-top: -10px;
+
   color: #fff;
 }
 

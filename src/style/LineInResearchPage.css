@@ -51,6 +51,7 @@
     flex-direction: row;
     align-items: center;
     direction: rtl;
+    flex-shrink: 3;
     width: 100%;
   }
 }
@@ -92,10 +93,6 @@
   .col-12 {
     width: 100%;
   }
-  .allButtons {
-    display: grid;
-    grid-template-columns: auto auto auto;
-  }
 }
 
 .resContainer {
@@ -120,7 +117,7 @@
   grid-template-columns: repeat(2, 1fr);
   margin-bottom: 15px;
 }
-.button {
+.button1 {
   width: 200px;
   font-size: 22px;
   box-shadow: -1px 0 0 rgb(0 0 0 / 10%), -3px 0 9px rgb(0 0 0 / 15%);
@@ -131,17 +128,26 @@
   height: 50px;
   padding: 10px;
   margin-right: 15px;
+
+  flex-shrink: 3;
   margin-bottom: 5px;
 }
 
-.button span {
+@media screen and (max-width: 700px) {
+  .button1 {
+    width: 30%;
+    font-size: 15px;
+    margin-right: 0;
+  }
+}
+.button1 span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-.button span:after {
+.button1 span:after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -150,11 +156,11 @@
   transition: 0.5s;
 }
 
-.button:hover span {
+.button1:hover span {
   padding-right: 25px;
 }
 
-.button:hover span:after {
+.button1:hover span:after {
   opacity: 1;
   right: 0;
 }

@@ -17,16 +17,16 @@ function LineInResearchPage(props) {
         <div className=' col-9 hebrwTextDiv'>
           <div className='hebrewText'>{props.name}</div>
         </div>
-        <div className='allButtons col-3'>
-          <button className='button ' onClick={printPdf}>
+        <div className='allButtons'>
+          <button className='button1' onClick={printPdf}>
             <span> הדפס</span>
           </button>
           <a href={props.name} download rel={props.url} target='_blank'>
-            <button className='button '>
+            <button className='button1'>
               <span>הורד</span>
             </button>
           </a>
-          <button className='button ' onClick={showPdf}>
+          <button className='button1' onClick={showPdf}>
             <span> הצג</span>
           </button>
         </div>

@@ -36,22 +36,19 @@ import AdminVideos from './components/AdminAddVideos/AdminVideos';
 import MyNewChatBot from '../src/components/NewCharBot/MyNewChatBot';
 import Search from './search/Search';
 import Noseem from './components/NOSEEM/Noseem';
+import ScrollToTop from './components/ScrollToTop';
+import Googlemap2 from './components/GoogleMap/Googlemap2';
+import AdminEditNews1 from './components/adminAddNews/AdminEditNews1';
+import Updating from './components/Updating';
 function App() {
-  const detailKfarSahoulMap = {
-    width: '500',
-    height: '500',
-    src1:
-      'https://maps.google.com/maps?width=300&amp;height=300&amp;hl=en&amp;q=abu%20tor%20jerusalem+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed',
-    src2:
-      'https://embedmaps.com/google-maps-authorization/script.js?id=97feefe6d324d091355df0c5d72a94599ff5dd91',
-    id: 'gmap_canvas',
-  };
+  const details1 = { width: '500', height: '500' };
   const div = styled.h2`
     text-align: center;
   `;
   return (
     <div className='App'>
       <Router>
+        <ScrollToTop />
         <Switch>
           <Route exact path='/Chatbot'>
             <MyNewChatBot />
@@ -60,7 +57,6 @@ function App() {
             <Header />
             <HomePage />
             <Fotter />
-
             <MyNewChatBot />
           </Route>
           <Route exact path='/AboutUs'>
@@ -271,6 +267,11 @@ function App() {
             <Fotter />
           </Route>
 
+          <Route exact path='/OurCenter'>
+            <Header />
+            <Updating />
+            <Fotter />
+          </Route>
           <Route exact path='/aher/11'>
             <Header />
             <Noseem department='קבלת חולים' url='11' />
@@ -296,7 +297,12 @@ function App() {
           </Route>
           <Route exact path='/map'>
             <Header />
-            <Googlemap details={detailKfarSahoulMap} />
+            <Googlemap details={details1} />
+            <Fotter />
+          </Route>
+          <Route exact path='/map1'>
+            <Header />
+            <Googlemap2 />
             <Fotter />
           </Route>
           <Route exact path='/Videos'>
@@ -329,6 +335,11 @@ function App() {
           />
           <ProtectedRoute
             exact
+            path='/Admin/EditNews/:id'
+            component={AdminEditNews1}
+          />
+          <ProtectedRoute
+            exact
             path='/Admin/EditNews/AddNews'
             component={AdminAddNews}
           />
@@ -353,9 +364,11 @@ function App() {
             component={AdminEditDoctors}
           />
 
-          <Route exact path='/Admin/AddChatBot'>
-            <AdminAddChatBotQuestion />
-          </Route>
+          <ProtectedRoute
+            exact
+            path='/Admin/AddChatBot'
+            component={AdminAddChatBotQuestion}
+          />
 
           <ProtectedRoute
             exact

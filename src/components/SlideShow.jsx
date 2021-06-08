@@ -1,3 +1,5 @@
+/** @format */
+
 import React from 'react';
 import {
   CarouselProvider,
@@ -27,10 +29,7 @@ const SlideShow = ({ collection }) => {
       step={2}
       playDirection={'forward'}
       interval={6000}>
-      <div className='sliderr0 slideShow-container'>
-        <div className='Backk0'>
-          {/* <ButtonBack className="prev">&#10094;</ButtonBack> */}
-        </div>
+      <div className='slideShow-container'>
         <div>
           <Slider className='myslide'>
             {SlideShows.map((element) => (
@@ -40,9 +39,8 @@ const SlideShow = ({ collection }) => {
             ))}
           </Slider>
         </div>
-        <div className='nextt0'>
-          {/* <ButtonNext className="next">&#10095;</ButtonNext> */}
-        </div>
+        <ButtonBack className='prev'>&#10094;</ButtonBack>
+        <ButtonNext className='next'>&#10095;</ButtonNext>
       </div>
     </CarouselProvider>
   );

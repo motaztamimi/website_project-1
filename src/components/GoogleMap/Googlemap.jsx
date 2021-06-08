@@ -14,10 +14,11 @@ const Googlemap = ({ details }) => {
           marginHeight='0'
           marginWidth='0'
           id='gmap_canvas'
-          src='https://maps.google.com/maps?width=500&amp;height=500&amp;hl=en&amp;q=abu%20tor%20jerusalem+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'></iframe>{' '}
+          src='https://maps.google.com/maps?width=500&amp;height=500&amp;hl=en&amp;q=%D7%91%D7%99%D7%AA%20%D7%97%D7%95%D7%9C%D7%99%D7%9D%20%D7%90%D7%99%D7%AA%D7%A0%D7%99%D7%9D%20Jerusalem%20+(%D7%91%D7%99%D7%AA%20%D7%97%D7%95%D7%9C%D7%99%D7%9D%20%D7%90%D7%99%D7%AA%D7%A0%D7%99%D7%9D)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'></iframe>
+
         <script
           type='text/javascript'
-          src='https://embedmaps.com/google-maps-authorization/script.js?id=97feefe6d324d091355df0c5d72a94599ff5dd91'></script>
+          src='https://embedmaps.com/google-maps-authorization/script.js?id=9c7ea40008e7186df49ba8c49aaa32b3c5ae3f76'></script>
       </div>
     </div>
   );

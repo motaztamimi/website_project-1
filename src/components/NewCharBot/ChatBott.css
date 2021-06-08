@@ -144,7 +144,7 @@ td {
 }
 .BotTable th {
   border: 1px solid;
-  background-color: aquamarine;
+  background-color: rgb(50, 147, 185);
 }
 .BotTable tr:nth-child(even) {
   background-color: #f2f2f2;
@@ -154,6 +154,9 @@ td {
 }
 .BotContainer {
   display: grid;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
   grid-template-columns: 1fr 100px 1fr;
   direction: rtl;
   width: 100%;
@@ -173,7 +176,7 @@ td {
   right: 0;
   background-color: red;
   border: none;
-  border-radius: 5%;
+  border-radius: 5px;
 }
 .BotTable input:hover {
   font-size: 30px;

@@ -4,6 +4,7 @@ import '../style/News.css';
 
 const NewsCard = ({ news }) => {
   let history = useHistory();
+
   return (
     <div
       className='NewsCard'

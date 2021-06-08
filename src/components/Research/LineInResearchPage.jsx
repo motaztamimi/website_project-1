@@ -9,12 +9,6 @@ function LineInResearchPage(props) {
   };
   const printPdf = () => {
     const hello = window.open(props.url);
-  //  hello.print();
-
-    // setTimeout(() => {
-    //   hello.focus();
-    //   hello.print();
-    // }, 500);
   };
 
   return (
@@ -23,43 +17,21 @@ function LineInResearchPage(props) {
         <div className=' col-9 hebrwTextDiv'>
           <div className='hebrewText'>{props.name}</div>
         </div>
-
-        <div className='allButtons col-3'>
-          <button className='button ' onClick={printPdf}>
+        <div className='allButtons'>
+          <button className='button1' onClick={printPdf}>
             <span> הדפס</span>
           </button>
-          <a href={props.name} download rel={props.url}target="_blank">
-            <button className='button '>
+          <a href={props.name} download rel={props.url} target='_blank'>
+            <button className='button1'>
               <span>הורד</span>
             </button>
           </a>
-          <button className='button ' onClick={showPdf}>
+          <button className='button1' onClick={showPdf}>
             <span> הצג</span>
           </button>
         </div>
       </div>
     </div>
-
-    // <div>
-    //   <div className='line centerEveryThing'>
-    //     <div className='col-3 col-s-12 col-m-6 theButton'>
-    //       <button className='button ' onClick={printPdf}>
-    //         <span> הדפס</span>
-    //       </button>
-    //       <a download={props.name} href={props.url}>
-    //         <button className='button '>
-    //           <span>הורד</span>
-    //         </button>
-    //       </a>
-    //       <button className='button ' onClick={showPdf}>
-    //         <span> הצג</span>
-    //       </button>
-    //     </div>
-    //     <div className='idk'>
-    //       <div className='col-9 col-s-12 hebrewText'>{props.name}</div>
-    //     </div>
-    //   </div>
-    // </div>
   );
 }
 

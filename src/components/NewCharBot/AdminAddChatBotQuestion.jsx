@@ -6,7 +6,8 @@ import '../adminAddNews/AdminAddNews.css';
 import AdminShowQuestions from './AdminShowQuestions';
 import './ChatBott.css';
 import { dataBase } from '../../config/firebase';
-import ListAdmin from "../ListAdmin"
+import ListAdmin from '../ListAdmin';
+import { AiOutlineUser } from 'react-icons/ai';
 const AdminAddChatBotQuestion = () => {
   const [ResultToUPload, setResultToUPload] = useState('');
   const [bollean, setbollean] = useState(false);
@@ -81,12 +82,13 @@ const AdminAddChatBotQuestion = () => {
       trigger: 'end Question',
     };
     ResultToUPload.push(Question);
-
-    console.log(ResultToUPload);
     collectionRef
       .doc(nameDoc)
       .update({ Steps: ResultToUPload })
       .then(() => {
+        document.getElementById('BotQuestion').value = ' ';
+        document.getElementById('BotAnswer').value = ' ';
+        setShowDiv(false);
         window.location.reload();
       });
   };
@@ -108,6 +110,14 @@ const AdminAddChatBotQuestion = () => {
   return (
     <div className='listAdminn'>
       <div className='ll'>
+        <a href='/Admin'>
+          <AiOutlineUser
+            title='AdminPage'
+            className='EditSlideShowPage2'
+            id='accessIMG'
+            color='#151e4d'
+          />
+        </a>
         <ListAdmin />
       </div>
       <div className='BotContainer'>
@@ -136,6 +146,7 @@ const AdminAddChatBotQuestion = () => {
             </select>
             <label> שאלה </label>
             <input
+              id='BotQuestion'
               type='text'
               placeholder='נא להכניס שאלה להוספה'
               onChange={(e) => {
@@ -145,6 +156,7 @@ const AdminAddChatBotQuestion = () => {
             />
             <label>תשובה</label>
             <input
+              id='BotAnswer'
               type='text'
               placeholder='נא להכניס תשובה'
               onChange={(e) => {

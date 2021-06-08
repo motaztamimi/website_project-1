@@ -1,6 +1,8 @@
+/** @format */
+
 import './AdminVideos.css';
 import { useState } from 'react';
-import {  dataBase, timestamp } from '../../config/firebase';
+import { dataBase, timestamp } from '../../config/firebase';
 import AdminVideosShow from './AdminVideosShow';
 import { AiOutlineUser } from 'react-icons/ai';
 const AdminVideos = () => {
@@ -36,7 +38,7 @@ const AdminVideos = () => {
         })
         .then(() => {
           setShowDiv(false);
-          document.getElementById('uploadFromVideos').value=' ';
+          document.getElementById('uploadFromVideos').value = ' ';
         });
     } else {
       alert('please upload an embed url');
@@ -50,7 +52,7 @@ const AdminVideos = () => {
         {showDiv && div}
 
         <form className='EditVideosForm' onSubmit={submithandeler}>
-          <span>עלית תמונה </span>
+          <span>העלאת סרטון</span>
           <a href='/Admin'>
             <AiOutlineUser
               title='AdminPage'

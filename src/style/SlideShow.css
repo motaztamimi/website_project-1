@@ -1,3 +1,4 @@
+/** @format */
 
 .sliderr0 {
   display: grid;
@@ -58,11 +59,11 @@
 
 /* Position the "next button" to the right */
 .next {
-  right: -11px;
+  right: 0px;
   border-radius: 3px 0 0 3px;
 }
 .prev {
-  left: 8px;
+  left: 31px;
   border-radius: 3px 0 0 3px;
 }
 

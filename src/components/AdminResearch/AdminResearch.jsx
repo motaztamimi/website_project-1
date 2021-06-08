@@ -7,6 +7,8 @@ import { AiOutlineUser } from 'react-icons/ai';
 import ListAdmin from '../ListAdmin';
 import { motion } from 'framer-motion';
 import './AdminResearch.css';
+import '../../style/AllResearchs.css';
+import '../../style/LineInResearchPage.css';
 import { useState } from 'react';
 
 const AdminResearch = () => {
@@ -24,11 +26,15 @@ const AdminResearch = () => {
   };
 
   let max = Researches.docs.length / 2;
+  if (max < 3) {
+    max = Researches.docs.length;
+  }
   let len = Math.round(max);
-
+  const showPdf = (url) => {
+    window.open(url);
+  };
   function getResearches() {
     if (isclick) {
-      console.log(Researches.doc);
       return Researches.docs;
     }
     return Researches.docs.slice(0, len);
@@ -37,9 +43,9 @@ const AdminResearch = () => {
     setClick(!isclick);
   }
   return (
-    <div className="listAdminInR">
-      <div className="listR">
-        <ListAdmin/>
+    <div className='listAdminInR'>
+      <div className='listR'>
+        <ListAdmin />
       </div>
       <div>
         <div className='AddResearchesButtonDiv'>
@@ -56,27 +62,39 @@ const AdminResearch = () => {
               history.push('/Admin/AdminResearch/AddResearch');
             }}
             className='AddResearchesButton'>
-            Add Research
+            הוספת מחקר{' '}
           </button>
         </div>
-        <div className='container'>
+        <div className='AllResearchContainer AdminResarchDiv'>
           {getResearches().map((research) => {
-            console.log('the res is ' + research.name);
             return (
-              <motion.div className='ResearchesDiv' key={research.id} layout>
-                <input
-                  type='button'
-                  value='X'
-                  onClick={() => {
-                    deleteResearch(research);
-                  }}
-                />
-                <div className='NewCARD'>
-                  <div className='ResearchesContent'>
-                    <h3>{research.name}</h3>
+              <motion.div
+                className='ResearchesDiv ResearchesDivAdmin'
+                key={research.id}
+                layout>
+                <div>
+                  <div className='theLine AdminResarchline '>
+                    <div className=' col-9 hebrwTextDiv'>
+                      <div className='hebrewText'>{research.name}</div>
+                    </div>
+                    <div className='allButtons allButtonsAdmin'>
+                      <button
+                        className='btnn'
+                        onClick={() => {
+                          showPdf(research.fileUrl);
+                        }}>
+                        <span> הצג</span>
+                      </button>
+                      <button
+                        className='btnn btnDelete'
+                        onClick={() => {
+                          deleteResearch(research);
+                        }}>
+                        <span>מחק </span>
+                      </button>
+                    </div>
                   </div>
                 </div>
-                <hr />
               </motion.div>
             );
           })}

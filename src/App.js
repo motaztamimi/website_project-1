@@ -38,6 +38,7 @@ import Noseem from './components/NOSEEM/Noseem';
 import ScrollToTop from './components/ScrollToTop';
 import Googlemap2 from './components/GoogleMap/Googlemap2';
 import AdminEditNews1 from './components/adminAddNews/AdminEditNews1';
+import Updating from './components/Updating';
 function App() {
   const details1 = { width: '500', height: '500' };
   const div = styled.h2`
@@ -265,6 +266,11 @@ function App() {
             <Fotter />
           </Route>
 
+          <Route exact path='/OurCenter'>
+            <Header />
+            <Updating />
+            <Fotter />
+          </Route>
           <Route exact path='/aher/11'>
             <Header />
             <Noseem department='קבלת חולים' url='11' />

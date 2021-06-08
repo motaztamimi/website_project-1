@@ -80,7 +80,6 @@ const AdminAddChatBotQuestion = () => {
       trigger: 'end Question',
     };
     ResultToUPload.push(Question);
-
     collectionRef
       .doc(nameDoc)
       .update({ Steps: ResultToUPload })

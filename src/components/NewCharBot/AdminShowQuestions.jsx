@@ -33,7 +33,7 @@ const AdminShowQuestions = () => {
       .doc(nameDoc)
       .update({ Steps: x })
       .then(() => {
-        window.location.reload();
+        setbollean(true);
       });
   };
   const changeSelectOptionHandler = (event) => {

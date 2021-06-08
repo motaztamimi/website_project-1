@@ -3,7 +3,7 @@
 .Header {
   margin-left: 15px;
   margin-right: 15px;
-  margin-bottom: 70px;
+  /* margin-bottom: 1px; */
   width: 100%;
 }
 .Header img {
@@ -43,7 +43,7 @@
 .HeaderUpperSection ::placeholder {
   color: #171f73;
 }
-.HeaderUpperSection button {
+.HeaderUpperSection .SearchButton {
   height: 43px;
   text-decoration: none;
   border-style: none;

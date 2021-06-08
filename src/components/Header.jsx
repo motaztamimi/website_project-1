@@ -27,7 +27,9 @@ const Header = () => {
       <div className='Header'>
         <div className='HeaderContanier'>
           <div className='HeaderUpperSection'>
-            <img src={`${process.env.PUBLIC_URL}/imges/LOGONEW.jpg`} alt='' />
+            <a href='/'>
+              <img src={`${process.env.PUBLIC_URL}/imges/LOGONEW.jpg`} alt='' />
+            </a>
             <div>
               <div className='accessLeft'>
                 <input
@@ -38,7 +40,7 @@ const Header = () => {
                   }}
                 />
                 <div className='accessLeft'>
-                  <button onClick={SearchButtonClick}>
+                  <button onClick={SearchButtonClick} className='SearchButton'>
                     <BsSearch size='20px' color='white' />
                   </button>
                   <Accessibility />

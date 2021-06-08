@@ -26,6 +26,7 @@
 .NewsFormSearch .NewsItemfromSearch img {
   width: 300px;
   max-height: 400px;
+  margin: 10px;
 }
 .NewsFormSearch hr {
   margin: 10px 0;
@@ -38,4 +39,37 @@
 }
 .SectionFromSearch hr {
   margin: 10px 0;
+}
+.DepartmentsFormSearch {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 10px 0;
+}
+.DepartmentsFormSearch .DepartmentFomSearch {
+  margin: 10px 10px;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  padding: 10px;
+  border-radius: 5px;
+}
+.DepartmentsContentFromSearch {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.DepartmentsContentFromSearch .DepartmentContentFormSearch {
+  margin: 10px 10px;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  padding: 10px;
+  border-radius: 5px;
+}
+.NoResults {
+  text-align: center;
+  direction: rtl;
+  font-size: 1.6rem;
+  font-weight: 700;
 }

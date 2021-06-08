@@ -1,5 +1,5 @@
 /** @format */
-import { React, useState ,useEffect } from 'react';
+import { React, useState, useEffect } from 'react';
 import '../style/AdminEditDoctors.css';
 import useDataBase from '../hooks/useDataBase';
 import { useHistory } from 'react-router-dom';
@@ -14,6 +14,7 @@ const AdminEditDoctors = () => {
   const [DoctorSpecialty0, setDoctorSpecialty0] = useState('');
   const [DepartmentOut0, SetDepartmentOut0] = useState('');
   const [DepartmentIn0, SetDepartmentIn0] = useState('');
+  const [error, setError] = useState(null);
   const [DoctorImage0, setDoctorImage0] = useState('');
   const [doctorE, setdoctorE] = useState('');
   const [editorS, seteditorS] = useState('');
@@ -93,7 +94,7 @@ const AdminEditDoctors = () => {
     );
     const doctorFilterIn = doctorFilter.filter((e) => e.DepartmentIn === part);
     return doctorFilterIn;
-  };
+  }
   const deleteDoctor = (doctor) => {
     const colecstion = dataBase.collection('Doctors');
     const item = colecstion.doc(doctor.id);
@@ -140,12 +141,37 @@ const AdminEditDoctors = () => {
   }
   const onFileChange = (e) => {
     e.preventDefault();
-    let selectedFile = e.target.files[0];
-    if (selectedFile && types.includes(selectedFile.type)) {
-      setFile(selectedFile);
-    } else {
-      setFile(null);
-    }
+    let selected = e.target.files[0];
+    let newFile = selected;
+
+    storage
+      .ref('Doctors/')
+      .listAll()
+      .then((res) => {
+        res.items.forEach((itemRef) => {
+          if (itemRef.name == selected.name) {
+            console.log('iam in ');
+            var val = Math.floor(1000 + Math.random() * 9000);
+            newFile = new File([selected], val + selected.name, {
+              type: selected.type,
+              lastModified: selected.lastModified,
+            });
+            console.log('the new file is ' + newFile.name);
+          }
+          if (newFile && types.includes(newFile.type)) {
+            console.log('we have update to ' + newFile.name);
+            setFile(newFile);
+
+            setError('');
+          } else {
+            setFile(null);
+            setError('Please Select an image file (png , jpeg or jpg)');
+          }
+        });
+      })
+      .catch((error) => {
+        // Uh-oh, an error occurred!
+      });
   };
   function styleEdit() {
     if (editorS !== 1) {
@@ -171,9 +197,9 @@ const AdminEditDoctors = () => {
       <div className='overlyForm' style={styleEdit()}>
         <button onClick={exitFormB}>X</button>
         <h1 id='editorTitle'>עריכת הרופא הרצוי</h1>
-        <form  onSubmit={editDoctor00}>
+        <form onSubmit={editDoctor00}>
           <label>תמונת הרופא</label>
-          <input type='file' key={51}  onChange={onFileChange} />
+          <input type='file' key={51} onChange={onFileChange} />
           <br />
           <label>שם הרופה:</label>
           <input

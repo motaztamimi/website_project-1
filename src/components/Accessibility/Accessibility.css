@@ -19,7 +19,8 @@
   text-align: center;
 }
 
-.circle {
+.circle,
+.down_circle {
   border-radius: 4px;
   background-color: #f4511e;
   border: none;
@@ -30,11 +31,18 @@
   margin: 5px;
 }
 
-.circle span {
+.circle,
+span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
+}
+.down_circle button {
+  background: none;
+  background-color: #f4511e;
+  border: none;
+  border: 0;
 }
 
 .circle span:after {
@@ -50,7 +58,8 @@
   padding-right: 10px;
 }
 
-.circle:hover span:after {
+.circle,
+.down_circle:hover span:after {
   opacity: 1;
   right: 0;
 }

@@ -47,7 +47,7 @@ const Search = () => {
         });
         setNewsFromSearch(toAdd);
       });
-  }, []);
+  }, [searchString]);
 
   useEffect(() => {
     const collectionRef = dataBase.collection('Departments');
@@ -298,9 +298,12 @@ const Search = () => {
           </div>
         </>
       )}
-      {!sectionsFromSearch && !departmentsFromSearch && !contentSec && (
-        <div className='NoResults'>לא נמצא נתונים עבור מה שחפשתה</div>
-      )}
+      {!sectionsFromSearch &&
+        !departmentsFromSearch &&
+        !contentSec &&
+        !newsFromSearch && (
+          <div className='NoResults'>לא נמצא נתונים עבור מה שחפשתה</div>
+        )}
     </div>
   );
 };

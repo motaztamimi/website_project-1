@@ -43,7 +43,7 @@
 .HeaderUpperSection ::placeholder {
   color: #171f73;
 }
-.HeaderUpperSection button {
+.HeaderUpperSection .SearchButton {
   height: 43px;
   text-decoration: none;
   border-style: none;

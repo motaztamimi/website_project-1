@@ -40,7 +40,7 @@ const Header = () => {
                   }}
                 />
                 <div className='accessLeft'>
-                  <button onClick={SearchButtonClick}>
+                  <button onClick={SearchButtonClick} className='SearchButton'>
                     <BsSearch size='20px' color='white' />
                   </button>
                   <Accessibility />

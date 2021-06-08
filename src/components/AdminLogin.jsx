@@ -14,7 +14,6 @@ const AdminLogin = () => {
 
   const formSubmit = async (e) => {
     e.preventDefault();
-    console.log(password);
 
     await auth
       .signInWithEmailAndPassword(userName, password)
@@ -33,14 +32,17 @@ const AdminLogin = () => {
   };
 
   useEffect(() => {
-    auth.onAuthStateChanged((user) => {
+    const sup = auth.onAuthStateChanged((user) => {
       if (user) {
         SetUser(user);
-        console.log('hellllo');
       } else {
         SetUser(undefined);
       }
     });
+
+    return () => {
+      sup();
+    };
   }, []);
 
   useEffect(() => {
@@ -58,7 +60,6 @@ const AdminLogin = () => {
           className=' homeInAdmin'
           id='accessIMG'
           color='FFFFFF'
-         
         />
       </a>
       <form className='LoginForm' onSubmit={formSubmit}>

@@ -1,5 +1,5 @@
 /** @format */
-import { React, useState ,useEffect } from 'react';
+import { React, useState, useEffect } from 'react';
 import '../style/AdminEditDoctors.css';
 import useDataBase from '../hooks/useDataBase';
 import { useHistory } from 'react-router-dom';
@@ -93,7 +93,7 @@ const AdminEditDoctors = () => {
     );
     const doctorFilterIn = doctorFilter.filter((e) => e.DepartmentIn === part);
     return doctorFilterIn;
-  };
+  }
   const deleteDoctor = (doctor) => {
     const colecstion = dataBase.collection('Doctors');
     const item = colecstion.doc(doctor.id);
@@ -171,9 +171,9 @@ const AdminEditDoctors = () => {
       <div className='overlyForm' style={styleEdit()}>
         <button onClick={exitFormB}>X</button>
         <h1 id='editorTitle'>עריכת הרופא הרצוי</h1>
-        <form  onSubmit={editDoctor00}>
+        <form onSubmit={editDoctor00}>
           <label>תמונת הרופא</label>
-          <input type='file' key={51}  onChange={onFileChange} />
+          <input type='file' key={51} onChange={onFileChange} />
           <br />
           <label>שם הרופה:</label>
           <input
@@ -238,7 +238,7 @@ const AdminEditDoctors = () => {
               />
             </a>
             <button className='ButtonAddD' onClick={routeChange}>
-              Add Doctors
+              הוספת רופא
             </button>
             <div className='chooseTheCampos'>
               <h2>בחר המחלקה שאתה רוצה לצפות ברופאים שלה</h2>

@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { dataBase } from '../../config/firebase';
 import '../../style/AdminEditNews.css';
 import { useHistory } from 'react-router-dom';
+import { AiOutlineUser } from 'react-icons/ai';
 
 import { storage } from '../../config/firebase';
 
@@ -105,6 +106,14 @@ const AdminEditNews1 = () => {
     <div>
       {bollean1 ? (
         <div className='AddDoctorsPage'>
+          <a href='/Admin'>
+            <AiOutlineUser
+              title='AdminPage'
+              className='EditSlideShowPage2'
+              id='accessIMG'
+              color='#151e4d'
+            />
+          </a>
           {showDiv && div}
           <form id='FormEditor' className='AddDoctorsForm' onSubmit={onSubmit}>
             <h1 id='editorTitleNews'>עריכת חדשות </h1>

@@ -114,6 +114,7 @@ const AddDoctors = () => {
         </a>
         {showDiv && div}
         <form className='AddDoctorsForm' onSubmit={onSubmit}>
+          <h1 className='h1ADDDoctor'>הוספת רופא</h1>
           <label>תמונת הרופא</label>
           <input type='file' onChange={onFileChange} required />
 

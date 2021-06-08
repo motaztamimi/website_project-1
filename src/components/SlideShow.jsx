@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import {
   CarouselProvider,
@@ -15,9 +13,8 @@ import useDataBase from '../hooks/useDataBase';
 const SlideShow = ({ collection }) => {
   const SlideShows = useDataBase(collection).docs;
 
- 
   let count = 2;
-  
+
   return (
     <CarouselProvider
       naturalSlideWidth={16}
@@ -28,15 +25,14 @@ const SlideShow = ({ collection }) => {
       isPlaying={true}
       infinite={true}
       step={2}
-      playDirection={'backward'}
-      interval={4000}
-      >
+      playDirection={'forward'}
+      interval={6000}>
       <div className='sliderr0 slideShow-container'>
         <div className='Backk0'>
-          <ButtonBack className="prev">&#10094;</ButtonBack>
+          {/* <ButtonBack className="prev">&#10094;</ButtonBack> */}
         </div>
-        <div >
-          <Slider className="myslide">
+        <div>
+          <Slider className='myslide'>
             {SlideShows.map((element) => (
               <Slide index={element.id} key={element.id}>
                 <img src={element.url} alt='' />
@@ -45,7 +41,7 @@ const SlideShow = ({ collection }) => {
           </Slider>
         </div>
         <div className='nextt0'>
-          <ButtonNext className="next">&#10095;</ButtonNext>
+          {/* <ButtonNext className="next">&#10095;</ButtonNext> */}
         </div>
       </div>
     </CarouselProvider>

@@ -301,7 +301,8 @@ const Search = () => {
       {!sectionsFromSearch &&
         !departmentsFromSearch &&
         !contentSec &&
-        !newsFromSearch && (
+        newsFromSearch &&
+        newsFromSearch.length === 0 && (
           <div className='NoResults'>לא נמצא נתונים עבור מה שחפשתה</div>
         )}
     </div>

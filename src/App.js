@@ -37,6 +37,7 @@ import Search from './search/Search';
 import Noseem from './components/NOSEEM/Noseem';
 import ScrollToTop from './components/ScrollToTop';
 import Googlemap2 from './components/GoogleMap/Googlemap2';
+import AdminEditNews1 from './components/adminAddNews/AdminEditNews1';
 function App() {
   const details1 = { width: '500', height: '500' };
   const div = styled.h2`
@@ -324,6 +325,11 @@ function App() {
             exact
             path='/Admin/EditNews'
             component={AdminEditNews}
+          />
+          <ProtectedRoute
+            exact
+            path='/Admin/EditNews/:id'
+            component={AdminEditNews1}
           />
           <ProtectedRoute
             exact

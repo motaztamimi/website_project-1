@@ -112,10 +112,10 @@ const AdminEditNews = () => {
   function toggle() {
     setClick(!isclick);
   }
-  console.log(News.docs);
+
   return (
     <div className='addNewsGrid'>
-      <div className='overlyEditNews' style={styleEditNews()}>
+      {/* <div className='overlyEditNews' style={styleEditNews()}>
         <button onClick={exitFormEditNews}>X</button>
         <h1 id='editorTitleNews'>עריכת הרופא הרצוי</h1>
         <form id='FormEditor' onSubmit={editNewsFunc}>
@@ -167,17 +167,15 @@ const AdminEditNews = () => {
           <br />
           <br />
 
-          <input className='submitButtonNews' type='submit' value='Submit' onClick={exitFormEditNews} />
+          <input
+            className='submitButtonNews'
+            type='submit'
+            value='Submit'
+            onClick={exitFormEditNews}
+          />
         </form>
-      </div>
+      </div> */}
       <div className='AddNewsButtonDiv'>
-        {/* <button
-          onClick={() => {
-            history.push('/Admin/EditNews/AddNews');
-          }}
-          className='AddNewsButton'>
-          Add news
-        </button> */}
         <AdminAddNews />
         <a href='/Admin'>
           <AiOutlineUser
@@ -204,7 +202,8 @@ const AdminEditNews = () => {
                 <button
                   className='EditioNEWS'
                   onClick={() => {
-                    editorNews(Newa);
+                    //editorNews(Newa);
+                    history.push(`/Admin/EditNews/${Newa.id}`);
                   }}>
                   <AiFillEdit />
                 </button>

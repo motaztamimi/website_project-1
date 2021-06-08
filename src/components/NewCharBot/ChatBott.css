@@ -176,7 +176,7 @@ td {
   right: 0;
   background-color: red;
   border: none;
-  border-radius: 5%;
+  border-radius: 5px;
 }
 .BotTable input:hover {
   font-size: 30px;

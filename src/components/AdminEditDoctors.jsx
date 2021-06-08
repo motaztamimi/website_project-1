@@ -237,11 +237,12 @@ const AdminEditDoctors = () => {
                 color='#151e4d'
               />
             </a>
-            <button className='ButtonAddD' onClick={routeChange}>
-              הוספת רופא
-            </button>
+
             <div className='chooseTheCampos'>
               <h2>בחר המחלקה שאתה רוצה לצפות ברופאים שלה</h2>
+              <button className='ButtonAddD' onClick={routeChange}>
+                הוספת רופא
+              </button>
               <select onChange={changeCampos}>
                 <option value='' defaultValue>
                   בחר קאמפוס

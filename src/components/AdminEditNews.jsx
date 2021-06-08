@@ -9,7 +9,7 @@ import '../style/AdminEditNews.css';
 import { React, useState } from 'react';
 import AdminAddNews from './adminAddNews/AdminAddNews.jsx';
 import { AiFillEdit } from 'react-icons/ai';
-
+import ListAdmin from './ListAdmin'
 const AdminEditNews = () => {
   const [isclick, setClick] = useState(false);
   const [NewsTitleE, setNewsTitleE] = useState('');
@@ -35,13 +35,37 @@ const AdminEditNews = () => {
 
   const onFileChange = (e) => {
     let selected = e.target.files[0];
-    if (selected && types.includes(selected.type)) {
-      setFile(selected);
-      setError('');
-    } else {
-      setFile(null);
-      setError('Please Select an image file (png , jpeg or jpg)');
-    }
+    let newFile = selected;
+
+    storage
+      .ref('News/')
+      .listAll()
+      .then((res) => {
+        res.items.forEach((itemRef) => {
+          if (itemRef.name == selected.name) {
+            console.log('iam in ');
+            var val = Math.floor(1000 + Math.random() * 9000);
+            newFile = new File([selected], val + selected.name, {
+              type: selected.type,
+              lastModified: selected.lastModified,
+            });
+            console.log('the new file is ' + newFile.name);
+          }
+          if (newFile && types.includes(newFile.type)) {
+            console.log('we have update to ' + newFile.name);
+            setFile(newFile);
+
+            setError('');
+          } else {
+            setFile(null);
+            setError('Please Select an image file (png , jpeg or jpg)');
+          }
+        });
+      })
+      .catch((error) => {
+        // Uh-oh, an error occurred!
+      });
+  
   };
   function exitFormEditNews(e) {
     setStyleFlag(0);
@@ -114,6 +138,10 @@ const AdminEditNews = () => {
   }
 
   return (
+    <div className="listAdminn">
+      <div className='ll'>
+        <ListAdmin/>
+      </div>
     <div className='addNewsGrid'>
       {/* <div className='overlyEditNews' style={styleEditNews()}>
         <button onClick={exitFormEditNews}>X</button>
@@ -228,6 +256,7 @@ const AdminEditNews = () => {
           />
         </section>
       </div>
+    </div>
     </div>
   );
 };

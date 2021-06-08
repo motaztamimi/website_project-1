@@ -5,7 +5,7 @@ import EditorPage from './EditorPage';
 import '../../style/EditorPageImlimentation.css';
 import { dataBase } from '../../config/firebase.js';
 import { AiOutlineUser } from 'react-icons/ai';
-
+import ListAdmin from '../ListAdmin';
 import useDataBase from '../../hooks/useDataBase';
 function EditorPageImlimentation() {
   const [data, setData] = useState();
@@ -155,6 +155,10 @@ function EditorPageImlimentation() {
   }
 
   return (
+    <div className="listAdminn">
+      <div className='ll'>
+        <ListAdmin/>
+      </div>
     <div>
       <div className='BigEditorContainer'>
         <div id='gridTitle'>בחר המקום המיועד לשינוי</div>
@@ -240,6 +244,7 @@ function EditorPageImlimentation() {
         </div>
         <div id='theText'></div>
       </div>
+    </div>
     </div>
   );
 }

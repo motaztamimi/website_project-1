@@ -6,6 +6,7 @@ import '../adminAddNews/AdminAddNews.css';
 import AdminShowQuestions from './AdminShowQuestions';
 import './ChatBott.css';
 import { dataBase } from '../../config/firebase';
+import ListAdmin from '../ListAdmin';
 const AdminAddChatBotQuestion = () => {
   const [ResultToUPload, setResultToUPload] = useState('');
   const [bollean, setbollean] = useState(false);
@@ -156,8 +157,58 @@ const AdminAddChatBotQuestion = () => {
       <div className='vLine1'>
         <div className='vLine'></div>
       </div>
+      <div className='BotContainer'>
+        <div className='BotformDiv'>
+          {showDiv && div}
+          <h1>הוספת שאלות</h1>
+          <form className='AddNewsForm Botform' onSubmit={onSubmit}>
+            <label> חלק </label>
+            <select
+              id='classes'
+              className='dropBot'
+              required
+              onChange={changeSelectOptionHandler}>
+              <option key='0' value='' defaultValue>
+                בחר נושא
+              </option>
+              <option key='4' value='רשומות רפואיות'>
+                רשומות רפואיות
+              </option>
+              <option key='1' value='עובדים סוציאליים'>
+                עובדים סוציאליים
+              </option>
+              <option key='2' value='מטבח'>
+                מטבח
+              </option>
+            </select>
+            <label> שאלה </label>
+            <input
+              type='text'
+              placeholder='נא להכניס שאלה להוספה'
+              onChange={(e) => {
+                setBotQuestion(e.target.value);
+              }}
+              required
+            />
+            <label>תשובה</label>
+            <input
+              type='text'
+              placeholder='נא להכניס תשובה'
+              onChange={(e) => {
+                setBotAnswer(e.target.value);
+              }}
+              required
+            />
 
-      <AdminShowQuestions key='AdminShowQuestions' />
+            <input className='SubmitButton' type='submit' value='submit' />
+          </form>
+        </div>
+        <div className='vLine1'>
+          <div className='vLine'></div>
+        </div>
+
+        <AdminShowQuestions key='AdminShowQuestions' />
+      </div>
     </div>
   );
 };

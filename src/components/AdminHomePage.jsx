@@ -5,7 +5,7 @@ import { GrGallery } from 'react-icons/gr';
 import { BiNews, BiIdCard, BiSlideshow,BiVideo,BiBot,BiSearchAlt,BiEdit } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import { auth } from '../config/firebase';
-import { AiFillHome,GrLogout } from 'react-icons/ai';
+import { AiFillHome } from 'react-icons/ai';
 const AdminHomePage = () => {
   return (
     <div className='AdminHomePage'>
@@ -44,7 +44,7 @@ const AdminHomePage = () => {
           </Link>
         </div>
         <div className='AdminHomePageOp'>
-          <Link to='/Admin/EditEvents'>
+          <Link to='/Admin/AdminVideos'>
             <BiVideo size='100px'></BiVideo>
             <h3>עריכת סרטונים</h3>
           </Link>

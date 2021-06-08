@@ -14,6 +14,7 @@ const AdminEditDoctors = () => {
   const [DoctorSpecialty0, setDoctorSpecialty0] = useState('');
   const [DepartmentOut0, SetDepartmentOut0] = useState('');
   const [DepartmentIn0, SetDepartmentIn0] = useState('');
+  const [error, setError] = useState(null);
   const [DoctorImage0, setDoctorImage0] = useState('');
   const [doctorE, setdoctorE] = useState('');
   const [editorS, seteditorS] = useState('');
@@ -140,12 +141,37 @@ const AdminEditDoctors = () => {
   }
   const onFileChange = (e) => {
     e.preventDefault();
-    let selectedFile = e.target.files[0];
-    if (selectedFile && types.includes(selectedFile.type)) {
-      setFile(selectedFile);
-    } else {
-      setFile(null);
-    }
+    let selected = e.target.files[0];
+    let newFile = selected;
+
+    storage
+      .ref('Doctors/')
+      .listAll()
+      .then((res) => {
+        res.items.forEach((itemRef) => {
+          if (itemRef.name == selected.name) {
+            console.log('iam in ');
+            var val = Math.floor(1000 + Math.random() * 9000);
+            newFile = new File([selected], val + selected.name, {
+              type: selected.type,
+              lastModified: selected.lastModified,
+            });
+            console.log('the new file is ' + newFile.name);
+          }
+          if (newFile && types.includes(newFile.type)) {
+            console.log('we have update to ' + newFile.name);
+            setFile(newFile);
+
+            setError('');
+          } else {
+            setFile(null);
+            setError('Please Select an image file (png , jpeg or jpg)');
+          }
+        });
+      })
+      .catch((error) => {
+        // Uh-oh, an error occurred!
+      });
   };
   function styleEdit() {
     if (editorS !== 1) {

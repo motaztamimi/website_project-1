@@ -11,6 +11,7 @@ const AddDoctors = () => {
   const [showDiv, setShowDiv] = useState(false);
   const history = useHistory();
   const [selected, setSelected] = useState('');
+  const [error, setError] = useState(null);
   const div = (
     <div className='loading'>
       <div className='loader'></div>
@@ -24,11 +25,36 @@ const AddDoctors = () => {
   const collectionRef = dataBase.collection('Doctors');
   const onFileChange = (e) => {
     let selected = e.target.files[0];
-    if (selected && types.includes(selected.type)) {
-      setFile(selected);
-    } else {
-      setFile(null);
-    }
+    let newFile = selected;
+
+    storage
+      .ref('Doctors/')
+      .listAll()
+      .then((res) => {
+        res.items.forEach((itemRef) => {
+          if (itemRef.name == selected.name) {
+            console.log('iam in ');
+            var val = Math.floor(1000 + Math.random() * 9000);
+            newFile = new File([selected], val + selected.name, {
+              type: selected.type,
+              lastModified: selected.lastModified,
+            });
+            console.log('the new file is ' + newFile.name);
+          }
+          if (newFile && types.includes(newFile.type)) {
+            console.log('we have update to ' + newFile.name);
+            setFile(newFile);
+
+            setError('');
+          } else {
+            setFile(null);
+            setError('Please Select an image file (png , jpeg or jpg)');
+          }
+        });
+      })
+      .catch((error) => {
+        // Uh-oh, an error occurred!
+      });
   };
   const onSubmit = (e) => {
     e.preventDefault();

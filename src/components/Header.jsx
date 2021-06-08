@@ -27,7 +27,9 @@ const Header = () => {
       <div className='Header' id='HEADERTOP'>
         <div className='HeaderContanier'>
           <div className='HeaderUpperSection'>
-            <img src={`${process.env.PUBLIC_URL}/imges/LOGONEW.jpg`} alt='' />
+            <a href='/'>
+              <img src={`${process.env.PUBLIC_URL}/imges/LOGONEW.jpg`} alt='' />
+            </a>
             <div>
               <div className='accessLeft'>
                 <input
@@ -37,12 +39,10 @@ const Header = () => {
                     setSearchString(e.target.value);
                   }}
                 />
-                <div className='accessLeft'>
-                  <button onClick={SearchButtonClick}>
-                    <BsSearch size='20px' color='white' />
-                  </button>
-                  <Accessibility />
-                </div>
+                <button onClick={SearchButtonClick} className='SearchButton'>
+                  <BsSearch size='20px' color='white' />
+                </button>
+                <Accessibility />
               </div>
             </div>
           </div>

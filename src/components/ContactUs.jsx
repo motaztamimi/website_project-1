@@ -7,10 +7,10 @@ const ContactUs = ({ details }) => {
   const history = useHistory();
   return (
     <div className='contactUS'>
-      <h5> מוקד זימון תורים</h5>
-      <a href='2786*'>
+      {/* <h5> מוקד זימון תורים</h5> */}
+      {/* <a href='2786*'>
         <h4>{details.moked_num}</h4>
-      </a>
+      </a> */}
       <h5>{details.address}</h5>
       <h5>{details.address2}</h5>
       <h5>

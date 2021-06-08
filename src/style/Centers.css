@@ -45,6 +45,7 @@
 }
 .Center img {
   max-width: 230px;
+
 }
 .Center h5 {
   text-align: center;
@@ -57,7 +58,17 @@
   color: #285c7e;
   text-underline-position: under;
 }
-@media screen and (max-width: 800px) {
+@media screen and (min-width: 1000px)and (max-width: 1210px) {
+  .Center img {
+    max-width: 180px;
+  }
+}
+@media screen and (min-width: 895px)and (max-width: 999px) {
+  .Center img {
+    max-width: 140px;
+  }
+}
+@media screen and (max-width: 895px) {
   .Center_Container {
     padding-left: 15px;
     padding-right: 15px;

@@ -3,8 +3,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import '../style/listAdmin.css'
 const ListAdmin = () => {
-    const list =["/Admin/EditPages","/Admin/EditNews","/Admin/EditSlideShow","/Admin/AdminResearch","/Admin/AdminEditDoctors","/Admin/EditGallery","/Admin/EditVideo"]
-    const listClass =[{class:"active0",stylee:{}},{class:"active1",stylee:{}},{class:"active2",stylee:{}},{class:"active3",stylee:{}},{class:"active4",stylee:{}},{class:"active5",stylee:{}},{class:"active6",stylee:{}}]
+    const list =["/Admin/EditPages","/Admin/EditNews","/Admin/EditSlideShow","/Admin/AdminResearch","/Admin/AdminEditDoctors","/Admin/EditGallery","/Admin/AdminVideos","/Admin/AddChatBot"]
+    const listClass =[{class:"active0",stylee:{}},{class:"active1",stylee:{}},{class:"active2",stylee:{}},{class:"active3",stylee:{}},{class:"active4",stylee:{}},{class:"active5",stylee:{}},{class:"active6",stylee:{}},{class:"active7",stylee:{}}]
     const path = window.location.pathname;
     let flag=-1;
     
@@ -29,7 +29,8 @@ const ListAdmin = () => {
                 <li style={listClass[3].stylee}><Link to="/Admin/AdminResearch">עריכת מחקרים</Link></li>
                 <li style={listClass[4].stylee}><Link to="/Admin/AdminEditDoctors">רופאים</Link></li>
                 <li style={listClass[5].stylee}><Link to="/Admin/EditGallery">עריכת גלאריה</Link></li>
-                <li style={listClass[6].stylee}><Link to="/Admin/EditVideo">עריכת סרטונים</Link></li>
+                <li style={listClass[6].stylee}><Link to="/Admin/AdminVideos">עריכת סרטונים</Link></li>
+                <li style={listClass[7].stylee}><Link to="/Admin/AddChatBot">עריכת CHATBOT</Link></li>
             </ul>
         </div>
     )

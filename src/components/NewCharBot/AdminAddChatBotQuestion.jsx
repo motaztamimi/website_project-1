@@ -7,6 +7,7 @@ import AdminShowQuestions from './AdminShowQuestions';
 import './ChatBott.css';
 import { dataBase } from '../../config/firebase';
 import ListAdmin from '../ListAdmin';
+import { AiOutlineUser } from 'react-icons/ai';
 const AdminAddChatBotQuestion = () => {
   const [ResultToUPload, setResultToUPload] = useState('');
   const [bollean, setbollean] = useState(false);
@@ -88,6 +89,7 @@ const AdminAddChatBotQuestion = () => {
         document.getElementById('BotQuestion').value = ' ';
         document.getElementById('BotAnswer').value = ' ';
         setShowDiv(false);
+        window.location.reload();
       });
   };
   const changeSelectOptionHandler = (event) => {
@@ -106,56 +108,17 @@ const AdminAddChatBotQuestion = () => {
     }
   };
   return (
-    <div className='BotContainer'>
-      <div className='BotformDiv'>
-        {showDiv && div}
-        <h1>הוספת שאלות</h1>
-        <form className='AddNewsForm Botform' onSubmit={onSubmit}>
-          <label> חלק </label>
-          <select
-            id='classes'
-            className='dropBot'
-            required
-            onChange={changeSelectOptionHandler}>
-            <option key='0' value='רשומות רפואיות' defaultValue>
-              בחר נושא
-            </option>
-            <option key='4' value='רשומות רפואיות'>
-              רשומות רפואיות
-            </option>
-            <option key='1' value='עובדים סוציאליים'>
-              עובדים סוציאליים
-            </option>
-            <option key='2' value='מטבח'>
-              מטבח
-            </option>
-          </select>
-          <label> שאלה </label>
-          <input
-            type='text'
-            id='BotQuestion'
-            placeholder='נא להכניס שאלה להוספה בעברית'
-            onChange={(e) => {
-              setBotQuestion(e.target.value);
-            }}
-            required
+    <div className='listAdminn'>
+      <div className='ll'>
+        <a href='/Admin'>
+          <AiOutlineUser
+            title='AdminPage'
+            className='EditSlideShowPage2'
+            id='accessIMG'
+            color='#151e4d'
           />
-          <label>תשובה</label>
-          <input
-            type='text'
-            id='BotAnswer'
-            placeholder='נא להכניס תשובה'
-            onChange={(e) => {
-              setBotAnswer(e.target.value);
-            }}
-            required
-          />
-
-          <input className='SubmitButton' type='submit' value='submit' />
-        </form>
-      </div>
-      <div className='vLine1'>
-        <div className='vLine'></div>
+        </a>
+        <ListAdmin />
       </div>
       <div className='BotContainer'>
         <div className='BotformDiv'>
@@ -183,6 +146,7 @@ const AdminAddChatBotQuestion = () => {
             </select>
             <label> שאלה </label>
             <input
+              id='BotQuestion'
               type='text'
               placeholder='נא להכניס שאלה להוספה'
               onChange={(e) => {
@@ -192,6 +156,7 @@ const AdminAddChatBotQuestion = () => {
             />
             <label>תשובה</label>
             <input
+              id='BotAnswer'
               type='text'
               placeholder='נא להכניס תשובה'
               onChange={(e) => {

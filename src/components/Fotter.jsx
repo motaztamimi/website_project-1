@@ -124,11 +124,6 @@ const Fotter = () => {
             <a href='blank'>ף הבית</a>
           </li>
         </ul> */}
-
-        <p className='text-center '>
-          מועתז תמימי | קובי ראית 2017<a href='blank'>Samsung</a>
-        </p>
-
         <ul className='social_footer_ul'>
           <li>
             <a href='https://www.facebook.com/jerusalem.mental.health.center/'>
@@ -155,6 +150,11 @@ const Fotter = () => {
             </a>
           </li>
         </ul>
+        <p className='text-center '>
+          <a href="https://github.com/MustafaAbuGhannam/website_project">
+           Project Repository 2021 &copy;
+        </a>
+        </p>
       </div>
     </footer>
   );

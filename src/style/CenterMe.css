@@ -62,6 +62,9 @@
     width: 150px;
     height: 150px;
   }
+  .button11,.button2{
+    margin-top: 50px;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -69,6 +72,7 @@
     width: 150px;
     height: 150px;
   }
+  
 }
 @media screen and (max-width: 700px) {
   .one-cardC img{
@@ -80,5 +84,11 @@
   .one-cardC img{
     width: 120px;
     height: 120px;
+  }
+  .button11,.button2{
+    margin-top: 50px;
+  }
+  .sliderrC{
+    grid-template-rows: 200px;
   }
 }

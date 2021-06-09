@@ -1,0 +1,84 @@
+.sliderrC{
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: 5% 90% 5%;
+  grid-template-rows: 300px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+.Center_ContainerC{
+  width: 100%;
+  padding-right: 20px;
+  margin-top: 30px;
+  margin: 0 auto;
+}
+.Center_ContainerC h2{
+  text-align: right;
+  font-size: 43px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  line-height: normal;
+  text-align: right;
+  font-family: 'Rubik' sans-serif;
+  color: #263c4a !important;
+}
+.one-cardC h3{
+  font-size: x-large;
+}
+.one-cardC img {
+  border-radius: 5px;
+  box-shadow: -1px 0 0 rgb(0 0 0 / 10%), -3px 0 9px rgb(0 0 0 / 15%);
+  box-sizing: border-box;
+  width: 250px;
+  height: 250px;
+}
+ .contenerSC{
+  width: 70%;
+}  
+.one-cardC {
+  text-align: center;
+  transition: 0.3s;
+  height: max-content;
+  border-radius: 5px;
+  width: 100%;
+}
+.card-containerC {
+  padding-bottom: 2px;
+  text-align: center;
+}
+.button11{
+  margin-left: 40px;
+}
+.button11,.button2{
+  width: 40%;
+  height: 50px;
+  margin-top: 100px;
+  background-color: white;
+  border: none;
+  font-size: x-large;
+}
+@media screen and (max-width: 1150px) {
+  .one-cardC img{
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .one-cardC img{
+    width: 150px;
+    height: 150px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .one-cardC img{
+    width: 150px;
+    height: 150px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .one-cardC img{
+    width: 120px;
+    height: 120px;
+  }
+}

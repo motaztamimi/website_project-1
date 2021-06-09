@@ -96,47 +96,48 @@ const DoctorSlid = () => {
       window.removeEventListener('resize', changeWindowSize);
     };
   }, []);
-  let count = 5;
+  let count = -1;
+  console.log(iin.length);
   if (windowSize.width > 3100) {
     count = 7;
-    if (inn.length < count) {
-      count = inn.length;
+    if (iin.length < count) {
+      count = iin.length;
     }
   }
   if (windowSize.width >= 2200 && windowSize.width <= 3100) {
     count = 6;
-    if (inn.length < count) {
-      count = inn.length;
+    if (iin.length < count) {
+      count = iin.length;
     }
   }
   if (windowSize.width >= 1150 && windowSize.width < 2200) {
-    count = 5;
-    if (inn.length < count) {
-      count = inn.length;
+    count = 4;
+    if (iin.length <= count) {
+      count = iin.length;
     }
   }
   if (windowSize.width >= 900 && windowSize.width < 1150) {
     count = 4;
-    if (inn.length < count) {
-      count = inn.length;
+    if (iin.length <= count) {
+      count = iin.length;
     }
   }
   if (windowSize.width >= 700 && windowSize.width < 900) {
     count = 3;
-    if (inn.length < count) {
-      count = inn.length;
+    if (iin.length <= count) {
+      count = iin.length;
     }
   }
   if (windowSize.width >= 500 && windowSize.width < 700) {
     count = 2;
-    if (inn.length < count) {
-      count = inn.length;
+    if (iin.length <= count) {
+      count = iin.length;
     }
   }
   if (windowSize.width < 500) {
     count = 1;
-    if (inn.length < count) {
-      count = inn.length;
+    if (iin.length <= count) {
+      count = iin.length;
     }
   }
   return (
@@ -152,9 +153,9 @@ const DoctorSlid = () => {
         </div>
         <div>
           <Slider>
-            {iin.map((element) => (
-              <Slide index={element.id} key={element.id}>
-                <DoctorCard key={element.id} index={element} />
+            {iin.map((inn) => (
+              <Slide index={inn.id} key={inn.id}>
+                <DoctorCard key={inn.id} index={inn} />
               </Slide>
             ))}
           </Slider>

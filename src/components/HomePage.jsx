@@ -7,11 +7,11 @@ import Information from './Information';
 import '../style/HomePage.css';
 import useDataBase from '../hooks/useDataBase';
 import Subjects from './Subjects';
-import Centers from './Centers';
 import Gallery from './Gallery';
 import Line from './Line';
 import Nav from './Nav';
 import ScrollToTop from './ScrollToTop';
+import CenterMe from './CenterMe';
 
 const HomePage = () => {
   let Nmews = useDataBase('News');
@@ -120,7 +120,7 @@ const HomePage = () => {
         <Line />
         <Subjects Sub={subject} />
         <Line />
-        <Centers Cent={Center} />
+        <CenterMe element={Center} />
         <Line />
         <News News={Nmews.docs} howmany={true} />
         <Line />

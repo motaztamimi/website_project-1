@@ -1,9 +1,9 @@
 .sliderr {
   display: grid;
-  grid-template-columns: 20% 60% 20%;
+  grid-template-columns: 10% 80% 10%;
   grid-template-rows: 170px;
 }
-.nextt {
+/* .nextt {
   border-radius: 3px 0 0 3px;
   width: 50%;
   height: 70px;
@@ -18,25 +18,28 @@
   text-align: right;
   margin-top: auto;
   margin-bottom: auto;
-}
-.Backk button:hover,
+} */
+/* .Backk button:hover,
 .nextt button:hover {
   background-color: #555555;
   color: white;
-}
+} */
 .nextt button {
-  width: 30%;
-  margin-top: auto;
-  margin-bottom: auto;
-  font-size: xx-large;
+  width: 40%;
+  height: 50px;
+  margin-top: 50px;
   background-color: white;
+  border: none;
+  font-size: xx-large;
 }
 .Backk button {
+  width: 40%;
+  height: 50px;
+  margin-top: 50px;
   background-color: white;
-  width: 17%;
-  margin-top: auto;
-  margin-bottom: auto;
+  border: none;
   font-size: xx-large;
+  margin-left: 55px;
 }
 @media screen and (max-width: 700px) {
   .nextt button {

@@ -1,3 +1,195 @@
+/* * @format
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+footer {
+  width: 100%;
+  background-color: #151e4d;
+  min-height: 250px;
+  margin-top: 60px;
+  padding: 10px 0px 25px 0px;
+  direction: rtl;
+  font-family: 'Poppins', sans-serif;
+}
+.Containers {
+  width: 100%;
+  max-width: fit-content;
+  direction: rtl;
+  /* display: flex; *
+  /* display:grid; *
+  margin: 20px;
+  text-align: right;
+}
+.rows {
+  width: 100%;
+  /* display: flex; 
+  display: grid;
+  /* flex-direction: row; 
+  direction: rtl;
+  grid-template-columns: 50% 20% 30%;
+  height: max-content;
+  justify-content: space-between;
+}
+.cols {
+  /* display: flex;
+  flex-direction: column; 
+  display: grid;
+  grid-template-columns: auto;
+  width: 100%;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  height: fit-content;
+
+  justify-content: space-between;
+  /* flex: 1; */
+/* } */
+/* .cols.firstCol {
+  flex: 2;
+} 
+.pt2 {
+  padding-top: 40px;
+  margin-bottom: 20px;
+  display: inline;
+}
+footer p {
+  color: #ccc;
+  padding-bottom: 3px;
+  margin-bottom: 8px;
+  direction: rtl;
+  font-weight: 500;
+  line-height: 2.2rem;
+  font-size: 1.2rem;
+}
+.mb10 {
+  display: ruby-text;
+  margin-left: auto;
+  margin-right: auto;
+
+  direction: rtl;
+}
+.footer_ul_amrc {
+  margin: 0px;
+  padding: 0px 0px 10px 0px;
+}
+.footer_ul_amrc li {
+  padding-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  list-style: none;
+}
+.footer_ul_amrc li a {
+  color: #ccc;
+}
+.footer_ul_amrc li a:hover {
+  color: #fff;
+  background-color: #1abc9c;
+}
+.fleft {
+  float: left;
+}
+.padding-right {
+  padding-right: 10px;
+}
+
+.bottom_border {
+  border-bottom: 1px solid #323f45;
+  direction: rtl;
+  padding-bottom: 20px;
+}
+.Down_Container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: max-content;
+  text-align: center;
+}
+
+.foote_bottom_ul_amrc {
+  list-style-type: none;
+  padding: 0px;
+  display: table;
+  margin-top: 10px;
+  margin-right: auto;
+  margin-bottom: 10px;
+  margin-left: auto;
+}
+.foote_bottom_ul_amrc li {
+  display: inline;
+}
+.foote_bottom_ul_amrc li a {
+  color: #999;
+  margin: 0 12px;
+  text-decoration: none;
+}
+
+.social_footer_ul {
+  text-align: center;
+  display: table;
+  margin: 15px auto 0 auto;
+  list-style-type: none;
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+.social_footer_ul li {
+  padding-left: 10px;
+  padding-right: 10px;
+
+  padding-top: 10px;
+  display: inline;
+  float: left;
+}
+.social_footer_ul li a {
+  color: white;
+
+  text-decoration: none;
+}
+.social_footer_ul li i {
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+}
+.location {
+  width: 100%;
+}
+.logoFotter {
+  display: inline;
+}
+.logoFotter1 {
+  margin-right: 30px;
+  margin-top: -10px;
+  width: 50%;
+}
+.col_white_amrc {
+  margin-top: -10px;
+
+  color: #fff;
+}
+
+@media screen and (max-width: 800px) {
+  .rows {
+    grid-template-rows:repeat(2,1fr) ;
+  }
+  .Down_Container {
+    flex-wrap: wrap;
+  }
+  .foote_bottom_ul_amrc {
+    display: flex;
+    flex-direction: row;
+  }
+  .foote_bottom_ul_amrc li {
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    text-align: center;
+  }
+  .foote_bottom_ul_amrc li a {
+    margin: 0;
+    padding: 5px;
+  }
+  .logoFotter1 {
+    margin: 0 auto 15px auto;
+  }
+} */
+
 /** @format */
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 footer {
@@ -149,7 +341,7 @@ footer p {
 }
 .logoFotter1 {
   margin-right: 30px;
-  margin-top: -10px;
+  margin-top: -20px;
   width: 50%;
 }
 .col_white_amrc {
@@ -159,6 +351,9 @@ footer p {
 }
 
 @media screen and (max-width: 800px) {
+  .Containers{
+    flex-direction:row;
+  }
   .rows {
     flex-wrap: wrap;
     flex-basis: 200px;
@@ -183,4 +378,32 @@ footer p {
   .logoFotter1 {
     margin: 0 auto 15px auto;
   }
+}
+@media screen and (max-width: 768px) {
+  .Containers{
+    flex-direction: column;
+  }
+  .cols{
+    padding-left: 0px;
+  }
+}
+@media screen and (max-width: 375px) {
+ .mb10{
+   display: none;
+ }
+ .logoFotter1{
+   margin: auto;
+   width: 250px;
+   height: 200px;
+ }
+.rows{
+  width:85%;
+}
+.cols{
+  text-align: center;
+}
+.footer_ul_amrc li {
+ 
+  padding: 8px;
+}
 }

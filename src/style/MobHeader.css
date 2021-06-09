@@ -1,7 +1,6 @@
 .MoblieHeader {
   display: none;
 }
-
 @media screen and (max-width: 800px) {
   .MoblieHeader {
     display: flex;
@@ -12,7 +11,26 @@
     padding: 10px;
   }
   .MoblieHeader img {
-    width: 120px;
+    width: 450px;
+    height: 100px;
+  }
+  .MoblieHeader button {
+    border: none;
+    background: none;
+    z-index: 11;
+  }
+}
+@media screen and (max-width: 500px) {
+  .MoblieHeader {
+    display: flex;
+    /* justify-content: space-between; */
+    direction: rtl;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+  }
+  .MoblieHeader img {
+    width: 245px;
     height: 100px;
   }
   .MoblieHeader button {

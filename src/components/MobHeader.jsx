@@ -27,7 +27,7 @@ const MobHeader = () => {
             <AiOutlineMenu size='30px' color='#151e4d' />
           )}{' '}
         </button>
-        <img src={`${process.env.PUBLIC_URL}/imges/LOGO.jpg`} alt='' />
+        <img src={`${process.env.PUBLIC_URL}/imges/LOGONEW.jpg`} alt='' />
         <Accessibility />
         {/* <a href="/">
         <AiFillHome size='30px' color='#151e4d' />

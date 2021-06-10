@@ -144,7 +144,7 @@ td {
 }
 .BotTable th {
   border: 1px solid;
-  background-color: rgb(50, 147, 185);
+  background-color: #b2ebf2;
 }
 .BotTable tr:nth-child(even) {
   background-color: #f2f2f2;

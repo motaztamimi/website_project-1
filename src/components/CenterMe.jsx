@@ -10,6 +10,7 @@ import {
 } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import '../style/CenterMe.css';
+import { useHistory } from 'react-router-dom';
 const CenterMe = ({ element }) => {
   const isSSR = typeof window !== 'undefined';
   const [windowSize, setWindowSize] = React.useState({
@@ -27,82 +28,85 @@ const CenterMe = ({ element }) => {
     };
   }, []);
   let count = -1;
-  let styleB ={};
-  let styleShow ={};
-  let cont={}
+  let styleB = {};
+  let styleShow = {};
+  let cont = {};
   if (windowSize.width >= 2000) {
     count = 4;
     if (element.length <= count) {
       count = element.length;
     }
-    styleB={
-      display:"none",
+    styleB = {
+      display: 'none',
     };
   }
-  if (windowSize.width >= 900 ) {
+  if (windowSize.width >= 900) {
     count = 4;
     if (element.length <= count) {
       count = element.length;
     }
-    styleShow.gridTemplateColumns = "10% 80% 10%";
+    styleShow.gridTemplateColumns = '10% 80% 10%';
   }
   if (windowSize.width >= 700 && windowSize.width < 900) {
     count = 3;
     if (element.length <= count) {
       count = element.length;
     }
-    styleShow.gridTemplateColumns = "10% 80% 10%";
+    styleShow.gridTemplateColumns = '10% 80% 10%';
   }
   if (windowSize.width >= 500 && windowSize.width < 700) {
     count = 2;
     if (element.length <= count) {
       count = element.length;
     }
-    styleShow.gridTemplateColumns = "10% 80% 10%";
+    styleShow.gridTemplateColumns = '10% 80% 10%';
   }
   if (windowSize.width < 500) {
     count = 1;
     if (element.length <= count) {
       count = element.length;
     }
-    styleShow.gridTemplateColumns = "10% 80% 10%";
-    cont.paddingLeft="25px";
+    styleShow.gridTemplateColumns = '10% 80% 10%';
+    cont.paddingLeft = '25px';
   }
+  let history = useHistory();
   return (
     <section id='m4' className='Center_ContainerC'>
-    <h2 id='m14'> המרכז שלנו</h2>
-    <CarouselProvider
-      naturalSlideWidth={100}
-      naturalSlideHeight={120}
-      totalSlides={element.length}
-      visibleSlides={count}
-      touchEnabled={true}>
-      <div className='sliderrC' style={styleShow}>
-        <div className='BackkC' style={styleB}>
-          <ButtonBack className="button11">&#10094;</ButtonBack>
-        </div>
-        <div className="cont" style={cont}>
-          <Slider>
-            {element.map((e) => (
-              <Slide key={e.id}>
-                <div className='contenerSC'>
-                  <div className='one-cardC'>
-                    <img src={e.img} alt='' />
-                      <h3>
-                      {e.body}
-                      </h3>
+      <h2 id='m14'> המרכז שלנו</h2>
+      <CarouselProvider
+        naturalSlideWidth={100}
+        naturalSlideHeight={120}
+        totalSlides={element.length}
+        visibleSlides={count}
+        touchEnabled={true}>
+        <div className='sliderrC' style={styleShow}>
+          <div className='BackkC' style={styleB}>
+            <ButtonBack className='button11'>&#10094;</ButtonBack>
+          </div>
+          <div className='cont' style={cont}>
+            <Slider>
+              {element.map((e) => (
+                <Slide key={e.id}>
+                  <div
+                    className='contenerSC'
+                    onClick={() => {
+                      history.push('/OurCenter');
+                    }}>
+                    <div className='one-cardC'>
+                      <img src={e.img} alt='' />
+                      <h3>{e.body}</h3>
+                    </div>
                   </div>
-                </div>
-              </Slide>
-            ))}
-          </Slider>
+                </Slide>
+              ))}
+            </Slider>
+          </div>
+          <div className='nexttC' style={styleB}>
+            <ButtonNext className='button2'>&#10095;</ButtonNext>
+          </div>
         </div>
-        <div className='nexttC' style={styleB}>
-          <ButtonNext className="button2">&#10095;</ButtonNext>
-        </div>
-      </div>
-    </CarouselProvider>
-     </section>
+      </CarouselProvider>
+    </section>
   );
 };
 export default CenterMe;

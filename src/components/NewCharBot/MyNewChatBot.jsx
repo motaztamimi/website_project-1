@@ -7,11 +7,9 @@ import './ChatBott.css';
 import ImgBot from '../../components/ChatBot/ImgBot';
 
 const MyNewChatBot = () => {
-  const [item, setitem] = useState(null);
   let temp = [];
   const [bollean, setbollean] = useState(false);
   const [bollean1, setbollean1] = useState(false);
-  const arraya = [];
   const [data, setdata] = useState(null);
   const [data1, setdata1] = useState(null);
   const [data2, setdata2] = useState(null);

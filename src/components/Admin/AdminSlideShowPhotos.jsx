@@ -27,7 +27,7 @@ const AdminSlideShowPhotos = ({ collection }) => {
               {' '}
               X{' '}
             </button>
-            <img src={photo.url} alt='picture' />
+            <img src={photo.url} alt='' />
           </motion.div>
         );
       })}

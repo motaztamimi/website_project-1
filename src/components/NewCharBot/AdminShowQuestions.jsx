@@ -1,10 +1,8 @@
 /** @format */
 
-import useDataBase from '../../hooks/useDataBase';
 import { dataBase } from '../../config/firebase';
 import React from 'react';
 import { useEffect, useState } from 'react';
-import ListAdmin from '../ListAdmin';
 
 const AdminShowQuestions = () => {
   const DataToShow = dataBase.collection('ChatBot');
@@ -19,7 +17,7 @@ const AdminShowQuestions = () => {
     { hebrew: 'עובדים סוציאליים', english: 'Workers' },
     { hebrew: 'מטבח', english: 'kitchen' },
   ];
-  const deleteNew = (item, index) => {
+  const deleteNew = (item) => {
     const colecstion = dataBase.collection('ChatBot');
 
     let q = ResultToUPload[0].options.filter(function(name) {

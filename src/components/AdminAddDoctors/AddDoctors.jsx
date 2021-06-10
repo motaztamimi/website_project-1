@@ -11,7 +11,6 @@ const AddDoctors = () => {
   const [showDiv, setShowDiv] = useState(false);
   const history = useHistory();
   const [selected, setSelected] = useState('');
-  const [error, setError] = useState(null);
   const div = (
     <div className='loading'>
       <div className='loader'></div>
@@ -32,7 +31,7 @@ const AddDoctors = () => {
       .listAll()
       .then((res) => {
         res.items.forEach((itemRef) => {
-          if (itemRef.name == selected.name) {
+          if (itemRef.name === selected.name) {
             console.log('iam in ');
             var val = Math.floor(1000 + Math.random() * 9000);
             newFile = new File([selected], val + selected.name, {
@@ -44,15 +43,12 @@ const AddDoctors = () => {
           if (newFile && types.includes(newFile.type)) {
             console.log('we have update to ' + newFile.name);
             setFile(newFile);
-
-            setError('');
           } else {
             setFile(null);
-            setError('Please Select an image file (png , jpeg or jpg)');
           }
         });
       })
-      .catch((error) => {
+      .catch(() => {
         // Uh-oh, an error occurred!
       });
   };

@@ -7,9 +7,7 @@ function LineInResearchPage(props) {
   const showPdf = () => {
     window.open(props.url);
   };
-  const printPdf = () => {
-    const hello = window.open(props.url);
-  };
+  const printPdf = () => {};
 
   return (
     <div>
@@ -21,7 +19,12 @@ function LineInResearchPage(props) {
           <button className='button1' onClick={printPdf}>
             <span> הדפס</span>
           </button>
-          <a href={props.name} download rel={props.url} target='_blank'>
+          <a
+            href={props.name}
+            download
+            rel={props.url}
+            target='_blank'
+            rel='noreferrer'>
             <button className='button1'>
               <span>הורד</span>
             </button>

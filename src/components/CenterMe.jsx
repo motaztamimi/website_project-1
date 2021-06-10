@@ -12,7 +12,6 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 import '../style/CenterMe.css';
 import { useHistory } from 'react-router-dom';
 const CenterMe = ({ element }) => {
-  const isSSR = typeof window !== 'undefined';
   const [windowSize, setWindowSize] = React.useState({
     width: window.innerWidth,
     height: window.innerHeight,

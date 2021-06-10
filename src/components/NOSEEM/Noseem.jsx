@@ -16,7 +16,7 @@ function Noseem({ department, url }) {
       setHeder(dep);
     });
   }, [department, url]);
-  if (theData != '') document.getElementById('inside').innerHTML = theData;
+  if (theData !== '') document.getElementById('inside').innerHTML = theData;
   return (
     <div>
       <h1 className='noseemHeader'>{header}</h1>

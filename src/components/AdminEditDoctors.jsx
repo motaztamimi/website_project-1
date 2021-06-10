@@ -1,5 +1,5 @@
 /** @format */
-import { React, useState, useEffect } from 'react';
+import { React, useState } from 'react';
 import '../style/AdminEditDoctors.css';
 import useDataBase from '../hooks/useDataBase';
 import { useHistory } from 'react-router-dom';
@@ -8,15 +8,13 @@ import { dataBase } from '../config/firebase';
 
 import '../components/adminAddNews/AdminAddNews.css';
 import { AiOutlineUser } from 'react-icons/ai';
-import DoctorCard from './DoctorCard';
-import { AiFillEdit } from 'react-icons/ai';
+
 import ListAdmin from './ListAdmin';
 const AdminEditDoctors = () => {
   const [DoctorName0, SetDoctorName0] = useState('');
   const [DoctorSpecialty0, setDoctorSpecialty0] = useState('');
   const [DepartmentOut0, SetDepartmentOut0] = useState('');
   const [DepartmentIn0, SetDepartmentIn0] = useState('');
-  const [error, setError] = useState(null);
   const [DoctorImage0, setDoctorImage0] = useState('');
   const [doctorE, setdoctorE] = useState('');
   const [editorS, seteditorS] = useState('');
@@ -111,7 +109,7 @@ const AdminEditDoctors = () => {
     if (file != null) {
       const storageRef = storage.ref(`Doctors/${file.name}`);
       let url;
-      storageRef.put(file).then((snapshot) => {
+      storageRef.put(file).then(() => {
         storageRef.getDownloadURL().then((data) => {
           url = data;
           const storageRef = storage.refFromURL(doctorE.DoctorImage);
@@ -151,7 +149,7 @@ const AdminEditDoctors = () => {
       .listAll()
       .then((res) => {
         res.items.forEach((itemRef) => {
-          if (itemRef.name == selected.name) {
+          if (itemRef.name === selected.name) {
             console.log('iam in ');
             var val = Math.floor(1000 + Math.random() * 9000);
             newFile = new File([selected], val + selected.name, {
@@ -163,11 +161,8 @@ const AdminEditDoctors = () => {
           if (newFile && types.includes(newFile.type)) {
             console.log('we have update to ' + newFile.name);
             setFile(newFile);
-
-            setError('');
           } else {
             setFile(null);
-            setError('Please Select an image file (png , jpeg or jpg)');
           }
         });
       })
@@ -183,7 +178,7 @@ const AdminEditDoctors = () => {
       return f;
     }
   }
-  const styleD = {};
+  var styleD = {};
   if (getTheDoctores() == null) {
     styleD = {
       display: 'none',
@@ -294,7 +289,7 @@ const AdminEditDoctors = () => {
                   <div className='wrapper'>
                     <div className='img-area'>
                       <div className='inner-area'>
-                        <img src={element.DoctorImage} />
+                        <img src={element.DoctorImage} alt='' />
                       </div>
                     </div>
                     <div className='name'>{element.DoctorName}</div>

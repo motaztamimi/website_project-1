@@ -81,7 +81,6 @@ const DoctorSlid = () => {
     (e) => e.DepartmentOut === nameDepO[flagg].text
   );
   const iin = oout.filter((e) => e.DepartmentIn === depIn);
-  const isSSR = typeof window !== 'undefined';
   const [windowSize, setWindowSize] = React.useState({
     width: window.innerWidth,
     height: window.innerHeight,

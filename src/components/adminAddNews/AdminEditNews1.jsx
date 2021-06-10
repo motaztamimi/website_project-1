@@ -20,7 +20,6 @@ const AdminEditNews1 = () => {
   const [NewsBodyE, setNewsBodyE] = useState('');
   const [NewsImageE, SetNewsImageE] = useState('');
   const [file, setFile] = useState(null);
-  const [error, setError] = useState(null);
   const [bollean, setbollean] = useState(false);
   const [bollean1, setbollean1] = useState(false);
   const types = ['image/png', 'image/jpeg', 'img/jpg'];
@@ -62,10 +61,8 @@ const AdminEditNews1 = () => {
     let selected = e.target.files[0];
     if (selected && types.includes(selected.type)) {
       setFile(selected);
-      setError('');
     } else {
       setFile(null);
-      setError('Please Select an image file (png , jpeg or jpg)');
     }
   };
   const onSubmit = (e) => {
@@ -74,7 +71,7 @@ const AdminEditNews1 = () => {
     if (file !== null) {
       const storageRef = storage.ref(`News/${file.name}`);
       let url;
-      storageRef.put(file).then((snapshot) => {
+      storageRef.put(file).then(() => {
         storageRef.getDownloadURL().then((data) => {
           url = data;
           const storageRef = storage.refFromURL(news.NewsImage);

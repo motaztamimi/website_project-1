@@ -9,21 +9,13 @@ import '../style/AdminEditNews.css';
 import { React, useState } from 'react';
 import AdminAddNews from './adminAddNews/AdminAddNews.jsx';
 import { AiFillEdit } from 'react-icons/ai';
-import ListAdmin from './ListAdmin'
+import ListAdmin from './ListAdmin';
 const AdminEditNews = () => {
   const [isclick, setClick] = useState(false);
-  const [NewsTitleE, setNewsTitleE] = useState('');
-  const [NewsSubTitleE, setNewsSubTitleE] = useState('');
-  const [NewsBodyE, setNewsBodyE] = useState('');
-  const [NewsImageE, SetNewsImageE] = useState('');
-  const [NewsE, setNewsE] = useState('');
-  const [file, setFile] = useState(null);
-  const [error, setError] = useState(null);
-  const types = ['image/png', 'image/jpeg', 'img/jpg'];
 
   let history = useHistory();
   const News = useDataBase('News');
-  const [StyleFlag, setStyleFlag] = useState('');
+
   const deleteNew = (newq) => {
     const colecstion = dataBase.collection('News');
 
@@ -31,53 +23,6 @@ const AdminEditNews = () => {
     const storageRef = storage.refFromURL(newq.NewsImage);
     storageRef.delete();
     item.delete();
-  };
-
-  const onFileChange = (e) => {
-    let selected = e.target.files[0];
-    let newFile = selected;
-
-    storage
-      .ref('News/')
-      .listAll()
-      .then((res) => {
-        res.items.forEach((itemRef) => {
-          if (itemRef.name == selected.name) {
-            console.log('iam in ');
-            var val = Math.floor(1000 + Math.random() * 9000);
-            newFile = new File([selected], val + selected.name, {
-              type: selected.type,
-              lastModified: selected.lastModified,
-            });
-            console.log('the new file is ' + newFile.name);
-          }
-          if (newFile && types.includes(newFile.type)) {
-            console.log('we have update to ' + newFile.name);
-            setFile(newFile);
-
-            setError('');
-          } else {
-            setFile(null);
-            setError('Please Select an image file (png , jpeg or jpg)');
-          }
-        });
-      })
-      .catch((error) => {
-        // Uh-oh, an error occurred!
-      });
-  
-  };
-  function exitFormEditNews(e) {
-    setStyleFlag(0);
-  }
-  const editorNews = (News) => {
-    setStyleFlag(1);
-    setNewsE(News);
-    setFile(null);
-    setNewsTitleE(News.NewsTitle);
-    setNewsSubTitleE(News.NewsSubTitle);
-    setNewsBodyE(News.NewsBody);
-    SetNewsImageE(News.NewsImage);
   };
 
   let max = News.docs.length / 2;
@@ -90,60 +35,17 @@ const AdminEditNews = () => {
     return News.docs.slice(0, len);
   }
 
-  function editNewsFunc(e) {
-    e.preventDefault();
-    if (file !== null) {
-      const storageRef = storage.ref(`News/${file.name}`);
-      let url;
-      storageRef.put(file).then((snapshot) => {
-        storageRef.getDownloadURL().then((data) => {
-          url = data;
-          const storageRef = storage.refFromURL(NewsE.NewsImage);
-          storageRef.delete();
-          const colecstion = dataBase
-            .collection('News')
-            .doc(NewsE.id)
-            .update({
-              NewsImage: url,
-            });
-        });
-      });
-    }
-    const colecstion = dataBase
-      .collection('News')
-      .doc(NewsE.id)
-      .update({
-        NewsTitle: NewsTitleE,
-        NewsSubTitle: NewsSubTitleE,
-        NewsBody: NewsBodyE,
-      })
-      .then(() => {
-        console.log('Document successfully written!');
-      })
-      .catch((error) => {
-        console.error('Error writing document: ', error);
-      });
-  }
-
-  function styleEditNews() {
-    if (StyleFlag !== 1) {
-      const style = {
-        display: 'none',
-      };
-      return style;
-    }
-  }
   function toggle() {
     setClick(!isclick);
   }
 
   return (
-    <div className="listAdminn">
+    <div className='listAdminn'>
       <div className='ll'>
-        <ListAdmin/>
+        <ListAdmin />
       </div>
-    <div className='addNewsGrid'>
-      {/* <div className='overlyEditNews' style={styleEditNews()}>
+      <div className='addNewsGrid'>
+        {/* <div className='overlyEditNews' style={styleEditNews()}>
         <button onClick={exitFormEditNews}>X</button>
         <h1 id='editorTitleNews'>עריכת הרופא הרצוי</h1>
         <form id='FormEditor' onSubmit={editNewsFunc}>
@@ -203,60 +105,60 @@ const AdminEditNews = () => {
           />
         </form>
       </div> */}
-      <div className='AddNewsButtonDiv'>
-        <AdminAddNews />
-        <a href='/Admin'>
-          <AiOutlineUser
-            title='AdminPage'
-            className='EditSlideShowPage2'
-            id='accessIMG'
-            color='#151e4d'
-          />
-        </a>
-      </div>
-      <div className='containerr'>
-        {getNews().map((Newa) => {
-          return (
-            <motion.div className='NewsDiv' key={Newa.id} layout>
-              <div className='DeleteAndEditNews'>
-                <input
-                  type='button'
-                  value='X'
-                  onClick={() => {
-                    deleteNew(Newa);
-                  }}
-                />
+        <div className='AddNewsButtonDiv'>
+          <AdminAddNews />
+          <a href='/Admin'>
+            <AiOutlineUser
+              title='AdminPage'
+              className='EditSlideShowPage2'
+              id='accessIMG'
+              color='#151e4d'
+            />
+          </a>
+        </div>
+        <div className='containerr'>
+          {getNews().map((Newa) => {
+            return (
+              <motion.div className='NewsDiv' key={Newa.id} layout>
+                <div className='DeleteAndEditNews'>
+                  <input
+                    type='button'
+                    value='X'
+                    onClick={() => {
+                      deleteNew(Newa);
+                    }}
+                  />
 
-                <button
-                  className='EditioNEWS'
-                  onClick={() => {
-                    //editorNews(Newa);
-                    history.push(`/Admin/EditNews/${Newa.id}`);
-                  }}>
-                  <AiFillEdit />
-                </button>
-              </div>
-              <div className='NewCARD'>
-                <img src={Newa.NewsImage} alt='' />
-                <div className='NewsContent'>
-                  <h1>{Newa.NewsTitle}</h1>
-                  <h3>{Newa.NewsSubTitle}</h3>
+                  <button
+                    className='EditioNEWS'
+                    onClick={() => {
+                      //editorNews(Newa);
+                      history.push(`/Admin/EditNews/${Newa.id}`);
+                    }}>
+                    <AiFillEdit />
+                  </button>
                 </div>
-              </div>
-              <hr />
-            </motion.div>
-          );
-        })}
-        <section>
-          <input
-            className='MoreNewsButton'
-            type='button'
-            value={isclick ? 'חסר חדשות' : 'עוד חדשות'}
-            onClick={toggle}
-          />
-        </section>
+                <div className='NewCARD'>
+                  <img src={Newa.NewsImage} alt='' />
+                  <div className='NewsContent'>
+                    <h1>{Newa.NewsTitle}</h1>
+                    <h3>{Newa.NewsSubTitle}</h3>
+                  </div>
+                </div>
+                <hr />
+              </motion.div>
+            );
+          })}
+          <section>
+            <input
+              className='MoreNewsButton'
+              type='button'
+              value={isclick ? 'חסר חדשות' : 'עוד חדשות'}
+              onClick={toggle}
+            />
+          </section>
+        </div>
       </div>
-    </div>
     </div>
   );
 };

@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { dataBase, timestamp } from '../../config/firebase';
 import AdminVideosShow from './AdminVideosShow';
 import { AiOutlineUser } from 'react-icons/ai';
+import ListAdmin from '../ListAdmin'
 const AdminVideos = () => {
   const [file, setFile] = useState(null);
   const [showDiv, setShowDiv] = useState(false);
@@ -47,33 +48,38 @@ const AdminVideos = () => {
   };
 
   return (
-    <div>
-      <div className='EditVideosPage'>
-        {showDiv && div}
+    <div className="listAdminInG">
+      <div className="listt">
+        <ListAdmin/>
+      </div>
+      <div>
+        <div className='EditVideosPage'>
+          {showDiv && div}
 
-        <form className='EditVideosForm' onSubmit={submithandeler}>
-          <span>העלאת סרטון</span>
-          <a href='/Admin'>
-            <AiOutlineUser
-              title='AdminPage'
-              className='AdminButtonVideos'
-              id='accessIMG'
-              color='#151e4d'
+          <form className='EditVideosForm' onSubmit={submithandeler}>
+            <span>העלאת סרטון</span>
+            <a href='/Admin'>
+              <AiOutlineUser
+                title='AdminPage'
+                className='AdminButtonVideos'
+                id='accessIMG'
+                color='#151e4d'
+              />
+            </a>
+            <input
+              type='url'
+              id='uploadFromVideos'
+              placeholder='embed URL'
+              title='please fill an emded URL'
+              onChange={OnChangeFileHandeler}
+              required
             />
-          </a>
-          <input
-            type='url'
-            id='uploadFromVideos'
-            placeholder='embed URL'
-            title='please fill an emded URL'
-            onChange={OnChangeFileHandeler}
-            required
-          />
 
-          <input type='submit' value='upload' className='submitPhoto' />
-        </form>
+            <input type='submit' value='upload' className='submitPhoto' />
+          </form>
 
-        {<AdminVideosShow collection={'Videos'} />}
+          {<AdminVideosShow collection={'Videos'} />}
+        </div>
       </div>
     </div>
   );

@@ -5,6 +5,8 @@ import useDataBase from '../hooks/useDataBase';
 import { useHistory } from 'react-router-dom';
 import { storage } from '../config/firebase';
 import { dataBase } from '../config/firebase';
+
+import '../components/adminAddNews/AdminAddNews.css';
 import { AiOutlineUser } from 'react-icons/ai';
 import DoctorCard from './DoctorCard';
 import { AiFillEdit } from 'react-icons/ai';
@@ -195,9 +197,11 @@ const AdminEditDoctors = () => {
   return (
     <div className='wholePageD'>
       <div className='overlyForm' style={styleEdit()}>
-        <button onClick={exitFormB}>X</button>
+        <button className='DeleteButtonDoctor' onClick={exitFormB}>
+          X
+        </button>
         <h1 id='editorTitle'>עריכת הרופא הרצוי</h1>
-        <form onSubmit={editDoctor00}>
+        <form className='FormEditDoctor' onSubmit={editDoctor00}>
           <label>תמונת הרופא</label>
           <input type='file' key={51} onChange={onFileChange} />
           <br />
@@ -244,7 +248,7 @@ const AdminEditDoctors = () => {
           <br />
           <br />
 
-          <input type='submit' value='Submit' />
+          <input type='submit' className='EDITDOCTORSUBMIT' value='Submit' />
         </form>
       </div>
       <div className='listAdminn'>

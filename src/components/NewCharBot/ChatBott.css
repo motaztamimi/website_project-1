@@ -128,6 +128,8 @@
 .BotTable {
   width: 100%;
   border-collapse: collapse;
+  border: 2px solid;
+  border-color: #4db6ac;
 }
 .BotTable tr,
 td {

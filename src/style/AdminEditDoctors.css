@@ -7,11 +7,70 @@
   position: absolute;
   direction: rtl;
   text-align: center;
-  background-color: #008cba;
+  background-color: #c5cae9;
   width: 650px;
-  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   right: 510px;
-  top: 250px;
+  top: 100px;
+  padding: 10px;
+}
+.FormEditDoctor {
+  direction: rtl;
+  text-align: right !important;
+}
+.FormEditDoctor input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  direction: rtl;
+  font-size: 1rem;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.EDITDOCTORSUBMIT {
+  width: 100%;
+  background-color: #2bbbad;
+  color: white;
+  opacity: 0.8;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.EDITDOCTORSUBMIT:hover {
+  opacity: 1;
+  width: 99%;
+}
+.DeleteButtonDoctor {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  right: 0px;
+  top: 0px;
+  font-size: 1.4rem;
+  padding: 7px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(228, 72, 72);
+  margin-right: 5px;
+  margin-top: 6px;
+  opacity: 0.8;
+}
+.DeleteButtonDoctor:hover {
+  opacity: 1;
+}
+.FormEditDoctor label {
+  direction: rtl;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  padding-right: 5px;
+  font-size: 1.3rem;
+  text-align: right !important;
 }
 .headerDoctors {
   padding-top: 20px;
@@ -134,20 +193,30 @@
   justify-content: space-between;
 }
 .buttonE {
-  background-color: khaki;
+  background-color: #ffbb33;
   border-radius: 5px;
   font-size: 17px;
   padding: 12px 0;
   width: 100%;
   border: none;
+  opacity: 0.8;
+  margin-right: 5px;
   padding-left: 15px;
 }
 .buttonD {
-  background-color: firebrick;
+  background-color: #cc0000;
   border-radius: 5px;
   font-size: 17px;
   padding: 12px 0;
   width: 100%;
   border: none;
+  opacity: 0.8;
   padding-left: 15px;
+}
+
+.buttonE:hover {
+  opacity: 1;
+}
+.buttonD:hover {
+  opacity: 1;
 }

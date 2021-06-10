@@ -70,7 +70,7 @@ const AdminVideos = () => {
             required
           />
 
-          <input type='submit' value='upload' className='submitPhoto' />
+          <input type='submit' value='העלאת סרטון' className='submitPhoto' />
         </form>
 
         {<AdminVideosShow collection={'Videos'} />}

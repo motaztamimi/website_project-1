@@ -4,6 +4,8 @@ import '../style/Fotter.css';
 import logo from '../imges/Logo3K.png';
 import Googlemap from '../components/GoogleMap/Googlemap';
 import { Link } from 'react-router-dom';
+import { AiOutlineYoutube } from "react-icons/ai";
+import { GrInstagram } from "react-icons/gr";
 
 const Fotter = () => {
   const detailKfarSahoulMap = {
@@ -51,16 +53,9 @@ const Fotter = () => {
               <li>
                 <Link to='/sherotKhelate'>השירות הקהילתי</Link>{' '}
               </li>
+              
               <li>
-                <a href='#m3'>נושאים</a>
-              </li>
-              <li>
-                <a className='m4' href='#m4'>
-                  המרכז-שלנו
-                </a>
-              </li>
-              <li>
-                <a href='#m5'>חדשות</a>
+                <a href='/NewsList'>חדשות</a>
               </li>
               <li>
               <Link to='/Gallery'>תמונות</Link>{' '}
@@ -128,25 +123,25 @@ const Fotter = () => {
           <li>
             <a href='https://www.facebook.com/jerusalem.mental.health.center/'>
               {' '}
-              <i className='material-icons'>facebook</i>
+              <i className='material-icons' id="facebook">facebook</i>
             </a>
           </li>
           <li>
             <a href='blank'>
               {' '}
-              <i className='material-icons'>favorite</i>
+              <i className='material-icons' id="youtube"><AiOutlineYoutube/></i>
             </a>
           </li>
           <li>
             <a href='mailto:p.tzibur@moh.gov.il'>
               {' '}
-              <i className='material-icons'>email</i>
+              <i className='material-icons' id="email">email</i>
             </a>
           </li>
           <li>
             <a href='blank'>
               {' '}
-              <i className='material-icons'>feedback</i>
+              <i className='material-icons' id="feedback"><GrInstagram/></i>
             </a>
           </li>
         </ul>

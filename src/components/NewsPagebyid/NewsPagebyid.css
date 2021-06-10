@@ -1,6 +1,7 @@
 /** @format */
 
 .NewsPageContainerId {
+  margin-top: 30px;
   padding-left: 30px;
   direction: rtl;
   padding-right: 30px;
@@ -13,7 +14,7 @@
   text-align: right;
   font-size: 43px;
   margin-right: 20px;
-  width: 100%;
+  width: 70%;
   margin-bottom: 50px;
   direction: rtl;
   font-weight: 700;
@@ -25,7 +26,7 @@
 .NewsPageContainerId h3 {
   font-family: 'rubik', sans-serif;
   font-weight: 700;
-  width: 100%;
+  width: 80%;
   font-style: normal;
   color: #272727 !important;
   text-align: right;
@@ -43,8 +44,8 @@
 .NewsPageContainerId img {
   box-shadow: -1px 0 0 rgb(0 0 0 / 10%), -3px 0 9px rgb(0 0 0 / 15%);
   box-sizing: border-box;
-  /* width: 35%; */
-  width: 80%;
+  width: 35%;
+  /* width: 80%; */
   margin-right: 20px;
   height: 350px;
   object-fit: fill;
@@ -66,7 +67,7 @@
 }
 @media screen and (max-width: 1200px) {
   .NewsPageContainerId img {
-    width: 80%;
+    width: 50%;
     margin-right: 0;
   }
 }
@@ -81,9 +82,11 @@
   }
   .NewsPageContainerId h2 {
     margin-right: 0;
+    width: 100%;
   }
   .NewsPageContainerId h3 {
     margin-right: 0;
+    width: 100%;
   }
   .hrdiv {
     width: 70%;

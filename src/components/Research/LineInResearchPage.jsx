@@ -27,7 +27,7 @@ function LineInResearchPage(props) {
             </button>
           </a>
           <button className='button1' onClick={showPdf}>
-            <span> הצג</span>
+            <span>הצג</span>
           </button>
         </div>
       </div>

@@ -11,6 +11,7 @@ const Search = () => {
   const [departmentsFromSearch, setDepartmentsFromSearch] = useState(null);
   const sections = ['איתנים', 'כפר שאול', 'שירות קהילתי'];
   const [contentSec, setContentSec] = useState(null);
+  const [DoctorsFormSearch, setDoctorsFormSearch] = useState([]);
   var sectionsFromSearch = '';
   var secToAdd = [];
   var contentSecToAdd = [];
@@ -93,6 +94,9 @@ const Search = () => {
                 var temp = toConnect.search(searchString);
 
                 for (var i = temp; i < temp + 40; i++) {
+                  if (toConnect[i] === undefined) {
+                    break;
+                  }
                   contentText += toConnect[i];
                 }
                 contentText = removeTags(contentText);
@@ -125,6 +129,9 @@ const Search = () => {
                 temp = toConnect.search(searchString);
 
                 for (i = temp; i < temp + 40; i++) {
+                  if (toConnect[i] === undefined) {
+                    break;
+                  }
                   contentText += toConnect[i];
                 }
                 contentText = removeTags(contentText);
@@ -157,6 +164,9 @@ const Search = () => {
                 temp = toConnect.search(searchString);
 
                 for (i = temp; i < temp + 40; i++) {
+                  if (toConnect[i] === undefined) {
+                    break;
+                  }
                   contentText += toConnect[i];
                 }
                 contentText = removeTags(contentText);
@@ -189,6 +199,9 @@ const Search = () => {
                 temp = toConnect.search(searchString);
 
                 for (i = temp; i < temp + 40; i++) {
+                  if (toConnect[i] === undefined) {
+                    break;
+                  }
                   contentText += toConnect[i];
                 }
                 contentText = removeTags(contentText);
@@ -210,6 +223,24 @@ const Search = () => {
         }
       });
     });
+  }, []);
+
+  useEffect(() => {
+    let temp = [];
+    dataBase
+      .collection('Doctors')
+      .get()
+      .then((doctors) => {
+        doctors.docs.forEach((doctor) => {
+          let data = { ...doctor.data(), id: doctor.id };
+          if (data.DoctorName.includes(searchString)) {
+            temp.push(data);
+          }
+        });
+        if (temp.length !== 0) {
+          setDoctorsFormSearch(temp);
+        }
+      });
   }, []);
 
   const removeTags = (str) => {
@@ -249,7 +280,22 @@ const Search = () => {
           </>
         )}
       </div>
-
+      {DoctorsFormSearch && DoctorsFormSearch.length !== 0 && (
+        <>
+          <h1>רופאים</h1>
+          <div className='DoctorsFromSearch'>
+            {DoctorsFormSearch.map((doctor) => {
+              return (
+                <div className='DoctorFromSearch' key={doctor.id}>
+                  <img src={doctor.DoctorImage} alt='img' />
+                  <p>{doctor.DoctorName}</p>
+                </div>
+              );
+            })}
+          </div>
+          <hr />
+        </>
+      )}
       {sectionsFromSearch && (
         <div className='SectionFromSearch'>
           <h1 className='SectionFromSearchTitle'>מרפאות</h1>
@@ -302,7 +348,9 @@ const Search = () => {
         !departmentsFromSearch &&
         !contentSec &&
         newsFromSearch &&
-        newsFromSearch.length === 0 && (
+        newsFromSearch.length === 0 &&
+        DoctorsFormSearch &&
+        DoctorsFormSearch.length === 0 && (
           <div className='NoResults'>לא נמצא נתונים עבור מה שחפשתה</div>
         )}
     </div>

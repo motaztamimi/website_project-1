@@ -63,31 +63,31 @@ function Accessibility() {
 
   return (
     <div className='dropDown'>
-      <div className="buttonsHeader">
-      <img
-        className='circleDive'
-        title='Accessibility'
-        id='accessIMG'
-        onClick={func}
-        src={accessIMG}
-        alt='nothing'
-      />
-      <Link to='/'>
-        <AiFillHome
-          title='HomePage'
-          className='circleDive2'
+      <div className='buttonsHeader'>
+        <img
+          className='circleDive'
+          title='Accessibility'
           id='accessIMG'
-          color='#151e4d'
+          onClick={func}
+          src={accessIMG}
+          alt='nothing'
         />
-      </Link>
-      <Link to='/Admin'>
-        <AiOutlineUser
-          title='AdminPage'
-          className='circleDive3'
-          id='accessIMG'
-          color='#151e4d'
-        />
-      </Link>
+        <Link to='/'>
+          <AiFillHome
+            title='HomePage'
+            className='circleDive2'
+            id='accessIMG'
+            color='#151e4d'
+          />
+        </Link>
+        <Link to='/Admin'>
+          <AiOutlineUser
+            title='AdminPage'
+            className='circleDive3'
+            id='accessIMG'
+            color='#151e4d'
+          />
+        </Link>
       </div>
       <div id='myDropdown' className='triangle dropdown-content'>
         <div className='up'>
@@ -101,11 +101,11 @@ function Accessibility() {
             <span> א + </span>
           </button>
         </div>
-        <div className='down_circle'>
-          <button onClick={invertColor}>
+        {/* <div className='down_circle'> */}
+          <button onClick={invertColor} className='down_circle tria'>
             <span>עוורי צבעים</span>
           </button>
-        </div>
+        {/* </div> */}
       </div>
     </div>
   );

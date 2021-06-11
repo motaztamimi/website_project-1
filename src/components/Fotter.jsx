@@ -26,15 +26,7 @@ const Fotter = () => {
               קמפוסים לאשפוז ותחנות לטיפול בבריאות הנפש הפרושות ברחבי העיר
               ובסביבותיה.
             </p>
-            {/* <p>
-              <i className=''></i>ירושלים -אבו טור{' '}
-            </p>
-            <p>
-              <i className=''></i> 0584999430{' '}
-            </p>
-            <p>
-              <i className=''></i>motaztamimi82@gmail.com
-            </p> */}
+          
           </div>
 
           <div className='cols'>
@@ -66,30 +58,7 @@ const Fotter = () => {
             </ul>
           </div>
 
-          {/* <div className='cols'> */}
-          {/* <h5 className='headin5_amrc col_white_amrc pt2'>קישורים מהירים</h5>
-
-            <ul className='footer_ul_amrc'>
-              <li>
-                <a href='blank'>צילומים</a>
-              </li>
-              <li>
-                <a href='blank'>צילומים </a>
-              </li>
-              <li>
-                <a href='blank'>צילומים </a>
-              </li>
-              <li>
-                <a href='blank'>צילומים</a>
-              </li>
-              <li>
-                <a href='blank'>צילומים</a>
-              </li>
-              <li>
-                <a href='blank'>צילומים</a>
-              </li>
-            </ul>
-          </div> */}
+         
           <div className='cols'>
             <h2 className='col_white_amrc pt2'>המיקום שלנו</h2>
 
@@ -99,26 +68,7 @@ const Fotter = () => {
       </div>
 
       <div className='Down_Container'>
-        {/* <ul className='foote_bottom_ul_amrc'>
-          <li>
-            <a href='blank'>דף הבית</a>
-          </li>
-          <li>
-            <a href='blank'>ף הבית</a>
-          </li>
-          <li>
-            <a href='blank'>ף הבית</a>
-          </li>
-          <li>
-            <a href='blank'>ף הבית</a>
-          </li>
-          <li>
-            <a href='blank'>ף הבית</a>
-          </li>
-          <li>
-            <a href='blank'>ף הבית</a>
-          </li>
-        </ul> */}
+       
         <ul className='social_footer_ul'>
           <li>
             <a href='https://www.facebook.com/jerusalem.mental.health.center/'>
@@ -127,7 +77,7 @@ const Fotter = () => {
             </a>
           </li>
           <li>
-            <a href='blank'>
+            <a href='https://www.youtube.com/results?search_query=%D7%94%D7%9E%D7%A8%D7%9B%D7%96+%D7%94%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%9E%D7%99+%D7%9C%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA+%D7%94%D7%A0%D7%A4%D7%A9'>
               {' '}
               <i className='material-icons' id="youtube"><AiOutlineYoutube/></i>
             </a>

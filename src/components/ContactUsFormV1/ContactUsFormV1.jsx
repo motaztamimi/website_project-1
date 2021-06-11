@@ -22,6 +22,7 @@ function ContactUsFormV1() {
   };
   return (
     <div style={{}}>
+      <h1 className="contactUsH1">תתצרו איתנו קשר</h1>
       <form className='form' onSubmit={clickSubmitButton} method='POST'>
         <label>שם</label>
         <input

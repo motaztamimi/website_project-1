@@ -57,6 +57,7 @@ function EditorPageImlimentation() {
       .collection('Departments')
       .doc(DropDownFirst)
       .set(toTheBase, { merge: true });
+    window.location.reload();
   };
 
   const a = [
@@ -155,96 +156,96 @@ function EditorPageImlimentation() {
   }
 
   return (
-    <div className="listAdminn">
+    <div className='listAdminn'>
       <div className='ll'>
-        <ListAdmin/>
+        <ListAdmin />
       </div>
-    <div>
-      <div className='BigEditorContainer'>
-        <div id='gridTitle'>בחר המקום המיועד לשינוי</div>
-        <a href='/Admin'>
-          <AiOutlineUser
-            title='AdminPage'
-            className='EditSlideShowPage2'
-            id='accessIMG'
-            color='#151e4d'
+      <div>
+        <div className='BigEditorContainer'>
+          <div id='gridTitle'>בחר המקום המיועד לשינוי</div>
+          <a href='/Admin'>
+            <AiOutlineUser
+              title='AdminPage'
+              className='EditSlideShowPage2'
+              id='accessIMG'
+              color='#151e4d'
+            />
+          </a>
+          <div className='threeColumnEditor'>
+            <div className='BigEditorContainer'>
+              <h2>קמפוס</h2>
+              <select
+                required
+                id='classes'
+                className='dropSelect'
+                onChange={changeSelectOptionHandler}>
+                <option key='1' value='' defaultValue>
+                  בחר קאמפוס
+                </option>
+                <option key='2' value='כפר שאול'>
+                  כפר שאול
+                </option>
+                <option key='3' value='איתנים'>
+                  איתנים
+                </option>
+                <option key='4' value='שירות קהילתי'>
+                  שירות קהילתי
+                </option>
+                <option key='10' value='אחר'>
+                  אחר
+                </option>
+              </select>
+            </div>
+            <div className='BigEditorContainer'>
+              <h2>תת מחלקה</h2>
+              <select
+                className='dropSelect'
+                id='classInClass'
+                onChange={changeSecondSelectOptionHandler}
+                required>
+                <option key='' value='' defaultValue>
+                  בחר תת מחלקה
+                </option>
+                {options}
+              </select>
+            </div>
+            <div className='BigEditorContainer'>
+              <h2>חלק מהדף</h2>
+              <select
+                required
+                id='classes'
+                className='dropSelect'
+                onChange={changeDropDownThird}>
+                <option key='5' value='' defaultValue>
+                  בחר חלק מהדף
+                </option>
+
+                {lastOption}
+              </select>
+            </div>
+          </div>
+        </div>
+        <div className='dropdown'>{/* page of the part choosen*/}</div>
+
+        <div id='one'>
+          <h1>{DropDownThird}</h1>
+          <EditorPage
+            value={inSquare}
+            callBack={(e) => {
+              setData(e);
+            }}
           />
-        </a>
-        <div className='threeColumnEditor'>
-          <div className='BigEditorContainer'>
-            <h2>קמפוס</h2>
-            <select
-              required
-              id='classes'
-              className='dropSelect'
-              onChange={changeSelectOptionHandler}>
-              <option key='1' value='' defaultValue>
-                בחר קאמפוס
-              </option>
-              <option key='2' value='כפר שאול'>
-                כפר שאול
-              </option>
-              <option key='3' value='איתנים'>
-                איתנים
-              </option>
-              <option key='4' value='שירות קהילתי'>
-                שירות קהילתי
-              </option>
-              <option key='10' value='אחר'>
-                אחר
-              </option>
-            </select>
-          </div>
-          <div className='BigEditorContainer'>
-            <h2>תת מחלקה</h2>
-            <select
-              className='dropSelect'
-              id='classInClass'
-              onChange={changeSecondSelectOptionHandler}
-              required>
-              <option key='' value='' defaultValue>
-                בחר תת מחלקה
-              </option>
-              {options}
-            </select>
-          </div>
-          <div className='BigEditorContainer'>
-            <h2>חלק מהדף</h2>
-            <select
-              required
-              id='classes'
-              className='dropSelect'
-              onChange={changeDropDownThird}>
-              <option key='5' value='' defaultValue>
-                בחר חלק מהדף
-              </option>
+        </div>
 
-              {lastOption}
-            </select>
+        <div className='finalStage'>
+          <div className='beforeButton'>
+            <button className='EditorButton' type='button' onClick={onSubmit}>
+              Submit
+            </button>
           </div>
+          <div id='theText'></div>
         </div>
       </div>
-      <div className='dropdown'>{/* page of the part choosen*/}</div>
-
-      <div id='one'>
-        <h1>{DropDownThird}</h1>
-        <EditorPage
-          value={inSquare}
-          callBack={(e) => {
-            setData(e);
-          }}
-        />
-      </div>
-
-      <div className='finalStage'>
-        <div className='beforeButton'>
-          <button className='EditorButton' type='button' onClick={onSubmit}>
-            Submit
-          </button>
-        </div>
-        <div id='theText'></div>
-      </div>
-    </div>
     </div>
   );
 }

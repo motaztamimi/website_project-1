@@ -47,6 +47,7 @@ function ContactUsFormV1() {
         <input
           type='tel'
           name='phoneNumber'
+          pattern="05[0-9]{8}"
           placeholder='מספר פלון'
           value={values.phoneNumber}
           onChange={handleChange}

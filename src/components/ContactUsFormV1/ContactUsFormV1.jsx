@@ -14,15 +14,18 @@ function ContactUsFormV1() {
         '?subject=' +
         values.name +
         '     ' +
-        values.phoneNumber +
-        'בקשה מאתר' +
+        'בקשה מהאתר' +
         '&body=' +
-        values.message
+        'מספר פלפון       ' +
+        values.phoneNumber +
+        '%0D%0A' +
+        escape(values.message)
     );
+    console.log(values.message);
   };
   return (
     <div style={{}}>
-      <h1 className="contactUsH1">תתצרו איתנו קשר</h1>
+      <h1 className='contactUsH1'>תתצרו איתנו קשר</h1>
       <form className='form' onSubmit={clickSubmitButton} method='POST'>
         <label>שם</label>
         <input
@@ -48,7 +51,7 @@ function ContactUsFormV1() {
         <input
           type='tel'
           name='phoneNumber'
-          pattern="05[0-9]{8}"
+          pattern='05[0-9]{8}'
           placeholder='מספר פלון'
           value={values.phoneNumber}
           onChange={handleChange}

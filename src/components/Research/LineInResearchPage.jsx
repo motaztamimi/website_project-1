@@ -19,12 +19,7 @@ function LineInResearchPage(props) {
           <button className='button1' onClick={printPdf}>
             <span> הדפס</span>
           </button>
-          <a
-            href={props.name}
-            download
-            rel={props.url}
-            target='_blank'
-            rel='noreferrer'>
+          <a href={props.url} download rel='noreferrer' target='_blank'>
             <button className='button1'>
               <span>הורד</span>
             </button>

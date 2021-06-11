@@ -45,66 +45,6 @@ const AdminEditNews = () => {
         <ListAdmin />
       </div>
       <div className='addNewsGrid'>
-        {/* <div className='overlyEditNews' style={styleEditNews()}>
-        <button onClick={exitFormEditNews}>X</button>
-        <h1 id='editorTitleNews'>עריכת הרופא הרצוי</h1>
-        <form id='FormEditor' onSubmit={editNewsFunc}>
-          <label>תמונת החדשות</label>
-          <br />
-
-          <input type='file' onChange={onFileChange} />
-          <br />
-          <label>כתורת החדשות</label>
-          <br />
-
-          <input
-            className='inputEditorNews'
-            id='input1'
-            type='text'
-            defaultValue={NewsTitleE}
-            onChange={(e) => {
-              setNewsTitleE(e.target.value);
-            }}
-          />
-          <br />
-          <label>כתורת משנית לחדשות</label>
-          <br />
-
-          <input
-            className='inputEditorNews'
-            type='text'
-            id='input2'
-            defaultValue={NewsSubTitleE}
-            onChange={(e) => {
-              setNewsSubTitleE(e.target.value);
-            }}
-          />
-          <br />
-          <label>גוף החדשות</label>
-          <br />
-
-          <input
-            className='inputEditorNews'
-            type='text'
-            id='input3'
-            defaultValue={NewsBodyE}
-            onChange={(e) => {
-              setNewsBodyE(e.target.value);
-            }}
-          />
-
-          <br />
-          <br />
-          <br />
-
-          <input
-            className='submitButtonNews'
-            type='submit'
-            value='Submit'
-            onClick={exitFormEditNews}
-          />
-        </form>
-      </div> */}
         <div className='AddNewsButtonDiv'>
           <AdminAddNews />
           <a href='/Admin'>

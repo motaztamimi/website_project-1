@@ -37,7 +37,6 @@ const ListAdmin = () => {
       color: 'white',
     };
   }
-  console.log(listClass[flag].stylee);
   return (
     <div className='listAdmin'>
       <ul>

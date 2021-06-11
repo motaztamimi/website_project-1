@@ -7,6 +7,7 @@ const Googlemap2 = () => {
     <div className='Mapdiv'>
       <div className='map'>
         <iframe
+          title='map'
           width='500'
           height='500'
           frameBorder='0'

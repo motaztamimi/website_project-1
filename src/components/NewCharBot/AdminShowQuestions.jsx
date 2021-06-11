@@ -5,7 +5,6 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 
 const AdminShowQuestions = () => {
-  const DataToShow = dataBase.collection('ChatBot');
   const [data, setdata] = useState('');
   const [nameDoc, setnameDoc] = useState('');
   const [data1, setdata1] = useState('');
@@ -33,6 +32,7 @@ const AdminShowQuestions = () => {
       .update({ Steps: x })
       .then(() => {
         setbollean(true);
+        window.location.reload();
       });
   };
   const changeSelectOptionHandler = (event) => {
@@ -51,19 +51,25 @@ const AdminShowQuestions = () => {
     }
   };
   useEffect(() => {
-    DataToShow.doc('kitchen')
+    dataBase
+      .collection('ChatBot')
+      .doc('kitchen')
       .get()
       .then((snapshot) => {
         let x = snapshot.data()['Steps'];
         setdata(x);
       });
-    DataToShow.doc('ListHealth')
+    dataBase
+      .collection('ChatBot')
+      .doc('ListHealth')
       .get()
       .then((snapshot) => {
         let x = snapshot.data()['Steps'];
         setdata1(x);
       });
-    DataToShow.doc('Workers')
+    dataBase
+      .collection('ChatBot')
+      .doc('Workers')
       .get()
       .then((snapshot) => {
         let x = snapshot.data()['Steps'];
@@ -71,19 +77,24 @@ const AdminShowQuestions = () => {
       });
   }, []);
   useEffect(() => {
-    if (nameDoc === 'kitchen') {
-      setResultToUPload(data);
-      setbollean(false);
+    if (bolean === false) {
+      return;
     }
-    if (nameDoc === 'ListHealth') {
-      setResultToUPload(data1);
-      setbollean(false);
+    if (nameDoc !== '' && (data1 !== '' || data2 !== '' || data !== '')) {
+      if (nameDoc === 'kitchen') {
+        setResultToUPload(data);
+        setbollean(false);
+      }
+      if (nameDoc === 'ListHealth') {
+        setResultToUPload(data1);
+        setbollean(false);
+      }
+      if (nameDoc === 'Workers') {
+        setResultToUPload(data2);
+        setbollean(false);
+      }
     }
-    if (nameDoc === 'Workers') {
-      setResultToUPload(data2);
-      setbollean(false);
-    }
-  }, [bolean]);
+  }, [bolean, nameDoc, data, data1, data2]);
 
   return (
     <div className='BotDataShow'>

@@ -56,21 +56,27 @@ const AdminAddChatBotQuestion = () => {
       });
   }, []);
   useEffect(() => {
-    if (nameDoc === 'kitchen') {
-      setResultToUPload(data);
-      setbollean(false);
+    if (bollean === false) {
+      return;
     }
-    if (nameDoc === 'ListHealth') {
-      setResultToUPload(data1);
-      setbollean(false);
+    if (nameDoc !== '' && (data1 !== '' || data2 !== '' || data !== '')) {
+      if (nameDoc === 'kitchen') {
+        setResultToUPload(data);
+        setbollean(false);
+      }
+      if (nameDoc === 'ListHealth') {
+        setResultToUPload(data1);
+        setbollean(false);
+      }
+      if (nameDoc === 'Workers') {
+        setResultToUPload(data2);
+        setbollean(false);
+      }
     }
-    if (nameDoc === 'Workers') {
-      setResultToUPload(data2);
-      setbollean(false);
-    }
-  }, [bollean]);
+  }, [nameDoc, bollean, data1, data2, data]);
   const onSubmit = (e) => {
     e.preventDefault();
+    console.log(BotAnswer);
     let OPthions = {
       value: BotQuestion,
       label: BotQuestion,

@@ -15,7 +15,7 @@ const AdminEditDoctors = () => {
   const [DoctorSpecialty0, setDoctorSpecialty0] = useState('');
   const [DepartmentOut0, SetDepartmentOut0] = useState('');
   const [DepartmentIn0, SetDepartmentIn0] = useState('');
-  const [DoctorImage0, setDoctorImage0] = useState('');
+  //const [DoctorImage0, setDoctorImage0] = useState('');
   const [doctorE, setdoctorE] = useState('');
   const [editorS, seteditorS] = useState('');
   const types = ['image/png', 'image/jpeg', 'img/jpg'];
@@ -29,7 +29,7 @@ const AdminEditDoctors = () => {
     seteditorS(1);
     setdoctorE(doctor);
     SetDoctorName0(doctor.DoctorName);
-    setDoctorImage0(doctor.DoctorImage);
+    //setDoctorImage0(doctor.DoctorImage);
     setDoctorSpecialty0(doctor.DoctorSpecialty);
     SetDepartmentOut0(doctor.DepartmentOut);
     SetDepartmentIn0(doctor.DepartmentIn);

@@ -70,6 +70,11 @@ span {
   width: 40px;
   height: 40px;
 }
+@media screen and (max-width: 800px) {
+  .circleDive{
+    display: none;
+  }
+}
 .circleDive {
   height: 43px;
   margin-right: 5px;

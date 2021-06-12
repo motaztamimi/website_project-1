@@ -444,3 +444,23 @@ border-radius: 13px;
    padding: 8px;
  }
  }
+ @media screen and (max-width: 500px) {
+  .mb10{
+    display: none;
+  }
+  .logoFotter1{
+    margin: auto;
+    width: 250px;
+    height: 200px;
+  }
+ .rows{
+   width:85%;
+ }
+ .cols{
+   text-align: center;
+ }
+ .footer_ul_amrc li {
+  
+   padding: 8px;
+ }
+ }

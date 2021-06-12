@@ -19,7 +19,6 @@ const AdminAddChatBotQuestion = () => {
   const [BotAnswer, setBotAnswer] = useState('');
   const [showDiv, setShowDiv] = useState(false);
 
-  const collectionRef = dataBase.collection('ChatBot');
   const div = (
     <div className='Botloading'>
       <div className='Botloader'></div>
@@ -31,44 +30,53 @@ const AdminAddChatBotQuestion = () => {
     { hebrew: 'מטבח', english: 'kitchen' },
   ];
   useEffect(() => {
-    collectionRef
+    dataBase
+      .collection('ChatBot')
       .doc('kitchen')
       .get()
       .then((snapshot) => {
         let x = snapshot.data()['Steps'];
         setdata(x);
       });
-    collectionRef
+    dataBase
+      .collection('ChatBot')
       .doc('ListHealth')
       .get()
       .then((snapshot) => {
         let x = snapshot.data()['Steps'];
         setdata1(x);
       });
-    collectionRef
+    dataBase
+      .collection('ChatBot')
       .doc('Workers')
       .get()
       .then((snapshot) => {
         let x = snapshot.data()['Steps'];
         setdata2(x);
       });
-  }, [true]);
+  }, []);
   useEffect(() => {
-    if (nameDoc === 'kitchen') {
-      setResultToUPload(data);
-      setbollean(false);
+    if (bollean === false) {
+      return;
     }
-    if (nameDoc === 'ListHealth') {
-      setResultToUPload(data1);
-      setbollean(false);
+    if (nameDoc !== '' && (data1 !== '' || data2 !== '' || data !== '')) {
+      if (nameDoc === 'kitchen') {
+        setResultToUPload(data);
+        setbollean(false);
+      }
+      if (nameDoc === 'ListHealth') {
+        setResultToUPload(data1);
+        setbollean(false);
+      }
+      if (nameDoc === 'Workers') {
+        setResultToUPload(data2);
+        setbollean(false);
+      }
     }
-    if (nameDoc === 'Workers') {
-      setResultToUPload(data2);
-      setbollean(false);
-    }
-  }, [bollean]);
+  }, [nameDoc, bollean, data1, data2, data]);
   const onSubmit = (e) => {
     e.preventDefault();
+    console.log(BotAnswer);
     let OPthions = {
       value: BotQuestion,
       label: BotQuestion,
@@ -82,7 +90,8 @@ const AdminAddChatBotQuestion = () => {
       trigger: 'end Question',
     };
     ResultToUPload.push(Question);
-    collectionRef
+    dataBase
+      .collection('ChatBot')
       .doc(nameDoc)
       .update({ Steps: ResultToUPload })
       .then(() => {

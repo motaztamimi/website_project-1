@@ -5,7 +5,6 @@ const Preview = (element) => {
   const [thisSrc, setthisSrc] = useState(null);
   let stO = {
     display: 'block',
-    
   };
   let stN = {
     display: 'none',
@@ -15,7 +14,7 @@ const Preview = (element) => {
     setthisSrc(e);
   }
   function closePhoto(e) {
-    if(e.target.id !== "imgg"){
+    if (e.target.id !== 'imgg') {
       setstylemodel(stN);
     }
   }
@@ -24,11 +23,12 @@ const Preview = (element) => {
       <img
         id='myImg'
         src={element.element.url}
+        alt=''
         onClick={() => showPhoto(element.element.url)}
       />
-      <div className='modal' style={stylemodel} onClick={(e)=>closePhoto(e)}>
-        <div className="modelImg">
-        <img id="imgg" src={thisSrc} />
+      <div className='modal' style={stylemodel} onClick={(e) => closePhoto(e)}>
+        <div className='modelImg'>
+          <img id='imgg' src={thisSrc} alt='' />
         </div>
       </div>
     </div>

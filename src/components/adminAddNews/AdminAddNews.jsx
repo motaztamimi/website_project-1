@@ -3,11 +3,9 @@
 import { useState } from 'react';
 import './AdminAddNews.css';
 import { dataBase, timestamp, storage } from '../../config/firebase';
-import { useHistory } from 'react-router-dom';
 const AdminAddNews = () => {
   const [file, setFile] = useState(null);
   const [showDiv, setShowDiv] = useState(false);
-  const history = useHistory();
   const div = (
     <div className='loading'>
       <div className='loader'></div>
@@ -16,7 +14,6 @@ const AdminAddNews = () => {
   const [NewsTitle, SetNewsTitle] = useState('');
   const [NewsSubTitle, setNewsSubTitle] = useState('');
   const [NewsBody, setNewsBody] = useState('');
-  const [error, setError] = useState(null);
   const types = ['image/png', 'image/jpeg', 'img/jpg'];
   const collectionRef = dataBase.collection('News');
   const onFileChange = (e) => {
@@ -29,7 +26,7 @@ const AdminAddNews = () => {
       .listAll()
       .then((res) => {
         res.items.forEach((itemRef) => {
-          if (itemRef.name == selected.name) {
+          if (itemRef.name === selected.name) {
             console.log('iam in ');
             var val = Math.floor(1000 + Math.random() * 9000);
             newFile = new File([selected], val + selected.name, {
@@ -41,15 +38,12 @@ const AdminAddNews = () => {
           if (newFile && types.includes(newFile.type)) {
             console.log('we have update to ' + newFile.name);
             setFile(newFile);
-
-            setError('');
           } else {
             setFile(null);
-            setError('Please Select an image file (png , jpeg or jpg)');
           }
         });
       })
-      .catch((error) => {
+      .catch(() => {
         // Uh-oh, an error occurred!
       });
     /////////////////////added
@@ -62,7 +56,7 @@ const AdminAddNews = () => {
     const storageRef = storage.ref(`News/${file.name}`);
     let url;
     setShowDiv(true);
-    storageRef.put(file).then((snapshot) => {
+    storageRef.put(file).then(() => {
       storageRef.getDownloadURL().then((data) => {
         url = data;
 

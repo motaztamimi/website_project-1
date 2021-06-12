@@ -36,7 +36,7 @@ import AdminVideos from './components/AdminAddVideos/AdminVideos';
 import MyNewChatBot from '../src/components/NewCharBot/MyNewChatBot';
 import Search from './search/Search';
 import Noseem from './components/NOSEEM/Noseem';
-import ScrollToTop from './components/ScrollToTop';
+import ScrollToTop1 from './components/ScrollToTop1';
 import Googlemap2 from './components/GoogleMap/Googlemap2';
 import AdminEditNews1 from './components/adminAddNews/AdminEditNews1';
 import Updating from './components/Updating';
@@ -48,7 +48,7 @@ function App() {
   return (
     <div className='App'>
       <Router>
-        <ScrollToTop />
+        <ScrollToTop1 />
         <Switch>
           <Route exact path='/Chatbot'>
             <MyNewChatBot />

@@ -1,19 +1,17 @@
 /** @format */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import EditorPage from './EditorPage';
 import '../../style/EditorPageImlimentation.css';
 import { dataBase } from '../../config/firebase.js';
 import { AiOutlineUser } from 'react-icons/ai';
 import ListAdmin from '../ListAdmin';
-import useDataBase from '../../hooks/useDataBase';
 function EditorPageImlimentation() {
   const [data, setData] = useState();
   const [DropDownFirst, setDropDownFirst] = useState('');
   const [DropDownSecond, setDropDownSecond] = useState('');
   const [DropDownThird, setDropDownThird] = useState('');
   const [inSquare, setinSquare] = useState('');
-  const Departments = useDataBase('/Departments');
 
   console.log(DropDownSecond);
   const num = [
@@ -34,13 +32,13 @@ function EditorPageImlimentation() {
     setDropDownThird(event.target.value);
   };
   const getDataFromDataBase = () => {
-    if (DropDownFirst != '' && DropDownSecond != '' && DropDownThird != '') {
+    if (DropDownFirst !== '' && DropDownSecond !== '' && DropDownThird !== '') {
       const collectionRef = dataBase.collection('Departments');
-      const therd = num.filter((e) => e.hebrew == DropDownThird);
+      const therd = num.filter((e) => e.hebrew === DropDownThird);
       const f = collectionRef.doc(DropDownFirst);
       f.get().then((item) => {
         const dep = item.data()[DropDownSecond];
-        if (dep == null) return;
+        if (dep === null) return;
         console.log(dep[therd[0].english]);
         document.getElementById('theText').innerHTML = dep[therd[0].english];
         setinSquare(dep[therd[0].english]);
@@ -48,7 +46,7 @@ function EditorPageImlimentation() {
     }
   };
   const onSubmit = (e) => {
-    const en = num.filter((e) => e.hebrew == DropDownThird);
+    const en = num.filter((e) => e.hebrew === DropDownThird);
     const toTheBase = {};
     const ans = {};
     ans[en[0].english] = data;
@@ -57,7 +55,7 @@ function EditorPageImlimentation() {
       .collection('Departments')
       .doc(DropDownFirst)
       .set(toTheBase, { merge: true });
-    window.location.reload();
+      window.location.reload();
   };
 
   const a = [
@@ -123,35 +121,13 @@ function EditorPageImlimentation() {
   if (type) {
     options = type.map((el) => <option key={el}>{el}</option>);
   }
-  if (type == d) {
+  if (type === d) {
     lastOption = <option key='10'> מידע </option>;
   } else {
     lastOption = f.map((el) => <option key={el}>{el}</option>);
   }
 
-  const lastDrop = () => {
-    if (type == d) {
-      console.log('wtf1');
-      return <div></div>;
-    } else {
-      console.log('wtf');
-      return (
-        <div>
-          <option key='7' value='מנהלים'>
-            מנהלים
-          </option>
-          <option key='8' value='צור קשר'>
-            צור קשר
-          </option>
-          <option key='9' value='ימי פעולה'>
-            ימי פעולה
-          </option>
-        </div>
-      );
-    }
-  };
-
-  if (DropDownSecond != '' && DropDownThird != '') {
+  if (DropDownSecond !== '' && DropDownThird !== '') {
     getDataFromDataBase();
   }
 

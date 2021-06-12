@@ -14,22 +14,22 @@ const MobNav = () => {
       </div>
       <ul>
       <li>
-          <Link to='/about'> מי-אנחנו</Link>
+          <Link to='/AboutUs'> מי-אנחנו</Link>
         </li>
         <li>
-          <a href="#m2">מחלקות</a>
+          <a href="/#m2">מחלקות</a>
+        </li>
+        {/* <li>
+          <a href="/#m3">נושאים</a>
+        </li> */}
+        {/* <li>
+          <a className="m4" href="/#m4">המרכזשלנו</a>
+        </li> */}
+        <li>
+        <Link to="/NewsList">חדשות</Link>
         </li>
         <li>
-          <a href="#m3">נושאים</a>
-        </li>
-        <li>
-          <a className="m4" href="#m4">המרכזשלנו</a>
-        </li>
-        <li>
-          <a href="#m5">חדשות</a>
-        </li>
-        <li>
-          <a href="#m6">גלריה</a>
+        <Link to="/Gallery">גלריה</Link>
         </li>
       </ul>
     </div>

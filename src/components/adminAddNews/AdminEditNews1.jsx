@@ -12,13 +12,11 @@ import { AiOutlineUser } from 'react-icons/ai';
 import { storage } from '../../config/firebase';
 
 const AdminEditNews1 = () => {
-  let fritstime = 0;
-  const collectionRef = dataBase.collection('News');
+  const [fritstime, setFirstTime] = useState(0);
   const [news, setnews] = useState(undefined);
   const [NewsTitleE, setNewsTitleE] = useState('');
   const [NewsSubTitleE, setNewsSubTitleE] = useState('');
   const [NewsBodyE, setNewsBodyE] = useState('');
-  const [NewsImageE, SetNewsImageE] = useState('');
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
   const [bollean, setbollean] = useState(false);
@@ -26,7 +24,7 @@ const AdminEditNews1 = () => {
   const types = ['image/png', 'image/jpeg', 'img/jpg'];
   let history = useHistory();
   const currentURL = window.location.href;
-  let resa = currentURL.split('/');
+  const [resa] = useState(currentURL.split('/'));
   const [showDiv, setShowDiv] = useState(false);
 
   const div = (
@@ -35,29 +33,26 @@ const AdminEditNews1 = () => {
     </div>
   );
   useEffect(() => {
-    collectionRef
+    dataBase
+      .collection('News')
       .doc(resa[5])
       .get()
       .then((item) => {
         setnews(item.data());
         setbollean(true);
       });
-    console.log('imhere 11');
-  }, [true]);
+  }, [resa]);
   useEffect(() => {
     if (news && fritstime === 0) {
-      console.log('imhere in use effect');
-
       setFile(null);
       setNewsTitleE(news.NewsTitle);
       setNewsSubTitleE(news.NewsSubTitle);
       setNewsBodyE(news.NewsBody);
-      SetNewsImageE(news.NewsImage);
       setbollean1(true);
       setbollean(false);
-      fritstime = 1;
+      setFirstTime(1);
     }
-  }, [bollean]);
+  }, [bollean, fritstime, news]);
   const onFileChange = (e) => {
     let selected = e.target.files[0];
     if (selected && types.includes(selected.type)) {
@@ -66,6 +61,7 @@ const AdminEditNews1 = () => {
     } else {
       setFile(null);
       setError('Please Select an image file (png , jpeg or jpg)');
+      console.log(error);
     }
   };
   const onSubmit = (e) => {
@@ -79,7 +75,7 @@ const AdminEditNews1 = () => {
           url = data;
           const storageRef = storage.refFromURL(news.NewsImage);
           storageRef.delete();
-          const colecstion = dataBase
+          dataBase
             .collection('News')
             .doc(resa[5])
             .update({
@@ -88,7 +84,7 @@ const AdminEditNews1 = () => {
         });
       });
     }
-    const colecstion = dataBase
+    dataBase
       .collection('News')
       .doc(resa[5])
       .update({

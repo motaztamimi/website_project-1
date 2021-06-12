@@ -13,8 +13,6 @@ const Search = () => {
   const [contentSec, setContentSec] = useState(null);
   const [DoctorsFormSearch, setDoctorsFormSearch] = useState([]);
   var sectionsFromSearch = '';
-  var secToAdd = [];
-  var contentSecToAdd = [];
 
   sections.forEach((section) => {
     if (section.includes(searchString)) {
@@ -51,6 +49,8 @@ const Search = () => {
   }, [searchString]);
 
   useEffect(() => {
+    let secToAdd1 = [];
+    let contentSecToAdd1 = [];
     const collectionRef = dataBase.collection('Departments');
     collectionRef.get().then((value) => {
       value.docs.forEach((doc) => {
@@ -65,11 +65,11 @@ const Search = () => {
               } else {
                 id = 'sherotKhelate';
               }
-              secToAdd = [
-                ...secToAdd,
+              secToAdd1 = [
+                ...secToAdd1,
                 ...[{ url: `${id}/${index}`, title: `${dep}/${doc.id}` }],
               ];
-              setDepartmentsFromSearch(secToAdd);
+              setDepartmentsFromSearch(secToAdd1);
             }
           });
         }
@@ -101,8 +101,8 @@ const Search = () => {
                 }
                 contentText = removeTags(contentText);
 
-                contentSecToAdd = [
-                  ...contentSecToAdd,
+                contentSecToAdd1 = [
+                  ...contentSecToAdd1,
                   ...[
                     {
                       contentText: contentText,
@@ -111,7 +111,7 @@ const Search = () => {
                     },
                   ],
                 ];
-                setContentSec(contentSecToAdd);
+                setContentSec(contentSecToAdd1);
               } else if (
                 data[dep].second &&
                 data[dep].second.includes(searchString)
@@ -136,8 +136,8 @@ const Search = () => {
                 }
                 contentText = removeTags(contentText);
 
-                contentSecToAdd = [
-                  ...contentSecToAdd,
+                contentSecToAdd1 = [
+                  ...contentSecToAdd1,
                   ...[
                     {
                       contentText: contentText,
@@ -146,7 +146,7 @@ const Search = () => {
                     },
                   ],
                 ];
-                setContentSec(contentSecToAdd);
+                setContentSec(contentSecToAdd1);
               } else if (
                 data[dep].theird &&
                 data[dep].theird.includes(searchString)
@@ -171,8 +171,8 @@ const Search = () => {
                 }
                 contentText = removeTags(contentText);
 
-                contentSecToAdd = [
-                  ...contentSecToAdd,
+                contentSecToAdd1 = [
+                  ...contentSecToAdd1,
                   ...[
                     {
                       contentText: contentText,
@@ -181,7 +181,7 @@ const Search = () => {
                     },
                   ],
                 ];
-                setContentSec(contentSecToAdd);
+                setContentSec(contentSecToAdd1);
               } else if (
                 data[dep].fourth &&
                 data[dep].fourth.includes(searchString)
@@ -206,8 +206,8 @@ const Search = () => {
                 }
                 contentText = removeTags(contentText);
 
-                contentSecToAdd = [
-                  ...contentSecToAdd,
+                contentSecToAdd1 = [
+                  ...contentSecToAdd1,
                   ...[
                     {
                       contentText: contentText,
@@ -216,14 +216,14 @@ const Search = () => {
                     },
                   ],
                 ];
-                setContentSec(contentSecToAdd);
+                setContentSec(contentSecToAdd1);
               }
             }
           });
         }
       });
     });
-  }, []);
+  }, [searchString]);
 
   useEffect(() => {
     let temp = [];
@@ -241,7 +241,7 @@ const Search = () => {
           setDoctorsFormSearch(temp);
         }
       });
-  }, []);
+  }, [searchString]);
 
   const removeTags = (str) => {
     if (str === null || str === '') return false;
@@ -358,9 +358,3 @@ const Search = () => {
 };
 
 export default Search;
-
-/* contentSecToAdd.push({
-  contentText: contentText,
-  url: `${id}/${index}`,
-  title: `${dep}/${doc.id}`,
-}); */

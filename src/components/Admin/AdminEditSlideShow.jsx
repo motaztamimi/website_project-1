@@ -1,3 +1,5 @@
+/** @format */
+
 import './AdminEditSlideShow.css';
 import { useState } from 'react';
 import { storage, dataBase, timestamp } from '../../config/firebase';
@@ -66,53 +68,62 @@ const AdminSlideShow = () => {
   };
 
   return (
-    <div className="listAdminPSS">
-      <div className="listPSS">
-        <ListAdmin/>
+    <div className='listAdminPSS'>
+      <div className='listPSS'>
+        <ListAdmin />
       </div>
-    <div className='EditSlideShowPage'>
-      {showDiv && div}
-      <form className='EditSlideShowForm' onSubmit={submithandeler}>
-        <span>עלית תמונה מתחלפת</span>
-        <a href='/Admin'>
-      <AiOutlineUser title="AdminPage" className='EditSlideShowPage2' id='accessIMG' color='#151e4d' />
-      </a>
-        <select
-          name=''
-          id='selectDep'
-          onChange={(e) => {
-            setSelectedValue(e.target.value);
-            if (e.target.value === 'kfarShaol') {
-              setCollectionToSend(`Departments/כפר שאול/slideShow`);
-            } else if (e.target.value === 'Etanim') {
-              setCollectionToSend('Departments/איתנים/slideShow');
-            } else if (e.target.value === 'HomePage') {
-              setCollectionToSend('HomePage/photos/slideShow');
-            } else {
-              setCollectionToSend('Departments/שירות קהילתי/slideShow');
-            }
-          }}>
-          <option value='kfarShaol' defaultValue>
-            {'כפר שאול'}{' '}
-          </option>
-          <option value='SherotKhelate'>{'שירות קהילתי'} </option>
-          <option value='Etanim'>{'איתנים'} </option>
-          <option value='HomePage'>{'דף הבית'} </option>
-        </select>
-        <input
-          type='file'
-          id='uploadFromSildeShow'
-          onChange={OnChangeFileHandeler}
-          required
-        />
+      <div className='EditSlideShowPage'>
+        {showDiv && div}
+        <form className='EditSlideShowForm' onSubmit={submithandeler}>
+          <span>העלאת תמונה מתחלפת</span>
+          <a href='/Admin'>
+            <AiOutlineUser
+              title='AdminPage'
+              className='EditSlideShowPage2'
+              id='accessIMG'
+              color='#151e4d'
+            />
+          </a>
+          <select
+            name=''
+            id='selectDep'
+            onChange={(e) => {
+              setSelectedValue(e.target.value);
+              if (e.target.value === 'kfarShaol') {
+                setCollectionToSend(`Departments/כפר שאול/slideShow`);
+              } else if (e.target.value === 'Etanim') {
+                setCollectionToSend('Departments/איתנים/slideShow');
+              } else if (e.target.value === 'HomePage') {
+                setCollectionToSend('HomePage/photos/slideShow');
+              } else {
+                setCollectionToSend('Departments/שירות קהילתי/slideShow');
+              }
+            }}>
+            <option value='kfarShaol' defaultValue>
+              {'כפר שאול'}{' '}
+            </option>
+            <option value='SherotKhelate'>{'שירות קהילתי'} </option>
+            <option value='Etanim'>{'איתנים'} </option>
+            <option value='HomePage'>{'דף הבית'} </option>
+          </select>
+          <input
+            type='file'
+            id='uploadFromSildeShow'
+            onChange={OnChangeFileHandeler}
+            required
+          />
 
-        <input type='submit' value='upload' className='submitPhoto' />
-      </form>
+          <input
+            type='submit'
+            value='העלאה תמונה מתחלפת'
+            className='submitPhoto'
+          />
+        </form>
 
-      {collectionToSend && (
-        <AdminSlideShowPhotos collection={collectionToSend} />
-      )}
-    </div>
+        {collectionToSend && (
+          <AdminSlideShowPhotos collection={collectionToSend} />
+        )}
+      </div>
     </div>
   );
 };

@@ -7,58 +7,12 @@ import './ChatBott.css';
 import ImgBot from '../../components/ChatBot/ImgBot';
 
 const MyNewChatBot = () => {
-  const [item, setitem] = useState(null);
-  let temp = [];
   const [bollean, setbollean] = useState(false);
   const [bollean1, setbollean1] = useState(false);
-  const arraya = [];
   const [data, setdata] = useState(null);
   const [data1, setdata1] = useState(null);
   const [data2, setdata2] = useState(null);
-
-  const collectionRef = dataBase.collection('ChatBot');
-
-  useEffect(() => {
-    collectionRef
-      .doc('kitchen')
-      .get()
-      .then((snapshot) => {
-        let x = snapshot.data()['Steps'];
-        setdata(x);
-      });
-    collectionRef
-      .doc('ListHealth')
-      .get()
-      .then((snapshot) => {
-        let x = snapshot.data()['Steps'];
-        setdata1(x);
-      });
-    collectionRef
-      .doc('Workers')
-      .get()
-      .then((snapshot) => {
-        let x = snapshot.data()['Steps'];
-        setdata2(x);
-        setbollean(true);
-      });
-  }, [true]);
-  useEffect(() => {
-    if (bollean) {
-      temp = [...newFiree];
-      for (let vla in data) {
-        temp.push(data[vla]);
-      }
-      for (let vla in data1) {
-        temp.push(data1[vla]);
-      }
-      for (let vla in data2) {
-        temp.push(data2[vla]);
-      }
-      setdata(temp);
-      setbollean1(true);
-    }
-  }, [bollean]);
-
+  const [resultToShow, setResultToShow] = useState(null);
   const theme = {
     background: 'white',
     fontFamily: 'Rubik',
@@ -78,7 +32,7 @@ const MyNewChatBot = () => {
     placeholder: 'Type your response.',
     headerTitle: 'מענה אוטומטי מהמרכז',
   };
-  const newFiree = [
+  const [newFiree] = useState([
     {
       id: 'imageStarting',
       component: <ImgBot />,
@@ -164,11 +118,60 @@ const MyNewChatBot = () => {
       message: 'אני מקווה שעזרתי לך להתראות',
       end: true,
     },
-  ];
+  ]);
+
+  useEffect(() => {
+    dataBase
+      .collection('ChatBot')
+      .doc('kitchen')
+      .get()
+      .then((snapshot) => {
+        let x = snapshot.data()['Steps'];
+        setdata(x);
+      });
+    dataBase
+      .collection('ChatBot')
+      .doc('ListHealth')
+      .get()
+      .then((snapshot) => {
+        let x = snapshot.data()['Steps'];
+        setdata1(x);
+      });
+    dataBase
+      .collection('ChatBot')
+      .doc('Workers')
+      .get()
+      .then((snapshot) => {
+        let x = snapshot.data()['Steps'];
+        setdata2(x);
+        setbollean(true);
+      });
+  }, []);
+  useEffect(() => {
+    let temp = [];
+    if (data1 && data2 && data && newFiree) {
+      if (bollean) {
+        for (let val in newFiree) {
+          temp.push(newFiree[val]);
+        }
+        for (let vla in data) {
+          temp.push(data[vla]);
+        }
+        for (let vla in data1) {
+          temp.push(data1[vla]);
+        }
+        for (let vla in data2) {
+          temp.push(data2[vla]);
+        }
+        setResultToShow(temp);
+        setbollean1(true);
+      }
+    }
+  }, [bollean, data1, data2, data, newFiree]);
 
   return (
     <ThemeProvider theme={theme}>
-      <div>{bollean1 ? <ChatBot steps={data} {...config} /> : ''}</div>
+      <div>{bollean1 ? <ChatBot steps={resultToShow} {...config} /> : ''}</div>
     </ThemeProvider>
   );
 };

@@ -1,14 +1,15 @@
 /** @format */
 
-import './AdminVideos.css';
-import { useState } from 'react';
-import { dataBase, timestamp } from '../../config/firebase';
-import AdminVideosShow from './AdminVideosShow';
-import { AiOutlineUser } from 'react-icons/ai';
+import "./AdminVideos.css";
+import { useState } from "react";
+import { dataBase, timestamp } from "../../config/firebase";
+import AdminVideosShow from "./AdminVideosShow";
+import { AiOutlineUser } from "react-icons/ai";
+import ListAdmin from "../ListAdmin";
 const AdminVideos = () => {
   const [file, setFile] = useState(null);
   const [showDiv, setShowDiv] = useState(false);
-  const collectionRef = dataBase.collection('Videos');
+  const collectionRef = dataBase.collection("Videos");
 
   const div = (
     <div className='loading'>
@@ -38,42 +39,47 @@ const AdminVideos = () => {
         })
         .then(() => {
           setShowDiv(false);
-          document.getElementById('uploadFromVideos').value = ' ';
+          document.getElementById("uploadFromVideos").value = " ";
         });
     } else {
-      alert('please upload an embed url');
+      alert("please upload an embed url");
       return;
     }
   };
 
   return (
-    <div>
-      <div className='EditVideosPage'>
-        {showDiv && div}
+    <div className='listAdminInG'>
+      <div className='listt'>
+        <ListAdmin />
+      </div>
+      <div>
+        <div className='EditVideosPage'>
+          {showDiv && div}
 
-        <form className='EditVideosForm' onSubmit={submithandeler}>
-          <span>העלאת סרטון</span>
-          <a href='/Admin'>
-            <AiOutlineUser
-              title='AdminPage'
-              className='AdminButtonVideos'
-              id='accessIMG'
-              color='#151e4d'
+          <form className='EditVideosForm' onSubmit={submithandeler}>
+            <span>העלאת סרטון</span>
+            <a href='/Admin'>
+              <AiOutlineUser
+                title='AdminPage'
+                className='AdminButtonVideos'
+                id='accessIMG'
+                color='#151e4d'
+              />
+            </a>
+            <input
+              type='url'
+              id='uploadFromVideos'
+              placeholder='embed URL'
+              title='please fill an emded URL'
+              onChange={OnChangeFileHandeler}
+              required
             />
-          </a>
-          <input
-            type='url'
-            id='uploadFromVideos'
-            placeholder='embed URL'
-            title='please fill an emded URL'
-            onChange={OnChangeFileHandeler}
-            required
-          />
 
-          <input type='submit' value='upload' className='submitPhoto' />
-        </form>
+            <input type='submit' value='העלאת סרטון' className='submitPhoto' />
+          </form>
 
-        {<AdminVideosShow collection={'Videos'} />}
+          {<AdminVideosShow collection={"Videos"} />}
+        </div>
       </div>
     </div>
   );

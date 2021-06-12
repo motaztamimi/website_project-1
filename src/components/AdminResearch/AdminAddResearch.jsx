@@ -17,8 +17,6 @@ const AdminAddResearch = () => {
   );
   const [ResearchName, SetResearchName] = useState('');
 
-  const [error, setError] = useState(null);
-  const types = ['file/pdf'];
   const collectionRef = dataBase.collection('Researches');
   const onFileChange = (e) => {
     let selected = e.target.files[0];
@@ -26,11 +24,8 @@ const AdminAddResearch = () => {
     // && types.includes(selected.type)
     if (selected) {
       setFile(selected);
-
-      setError('');
     } else {
       setFile(null);
-      setError('Please Select a pdf file');
     }
   };
 
@@ -39,7 +34,7 @@ const AdminAddResearch = () => {
     const storageRef = storage.ref(`Researches/${file.name}`);
     let url;
     setShowDiv(true);
-    storageRef.put(file).then((snapshot) => {
+    storageRef.put(file).then(() => {
       storageRef.getDownloadURL().then((data) => {
         url = data;
         collectionRef
@@ -48,7 +43,7 @@ const AdminAddResearch = () => {
             name: ResearchName,
             createdAt: timestamp(),
           })
-          .then((value) => {
+          .then(() => {
             history.push('/Admin/AdminResearch');
           });
       });
@@ -59,9 +54,14 @@ const AdminAddResearch = () => {
     <div className='AddNewsPage'>
       {showDiv && div}
       <form className='AddNewsForm' onSubmit={onSubmit}>
-      <a href='/Admin'>
-      <AiOutlineUser title="AdminPage" className='EditSlideShowPage2' id='accessIMG' color='#151e4d' />
-      </a>
+        <a href='/Admin'>
+          <AiOutlineUser
+            title='AdminPage'
+            className='EditSlideShowPage2'
+            id='accessIMG'
+            color='#151e4d'
+          />
+        </a>
         <label>המחקר כ pdf</label>
         <input type='file' onChange={onFileChange} required />
 

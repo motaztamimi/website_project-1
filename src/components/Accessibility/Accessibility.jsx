@@ -51,7 +51,6 @@ function Accessibility() {
     if (font > min) {
       setfont(font - 10);
     }
-    console.log(font);
   };
   const originalFont = () => {
     setfont(original);

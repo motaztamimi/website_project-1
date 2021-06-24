@@ -157,7 +157,7 @@ const AdminAddChatBotQuestion = () => {
             <input
               id='BotQuestion'
               type='text'
-              placeholder='נא להכניס שאלה להוספה'
+              placeholder='נא להכניס שאלה בעברית'
               onChange={(e) => {
                 setBotQuestion(e.target.value);
               }}
@@ -167,7 +167,7 @@ const AdminAddChatBotQuestion = () => {
             <input
               id='BotAnswer'
               type='text'
-              placeholder='נא להכניס תשובה'
+              placeholder='נא להכניס תשובה בעברית'
               onChange={(e) => {
                 setBotAnswer(e.target.value);
               }}

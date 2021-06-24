@@ -10,7 +10,7 @@ function ContactUsFormV1() {
     e.preventDefault();
     window.open(
       'mailto:' +
-        values.email +
+        'ELADSAKI@GMAIL.COM' +
         '?subject=' +
         values.name +
         '     ' +

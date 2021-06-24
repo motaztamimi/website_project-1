@@ -55,7 +55,7 @@ function EditorPageImlimentation() {
       .collection('Departments')
       .doc(DropDownFirst)
       .set(toTheBase, { merge: true });
-      window.location.reload();
+      //window.location.reload();
   };
 
   const a = [
